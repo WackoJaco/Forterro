@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>taskdatescheck__c</fullName>
+    <formula>If ( 
+        AND (Due_Date__c  - Start_Date__c  = 0, 
+              Remaining_Effort__c &gt; 24),
+     true,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>taskdatescheck</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

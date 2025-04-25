@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_FSP</fullName>
+    <columns>NAME</columns>
+    <columns>ffps_forterro__Type__c</columns>
+    <columns>ffps_forterro__CatalogueItem__c</columns>
+    <columns>ffps_forterro__RequestDetails__c</columns>
+    <columns>ffps_forterro__Status__c</columns>
+    <columns>ffps_forterro__ProjectTask__c</columns>
+    <columns>ffps_forterro__Account__c</columns>
+    <columns>ffps_forterro__RequestedDate__c</columns>
+    <columns>ffps_forterro__DeliveryDate__c</columns>
+    <columns>Region__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ffps_forterro__Type__c</field>
+        <operation>equals</operation>
+        <value>FSP</value>
+    </filters>
+    <label>All FSP</label>
+</ListView>

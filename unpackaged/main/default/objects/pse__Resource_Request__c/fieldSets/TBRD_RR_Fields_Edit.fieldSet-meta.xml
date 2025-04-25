@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TBRD_RR_Fields_Edit</fullName>
+    <description>Edtiable RR fields for TBRD , Task Based Resourcing Detail.</description>
+    <displayedFields>
+        <field>pse__Milestone__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>pse__Practice__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>TBRD_RR_Fields_Edit</label>
+</FieldSet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credited_Hours__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Customer Project: A credited hours role budget is required for FoC Investment or Business Development.
+Internal Project: A credited hours role budget is required for Field Innovation projects.</inlineHelpText>
+    <label>Credited Hours?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

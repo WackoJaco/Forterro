@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Ad_Hoc</fullName>
+    <columns>NAME</columns>
+    <columns>ffps_forterro__Type__c</columns>
+    <columns>ffps_forterro__RequestDetails__c</columns>
+    <columns>ffps_forterro__StatusOverride__c</columns>
+    <columns>ffps_forterro__Account__c</columns>
+    <columns>ffps_forterro__RequestedDate__c</columns>
+    <columns>ffps_forterro__DeliveryDate__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ffps_forterro__Type__c</field>
+        <operation>equals</operation>
+        <value>Ad Hoc</value>
+    </filters>
+    <label>All Generic Requests</label>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role_Budget__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Populated by a flow. The Role budget linked to the PTA.</description>
+    <label>Role Budget</label>
+    <referenceTo>Role_Budget__c</referenceTo>
+    <relationshipLabel>Project Task Assignments</relationshipLabel>
+    <relationshipName>Project_Task_Assignments</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

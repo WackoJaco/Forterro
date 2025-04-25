@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remaining_Hours__c</fullName>
+    <description>Remaining Hours based on Planned or Scheduled.</description>
+    <externalId>false</externalId>
+    <formula>If (
+       pse__Planned_Hours__c = 0,  pse__Scheduled_Hours__c -  (pse__Billable_Hours_Submitted__c + pse__Non_Billable_Hours_Submitted__c) ,
+        pse__Planned_Hours__c -  (pse__Billable_Hours_Submitted__c + pse__Non_Billable_Hours_Submitted__c)
+   )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Remaining Hours</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

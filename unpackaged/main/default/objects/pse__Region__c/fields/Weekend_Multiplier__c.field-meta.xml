@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Weekend_Multiplier__c</fullName>
+    <defaultValue>1</defaultValue>
+    <description>Multiplier Value for the Billable amount of Weekend type Timecards</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Multiplier Value for the Billable amount of Weekend type Timecards</inlineHelpText>
+    <label>Weekend Multiplier</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

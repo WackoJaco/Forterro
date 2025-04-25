@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTC_Training_Code__c</fullName>
+    <description>Field to store FWE training codes required by French regulations</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field to store FWE training codes required by French regulations</inlineHelpText>
+    <label>Training Code</label>
+    <length>20</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

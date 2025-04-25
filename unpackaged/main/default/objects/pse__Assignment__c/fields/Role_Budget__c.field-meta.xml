@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role_Budget__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Role Budget</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Role_Budget__c.Project__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.pse__Project__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.pse__Role__c</field>
+            <operation>equals</operation>
+            <valueField>Role_Budget__c.Role__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Role_Budget__c</referenceTo>
+    <relationshipLabel>Assignments</relationshipLabel>
+    <relationshipName>Assignments</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

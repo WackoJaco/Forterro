@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ongoing_Project_Requests_Processed</fullName>
+    <columns>NAME</columns>
+    <columns>ffps_forterro__RequestedDate__c</columns>
+    <columns>ffps_forterro__RequestDetails__c</columns>
+    <columns>ffps_forterro__Account__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>ffps_forterro__ProjectTask__c</columns>
+    <columns>Task_Start_Date__c</columns>
+    <columns>Task_End_Date__c</columns>
+    <columns>Estimated_Hours__c</columns>
+    <columns>Resource__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ffps_forterro__Type__c</field>
+        <operation>equals</operation>
+        <value>Ad Hoc,SupportBillable,SupportCredited,smallrequest</value>
+    </filters>
+    <filters>
+        <field>Ongoing_Task_Created__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Ongoing Project Requests Processed</label>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

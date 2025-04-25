@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Request</fullName>
+    <fields>Name</fields>
+    <fields>Category__c</fields>
+    <fields>Sub_category__c</fields>
+    <fields>ffps_forterro__RequestedDate__c</fields>
+    <fields>ffps_forterro__Type__c</fields>
+    <label>Service_Request</label>
+</CompactLayout>

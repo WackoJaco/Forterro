@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Sub_Types__c</fullName>
+    <label>Project Sub-Types</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>pse__Project_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NSS - Implementation</fullName>
+                <default>false</default>
+                <label>NSS - Implementation</label>
+            </value>
+            <value>
+                <fullName>NSS - Reference Implementation</fullName>
+                <default>false</default>
+                <label>NSS - Reference Implementation</label>
+            </value>
+            <value>
+                <fullName>IBS - Upgrade</fullName>
+                <default>false</default>
+                <label>IBS - Upgrade</label>
+            </value>
+            <value>
+                <fullName>IBS - Enhancement</fullName>
+                <default>false</default>
+                <label>IBS - Enhancement</label>
+            </value>
+            <value>
+                <fullName>IBS - Ongoing Work</fullName>
+                <default>false</default>
+                <label>IBS - Ongoing Work</label>
+            </value>
+            <value>
+                <fullName>IBS - Cloud Migration</fullName>
+                <default>false</default>
+                <label>IBS - Cloud Migration</label>
+            </value>
+            <value>
+                <fullName>IBS - Subscription Managed Services</fullName>
+                <default>false</default>
+                <label>IBS - Subscription Managed Services</label>
+            </value>
+            <value>
+                <fullName>PS Subscription - Managed Services</fullName>
+                <default>false</default>
+                <label>PS Subscription - Managed Services</label>
+            </value>
+            <value>
+                <fullName>PS Subscription - Forterro Service Points</fullName>
+                <default>false</default>
+                <label>PS Subscription - Forterro Service Points</label>
+            </value>
+            <value>
+                <fullName>PS Subscription - Customisation Maintenance</fullName>
+                <default>false</default>
+                <label>PS Subscription - Customisation Maintenance</label>
+            </value>
+            <value>
+                <fullName>Internal - Business Development</fullName>
+                <default>false</default>
+                <label>Internal - Business Development</label>
+            </value>
+            <value>
+                <fullName>Internal - Packaged Solutions</fullName>
+                <default>false</default>
+                <label>Internal - Packaged Solutions</label>
+            </value>
+            <value>
+                <fullName>Internal - Field Innovation</fullName>
+                <default>false</default>
+                <label>Internal - Field Innovation</label>
+            </value>
+            <value>
+                <fullName>Internal - Organisational Development</fullName>
+                <default>false</default>
+                <label>Internal - Organisational Development</label>
+            </value>
+            <value>
+                <fullName>Internal - Administration</fullName>
+                <default>false</default>
+                <label>Internal - Administration</label>
+            </value>
+            <value>
+                <fullName>Internal – Cross-Functional Work</fullName>
+                <default>false</default>
+                <label>Internal – Cross-Functional Work</label>
+            </value>
+            <value>
+                <fullName>Internal – Unavailability</fullName>
+                <default>false</default>
+                <label>Internal – Unavailability</label>
+            </value>
+            <value>
+                <fullName>IBS – Upgrade</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IBS – Upgrade</label>
+            </value>
+            <value>
+                <fullName>Internal - Cross-Functional Work</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Internal - Cross-Functional Work</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Internal - Business Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Internal - Packaged Solutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Internal - Field Innovation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Internal - Organisational Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Internal - Administration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Internal – Cross-Functional Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Internal – Unavailability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NSS</controllingFieldValue>
+            <valueName>NSS - Implementation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NSS</controllingFieldValue>
+            <valueName>NSS - Reference Implementation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IBS</controllingFieldValue>
+            <valueName>IBS - Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IBS</controllingFieldValue>
+            <valueName>IBS - Enhancement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IBS</controllingFieldValue>
+            <valueName>IBS - Ongoing Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IBS</controllingFieldValue>
+            <valueName>IBS - Cloud Migration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IBS</controllingFieldValue>
+            <valueName>IBS - Subscription Managed Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PS Subscription</controllingFieldValue>
+            <valueName>PS Subscription - Managed Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PS Subscription</controllingFieldValue>
+            <valueName>PS Subscription - Forterro Service Points</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PS Subscription</controllingFieldValue>
+            <valueName>PS Subscription - Customisation Maintenance</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

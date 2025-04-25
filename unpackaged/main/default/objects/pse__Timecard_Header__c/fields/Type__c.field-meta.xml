@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard</fullName>
+                <default>true</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>Overtime</fullName>
+                <default>false</default>
+                <label>Overtime</label>
+            </value>
+            <value>
+                <fullName>Travel</fullName>
+                <default>false</default>
+                <label>Travel</label>
+            </value>
+            <value>
+                <fullName>Travel - KM/Miles</fullName>
+                <default>false</default>
+                <label>Travel - KM/Miles</label>
+            </value>
+            <value>
+                <fullName>Standby</fullName>
+                <default>false</default>
+                <label>Standby</label>
+            </value>
+            <value>
+                <fullName>Saturday</fullName>
+                <default>false</default>
+                <label>Saturday</label>
+            </value>
+            <value>
+                <fullName>Sunday &amp; Bank Holiday</fullName>
+                <default>false</default>
+                <label>Sunday &amp; Bank Holiday</label>
+            </value>
+            <value>
+                <fullName>Overtime + Travel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Overtime + Travel</label>
+            </value>
+            <value>
+                <fullName>Weekend</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Weekend</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

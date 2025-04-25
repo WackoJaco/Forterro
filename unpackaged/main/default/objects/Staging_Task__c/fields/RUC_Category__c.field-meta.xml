@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RUC_Category__c</fullName>
+    <label>RUC Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Invoiceable</fullName>
+                <default>false</default>
+                <label>Invoiceable</label>
+            </value>
+            <value>
+                <fullName>Free Work</fullName>
+                <default>false</default>
+                <label>Free Work</label>
+            </value>
+            <value>
+                <fullName>Partner BD/SME Support</fullName>
+                <default>false</default>
+                <label>Partner BD/SME Support</label>
+            </value>
+            <value>
+                <fullName>Non-billable Travel time to customer</fullName>
+                <default>false</default>
+                <label>Non-billable Travel time to customer</label>
+            </value>
+            <value>
+                <fullName>Business Development</fullName>
+                <default>false</default>
+                <label>Business Development</label>
+            </value>
+            <value>
+                <fullName>FI-Projects &amp; Training Delivery</fullName>
+                <default>false</default>
+                <label>FI-Projects &amp; Training Delivery</label>
+            </value>
+            <value>
+                <fullName>FI-Portfolio Support</fullName>
+                <default>false</default>
+                <label>FI-Portfolio Support</label>
+            </value>
+            <value>
+                <fullName>Shadow Time</fullName>
+                <default>false</default>
+                <label>Shadow Time</label>
+            </value>
+            <value>
+                <fullName>Recruiting and Hiring</fullName>
+                <default>false</default>
+                <label>Recruiting and Hiring</label>
+            </value>
+            <value>
+                <fullName>Career Management</fullName>
+                <default>false</default>
+                <label>Career Management</label>
+            </value>
+            <value>
+                <fullName>Community</fullName>
+                <default>false</default>
+                <label>Community</label>
+            </value>
+            <value>
+                <fullName>Receiving Training</fullName>
+                <default>false</default>
+                <label>Receiving Training</label>
+            </value>
+            <value>
+                <fullName>Vacation</fullName>
+                <default>false</default>
+                <label>Vacation</label>
+            </value>
+            <value>
+                <fullName>Sick</fullName>
+                <default>false</default>
+                <label>Sick</label>
+            </value>
+            <value>
+                <fullName>Administrative</fullName>
+                <default>false</default>
+                <label>Administrative</label>
+            </value>
+            <value>
+                <fullName>Dummy</fullName>
+                <default>false</default>
+                <label>Dummy</label>
+            </value>
+            <value>
+                <fullName>Free Work (incl Investment)</fullName>
+                <default>false</default>
+                <label>Free Work (incl Investment)</label>
+            </value>
+            <value>
+                <fullName>4 - Development</fullName>
+                <default>false</default>
+                <label>4 - Development</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resource_Role__c</fullName>
+    <label>Resource Role</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+                <label>Consultant</label>
+            </value>
+            <value>
+                <fullName>Consultant (Business Process Functional)</fullName>
+                <default>false</default>
+                <label>Consultant (Business Process Functional)</label>
+            </value>
+            <value>
+                <fullName>Consultant Developer (App Development &amp; Integrations)</fullName>
+                <default>false</default>
+                <label>Consultant Developer (App Development &amp; Integrations)</label>
+            </value>
+            <value>
+                <fullName>Consultant Developer IBS (App Development &amp; Integrations)</fullName>
+                <default>false</default>
+                <label>Consultant Developer IBS (App Development &amp; Integrations)</label>
+            </value>
+            <value>
+                <fullName>Consultant Developer NSS (App Development &amp; Integrations)</fullName>
+                <default>false</default>
+                <label>Consultant Developer NSS (App Development &amp; Integrations)</label>
+            </value>
+            <value>
+                <fullName>Consultant IBS (Business Process Functional)</fullName>
+                <default>false</default>
+                <label>Consultant IBS (Business Process Functional)</label>
+            </value>
+            <value>
+                <fullName>Consultant NSS (Business Process Functional)</fullName>
+                <default>false</default>
+                <label>Consultant NSS (Business Process Functional)</label>
+            </value>
+            <value>
+                <fullName>Custom Development</fullName>
+                <default>false</default>
+                <label>Custom Development</label>
+            </value>
+            <value>
+                <fullName>Customer Success</fullName>
+                <default>false</default>
+                <label>Customer Success</label>
+            </value>
+            <value>
+                <fullName>Customer Success Manager</fullName>
+                <default>false</default>
+                <label>Customer Success Manager</label>
+            </value>
+            <value>
+                <fullName>Developer</fullName>
+                <default>false</default>
+                <label>Developer</label>
+            </value>
+            <value>
+                <fullName>Developer (Cust)</fullName>
+                <default>false</default>
+                <label>Developer (Cust)</label>
+            </value>
+            <value>
+                <fullName>Developer (PS)</fullName>
+                <default>false</default>
+                <label>Developer (PS)</label>
+            </value>
+            <value>
+                <fullName>External (Sub Consulting)</fullName>
+                <default>false</default>
+                <label>External (Sub Consulting)</label>
+            </value>
+            <value>
+                <fullName>Infrastructure Consultant</fullName>
+                <default>false</default>
+                <label>Infrastructure Consultant</label>
+            </value>
+            <value>
+                <fullName>Infrastructure Consultant - Accounts</fullName>
+                <default>false</default>
+                <label>Infrastructure Consultant - Accounts</label>
+            </value>
+            <value>
+                <fullName>Infrastructure Consultant IBS</fullName>
+                <default>false</default>
+                <label>Infrastructure Consultant IBS</label>
+            </value>
+            <value>
+                <fullName>Infrastructure Consultant NSS</fullName>
+                <default>false</default>
+                <label>Infrastructure Consultant NSS</label>
+            </value>
+            <value>
+                <fullName>Infrastructure Consultant - Tech</fullName>
+                <default>false</default>
+                <label>Infrastructure Consultant - Tech</label>
+            </value>
+            <value>
+                <fullName>Infrastructure Consultant - Web</fullName>
+                <default>false</default>
+                <label>Infrastructure Consultant - Web</label>
+            </value>
+            <value>
+                <fullName>Junior Consultant (Ramp-up)</fullName>
+                <default>false</default>
+                <label>Junior Consultant (Ramp-up)</label>
+            </value>
+            <value>
+                <fullName>Lead</fullName>
+                <default>false</default>
+                <label>Lead</label>
+            </value>
+            <value>
+                <fullName>Managed Services</fullName>
+                <default>false</default>
+                <label>Managed Services</label>
+            </value>
+            <value>
+                <fullName>Manager</fullName>
+                <default>false</default>
+                <label>Manager</label>
+            </value>
+            <value>
+                <fullName>Oracle Database Engineer</fullName>
+                <default>false</default>
+                <label>Oracle Database Engineer</label>
+            </value>
+            <value>
+                <fullName>Pre Sales</fullName>
+                <default>false</default>
+                <label>Pre Sales</label>
+            </value>
+            <value>
+                <fullName>Principal</fullName>
+                <default>false</default>
+                <label>Principal</label>
+            </value>
+            <value>
+                <fullName>Product Education Services</fullName>
+                <default>false</default>
+                <label>Product Education Services</label>
+            </value>
+            <value>
+                <fullName>Project Administrator</fullName>
+                <default>false</default>
+                <label>Project Administrator</label>
+            </value>
+            <value>
+                <fullName>Project Manager</fullName>
+                <default>false</default>
+                <label>Project Manager</label>
+            </value>
+            <value>
+                <fullName>Project Manager IBS</fullName>
+                <default>false</default>
+                <label>Project Manager IBS</label>
+            </value>
+            <value>
+                <fullName>Project Manager NSS</fullName>
+                <default>false</default>
+                <label>Project Manager NSS</label>
+            </value>
+            <value>
+                <fullName>Senior Lead</fullName>
+                <default>false</default>
+                <label>Senior Lead</label>
+            </value>
+            <value>
+                <fullName>Service Operation Administrator (WFM)</fullName>
+                <default>false</default>
+                <label>Service Operation Administrator (WFM)</label>
+            </value>
+            <value>
+                <fullName>Service Operations</fullName>
+                <default>false</default>
+                <label>Service Operations</label>
+            </value>
+            <value>
+                <fullName>Service Operations Manager</fullName>
+                <default>false</default>
+                <label>Service Operations Manager</label>
+            </value>
+            <value>
+                <fullName>Services Director</fullName>
+                <default>false</default>
+                <label>Services Director</label>
+            </value>
+            <value>
+                <fullName>Solution Architect</fullName>
+                <default>false</default>
+                <label>Solution Architect</label>
+            </value>
+            <value>
+                <fullName>Solution Architect IBS</fullName>
+                <default>false</default>
+                <label>Solution Architect IBS</label>
+            </value>
+            <value>
+                <fullName>Solution Architect NSS</fullName>
+                <default>false</default>
+                <label>Solution Architect NSS</label>
+            </value>
+            <value>
+                <fullName>Specialist</fullName>
+                <default>false</default>
+                <label>Specialist</label>
+            </value>
+            <value>
+                <fullName>System Engineer</fullName>
+                <default>false</default>
+                <label>System Engineer</label>
+            </value>
+            <value>
+                <fullName>Team Lead</fullName>
+                <default>false</default>
+                <label>Team Lead</label>
+            </value>
+            <value>
+                <fullName>Team Lead (DTM,CTM)</fullName>
+                <default>false</default>
+                <label>Team Lead (DTM,CTM)</label>
+            </value>
+            <value>
+                <fullName>Technical Consultant</fullName>
+                <default>false</default>
+                <label>Technical Consultant</label>
+            </value>
+            <value>
+                <fullName>Technician</fullName>
+                <default>false</default>
+                <label>Technician</label>
+            </value>
+            <value>
+                <fullName>WFM</fullName>
+                <default>false</default>
+                <label>WFM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

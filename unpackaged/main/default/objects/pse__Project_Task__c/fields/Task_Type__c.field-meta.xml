@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Type__c</fullName>
+    <label>Task Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>Contingent</fullName>
+                <default>false</default>
+                <label>Contingent</label>
+            </value>
+            <value>
+                <fullName>Product Bug</fullName>
+                <default>false</default>
+                <label>Product Bug</label>
+            </value>
+            <value>
+                <fullName>Billable</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Billable</label>
+            </value>
+            <value>
+                <fullName>Free of Charge</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Free of Charge</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

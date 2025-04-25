@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trigger_Ongoing_Task__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Updated by FLOW. Used to create an assignment, and task from a customer request.</description>
+    <label>Trigger Ongoing Task</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
