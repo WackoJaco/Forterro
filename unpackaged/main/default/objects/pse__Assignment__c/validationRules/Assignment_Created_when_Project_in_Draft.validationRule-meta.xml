@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assignment_Created_when_Project_in_Draft</fullName>
+    <active>true</active>
+    <description>If a Project is still in Draft</description>
+    <errorConditionFormula>ISNEW() &amp;&amp; (ISPICKVAL( pse__Project__r.pse__Stage__c, "Draft" ) || ISPICKVAL( pse__Project__r.pse__Stage__c, "Requested" ))</errorConditionFormula>
+    <errorMessage>An Assignment can't be created when the Projects in Draft stage.</errorMessage>
+</ValidationRule>

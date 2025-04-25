@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Status_Visual__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Shows the status of the project based on the color selected from the corresponding Project Status picklist.</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(pse__Project_Status__c,"Yellow"),IMAGE("/resource/pse__StatusImages/yellow.png","2-Yellow"),IF(ISPICKVAL(pse__Project_Status__c,"Red"),IMAGE("/resource/pse__StatusImages/red.png","3-Red"),IF(ISPICKVAL(pse__Project_Status__c,"Green"),IMAGE("/resource/pse__StatusImages/green.png","1-Green"),"")))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Shows the status of the project based on the color selected from the corresponding Project Status picklist.</inlineHelpText>
+    <label>Project Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

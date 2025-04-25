@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TE_User_cannot_Edit_Task_Information</fullName>
+    <active>true</active>
+    <description>Prevent TE user editing task details on proejcts that are non ongoing. Will allow PM users to do this.</description>
+    <errorConditionFormula>AND (
+      OR(
+         IsChanged( pse__Estimated_Hours__c ),
+         IsChanged(  pse__Start_Date_Time__c ),
+         IsChanged(  pse__End_Date_Time__c )
+
+        ),
+      NOT($Permission.PM_Edit_Start_End_Dates ),
+      NOT(ISPICKVAL( pse__Project__r.Project_Sub_Types__c , "IBS - Ongoing Work"))
+             
+     )</errorConditionFormula>
+    <errorMessage>You cannot edit Project Task Details.</errorMessage>
+</ValidationRule>

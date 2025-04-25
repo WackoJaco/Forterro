@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_System_Admins_Can_Edit_a_Budget</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( $User.ProfileId  = "2F00e8d000002dUT9", TRUE, FALSE)</errorConditionFormula>
+    <errorMessage>Please contact a System Administrator if you wish to edit a Budget Record</errorMessage>
+</ValidationRule>

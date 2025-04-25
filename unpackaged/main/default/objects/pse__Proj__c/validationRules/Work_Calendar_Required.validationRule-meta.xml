@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Calendar_Required</fullName>
+    <active>false</active>
+    <description>Work Calendar must be populated on Customer Project</description>
+    <errorConditionFormula>ISBLANK( pse__Work_Calendar__c ) &amp;&amp; RecordType.Name = "Customer Project"</errorConditionFormula>
+    <errorDisplayField>pse__Work_Calendar__c</errorDisplayField>
+    <errorMessage>Work Calendar must be populated on a Customer Project</errorMessage>
+</ValidationRule>

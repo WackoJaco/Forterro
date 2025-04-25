@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Timecard_entry</fullName>
+    <active>false</active>
+    <description>Validation rule incorporated for submitting travel time with all required information against a timecard record</description>
+    <errorConditionFormula>(ISPICKVAL( Type__c  , "Travel") || ISPICKVAL( Type__c  , "Overtime + Travel")) &amp;&amp; (( ISPICKVAL(Travel_Type__c, "Car (Mileage)") &amp;&amp; ISBLANK(TEXT(KM_Miles__c))) || (ISBLANK(TEXT(Travel_Type__c))) || ( ISPICKVAL(Travel_Type__c, "Car (Mileage)") &amp;&amp; ((ISBLANK(Distance_Monday__c) &amp;&amp;  pse__Monday_Hours__c &gt;0 ) || (ISBLANK( Distance_Tuesday__c ) &amp;&amp;  pse__Tuesday_Hours__c&gt;0 ) || (ISBLANK( Distance_Wednesday__c)&amp;&amp;  pse__Wednesday_Hours__c &gt;0 ) || (ISBLANK( Distance_Thursday__c ) &amp;&amp; pse__Thursday_Hours__c &gt;0 ) ||( ISBLANK( Distance_Friday__c ) &amp;&amp;  pse__Friday_Hours__c &gt;0 ) || ( ISBLANK( Distance_Saturday__c ) &amp;&amp; pse__Saturday_Hours__c &gt;0 ) || ( ISBLANK( Distance_Sunday__c ) &amp;&amp;  pse__Sunday_Hours__c &gt;0 ) )))</errorConditionFormula>
+    <errorMessage>If the Timecard is for Travel, please enter Travel Type, and if travelling by Car, please enter KM/Miles and distance traveled per day</errorMessage>
+</ValidationRule>

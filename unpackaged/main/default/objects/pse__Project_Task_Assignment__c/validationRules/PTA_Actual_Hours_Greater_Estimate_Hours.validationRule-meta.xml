@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PTA_Actual_Hours_Greater_Estimate_Hours</fullName>
+    <active>true</active>
+    <description>Timecard Actual hours are greater than estimated hours on the PTA.</description>
+    <errorConditionFormula>AND ( 
+      NOT(ISPICKVAL( Project__r.Project_Sub_Types__c , "IBS - Ongoing Work")),
+      NOT(ISPICKVAL(  Project__r.pse__Project_Type__c , "Internal")), 
+      Timecard_Hours__c &gt; pse__Estimated_Hours__c
+     )</errorConditionFormula>
+    <errorMessage>OVER BUDGET!! Timecard Hours are greater than the Estimated Hours you have been allocated for this Task.</errorMessage>
+</ValidationRule>

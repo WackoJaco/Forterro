@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Projects_Lead_Consultant</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Account__c</columns>
+    <columns>pse__Status_Visual__c</columns>
+    <columns>pse__Bookings__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Total_Assigned_Hours__c</columns>
+    <columns>pse__Total_Submitted_Hours__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Lead_Consultant_is_Current_User__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Projects (Lead Consultant)</label>
+</ListView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jvs_Opportunity_Ready_to_staff</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Opportunity__c</columns>
+    <columns>pse__Account__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Resource_Role__c</columns>
+    <columns>pse__Practice__c</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__SOW_Hours__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Region__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>equals</operation>
+        <value>Draft,Ready to Staff</value>
+    </filters>
+    <filters>
+        <field>pse__Region__c</field>
+        <operation>equals</operation>
+        <value>Jeeves</value>
+    </filters>
+    <filters>
+        <field>pse__Opportunity__c</field>
+        <operation>greaterThan</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>pse__Project__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Jvs - Opportunity - Ready to staff</label>
+</ListView>

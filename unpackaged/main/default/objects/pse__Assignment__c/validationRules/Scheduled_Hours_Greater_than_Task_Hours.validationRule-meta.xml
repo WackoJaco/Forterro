@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scheduled_Hours_Greater_than_Task_Hours</fullName>
+    <active>false</active>
+    <errorConditionFormula>pse__Scheduled_Hours__c &gt; Task_Assignment_Hours__c</errorConditionFormula>
+    <errorMessage>You have scheduled more hours than planned. Please adjust the scheduled hours to match the planned hours.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PMs_can_only_Edit_Start_and_End_Dates</fullName>
+    <active>false</active>
+    <description>Validation to prevent non PM users from updating thier start/end dates</description>
+    <errorConditionFormula>(ISCHANGED(pse__Start_Date__c) || ISCHANGED(pse__End_Date__c)) &amp;&amp; NOT(  $Permission.PM_Edit_Start_End_Dates )</errorConditionFormula>
+    <errorMessage>You are not able to edit Start/End Dates of Assignments, please contact your PM.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jeeves_Projects</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Project_Manager__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Region__c</columns>
+    <columns>pse__Practice__c</columns>
+    <columns>pse__Group__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Region__c</field>
+        <operation>contains</operation>
+        <value>Jeeves</value>
+    </filters>
+    <label>Jeeves - Projects</label>
+    <sharedTo>
+        <group>Services_Jeeves</group>
+    </sharedTo>
+</ListView>

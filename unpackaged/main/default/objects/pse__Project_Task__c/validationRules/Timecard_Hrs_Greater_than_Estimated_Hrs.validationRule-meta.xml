@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timecard_Hrs_Greater_than_Estimated_Hrs</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISPICKVAL( pse__Project__r.Project_Sub_Types__c , "IBS - Ongoing Work")),
+    NOT(ISPICKVAL( pse__Project__r.pse__Project_Type__c, "Internal")),
+    pse__Timecard_Actual_Hours__c &gt;  pse__Estimated_Hours__c
+)</errorConditionFormula>
+    <errorMessage>Timecard Hours are greater than Estimated Hours.</errorMessage>
+</ValidationRule>

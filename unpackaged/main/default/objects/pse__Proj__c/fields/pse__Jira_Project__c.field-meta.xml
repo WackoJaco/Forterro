@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Jira_Project__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Picklist containing available Jira project keys. Key of the Jira project this project will be created as an issue for.</description>
+    <inlineHelpText>Key of the Jira project this project will be created as an issue for.</inlineHelpText>
+    <label>Jira Project</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>BPSCC</fullName>
+                <default>false</default>
+                <label>BPSCC</label>
+            </value>
+            <value>
+                <fullName>BPSCS</fullName>
+                <default>false</default>
+                <label>BPSCS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

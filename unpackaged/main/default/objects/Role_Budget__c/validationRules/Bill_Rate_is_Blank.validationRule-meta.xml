@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bill_Rate_is_Blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>IsNUll( Rate__c )</errorConditionFormula>
+    <errorMessage>Bill Rate must be populated, if no bill rate is available set this to 0.00.</errorMessage>
+</ValidationRule>

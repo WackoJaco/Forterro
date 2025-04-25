@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jvs_ALL</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Opportunity__c</columns>
+    <columns>pse__Account__c</columns>
+    <columns>FFX_Project_Name__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Resource_Role__c</columns>
+    <columns>pse__Practice__c</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__SOW_Hours__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Region__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>equals</operation>
+        <value>Draft,Ready to Staff,Hold</value>
+    </filters>
+    <filters>
+        <field>pse__Region__c</field>
+        <operation>equals</operation>
+        <value>Jeeves</value>
+    </filters>
+    <label>Jvs - ALL Open</label>
+</ListView>

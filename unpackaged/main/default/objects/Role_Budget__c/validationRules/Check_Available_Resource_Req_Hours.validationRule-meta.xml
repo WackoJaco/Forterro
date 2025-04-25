@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Available_Resource_Req_Hours</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND (IsNew(),
+Requested_Hours__c &gt;   Budget_Incl_Tolerance__c 
+)</errorConditionFormula>
+    <errorMessage>There are no available hours remaining to make this request. Please review the role budget.</errorMessage>
+</ValidationRule>
