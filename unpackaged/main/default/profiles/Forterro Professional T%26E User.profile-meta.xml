@@ -166,4 +166,19 @@
         <enabled>true</enabled>
         <name>ViewSetup</name>
     </userPermissions>
+    <layoutAssignments>
+        <layout>pse__Missing_Timecard_Calculation__c-pse__Missing Timecard Calculation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>pse__Missing_Timecard__c-pse__Missing Timecard Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>pse__Timecard_Header__c-Forterro PSA Timecard Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>pse__Timecard_Transmission__c-pse__Timecard Transmission Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>pse__Timecard__c-pse__Timecard Split Layout</layout>
+    </layoutAssignments>
 </Profile>
