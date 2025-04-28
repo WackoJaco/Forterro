@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role_Budget_Invalid_on_Parent_Tasks</fullName>
+    <active>false</active>
+    <errorConditionFormula>pse__Summary__c</errorConditionFormula>
+    <errorMessage>Role Budget cannot be populated on Parent Tasks.</errorMessage>
+</ValidationRule>

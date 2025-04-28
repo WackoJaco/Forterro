@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FSP_Tasks_Resource_Request_No_Assignm</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__WBS_Element_Number__c</columns>
+    <columns>pse__Estimated_Hours__c</columns>
+    <columns>pse__Hours_Remaining__c</columns>
+    <columns>Sharepoint_Link_URL__c</columns>
+    <columns>pse__Description__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Assigned_Resources__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Service_Request_Type__c</field>
+        <operation>equals</operation>
+        <value>FSP</value>
+    </filters>
+    <filters>
+        <field>Request_Created__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Assignment_Created__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>FSP Tasks (Resource Request, No Assignm)</label>
+</ListView>

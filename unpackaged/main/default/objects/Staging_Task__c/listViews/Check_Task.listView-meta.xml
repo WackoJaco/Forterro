@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>All</fullName>
+    <fullName>Check_Task</fullName>
     <columns>NAME</columns>
     <columns>Task_Name__c</columns>
     <columns>Start_Date__c</columns>
     <columns>Due_Date__c</columns>
-    <columns>Budget__c</columns>
     <columns>Resource_Name__c</columns>
-    <columns>Owner_Name__c</columns>
     <columns>Task_ID__c</columns>
     <columns>State__c</columns>
     <columns>Project_ID__c</columns>
     <columns>Project_Name__c</columns>
     <columns>Remaining_Effort__c</columns>
+    <columns>Reportable__c</columns>
     <columns>Project_Task__c</columns>
-    <columns>CREATED_DATE</columns>
-    <columns>Task_Type__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>Reportable__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
     <filters>
         <field>Task_ID__c</field>
         <operation>equals</operation>
-        <value>T-1816204</value>
+        <value>T-990903</value>
     </filters>
-    <label>All Records</label>
+    <label>Check Task</label>
 </ListView>

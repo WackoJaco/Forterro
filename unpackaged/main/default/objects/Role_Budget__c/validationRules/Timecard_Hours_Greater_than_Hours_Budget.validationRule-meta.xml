@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timecard_Hours_Greater_than_Hours_Budget</fullName>
+    <active>true</active>
+    <errorConditionFormula>Timecard_Hours__c &gt;   Budget_Incl_Tolerance__c</errorConditionFormula>
+    <errorMessage>Timecard Hours cannot be greater than Role Budget Hours.</errorMessage>
+</ValidationRule>

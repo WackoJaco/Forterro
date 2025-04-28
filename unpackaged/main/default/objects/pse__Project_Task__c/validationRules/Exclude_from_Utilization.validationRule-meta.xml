@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclude_from_Utilization</fullName>
+    <active>false</active>
+    <description>Only tasks that are Education can be excluded from Education.</description>
+    <errorConditionFormula>AND ( 
+      Exclude_from_Utilization__c,        
+ 
+      Not(ISPICKVAL( Task_Type__c, 'Education'))
+    )</errorConditionFormula>
+    <errorMessage>Task Type must be Education.</errorMessage>
+</ValidationRule>

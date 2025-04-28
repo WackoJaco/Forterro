@@ -33,6 +33,11 @@
                 <default>false</default>
                 <label>CLP</label>
             </value>
+            <value>
+                <fullName>JVS</fullName>
+                <default>false</default>
+                <label>JVS</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insufficient_Role_Budget_Hours</fullName>
+    <active>false</active>
+    <errorConditionFormula>pse__Scheduled_Hours__c &gt; Role_Budget__r.Available_Hours_to_Assign__c</errorConditionFormula>
+    <errorMessage>There are not enough available hours for this Assignment. Please review your role budgets.</errorMessage>
+</ValidationRule>

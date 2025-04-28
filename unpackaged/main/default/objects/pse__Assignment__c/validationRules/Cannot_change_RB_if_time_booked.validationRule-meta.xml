@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_RB_if_time_booked</fullName>
+    <active>false</active>
+    <description>Cannot change the role budget on an Assignment if timne has been booked.</description>
+    <errorConditionFormula>AND (
+        Not(isNull(Role_Budget__c )),
+        isChanged(Role_Budget__c),
+         Total_Hours_Submitted__c &gt; 0
+     )</errorConditionFormula>
+    <errorMessage>A role budget cannot be changed on an assignment if time has been submitted.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_edit_Role_Budget_on_PTA_with_AGNT</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND (
+      Not(isblank(   pse__Assignment__c  )),
+      Not(isblank(   Role_Budget__c  )),  
+      isChanged( Role_Budget__c ),
+       pse__Assignment__r.Total_Hours_Submitted__c &gt;0
+      )</errorConditionFormula>
+    <errorMessage>Role Budget cannot be changed if timecards are already submitted.</errorMessage>
+</ValidationRule>

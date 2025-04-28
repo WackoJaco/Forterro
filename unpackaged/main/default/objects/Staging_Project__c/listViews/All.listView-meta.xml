@@ -17,5 +17,10 @@
     <columns>CREATED_DATE</columns>
     <columns>LAST_UPDATE</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project_ID__c</field>
+        <operation>equals</operation>
+        <value>P-361101</value>
+    </filters>
     <label>All Records</label>
 </ListView>
