@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_KM_Miles__c</fullName>
+    <description>Multiplier rate used to define the amount per Mile or KM travelled by a resource</description>
+    <externalId>false</externalId>
+    <label>Travel - KM/Miles Rate Multiplier</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

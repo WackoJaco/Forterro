@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role_Budget_Required__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Populated from a FLOW.</description>
+    <inlineHelpText>This resource requets requires a role budget.</inlineHelpText>
+    <label>Role Budget Required?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

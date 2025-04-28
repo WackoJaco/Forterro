@@ -43,11 +43,6 @@
                 <label>IBS - Cloud Migration</label>
             </value>
             <value>
-                <fullName>IBS - Subscription Managed Services</fullName>
-                <default>false</default>
-                <label>IBS - Subscription Managed Services</label>
-            </value>
-            <value>
                 <fullName>PS Subscription - Managed Services</fullName>
                 <default>false</default>
                 <label>PS Subscription - Managed Services</label>
@@ -96,6 +91,12 @@
                 <fullName>Internal – Unavailability</fullName>
                 <default>false</default>
                 <label>Internal – Unavailability</label>
+            </value>
+            <value>
+                <fullName>IBS - Subscription Managed Services</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IBS - Subscription Managed Services</label>
             </value>
             <value>
                 <fullName>IBS – Upgrade</fullName>
@@ -161,10 +162,6 @@
         <valueSettings>
             <controllingFieldValue>IBS</controllingFieldValue>
             <valueName>IBS - Cloud Migration</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>IBS</controllingFieldValue>
-            <valueName>IBS - Subscription Managed Services</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>PS Subscription</controllingFieldValue>

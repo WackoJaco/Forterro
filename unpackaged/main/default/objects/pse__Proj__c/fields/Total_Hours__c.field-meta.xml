@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Hours__c</fullName>
+    <externalId>false</externalId>
+    <formula>If ( 
+        TEXT(pse__Billing_Type__c) = 'Fixed Price', 
+        Project_Estimate_to_Complete__c,
+       If (
+             TEXT(pse__Billing_Type__c) = 'Time and Materials', 
+             Total_Role_Budget_Hours__c ,
+           If (
+             TEXT(pse__Billing_Type__c) = 'Mixed', 
+             Total_Milestone_Hours__c ,
+            Total_Estimated_Hours__c 
+              )
+            )
+     )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Based on Billing Type.
+Fixed Price - Project Estimate to Complete
+T&amp;M - Sum of of Role Budgets
+Mixed - Sum of Milestone Planned Hours
+Subscription - Total Estimated Hours</inlineHelpText>
+    <label>Total Hours</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

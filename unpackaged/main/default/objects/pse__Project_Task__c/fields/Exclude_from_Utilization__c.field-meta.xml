@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclude_from_Utilization__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Populated from Education tasks to exclude them from utilization.</description>
+    <inlineHelpText>This exclues all timecards linked to the task from utilization. This can only updated if the task type is Education.</inlineHelpText>
+    <label>Exclude from Utilization</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

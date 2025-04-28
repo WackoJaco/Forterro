@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Address__c</fullName>
+    <inlineHelpText>Enter details of where the work will be delivered (address, contact details, travel instructions and notes).</inlineHelpText>
+    <label>Delivery Address</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>8</visibleLines>
+</CustomField>
