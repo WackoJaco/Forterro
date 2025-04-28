@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#D5D5D5</headerColor>
+        <logo>download2</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>Workforce &amp; Resource Management app for managing Resources, Resource Requests, Assignments</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Forterro Workforce Management</label>
+    <navType>Standard</navType>
+    <tabs>Resource_Management_Workspace</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>pse__Resource_Request__c</tabs>
+    <tabs>pse__Assignment__c</tabs>
+    <tabs>pse__Work_Planner</tabs>
+    <tabs>pse__Project_Task_Assignment__c</tabs>
+    <tabs>pse__Proj__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>Exclude_from_Work__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Forterro_Workforce_Management_UtilityBar</utilityBar>
+</CustomApplication>

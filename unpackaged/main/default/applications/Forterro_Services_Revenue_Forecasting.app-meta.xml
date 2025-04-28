@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logo>download5</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>App for Forterro Services Revenue Forecasting</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Forterro Services Revenue Forecasting</label>
+    <navType>Standard</navType>
+    <tabs>Services_Revenue_Forecasting_Workspace1</tabs>
+    <tabs>pse__Review_Forecast_Version</tabs>
+    <tabs>pse__Revenue_Forecast_Batch_Log__c</tabs>
+    <tabs>pse__Revenue_Forecast_Setup__c</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-report</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Forterro_Services_Revenue_Forecasting_UtilityBar</utilityBar>
+</CustomApplication>

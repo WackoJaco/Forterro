@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Set_Actual_Hours</name>
+        <label>Set Actual Hours</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Actual_Hours__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varNumHours</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>varNumHours</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.pse__Billable_Hours_Submitted__c} +{!$Record.pse__Non_Billable_Hours_Submitted__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>PSA - Assignment - Set Actual Hours {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PSA - Assignment - Set Actual Hours</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Actual_Hours</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>pse__Non_Billable_Hours_Submitted__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Billable_Hours_Submitted__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>pse__Assignment__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

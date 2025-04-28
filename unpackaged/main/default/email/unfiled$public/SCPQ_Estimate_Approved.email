@@ -1,0 +1,7 @@
+Hi {!ffscpq__Estimate__c.OwnerFullName}, 
+
+The following Estimate has been approved: {!ffscpq__Estimate__c.Name}
+Approver: {!ffscpq__Estimate__c.Approver__c}
+
+Kind Regards,
+Services CPQ

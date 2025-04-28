@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <decisions>
+        <name>Milestones</name>
+        <label>Milestones</label>
+        <locationX>308</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Get_Actuals_Template</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>T&amp;M</defaultConnectorLabel>
+        <rules>
+            <name>Fixed_Price</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Milestone__r.Milestone_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Fixed Price</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Project_Billing_Type</name>
+        <label>Project Billing Type</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Subscription</defaultConnectorLabel>
+        <rules>
+            <name>Fixed_Priced</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Fixed Priced</label>
+        </rules>
+        <rules>
+            <name>T_M_Material</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Time and Materials</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Actuals_Template</targetReference>
+            </connector>
+            <label>T&amp;M Material</label>
+        </rules>
+        <rules>
+            <name>Mixed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mixed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Milestones</targetReference>
+            </connector>
+            <label>Mixed</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>CTC - Add Actual Template to Timecard Split {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CTC - Add Actual Template to Timecard Split</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Actuals_Template</name>
+        <label>Get Actuals Template</label>
+        <locationX>176</locationX>
+        <locationY>815</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Actuals_Template</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Timecard - Deliverable</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ffrr__Template__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Actuals_Template</name>
+        <label>Actuals Template</label>
+        <locationX>176</locationX>
+        <locationY>923</locationY>
+        <inputAssignments>
+            <field>ffrrtemplate__c</field>
+            <value>
+                <elementReference>Get_Actuals_Template.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Project_Billing_Type</targetReference>
+        </connector>
+        <object>pse__Timecard__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

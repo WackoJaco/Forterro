@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <customErrors>
+        <name>Role_Budgets_Not_Setup</name>
+        <label>Role Budgets Not Setup</label>
+        <locationX>242</locationX>
+        <locationY>611</locationY>
+        <customErrorMessages>
+            <errorMessage>Project Stage cannot be updated. There are no Role Budgets setup for this project.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Bypass_Validation</name>
+        <label>Bypass Validation</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Get_Role_Budgets</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Bypass_Validation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formBypassValidation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Role_Budget_Exist</name>
+        <label>Role Budget Exist?</label>
+        <locationX>374</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_Role_Budget_Exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Role_Budgets</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>FSP</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Role_Budgets_Not_Setup</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <description>Checks that the role budget requirements are met when a project is moved from requested.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>formBypassValidation</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Permission.Bypass_Validation_Rules}</expression>
+    </formulas>
+    <interviewLabel>PSA - Project -Role Budget Requried {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PSA - Project -Role Budget Required</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Role_Budgets</name>
+        <label>Get Role Budgets</label>
+        <locationX>374</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Role_Budget_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Role_Budget__c</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Bypass_Validation</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>(1  AND 4 AND 5) or (2 AND 3 AND 4) or (6 AND 4)</filterLogic>
+        <filters>
+            <field>pse__Billing_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Time and Materials</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Billing_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Fixed Price</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Project_Type__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Packaged Solutions</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Stage__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Requested</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Project_Sub_Types__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>IBS - Ongoing Work</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Billing_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Mixed</stringValue>
+            </value>
+        </filters>
+        <object>pse__Proj__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to initial submitter when Request is rejected.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>FFX_Letterhead</letterhead>
+    <name>PSA Misc Adjustment Request Rejected</name>
+    <style>freeForm</style>
+    <subject>Approval Request for Misc Adjustment: {!pse__Miscellaneous_Adjustment__c.Name}, for Project {!pse__Miscellaneous_Adjustment__c.pse__Project__c} has been Rejected</subject>
+    <textOnly>Hello,
+
+Your requested for a Misc Adjustment {!pse__Miscellaneous_Adjustment__c.Name}, on Project {!pse__Miscellaneous_Adjustment__c.pse__Project__c} has been rejected by {!pse__Miscellaneous_Adjustment__c.pse__Approver__c}.
+
+Rejection Comments:  {!ApprovalRequest.Comments}
+
+To view the view the record click on the below link.
+
+{!pse__Miscellaneous_Adjustment__c.Link}
+
+Here is some additional information about the request.
+
+Description: {!pse__Miscellaneous_Adjustment__c.pse__Description__c}
+
+Reason: {!pse__Miscellaneous_Adjustment__c.Reason__c}
+Amount: {!pse__Miscellaneous_Adjustment__c.pse__Amount__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

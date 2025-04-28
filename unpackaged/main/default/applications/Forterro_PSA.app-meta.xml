@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#D5D5D5</headerColor>
+        <logo>md_8602aace82ee</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>Standard PSA App with basic features.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Forterro PSA</label>
+    <navType>Standard</navType>
+    <tabs>standard-Feed</tabs>
+    <tabs>Work_Planner1</tabs>
+    <tabs>pse__Proj__c</tabs>
+    <tabs>pse__Assignment__c</tabs>
+    <tabs>pse__Time_Entry</tabs>
+    <tabs>pse__Project_Task__c</tabs>
+    <tabs>pse__Project_Task_Assignment__c</tabs>
+    <tabs>pse__Approve_Multiple_Timecards</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>Exclude_from_Work__c</tabs>
+    <tabs>Absence_Staging__c</tabs>
+    <tabs>pse__Schedule_Exception__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Forterro_PSA_UtilityBar</utilityBar>
+</CustomApplication>

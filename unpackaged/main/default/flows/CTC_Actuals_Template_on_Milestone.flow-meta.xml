@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <decisions>
+        <name>Milestone_Type</name>
+        <label>Milestone Type</label>
+        <locationX>974</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Copy_2_of_Get_Actuals_Template</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Fixed Price</defaultConnectorLabel>
+        <rules>
+            <name>Time_Tracking</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Milestone_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Time Tracking</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Ensure_Not_Included_in_Rev_Rec</targetReference>
+            </connector>
+            <label>Time Tracking</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Project_Type</name>
+        <label>Project Type</label>
+        <locationX>710</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Fixed_Fee</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Actuals_Template</targetReference>
+            </connector>
+            <label>Fixed Fee</label>
+        </rules>
+        <rules>
+            <name>T_M</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Time and Materials</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Ensure_Not_Included_in_Rev_Rec</targetReference>
+            </connector>
+            <label>T&amp;M</label>
+        </rules>
+        <rules>
+            <name>FSP</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Subscription</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Actuals_Template_FSP</targetReference>
+            </connector>
+            <label>FSP</label>
+        </rules>
+        <rules>
+            <name>Mixed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mixed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Milestone_Type</targetReference>
+            </connector>
+            <label>Mixed</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>CTC - Actuals Template on Milestone {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CTC - Actuals Template on Milestone</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Copy_2_of_Get_Actuals_Template</name>
+        <label>Copy 2 of Get Actuals Template</label>
+        <locationX>1106</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_1_of_Add_Actuals_Template_on_Milestone</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Milestone - % Complete</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ffrr__Template__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Actuals_Template</name>
+        <label>Get Actuals Template</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Add_Actuals_Template_on_Milestone</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Milestone - % Complete</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ffrr__Template__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Actuals_Template_FSP</name>
+        <label>Get Actuals Template - Equal Split</label>
+        <locationX>578</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_2_of_Add_Actuals_Template_on_Milestone</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Milestone - Equal Split Months</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ffrr__Template__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Add_Actuals_Template_on_Milestone</name>
+        <label>Add Actuals Template on Milestone</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>ffrrtemplate__c</field>
+            <value>
+                <elementReference>Get_Actuals_Template.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_1_of_Add_Actuals_Template_on_Milestone</name>
+        <label>Copy 1 of Add Actuals Template on Milestone</label>
+        <locationX>1106</locationX>
+        <locationY>647</locationY>
+        <inputAssignments>
+            <field>ffrrtemplate__c</field>
+            <value>
+                <elementReference>Copy_2_of_Get_Actuals_Template.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_1_of_Ensure_Not_Included_in_Rev_Rec</name>
+        <label>Copy 1 of Ensure Not Included in Rev Rec</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>ffrrIncludeInRevenueRecognition__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_2_of_Add_Actuals_Template_on_Milestone</name>
+        <label>Copy 2 of Add Actuals Template on Milestone</label>
+        <locationX>578</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>ffrrtemplate__c</field>
+            <value>
+                <elementReference>Get_Actuals_Template_FSP.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Ensure_Not_Included_in_Rev_Rec</name>
+        <label>Ensure Not Included in Rev Rec</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>ffrrIncludeInRevenueRecognition__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>584</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Project_Type</targetReference>
+        </connector>
+        <object>pse__Milestone__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

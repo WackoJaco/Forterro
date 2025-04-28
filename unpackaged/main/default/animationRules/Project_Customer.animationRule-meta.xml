@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>always</animationFrequency>
+    <developerName>Project_Customer</developerName>
+    <isActive>true</isActive>
+    <masterLabel>Project - Customer</masterLabel>
+    <recordTypeContext>Custom</recordTypeContext>
+    <recordTypeName>Customer_Project</recordTypeName>
+    <sobjectType>pse__Proj__c</sobjectType>
+    <targetField>pse__Stage__c</targetField>
+    <targetFieldChangeToValues>Complete</targetFieldChangeToValues>
+</AnimationRule>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#D5D5D5</headerColor>
+        <logo>download3</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>Services Devilvery App for resources to manage their Timecards, Project Task Time, and view their assignments and assigned tasks</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Forterro Services Delivery</label>
+    <navType>Standard</navType>
+    <tabs>Services_Delivery_Workspace</tabs>
+    <tabs>pse__Time_Entry</tabs>
+    <tabs>pse__Timecard_Header__c</tabs>
+    <tabs>pse__Project_Task__c</tabs>
+    <tabs>pse__Assignment__c</tabs>
+    <tabs>pse__Project_Task_Assignment__c</tabs>
+    <tabs>standard-report</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Forterro_Services_Delivery_UtilityBar</utilityBar>
+</CustomApplication>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Region_Owner_as_Approver</name>
+        <label>Assign Region Owner as Approver</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Approver__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pse__Project__r.pse__Region__r.pse__Region_Head__r.pse__Salesforce_User__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Sets the Misc Adjustment Approver usign the related poject Region Owner.</description>
+    <environments>Default</environments>
+    <interviewLabel>PSA _ Misc Adjustment - Set Approver {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PSA _ Misc Adjustment - Set Approver</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Region_Owner_as_Approver</targetReference>
+        </connector>
+        <object>pse__Miscellaneous_Adjustment__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Green</fullName>
+        <default>true</default>
+        <label>Green</label>
+    </customValue>
+    <customValue>
+        <fullName>Yellow</fullName>
+        <default>false</default>
+        <label>Yellow</label>
+    </customValue>
+    <customValue>
+        <fullName>Red</fullName>
+        <default>false</default>
+        <label>Red</label>
+    </customValue>
+    <description>Use for field which use RAG status.</description>
+    <masterLabel>Project RAG Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

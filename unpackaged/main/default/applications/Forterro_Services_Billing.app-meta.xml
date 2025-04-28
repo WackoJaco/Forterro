@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Quote_Record_Page_Default</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>SBQQ__Quote__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Quote_Record_Page_Default</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>SBQQ__Quote__c</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#D5D5D5</headerColor>
+        <logo>download4</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>Billing Management app for managing Billing Events from Projects, Milestones, Timecards, and Misc Adjustments</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Forterro Services Billing</label>
+    <navType>Standard</navType>
+    <tabs>psaws__services_billing_workspace</tabs>
+    <tabs>pse__Projects_Awaiting_Billing</tabs>
+    <tabs>pse__Billing_Events_Awaiting_Release</tabs>
+    <tabs>pse__Billing_Events_Awaiting_Invoicing</tabs>
+    <tabs>pse__Invoiced_Billing_Events</tabs>
+    <tabs>pse__Billing_Event__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Forterro_Services_Billing_UtilityBar</utilityBar>
+</CustomApplication>
