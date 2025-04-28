@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows user to make changes to override role budgets on tasks.</description>
+    <isLicensed>false</isLicensed>
+    <label>Role Budget</label>
+</CustomPermission>

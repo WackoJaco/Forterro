@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Update_ETC</name>
+        <label>Update ETC</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Estimated_Time_To_Completion__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Fixed_Price</name>
+        <label>Fixed Price?</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Fixed_Price</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_ETC</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Sets ETC to 0 on Completion of Task on Fixed Price Projects.</description>
+    <environments>Default</environments>
+    <interviewLabel>PSA - Project Task - Update ETC {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PSA - Project Task - Update ETC</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Fixed_Price</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Complete</stringValue>
+            </value>
+        </filters>
+        <object>pse__Project_Task__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

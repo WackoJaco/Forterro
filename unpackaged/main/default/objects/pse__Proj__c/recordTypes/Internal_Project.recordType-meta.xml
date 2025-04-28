@@ -221,10 +221,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>IBS - Subscription Managed Services</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>IBS - Upgrade</fullName>
             <default>false</default>
         </values>

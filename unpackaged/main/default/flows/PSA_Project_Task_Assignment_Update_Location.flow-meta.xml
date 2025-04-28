@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <description>Updates the location from Task when PTA created.</description>
+    <environments>Default</environments>
+    <interviewLabel>PSA - Project Task Assignment - Update Location {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PSA - Project Task Assignment - Update Location</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_PTA_Location</name>
+        <label>Update PTA Location</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>Task_Location__c</field>
+            <value>
+                <elementReference>$Record.pse__Project_Task__r.Task_Location__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_PTA_Location</targetReference>
+        </connector>
+        <filterFormula>Not(IsBlank(TEXT({!$Record.pse__Project_Task__r.Task_Location__c})))</filterFormula>
+        <object>pse__Project_Task_Assignment__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

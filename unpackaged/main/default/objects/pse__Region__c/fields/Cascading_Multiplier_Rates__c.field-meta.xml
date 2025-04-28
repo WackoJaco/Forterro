@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cascading_Multiplier_Rates__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Setting this to True will push all the Multiplier rates to the Immediate Sub Regions and below. If you would like different rates on different sub-regions, do not mark this field as true.</description>
+    <inlineHelpText>Setting this to True will push all the Multiplier rates to the Immediate Sub Regions and below. If you would like different rates on different sub-regions, do not mark this field as true.</inlineHelpText>
+    <label>Cascading Multiplier Rates</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

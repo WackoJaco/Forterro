@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Update_Original_Hours</name>
+        <label>Update Original Hours</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Original_Estimated_Hours__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pse__Estimated_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <interviewLabel>PSA - Project Task - Update Original Est Hours {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PSA - Project Task - Update Original Est Hours</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Original_Hours</targetReference>
+        </connector>
+        <filterFormula>AND (
+                   ({!$Record__Prior.pse__Estimated_Hours__c}) = 0,
+                   OR (
+                           IsChanged({!$Record.pse__Estimated_Hours__c}),
+                           Not(isNULL({!$Record.pse__Estimated_Hours__c}))
+                         )
+         )</filterFormula>
+        <object>pse__Project_Task__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

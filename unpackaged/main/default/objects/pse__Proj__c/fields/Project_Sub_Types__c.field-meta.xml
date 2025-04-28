@@ -43,6 +43,11 @@
                 <label>IBS - Cloud Migration</label>
             </value>
             <value>
+                <fullName>IBS - Solution Package</fullName>
+                <default>false</default>
+                <label>IBS - Solution Package</label>
+            </value>
+            <value>
                 <fullName>PS Subscription - Managed Services</fullName>
                 <default>false</default>
                 <label>PS Subscription - Managed Services</label>
@@ -51,6 +56,11 @@
                 <fullName>PS Subscription - Forterro Service Points</fullName>
                 <default>false</default>
                 <label>PS Subscription - Forterro Service Points</label>
+            </value>
+            <value>
+                <fullName>PS Solution - Packaged Solution</fullName>
+                <default>false</default>
+                <label>PS Solution - Packaged Solution</label>
             </value>
             <value>
                 <fullName>PS Subscription - Customisation Maintenance</fullName>
@@ -164,12 +174,20 @@
             <valueName>IBS - Cloud Migration</valueName>
         </valueSettings>
         <valueSettings>
+            <controllingFieldValue>IBS</controllingFieldValue>
+            <valueName>IBS - Solution Package</valueName>
+        </valueSettings>
+        <valueSettings>
             <controllingFieldValue>PS Subscription</controllingFieldValue>
             <valueName>PS Subscription - Managed Services</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>PS Subscription</controllingFieldValue>
             <valueName>PS Subscription - Forterro Service Points</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PS Subscription</controllingFieldValue>
+            <valueName>PS Solution - Packaged Solution</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>PS Subscription</controllingFieldValue>

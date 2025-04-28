@@ -225,7 +225,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>IBS - Subscription Managed Services</fullName>
+            <fullName>IBS - Solution Package</fullName>
             <default>false</default>
         </values>
         <values>
@@ -238,6 +238,10 @@
         </values>
         <values>
             <fullName>NSS - Reference Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PS Solution - Packaged Solution</fullName>
             <default>false</default>
         </values>
         <values>

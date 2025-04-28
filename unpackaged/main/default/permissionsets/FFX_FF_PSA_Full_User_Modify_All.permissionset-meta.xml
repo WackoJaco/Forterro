@@ -34229,6 +34229,10 @@
         <visibility>Available</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>Work_Planner1</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>appirio_core__App_Log__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>

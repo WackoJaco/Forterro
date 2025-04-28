@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BPSC_ALL_Tasks</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__WBS_Element_Number__c</columns>
+    <columns>pse__Estimated_Hours__c</columns>
+    <columns>pse__Hours_Remaining__c</columns>
+    <columns>Sharepoint_Link_URL__c</columns>
+    <columns>pse__Description__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Assigned_Resources__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>pse__Blocked__c</columns>
+    <columns>Role_Budget__c</columns>
+    <columns>Role_Budget_Link__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Project__c</field>
+        <operation>contains</operation>
+        <value>intermag</value>
+    </filters>
+    <label>BPSC - ALL Tasks</label>
+</ListView>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <customErrors>
+        <name>Role_Budget_Error</name>
+        <label>Role Budget Error</label>
+        <locationX>248</locationX>
+        <locationY>1103</locationY>
+        <customErrorMessages>
+            <errorMessage>This Assignment must have a role budget.ww</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Fixed_Price</name>
+        <label>Fixed Price?</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Get_Role_Budgets</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Fixed_Price</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Milestone__r.Milestone_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Role_Budget_Required_For_Project</name>
+        <label>Is Role Budget Required for Project?</label>
+        <locationX>391</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Is_Role_Budget_Required</name>
+            <conditionLogic>1 OR (2 AND 3) or 4 or 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Time and Materials</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Project_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Packaged Solutions</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Time_Credited__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mixed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fixed_Price</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Role_Budget_Exists</name>
+        <label>Role Budget Exists?</label>
+        <locationX>248</locationX>
+        <locationY>611</locationY>
+        <defaultConnector>
+            <targetReference>Role_Budget_Requried</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Role_Budget_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Role_Budgets</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Role_Budget_Error</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Role_Budget_Requried</name>
+        <label>Role Budget Requried ?</label>
+        <locationX>380</locationX>
+        <locationY>719</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Role_Budget_Requried</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.Project_Sub_Types__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>IBS - Ongoing Work</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Role_Budget_Error</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Checks that a role budget has been assigned to the Assignment.</description>
+    <environments>Default</environments>
+    <interviewLabel>PSA - Assignment - Validate Role Budgert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PSA - Assignment - Validate Role Budget</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Role_Budgets</name>
+        <label>Get Role Budgets</label>
+        <locationX>248</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Role_Budget_Exists</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Project__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Role__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Role__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Role_Budget__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>265</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Role_Budget_Required_For_Project</targetReference>
+        </connector>
+        <filterLogic>1 AND( 2 or 3)</filterLogic>
+        <filters>
+            <field>Role_Budget__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Billable_Hours_Submitted__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Non_Billable_Hours_Submitted__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <object>pse__Assignment__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

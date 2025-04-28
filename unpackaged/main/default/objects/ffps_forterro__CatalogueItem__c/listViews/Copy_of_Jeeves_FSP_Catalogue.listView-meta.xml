@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Jeeves_FSP_Catalogue</fullName>
+    <columns>NAME</columns>
+    <columns>ffps_forterro__ProductLine__c</columns>
+    <columns>ffps_forterro__ItemName__c</columns>
+    <columns>ffps_forterro__ServicePoints__c</columns>
+    <columns>ffps_forterro__Description__c</columns>
+    <columns>ffps_forterro__Group__c</columns>
+    <columns>ffps_forterro__Status__c</columns>
+    <columns>ffps_forterro__TaskTemplate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ffps_forterro__ProductLine__c</field>
+        <operation>equals</operation>
+        <value>OrderWise</value>
+    </filters>
+    <label>Orderwises FSP Catalogue</label>
+</ListView>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <customErrors>
+        <name>Role_Budget_Error</name>
+        <label>Role Budget Error</label>
+        <locationX>116</locationX>
+        <locationY>647</locationY>
+        <customErrorMessages>
+            <errorMessage>This Resource Request must have a Role Budget.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_if_Not_Progress_or_Not_Ongoing</name>
+        <label>Check if Not Progress or Not Ongoing</label>
+        <locationX>248</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Check_if_Not_Progress_or_Not_Ongoing</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Stage__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Requested</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.Project_Sub_Types__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>IBS - Ongoing Work</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Role_Budget_Error</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if the project requires a role budget.</description>
+        <name>Is_Project_Valid</name>
+        <label>Is Project Valid?</label>
+        <locationX>347</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Is_Project_Valid</name>
+            <conditionLogic>1 OR (2 AND 3) or 4 or 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Time and Materials</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Project_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Packaged Solutions</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Time_Credited__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mixed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_there_a_Fixed_Price_Milestone</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If there is a fix price milestone and the project is mixed billing type then do not apply Role Budget logic.</description>
+        <name>Is_there_a_Fixed_Price_Milestone</name>
+        <label>Is there a Fixed Price Milestone?</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Check_if_Not_Progress_or_Not_Ongoing</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Is_there_a_Fixed_Price_Milestone</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Milestone__r.Milestone_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mixed</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Checks if a Role Budget is required.</description>
+    <environments>Default</environments>
+    <interviewLabel>PSA - Resource Request - Validate Role Budget {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PSA - Resource Request - Validate Role Budget</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>221</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Project_Valid</targetReference>
+        </connector>
+        <filterLogic>5 AND 6 AND (1 OR 2 OR 3 OR 4 OR 7 )</filterLogic>
+        <filters>
+            <field>pse__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Ready to Staff</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Hold</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Assigned</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Tentative</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Project__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Role_Budget__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Assignment__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>pse__Resource_Request__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
