@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>FNE_Services</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>FNE - Services</label>
+        <sharedTo>
+            <roleAndSubordinates>Regional_Service_Lead_FNE</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Product_Family__c</field>
+            <operation>equals</operation>
+            <value>Jeeves,OrderWise</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

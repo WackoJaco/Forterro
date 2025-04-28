@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>PSG containing all PS required for the JIRA to PSA connector</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>JIRA Connector Permissions</label>
+    <permissionSets>fferpcore__ERPMessaging</permissionSets>
+    <permissionSets>fferpcore__ERP_Messaging_Administrator</permissionSets>
+    <permissionSets>psaj__PSADirect_ConfigureMappings</permissionSets>
+    <permissionSets>psaj__WTTP_ProjectManager</permissionSets>
+    <permissionSets>pse__IHCConfigureMappings</permissionSets>
+    <permissionSets>pse__IHCJiratoPSA</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

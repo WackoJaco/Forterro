@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permissions required for use of Certinia Revenue Management</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Persona: Revenue Management</label>
+    <permissionSets>RMPSAObjectPermissionSet</permissionSets>
+    <permissionSets>ffrr__RMAdmin</permissionSets>
+    <permissionSets>ffrr__RMGuest</permissionSets>
+    <permissionSets>ffrr__RMProjectManager</permissionSets>
+    <permissionSets>ffrr__RevenueRecognitionAdminAccess</permissionSets>
+    <permissionSets>ffrr__RevenueRecognitionAnalyticsReadAccess</permissionSets>
+    <permissionSets>ffrr__RevenueRecognitionConsultantAccess</permissionSets>
+    <permissionSets>ffrr__RevenueRecognitionGuestAccess</permissionSets>
+    <permissionSets>ffrr__RevenueRecognitionProjectManagerAccess</permissionSets>
+    <permissionSets>pse__PSALightningComponentApexClassAccess</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

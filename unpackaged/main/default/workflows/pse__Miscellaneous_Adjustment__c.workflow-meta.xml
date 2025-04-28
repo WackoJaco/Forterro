@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>PSA_Misc_Adjustment_Request_Approved</fullName>
+        <description>PSA Misc Adjustment Request Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>FFX_PSA_Email_Templates/PSA_Misc_Adjustment_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Misc_Adjustment_Request_Rejected</fullName>
+        <description>PSA Misc Adjustment Request Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>FFX_PSA_Email_Templates/PSA_Misc_Adjustment_Request_Rejected</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Misc_Adjustment_Set_Status_Draft</fullName>
+        <field>pse__Status__c</field>
+        <literalValue>Draft</literalValue>
+        <name>Misc Adjustment Set Status Draft</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Misc_Adjustment_Set_Status_Rejected</fullName>
+        <description>Sets status to Rejected.</description>
+        <field>pse__Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Misc Adjustment Set Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Misc_Adjustment_Status_Approved</fullName>
+        <description>Updates Status to Approved</description>
+        <field>pse__Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Misc Adjustment Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Misc_Adjustment_Status_Submitted</fullName>
+        <description>Updates Status to Submitted</description>
+        <field>pse__Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Misc Adjustment Status Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>FFX_PSA_Timecard_Status_Rejected</fullName>
+        <field>pse__Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>PSA Timecard Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Timecard_Set_Approved_Date</fullName>
+        <field>Approved_Date__c</field>
+        <formula>Now()</formula>
+        <name>PSA Timecard Set Approved Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

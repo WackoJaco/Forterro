@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MutingPermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>psaws__Project_Management</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>psaws__Resource_Management</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>psaws__Services_Billing</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>psaws__Services_Delivery</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>psaws__Services_Forecasting</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>pse__PS_Enterprise</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>pse__PS_Enterprise_Lightning</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <label>Persona - Team Lead / Business Manager Muted</label>
+    <tabSettings>
+        <tab>psaws__services_revenue_forecasting_workspace</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>psaws__time_and_expense_workspace</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+</MutingPermissionSet>

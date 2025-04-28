@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>PSA_Services_Opportunity</fullName>
+        <description>PSA Services Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Region_Owner__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>FFX_PSA_Email_Templates/PSA_Services_Opportunity</template>
+    </alerts>
+</Workflow>

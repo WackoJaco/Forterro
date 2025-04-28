@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Abas_DE_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Abas DE Share</label>
+        <sharedTo>
+            <group>Services_Abas_DE</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Services_Abas_DE</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Projects_All_Services_minus_Abas_DE</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Projects - All Services minus Abas DE</label>
+        <sharedTo>
+            <group>Services_All_Without_Abas_DE</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Services_All_Without_Abas_DE</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

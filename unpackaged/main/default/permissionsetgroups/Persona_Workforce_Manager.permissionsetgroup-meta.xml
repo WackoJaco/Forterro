@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission set group configured of all the permission sets required to carry out the role of Workforce Manager</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Persona - Workforce Manager</label>
+    <mutingPermissionSets>Persona_Workforce_Manager_Muted</mutingPermissionSets>
+    <permissionSets>FFX_FF_PSA_Full_User</permissionSets>
+    <permissionSets>PSA_Create_New_Service_Request</permissionSets>
+    <permissionSets>Persona_Workforce_Manager_PS</permissionSets>
+    <permissionSets>Run_Flows</permissionSets>
+    <permissionSets>fferpcore__exp_FF_Configurable_Components</permissionSets>
+    <permissionSets>force__AnalyticsViewOnlyUser</permissionSets>
+    <permissionSets>psaws__PSA_Workspaces_Resource_Manager</permissionSets>
+    <permissionSets>psaws__PSA_Workspaces_Time_And_Expense</permissionSets>
+    <permissionSets>pse__ApexLibBatchProcess</permissionSets>
+    <permissionSets>pse__PSACloseAssignments</permissionSets>
+    <permissionSets>pse__PSAEditSkillAndCertificationRatings</permissionSets>
+    <permissionSets>pse__PSAEditWorkPlanner</permissionSets>
+    <permissionSets>pse__PSALightningComponentApexClassAccess</permissionSets>
+    <permissionSets>pse__PSAManageSelfNominationOnWorkOpportunities</permissionSets>
+    <permissionSets>pse__PSAManageSkillAndCertificationRatings</permissionSets>
+    <permissionSets>pse__PSAManageTeams</permissionSets>
+    <permissionSets>pse__PSAManageYourSkillAndCertificationRatings</permissionSets>
+    <permissionSets>pse__PSAMatchAndAssignResourcesWithOptimizer</permissionSets>
+    <permissionSets>pse__PSAOnlineHelp</permissionSets>
+    <permissionSets>pse__PSARecalculateSchedules</permissionSets>
+    <permissionSets>pse__PSAStaffResourceRequests</permissionSets>
+    <permissionSets>pse__PSASwapResources</permissionSets>
+    <permissionSets>pse__PSAUseProjectPlanner</permissionSets>
+    <permissionSets>pse__PSAUseResourcePlanner</permissionSets>
+    <permissionSets>pse__PSAUseTeamSchedulePlanner</permissionSets>
+    <permissionSets>pse__PSAViewRPGHierarchy</permissionSets>
+    <permissionSets>pse__PSAViewResource</permissionSets>
+    <permissionSets>pse__PSAViewSkillsCapacity</permissionSets>
+    <permissionSets>pse__PSAViewUnfilledResourceRequestsForAProject</permissionSets>
+    <permissionSets>pse__PSAViewWorkPlanner</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

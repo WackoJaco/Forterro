@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Forterro Workforce Management</label>
+    <applicationVisibilities>
+        <application>Forterro_Workforce_Management</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Data_Import_Results__c.Errors__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffscpq__Estimate__c.Approver__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffscpq__Estimate__c.ffscpq__Approval_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <tabSettings>
+        <tab>Resource_Management_Workspace</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>
