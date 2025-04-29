@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Rating__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The level of exposure or ability that the resource has for the Skill or Certification.</description>
+    <inlineHelpText>The level of exposure or ability that the resource has for the Skill or Certification.</inlineHelpText>
+    <label>Rating</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>0 - Not Applicable</fullName>
+                <default>false</default>
+                <label>0 - Not Applicable</label>
+            </value>
+            <value>
+                <fullName>10 - Acquired</fullName>
+                <default>false</default>
+                <label>10 - Acquired</label>
+            </value>
+            <value>
+                <fullName>1 - None</fullName>
+                <default>false</default>
+                <label>1 - None</label>
+            </value>
+            <value>
+                <fullName>2 - Limited Exposure</fullName>
+                <default>false</default>
+                <label>2 - Limited Exposure</label>
+            </value>
+            <value>
+                <fullName>3 - Training in progress</fullName>
+                <default>false</default>
+                <label>3 - Training in progress</label>
+            </value>
+            <value>
+                <fullName>4 - Proficient</fullName>
+                <default>false</default>
+                <label>4 - Proficient</label>
+            </value>
+            <value>
+                <fullName>5 - Expert</fullName>
+                <default>false</default>
+                <label>5 - Expert</label>
+            </value>
+            <value>
+                <fullName>5 - TRUE</fullName>
+                <default>false</default>
+                <label>5 - TRUE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
