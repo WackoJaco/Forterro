@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disqualified_Reason__c</fullName>
+    <label>Disqualified Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Project Cancelled</fullName>
+                <default>false</default>
+                <label>Project Cancelled</label>
+            </value>
+            <value>
+                <fullName>Project Delayed</fullName>
+                <default>false</default>
+                <label>Project Delayed</label>
+            </value>
+            <value>
+                <fullName>Poor fit</fullName>
+                <default>false</default>
+                <label>Poor fit</label>
+            </value>
+            <value>
+                <fullName>No interest</fullName>
+                <default>false</default>
+                <label>No interest</label>
+            </value>
+            <value>
+                <fullName>Not Decision Maker</fullName>
+                <default>false</default>
+                <label>Not Decision Maker</label>
+            </value>
+            <value>
+                <fullName>Unable to contact</fullName>
+                <default>false</default>
+                <label>Unable to contact</label>
+            </value>
+            <value>
+                <fullName>Insufficient Budget</fullName>
+                <default>false</default>
+                <label>Insufficient Budget</label>
+            </value>
+            <value>
+                <fullName>Not ready to buy</fullName>
+                <default>false</default>
+                <label>Not ready to buy</label>
+            </value>
+            <value>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+                <label>Lost to Competitor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
