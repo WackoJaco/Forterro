@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SIC_Code_Category__c</fullName>
+    <label>SIC Code Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>01 - Agricultural Production - Crops</fullName>
+                <default>false</default>
+                <label>01 - Agricultural Production - Crops</label>
+            </value>
+            <value>
+                <fullName>02 - Agricultural Production - Livestock &amp; Animal Specialities</fullName>
+                <default>false</default>
+                <label>02 - Agricultural Production - Livestock &amp; Animal Specialities</label>
+            </value>
+            <value>
+                <fullName>07 - Agricultural Services</fullName>
+                <default>false</default>
+                <label>07 - Agricultural Services</label>
+            </value>
+            <value>
+                <fullName>08 - Forestry</fullName>
+                <default>false</default>
+                <label>08 - Forestry</label>
+            </value>
+            <value>
+                <fullName>09 - Fishing, Hunting &amp; Trapping</fullName>
+                <default>false</default>
+                <label>09 - Fishing, Hunting &amp; Trapping</label>
+            </value>
+            <value>
+                <fullName>10 - Metal Mining</fullName>
+                <default>false</default>
+                <label>10 - Metal Mining</label>
+            </value>
+            <value>
+                <fullName>12 - Coal Mining</fullName>
+                <default>false</default>
+                <label>12 - Coal Mining</label>
+            </value>
+            <value>
+                <fullName>13 - Oil and Gas Extraction</fullName>
+                <default>false</default>
+                <label>13 - Oil and Gas Extraction</label>
+            </value>
+            <value>
+                <fullName>14 - Mining &amp; Quarrying of Non-metallic Minerals exc. Fuels</fullName>
+                <default>false</default>
+                <label>14 - Mining &amp; Quarrying of Non-metallic Minerals exc. Fuels</label>
+            </value>
+            <value>
+                <fullName>15 - Building Construction - General Contractors &amp; Operative Builders</fullName>
+                <default>false</default>
+                <label>15 - Building Construction - General Contractors &amp; Operative Builders</label>
+            </value>
+            <value>
+                <fullName>16 - Heavy Construction Other than Building Construction - Contractors</fullName>
+                <default>false</default>
+                <label>16 - Heavy Construction Other than Building Construction - Contractors</label>
+            </value>
+            <value>
+                <fullName>17 - Construction - Special Trade Contractors</fullName>
+                <default>false</default>
+                <label>17 - Construction - Special Trade Contractors</label>
+            </value>
+            <value>
+                <fullName>20 - Food &amp; Kindred Products</fullName>
+                <default>false</default>
+                <label>20 - Food &amp; Kindred Products</label>
+            </value>
+            <value>
+                <fullName>21 - Tobacco products</fullName>
+                <default>false</default>
+                <label>21 - Tobacco products</label>
+            </value>
+            <value>
+                <fullName>22 - Textile Mill Products</fullName>
+                <default>false</default>
+                <label>22 - Textile Mill Products</label>
+            </value>
+            <value>
+                <fullName>23 - Apparel &amp; Other Finished Products</fullName>
+                <default>false</default>
+                <label>23 - Apparel &amp; Other Finished Products</label>
+            </value>
+            <value>
+                <fullName>24 - Lumber &amp; Wood Products exc. Furniture</fullName>
+                <default>false</default>
+                <label>24 - Lumber &amp; Wood Products exc. Furniture</label>
+            </value>
+            <value>
+                <fullName>25 - Furniture &amp; Fixtures</fullName>
+                <default>false</default>
+                <label>25 - Furniture &amp; Fixtures</label>
+            </value>
+            <value>
+                <fullName>26 - Paper &amp; Allied Products</fullName>
+                <default>false</default>
+                <label>26 - Paper &amp; Allied Products</label>
+            </value>
+            <value>
+                <fullName>27 - Printing, Publishing &amp; Allied Industries</fullName>
+                <default>false</default>
+                <label>27 - Printing, Publishing &amp; Allied Industries</label>
+            </value>
+            <value>
+                <fullName>28 - Chemicals &amp; Allied Products</fullName>
+                <default>false</default>
+                <label>28 - Chemicals &amp; Allied Products</label>
+            </value>
+            <value>
+                <fullName>29 - Petroleum Refining &amp; Related Industries</fullName>
+                <default>false</default>
+                <label>29 - Petroleum Refining &amp; Related Industries</label>
+            </value>
+            <value>
+                <fullName>30 - Rubber &amp; Miscellaneous Plastics Products</fullName>
+                <default>false</default>
+                <label>30 - Rubber &amp; Miscellaneous Plastics Products</label>
+            </value>
+            <value>
+                <fullName>31 - Leather &amp; Leather Products</fullName>
+                <default>false</default>
+                <label>31 - Leather &amp; Leather Products</label>
+            </value>
+            <value>
+                <fullName>32 - Stone, Clay, Glass &amp; Concrete Products</fullName>
+                <default>false</default>
+                <label>32 - Stone, Clay, Glass &amp; Concrete Products</label>
+            </value>
+            <value>
+                <fullName>33 - Primary Metal Industries</fullName>
+                <default>false</default>
+                <label>33 - Primary Metal Industries</label>
+            </value>
+            <value>
+                <fullName>34 - Fabricated Metal Products exc. Machinery &amp; Transportation Equipment</fullName>
+                <default>false</default>
+                <label>34 - Fabricated Metal Products exc. Machinery &amp; Transportation Equipment</label>
+            </value>
+            <value>
+                <fullName>35 - Industrial &amp; Commercial Machinery &amp; Computer Equipment</fullName>
+                <default>false</default>
+                <label>35 - Industrial &amp; Commercial Machinery &amp; Computer Equipment</label>
+            </value>
+            <value>
+                <fullName>36 - Electronic &amp; Other Electrical Equipment &amp; Components exc. Computer Equipment</fullName>
+                <default>false</default>
+                <label>36 - Electronic &amp; Other Electrical Equipment &amp; Components exc. Computer Equipment</label>
+            </value>
+            <value>
+                <fullName>37 - Transportation Equipment</fullName>
+                <default>false</default>
+                <label>37 - Transportation Equipment</label>
+            </value>
+            <value>
+                <fullName>38 - Measuring, Analyzing &amp; Controlling Instruments</fullName>
+                <default>false</default>
+                <label>38 - Measuring, Analyzing &amp; Controlling Instruments</label>
+            </value>
+            <value>
+                <fullName>39 - Miscellaneous Manufacturing Industries</fullName>
+                <default>false</default>
+                <label>39 - Miscellaneous Manufacturing Industries</label>
+            </value>
+            <value>
+                <fullName>40 - Railroad Transportation</fullName>
+                <default>false</default>
+                <label>40 - Railroad Transportation</label>
+            </value>
+            <value>
+                <fullName>41 - Local &amp; Suburban Transit &amp; Interurban Highway Passenger Transportation</fullName>
+                <default>false</default>
+                <label>41 - Local &amp; Suburban Transit &amp; Interurban Highway Passenger Transportation</label>
+            </value>
+            <value>
+                <fullName>42 - Motor Freight Transportation &amp; Warehousing</fullName>
+                <default>false</default>
+                <label>42 - Motor Freight Transportation &amp; Warehousing</label>
+            </value>
+            <value>
+                <fullName>43 - Postal services</fullName>
+                <default>false</default>
+                <label>43 - Postal services</label>
+            </value>
+            <value>
+                <fullName>44 - Water Transportation</fullName>
+                <default>false</default>
+                <label>44 - Water Transportation</label>
+            </value>
+            <value>
+                <fullName>45 - Transportation by Air</fullName>
+                <default>false</default>
+                <label>45 - Transportation by Air</label>
+            </value>
+            <value>
+                <fullName>46 - Pipelines exc. Natural Gas</fullName>
+                <default>false</default>
+                <label>46 - Pipelines exc. Natural Gas</label>
+            </value>
+            <value>
+                <fullName>47 - Transportation Services</fullName>
+                <default>false</default>
+                <label>47 - Transportation Services</label>
+            </value>
+            <value>
+                <fullName>48 - Communications</fullName>
+                <default>false</default>
+                <label>48 - Communications</label>
+            </value>
+            <value>
+                <fullName>49 - Electric, Gas &amp; Sanitary Services</fullName>
+                <default>false</default>
+                <label>49 - Electric, Gas &amp; Sanitary Services</label>
+            </value>
+            <value>
+                <fullName>50 - Wholesale Trade - Durable Goods</fullName>
+                <default>false</default>
+                <label>50 - Wholesale Trade - Durable Goods</label>
+            </value>
+            <value>
+                <fullName>51 - Wholesale Trade - Non durable Goods</fullName>
+                <default>false</default>
+                <label>51 - Wholesale Trade - Non durable Goods</label>
+            </value>
+            <value>
+                <fullName>52 - Building Materials, Hardware, Garden Supply &amp; Mobile Home Dealers</fullName>
+                <default>false</default>
+                <label>52 - Building Materials, Hardware, Garden Supply &amp; Mobile Home Dealers</label>
+            </value>
+            <value>
+                <fullName>53 - General Merchandise Stores</fullName>
+                <default>false</default>
+                <label>53 - General Merchandise Stores</label>
+            </value>
+            <value>
+                <fullName>54 - Food Stores</fullName>
+                <default>false</default>
+                <label>54 - Food Stores</label>
+            </value>
+            <value>
+                <fullName>55 - Automotive Dealers &amp; Gasoline Service Stations</fullName>
+                <default>false</default>
+                <label>55 - Automotive Dealers &amp; Gasoline Service Stations</label>
+            </value>
+            <value>
+                <fullName>56 - Apparel &amp; Accessory Stores</fullName>
+                <default>false</default>
+                <label>56 - Apparel &amp; Accessory Stores</label>
+            </value>
+            <value>
+                <fullName>57 - Home Furniture, Furnishings &amp; Equipment Stores</fullName>
+                <default>false</default>
+                <label>57 - Home Furniture, Furnishings &amp; Equipment Stores</label>
+            </value>
+            <value>
+                <fullName>58 - Eating &amp; Drinking Places</fullName>
+                <default>false</default>
+                <label>58 - Eating &amp; Drinking Places</label>
+            </value>
+            <value>
+                <fullName>59 - Miscellaneous Retail</fullName>
+                <default>false</default>
+                <label>59 - Miscellaneous Retail</label>
+            </value>
+            <value>
+                <fullName>60 - Depository Institutions</fullName>
+                <default>false</default>
+                <label>60 - Depository Institutions</label>
+            </value>
+            <value>
+                <fullName>61 - Non Depository Institutions</fullName>
+                <default>false</default>
+                <label>61 - Non Depository Institutions</label>
+            </value>
+            <value>
+                <fullName>62 - Security &amp; Commodity Brokers, Dealers, Exchanges &amp; Services</fullName>
+                <default>false</default>
+                <label>62 - Security &amp; Commodity Brokers, Dealers, Exchanges &amp; Services</label>
+            </value>
+            <value>
+                <fullName>63 - Insurance Carriers</fullName>
+                <default>false</default>
+                <label>63 - Insurance Carriers</label>
+            </value>
+            <value>
+                <fullName>64 - Insurance Agents, Brokers &amp; Service</fullName>
+                <default>false</default>
+                <label>64 - Insurance Agents, Brokers &amp; Service</label>
+            </value>
+            <value>
+                <fullName>65 - Real Estate</fullName>
+                <default>false</default>
+                <label>65 - Real Estate</label>
+            </value>
+            <value>
+                <fullName>67 - Holding &amp; Other Investment Offices</fullName>
+                <default>false</default>
+                <label>67 - Holding &amp; Other Investment Offices</label>
+            </value>
+            <value>
+                <fullName>70 - Hotels, Rooming Houses, Camps &amp; other Lodging Places</fullName>
+                <default>false</default>
+                <label>70 - Hotels, Rooming Houses, Camps &amp; other Lodging Places</label>
+            </value>
+            <value>
+                <fullName>72 - Personal Services</fullName>
+                <default>false</default>
+                <label>72 - Personal Services</label>
+            </value>
+            <value>
+                <fullName>73 - Business Services</fullName>
+                <default>false</default>
+                <label>73 - Business Services</label>
+            </value>
+            <value>
+                <fullName>75 - Automotive Repair, Services &amp; Parking</fullName>
+                <default>false</default>
+                <label>75 - Automotive Repair, Services &amp; Parking</label>
+            </value>
+            <value>
+                <fullName>76 - Miscellaneous Repair Services</fullName>
+                <default>false</default>
+                <label>76 - Miscellaneous Repair Services</label>
+            </value>
+            <value>
+                <fullName>78 - Motion Pictures</fullName>
+                <default>false</default>
+                <label>78 - Motion Pictures</label>
+            </value>
+            <value>
+                <fullName>79 - Amusement &amp; Recreation Services</fullName>
+                <default>false</default>
+                <label>79 - Amusement &amp; Recreation Services</label>
+            </value>
+            <value>
+                <fullName>80 - Health Services</fullName>
+                <default>false</default>
+                <label>80 - Health Services</label>
+            </value>
+            <value>
+                <fullName>81 - Legal Services</fullName>
+                <default>false</default>
+                <label>81 - Legal Services</label>
+            </value>
+            <value>
+                <fullName>82 - Educational Services</fullName>
+                <default>false</default>
+                <label>82 - Educational Services</label>
+            </value>
+            <value>
+                <fullName>83 - Social Services</fullName>
+                <default>false</default>
+                <label>83 - Social Services</label>
+            </value>
+            <value>
+                <fullName>84 - Museums, Art Galleries &amp; Botanical &amp; Zoological Gardens</fullName>
+                <default>false</default>
+                <label>84 - Museums, Art Galleries &amp; Botanical &amp; Zoological Gardens</label>
+            </value>
+            <value>
+                <fullName>86 - Membership Organizations</fullName>
+                <default>false</default>
+                <label>86 - Membership Organizations</label>
+            </value>
+            <value>
+                <fullName>87 - Engineering, Accounting, Research, Management &amp; Related Services</fullName>
+                <default>false</default>
+                <label>87 - Engineering, Accounting, Research, Management &amp; Related Services</label>
+            </value>
+            <value>
+                <fullName>88 - Private Households</fullName>
+                <default>false</default>
+                <label>88 - Private Households</label>
+            </value>
+            <value>
+                <fullName>89 - Services Not Elsewhere Classified</fullName>
+                <default>false</default>
+                <label>89 - Services Not Elsewhere Classified</label>
+            </value>
+            <value>
+                <fullName>91 - Executive, Legislative and General Government exc. Finance</fullName>
+                <default>false</default>
+                <label>91 - Executive, Legislative and General Government exc. Finance</label>
+            </value>
+            <value>
+                <fullName>92 - Justice, Public Order &amp; Safety</fullName>
+                <default>false</default>
+                <label>92 - Justice, Public Order &amp; Safety</label>
+            </value>
+            <value>
+                <fullName>93 - Public Finance, Taxation &amp; Monetary Policy</fullName>
+                <default>false</default>
+                <label>93 - Public Finance, Taxation &amp; Monetary Policy</label>
+            </value>
+            <value>
+                <fullName>94 - Administration of Human Resource Programs</fullName>
+                <default>false</default>
+                <label>94 - Administration of Human Resource Programs</label>
+            </value>
+            <value>
+                <fullName>95 - Administration of Environmental Quality &amp; Housing Programs</fullName>
+                <default>false</default>
+                <label>95 - Administration of Environmental Quality &amp; Housing Programs</label>
+            </value>
+            <value>
+                <fullName>96 - Administration of Economic Programs</fullName>
+                <default>false</default>
+                <label>96 - Administration of Economic Programs</label>
+            </value>
+            <value>
+                <fullName>97 - National Security &amp; International Affairs</fullName>
+                <default>false</default>
+                <label>97 - National Security &amp; International Affairs</label>
+            </value>
+            <value>
+                <fullName>99 - Non Classified Establishments</fullName>
+                <default>false</default>
+                <label>99 - Non Classified Establishments</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
