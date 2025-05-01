@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Resource_Role__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Resource Role</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+                <label>Consultant</label>
+            </value>
+            <value>
+                <fullName>Consultant (Finance)</fullName>
+                <default>false</default>
+                <label>Consultant (Finance)</label>
+            </value>
+            <value>
+                <fullName>Consultant (HR)</fullName>
+                <default>false</default>
+                <label>Consultant (HR)</label>
+            </value>
+            <value>
+                <fullName>Consultant (Infrastructure)</fullName>
+                <default>false</default>
+                <label>Consultant (Infrastructure)</label>
+            </value>
+            <value>
+                <fullName>Consultant (Logistic Production)</fullName>
+                <default>false</default>
+                <label>Consultant (Logistic Production)</label>
+            </value>
+            <value>
+                <fullName>Consultant (Managed Services)</fullName>
+                <default>false</default>
+                <label>Consultant (Managed Services)</label>
+            </value>
+            <value>
+                <fullName>Consultant (Principal)</fullName>
+                <default>false</default>
+                <label>Consultant (Principal)</label>
+            </value>
+            <value>
+                <fullName>Customer Success Manager</fullName>
+                <default>false</default>
+                <label>Customer Success Manager</label>
+            </value>
+            <value>
+                <fullName>Database Engineer</fullName>
+                <default>false</default>
+                <label>Database Engineer</label>
+            </value>
+            <value>
+                <fullName>Developer</fullName>
+                <default>false</default>
+                <label>Developer</label>
+            </value>
+            <value>
+                <fullName>Director</fullName>
+                <default>false</default>
+                <label>Director</label>
+            </value>
+            <value>
+                <fullName>Education Services</fullName>
+                <default>false</default>
+                <label>Education Services</label>
+            </value>
+            <value>
+                <fullName>Lead</fullName>
+                <default>false</default>
+                <label>Lead</label>
+            </value>
+            <value>
+                <fullName>Project Coordinator</fullName>
+                <default>false</default>
+                <label>Project Coordinator</label>
+            </value>
+            <value>
+                <fullName>Project Manager</fullName>
+                <default>false</default>
+                <label>Project Manager</label>
+            </value>
+            <value>
+                <fullName>Solution Architect</fullName>
+                <default>false</default>
+                <label>Solution Architect</label>
+            </value>
+            <value>
+                <fullName>Team Lead</fullName>
+                <default>false</default>
+                <label>Team Lead</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
