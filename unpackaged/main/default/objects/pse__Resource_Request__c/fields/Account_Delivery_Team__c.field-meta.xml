@@ -2,8 +2,14 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Account_Delivery_Team__c</fullName>
     <externalId>false</externalId>
-    <formula>IF( NOT(ISBLANK(pse__Opportunity__c)), TEXT(pse__Opportunity__r.Account.Delivery_Team__c),
-IF( NOT(ISBLANK(pse__Project__c)), TEXT(pse__Project__r.pse__Account__r.Delivery_Team__c) , ""))</formula>
+    <formula>IF( 
+				ISBLANK(pse__Opportunity__c)=false
+				, TEXT(pse__Opportunity__r.Account.Delivery_Team__c),
+				IF( 
+								ISBLANK(pse__Project__c)=false
+								, TEXT(pse__Project__r.pse__Account__r.Delivery_Team__c) 
+								, "")
+)</formula>
     <label>Account Delivery Team</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
