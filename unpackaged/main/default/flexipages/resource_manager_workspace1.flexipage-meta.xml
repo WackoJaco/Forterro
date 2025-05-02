@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <itemInstances>
@@ -32,8 +32,69 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>psaws:alertLowUtilization</componentName>
-                <identifier>alertLowUtilization</identifier>
+                <componentInstanceProperties>
+                    <name>alertDescription</name>
+                    <value>Resources at 90% or below their utilization target in the current and next month.</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alertTitle</name>
+                    <value>Resources below Utilization Target</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>listViewApiName</name>
+                    <value>Resources_Below_Utili_Target_Group</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>majorKpiCalculation</name>
+                    <value>count</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>majorKpiDefaultThresholdColor</name>
+                    <value>gray</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>majorKpiDescription</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>majorKpiFieldName</name>
+                    <value>pse__Resource__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>majorKpiLowerThresholdColor</name>
+                    <value>gray</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>majorKpiUpperThresholdColor</name>
+                    <value>gray</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>minorKpi1Calculation</name>
+                    <value>count</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>minorKpi1Description</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>minorKpi1FieldName</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>minorKpi2Calculation</name>
+                    <value>count</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>minorKpi2Description</name>
+                    <value>records due to multiple calculations per resource.</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>minorKpi2FieldName</name>
+                    <value>Name</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectApiName</name>
+                    <value>pse__Utilization_Detail__c</value>
+                </componentInstanceProperties>
+                <componentName>fferpcore:exp_customAlertCard</componentName>
+                <identifier>fferpcore_exp_customAlertCard3</identifier>
             </componentInstance>
         </itemInstances>
         <name>region2</name>
@@ -52,7 +113,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>psaws__Projects_Without_Assigned_Hours</value>
+                    <value>Projects_Without_Assigned_Hours_Group</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>majorKpiCalculation</name>
@@ -74,7 +135,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>alertDescription</name>
-                    <value>Open resource requests starting in the next 10 days</value>
+                    <value>Resource requests that are open for staffing</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>alertTitle</name>
@@ -82,7 +143,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>psaws__Open_Resource_Requests_Next_10_Days</value>
+                    <value>Ready_to_Staff_Resource_Requests</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>majorKpiCalculation</name>
@@ -91,6 +152,12 @@
                 <componentInstanceProperties>
                     <name>majorKpiDefaultThresholdColor</name>
                     <value>gray</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>majorKpiDescription</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>majorKpiFieldName</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>majorKpiLowerThresholdColor</name>
@@ -105,8 +172,20 @@
                     <value>count</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>minorKpi1Description</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>minorKpi1FieldName</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>minorKpi2Calculation</name>
                     <value>count</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>minorKpi2Description</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>minorKpi2FieldName</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
@@ -124,11 +203,11 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>displayLabel</name>
-                    <value>Planned Tasks without assigned Resources</value>
+                    <value>Tasks pending resourcing</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>Planned_Tasks_wo_Assignments</value>
+                    <value>Planned_Tasks_wo_Assignments_Group</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
@@ -145,8 +224,11 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>displayLabel</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>psaws__Held_Resource_Requests</value>
+                    <value>Held_Resource_Requests_Group</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
@@ -164,15 +246,15 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>displayLabel</name>
-                    <value>Resources Started Recently</value>
+                    <value>Resource request starting soon (15 days)</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>psaws__Resources_Started_in_the_Last_30_Days</value>
+                    <value>Open_Resource_Requests_Next_15_Days</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
-                    <value>Contact</value>
+                    <value>pse__Resource_Request__c</value>
                 </componentInstanceProperties>
                 <componentName>fferpcore:exp_customCountCard</componentName>
                 <identifier>fferpcore_exp_customCountCard3</identifier>
@@ -258,15 +340,15 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideSplitAssignmentToNewAssignmentAction</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideSplitAssignmentToNewResourceRequestAction</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideSplitResourceRequestAction</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideSwapResourceOnAssignmentAction</name>
@@ -440,7 +522,21 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <name>Facet-324975de-ba11-4aa9-9743-62ea48750d2c</name>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>dashboardName</name>
+                    <value>FFX_PSA_Consultant_Dashboard21</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideOnError</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>desktopDashboards:embeddedDashboard</componentName>
+                <identifier>desktopDashboards_embeddedDashboard</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-4877e5d4-b79c-4ee9-ad80-afb8c01a9beb</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -494,11 +590,11 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-324975de-ba11-4aa9-9743-62ea48750d2c</value>
+                    <value>Facet-4877e5d4-b79c-4ee9-ad80-afb8c01a9beb</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Team Utilisation</value>
+                    <value>Utilization</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab2</identifier>

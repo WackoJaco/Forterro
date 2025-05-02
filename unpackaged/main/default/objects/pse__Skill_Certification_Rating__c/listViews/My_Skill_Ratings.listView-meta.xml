@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Skill_Ratings</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>psaws__Skill_Or_Certification__c</columns>
+    <columns>pse__Skill_Certification__c</columns>
+    <columns>pse__Rating__c</columns>
+    <columns>pse__Numerical_Rating__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>psaws__Is_Resource_Current_User__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Skill Ratings</label>
+</ListView>
