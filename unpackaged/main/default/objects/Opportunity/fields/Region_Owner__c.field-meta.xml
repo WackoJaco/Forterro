@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_Owner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Region Owner field used for Services Opportunity Email Notification Flow</description>
+    <label>Region Owner</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Opportunities (Region Owner)</relationshipLabel>
+    <relationshipName>Opportunities1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
