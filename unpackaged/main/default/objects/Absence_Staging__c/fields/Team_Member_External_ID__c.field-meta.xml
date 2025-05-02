@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team_Member_External_ID__c</fullName>
+    <description>Resource/Team Member External ID linking the Sage HR Team Member record requesting the absence and the Certinia PSA Resource record.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>Resource/Team Member External ID linking the Sage HR Team Member record requesting the absence and the Certinia PSA Resource record.</inlineHelpText>
+    <label>Team Member External ID</label>
+    <length>155</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SageHR_External_ID__c</fullName>
+    <description>External ID linking the SageHR Absence and the Salesforce Absence Staging records.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>External ID linking the SageHR Absence and the Salesforce Absence Staging records.</inlineHelpText>
+    <label>SageHR External ID</label>
+    <length>155</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

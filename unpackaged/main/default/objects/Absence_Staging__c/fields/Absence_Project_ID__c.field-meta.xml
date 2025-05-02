@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Absence_Project_ID__c</fullName>
+    <description>Absence Project ID for the Absence Project for which the PSA records must be created.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Absence Project ID for the Absence Project for which the PSA records must be created.</inlineHelpText>
+    <label>Absence Project ID</label>
+    <length>155</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
