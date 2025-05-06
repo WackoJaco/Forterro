@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF(
+    (pse__Utilization_Result__c.pse__Billable_Assignment_Hours__c:SUM+pse__Utilization_Result__c.pse__Non_Billable_Assignment_Hours__c:SUM+pse__Utilization_Result__c.pse__Credited_Assignment_Hours__c:SUM+pse__Utilization_Result__c.pse__Held_Resource_Request_Hours__c:SUM+pse__Utilization_Result__c.pse__Unheld_Resource_Request_Hours__c:SUM)&gt;0,
+    (1-(pse__Utilization_Result__c.pse__Billable_Assignment_Hours__c:SUM+pse__Utilization_Result__c.pse__Non_Billable_Assignment_Hours__c:SUM+pse__Utilization_Result__c.pse__Credited_Assignment_Hours__c:SUM+pse__Utilization_Result__c.pse__Held_Resource_Request_Hours__c:SUM+pse__Utilization_Result__c.pse__Unheld_Resource_Request_Hours__c:SUM))/(pse__Utilization_Result__c.pse__Calendar_Hours__c:SUM- pse__Utilization_Result__c.pse__Time_Excluded_Assignment_Hours__c:SUM),1)</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Total scheduled hours / total available hours</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Capacity %</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Utilization_Result__c.pse__Calendar_Hours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Utilization_Result__c.pse__Billable_Assignment_Hours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Utilization_Result__c.pse__Credited_Assignment_Hours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Utilization_Result__c.pse__Non_Billable_Assignment_Hours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Utilization_Result__c.pse__Utilization_Excluded_Assignment_Hours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Utilization_Result__c.pse__Held_Resource_Request_Hours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Utilization_Result__c.pse__Unheld_Resource_Request_Hours__c</field>
+    </columns>
+    <currency>EUR</currency>
+    <description>Resource Capacity based on Work Calendar Hours Remaining after current RRs and Assignments using Util Runs.</description>
+    <filter>
+        <criteriaItems>
+            <column>pse__Utilization_Result__c.pse__Resource_Role__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>pse__Utilization_Result__c.pse__Group__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Jeeves</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <field>FK_$pse__Utilization_Run__c.pse__End_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>pse__Utilization_Result__c.pse__Resource_Role__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>JVS Capacity - Util Results</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$pse__Utilization_Result__c@pse__Utilization_Result__c.pse__Last_Updated_Run__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>FK_$pse__Utilization_Run__c.pse__End_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>pse__Project_Task__c.pse__Start_Date_Time__c</field>
+    </columns>
+    <columns>
+        <field>pse__Project_Task__c.pse__End_Date_Time__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Project_Task__c.pse__Estimated_Hours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Project_Task__c.pse__Actual_Hours__c</field>
+    </columns>
+    <currency>EUR</currency>
+    <description>Individual infromation include:
+- All Tasks
+- Task Due This Week
+- Late - Off Track
+- At Risk
+- Overrun
+- Travel
+- Administrative</description>
+    <filter>
+        <criteriaItems>
+            <column>pse__Project_Task__c.pse__Assigned_Resources__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>$USER</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>pse__Project_Task__c.pse__Start_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$pse__Proj__c.pse__Project_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$pse__Proj__c.Project_Sub_Types__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>My Tasks</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$pse__Project_Task__c$pse__Project_Task_Assignment__c@pse__Project_Task_Assignment__c.Project__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>pse__Project_Task__c.pse__Actual_End_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
