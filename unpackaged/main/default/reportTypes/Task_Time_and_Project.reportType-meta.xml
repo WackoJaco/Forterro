@@ -712,17 +712,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>External_Id__c</field>
+            <field>Invoice_Number__c</field>
             <table>pse__Timecard_Header__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Absence_Rejected_Flag__c</field>
+            <field>Invoice_Date__c</field>
             <table>pse__Timecard_Header__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Absence_Rejected_Comments__c</field>
+            <field>MyGroup__c</field>
+            <table>pse__Timecard_Header__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MyRegion__c</field>
             <table>pse__Timecard_Header__c</table>
         </columns>
         <masterLabel>Timecards</masterLabel>
@@ -911,6 +916,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>pse__Wednesday_Notes__c</field>
+            <table>pse__Timecard_Header__c.pse__Task_Time__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Submitted__c</field>
             <table>pse__Timecard_Header__c.pse__Task_Time__r</table>
         </columns>
         <masterLabel>Task Time</masterLabel>

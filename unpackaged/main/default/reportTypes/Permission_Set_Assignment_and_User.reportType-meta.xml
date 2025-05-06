@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>PermissionSetAssignment</baseObject>
+    <category>admin</category>
+    <deployed>true</deployed>
+    <description>Permission Set Assignment and User</description>
+    <label>Permission Set Assignment and User</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PermissionSetAssignment ID</displayNameOverride>
+            <field>Id</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Permission Set</displayNameOverride>
+            <field>PermissionSet</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Permission Set Group</displayNameOverride>
+            <field>PermissionSetGroup</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>User</displayNameOverride>
+            <field>Assignee</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expires On</displayNameOverride>
+            <field>ExpirationDate</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.IsActive</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.Username</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.Id</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.UserRole</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.Profile</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.LastLoginDate</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.PSA_Group__c</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.PSA_Group_ID__c</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.PSA_Region__c</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.PSA_Region_ID__c</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <masterLabel>Permission Set Assignments</masterLabel>
+    </sections>
+</ReportType>
