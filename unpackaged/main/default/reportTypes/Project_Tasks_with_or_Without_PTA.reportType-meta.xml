@@ -486,16 +486,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>msg_link_PSAD4_errors__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>msg_link_PSAD4_state__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>pse__Financial_Status__c</field>
             <table>pse__Proj__c</table>
         </columns>
