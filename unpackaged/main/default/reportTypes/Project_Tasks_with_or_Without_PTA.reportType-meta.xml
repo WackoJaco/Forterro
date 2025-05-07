@@ -1354,57 +1354,17 @@
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Owner</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>Name</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CurrencyIsoCode</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedBy</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastActivityDate</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>pse__Action_Sync_With_External_Calendar__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>pse__Actual_Cost__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Actual_End_Date__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1419,12 +1379,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Actual_Start_Date_Time__c</field>
+            <field>Actual_Hours_Migrated__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Assigned_Resources_Long__c</field>
+            <field>pse__Actual_Start_Date__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Actual_Start_Date_Time__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1434,7 +1399,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Assigned_Resources_Long__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignment_Created__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Blocked__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RAG__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1444,7 +1424,27 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>CLZ_Internal_Id__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Completed__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedBy</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CurrencyIsoCode</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1469,6 +1469,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__End_Date__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__End_Date_Time__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
@@ -1479,12 +1484,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Estimated_Hours_Rollup__c</field>
+            <field>pse__Estimated_Hours__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Estimated_Hours__c</field>
+            <field>pse__Estimated_Hours_Rollup__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1495,6 +1500,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>pse__Exclude_From_External_Calendar_Sync__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Exclude_from_Utilization__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1539,12 +1549,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Flag_Task_Start_Milestone_Bounds__c</field>
+            <field>pse__Flag_Task_Start_Project_Bounds__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Flag_Task_Start_Project_Bounds__c</field>
+            <field>pse__Flag_Task_Start_Milestone_Bounds__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1554,12 +1564,67 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Hours_Remaining__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Hours_Validation__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_PM_Current_User__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CTC_Jira_Assignee__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Jira_Correlation_ID__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Jira_Issue_Type__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Jira_Issue_Type_Category__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>psaj__Jira_Parent_Task__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastActivityDate</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Late_Project_Task__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Task_Location__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1579,7 +1644,27 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Order__c</field>
+            <field>pse__Number_of_Assignments__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Number_of_Resource_Assignments__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Number_of_Resource_Requests__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Order_Id__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Original_Estimated_Hours__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1589,17 +1674,52 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Override_Points_Complete__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>pse__Override_Points__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Override_Points_Complete__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Parent_Task__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Parent_Task_End_Date__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Parent_Task_End_Date_Time__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Parent_Task_Start_Date__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Parent_Task_Start_Date_Time__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Order__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Percent_Complete_Hours__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1614,12 +1734,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Points_Baseline__c</field>
+            <field>pse__Points__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Points_Complete_Rollup__c</field>
+            <field>pse__Points_Baseline__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1629,17 +1749,92 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Points_Complete_Rollup__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Points_Remaining__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Points_Rollup__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Points__c</field>
+            <field>Practice__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>pse__Priority__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Project_Region__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Projected_Hours__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Request_Created__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Role_Budget_Link__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Role_Budget__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RoleBudgetWarning__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ffps_forterro__ServiceRequest__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Service_Request_Type__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Sharepoint_Link__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Sharepoint_Link_URL__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Start_Date__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1679,17 +1874,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Task_Key_Chain__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>pse__Task_Key__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Task_Name_Chain_Long__c</field>
+            <field>pse__Task_Key_Chain__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1699,7 +1889,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Task_Name_Chain_Long__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Task_Number__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Task_Timeline_Status__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Task_Type__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1709,7 +1914,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Timecard_History__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Timecard_Hours__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Top_level_Parent_Task__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CTC_Training_Code__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
         <columns>
@@ -1727,274 +1947,9 @@
             <field>pse__Work_Remaining__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Number_of_Assignments__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Actual_End_Date__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Actual_Start_Date__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__End_Date__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Hours_Remaining__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Jira_Issue_Type__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Parent_Task_End_Date_Time__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Parent_Task_End_Date__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Parent_Task_Start_Date_Time__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Parent_Task_Start_Date__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Percent_Complete_Hours__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Points_Remaining__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Projected_Hours__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Start_Date__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Timecard_Hours__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>psaj__Jira_Parent_Task__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Sharepoint_Link_URL__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Sharepoint_Link__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffps_forterro__ServiceRequest__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CTC_Training_Code__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Task_Type__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Hours_Validation__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Practice__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RAG__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Late_Project_Task__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RoleBudgetWarning__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CLZ_Internal_Id__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Is_PM_Current_User__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Timecard_History__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Order_Id__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Role_Budget_Link__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Task_Timeline_Status__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Original_Estimated_Hours__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Role_Budget__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CTC_Jira_Assignee__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Task_Location__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Number_of_Resource_Requests__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Number_of_Resource_Assignments__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Service_Request_Type__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Exclude_from_Utilization__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Request_Created__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Assignment_Created__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Project_Region__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Actual_Hours_Migrated__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MyGroup__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MyRegion__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r</table>
-        </columns>
         <masterLabel>Project Tasks</masterLabel>
     </sections>
     <sections>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>Name</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CurrencyIsoCode</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedBy</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>pse__Action_Sync_With_External_Calendar__c</field>
@@ -2022,6 +1977,31 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>CreatedBy</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CurrencyIsoCode</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Description__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__End_Date__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Estimated_Cost__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
         </columns>
@@ -2032,7 +2012,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>FFX_Estimated_Hours__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FFX_Estimated_Hours_per_PTA__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Exclude_From_External_Calendar_Sync__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>External_Id__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
         </columns>
         <columns>
@@ -2042,32 +2037,62 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Resource_Request__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Resource_Role__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Resource__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__End_Date__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>pse__Hours__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Hours_Remaining__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>psaws__Is_Resource_Current_User__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FFX_Is_Running_User_s_Record__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Project__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Project__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Project_ID__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Project_ID_2__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
             <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
         </columns>
         <columns>
@@ -2082,92 +2107,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Project__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Schedule_Type__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Start_Date__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>psaws__Is_Resource_Current_User__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>psaws__Status__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>FFX_Estimated_Hours__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>FFX_Is_Running_User_s_Record__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>FFX_Estimated_Hours_per_PTA__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Description__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Sharepoint_Link_URL__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Role_Budget__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Timecard_Hours__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Hours_Remaining__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Project__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Project_ID_2__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Task_Type__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RoleBudgetTaskEstimateMismatch__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Task_Name__c</field>
+            <field>pse__Resource__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
         </columns>
         <columns>
@@ -2177,17 +2122,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Resource_Request__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Resource_Role__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Role_Budget__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Role_BudgetName__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Variance__c</field>
-            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>External_Id__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
         </columns>
         <columns>
@@ -2197,7 +2147,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Task_Location__c</field>
+            <field>RoleBudgetTaskEstimateMismatch__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Schedule_Type__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Sharepoint_Link_URL__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Start_Date__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
         </columns>
         <columns>
@@ -2207,12 +2172,27 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>MyRegion__c</field>
+            <field>Task_Location__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>MyGroup__c</field>
+            <field>Task_Name__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Task_Type__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Timecard_Hours__c</field>
+            <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Variance__c</field>
             <table>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r</table>
         </columns>
         <masterLabel>Project Task Assignments</masterLabel>
