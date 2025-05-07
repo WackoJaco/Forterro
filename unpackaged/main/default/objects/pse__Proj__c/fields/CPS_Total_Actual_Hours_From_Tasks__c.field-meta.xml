@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPS_Total_Actual_Hours_From_Tasks__c</fullName>
+    <description>Used to hold values rolled up from the Project Record's associated Project Task Record's, via flow: Certinia: Project Task - Create/Update (Hours Rollups to Project)</description>
+    <externalId>false</externalId>
+    <label>Total Actual Hours (From Tasks)</label>
+    <precision>8</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

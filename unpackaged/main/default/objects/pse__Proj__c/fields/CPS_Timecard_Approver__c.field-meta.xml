@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPS_Timecard_Approver__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Users are able to define a contact to be the timecard approver. This should overrider the PM as the approver if populated (In conjunction with Approval Processes).</description>
+    <inlineHelpText>Select an alternative Timecard Approver to the Project Manager if required.</inlineHelpText>
+    <label>Timecard Approver</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Projects (Timecard Approver)</relationshipLabel>
+    <relationshipName>Projects3</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
