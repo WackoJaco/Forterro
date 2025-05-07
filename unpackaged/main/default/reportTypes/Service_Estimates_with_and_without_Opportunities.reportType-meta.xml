@@ -207,22 +207,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ffbc__Contract__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Contract_End_Date__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffbc__ContractEndDate__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffbc__ContractFirstBillDate__c</field>
             <table>Opportunity</table>
         </columns>
         <columns>
@@ -233,11 +218,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Contract_Start_Date__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffbc__ContractStartDate__c</field>
             <table>Opportunity</table>
         </columns>
         <columns>
@@ -503,11 +483,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Original_Created_Date__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffbc__OriginalOpportunity__c</field>
             <table>Opportunity</table>
         </columns>
         <columns>
@@ -802,11 +777,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAUnitOfWork__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Weighted_ACV__c</field>
             <table>Opportunity</table>
         </columns>
@@ -878,11 +848,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>IsWon</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffr__BatchProcess__c</field>
             <table>Opportunity</table>
         </columns>
         <masterLabel>Opportunities</masterLabel>

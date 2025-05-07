@@ -56,11 +56,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ffbf__AccountParticulars__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>RecordType</field>
             <table>Account</table>
         </columns>
@@ -86,11 +81,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAAllowDeleteInUse__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>AnnualRevenue</field>
             <table>Account</table>
         </columns>
@@ -106,102 +96,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankAccountName__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankAccountNumber__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankAccountReference__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>ffbf__BankBIC__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankCity__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankCountry__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankFax__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankIBANNumber__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankName__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankPhone__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankSortCode__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankStateProvince__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankStreet__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankSWIFTNumber__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABankZipPostalCode__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABaseDate1__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABaseDate2__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABaseDate3__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABaseDate4__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffbc__BillingAccount__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -212,11 +107,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>fferpcore__IsBillingAddressValidated__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABillingAddressIsValid__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -251,11 +141,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODABillingMethod__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>BillingState</field>
             <table>Account</table>
         </columns>
@@ -277,16 +162,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>SBQQ__CoTerminationEvent__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CollectionsOnHold__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CollectionsOnHoldReason__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -331,51 +206,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODACreditAgency__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODACreditLimit__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODACreditLimitEnabled__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODACreditLimitReviewed__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODACreditManager__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODACreditRating__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODACreditRatingReviewed__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODACreditReference__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODACreditStatus__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>ffaci__CurrencyCulture__c</field>
             <table>Account</table>
         </columns>
@@ -416,36 +246,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADaysOffset1__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADaysOffset2__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADaysOffset3__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADaysOffset4__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__DaysSalesOutstanding__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADefaultExpenseAccount__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>SBQQ__DefaultOpportunity__c</field>
             <table>Account</table>
         </columns>
@@ -471,66 +271,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADescription1__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADescription2__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADescription3__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADescription4__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADimension1__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADimension2__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADimension3__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADimension4__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADiscount1__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADiscount2__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADiscount3__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODADiscount4__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>ffps_forterro__DisputedServicePoints__c</field>
             <table>Account</table>
         </columns>
@@ -541,17 +281,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAEntityUseCode__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>fferpcore__ExemptionCertificate__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAExemptionCertificate__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -561,22 +291,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAExternalId__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Fax</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAFederallyReportable1099__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAFinanceContact__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -601,27 +316,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAIncomeTaxType__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Industry</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAInputVATCode__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAIntercompanyAccount__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAInvoiceEmail__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -651,22 +346,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAMergeId__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Orderwise_ERP_Account_ID__c</field>
             <table>Account</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>fferpcore__OutputVatCode__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAOutputVATCode__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -702,11 +387,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>ffbf__PaymentCountryISO__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAPaymentMethod__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -796,22 +476,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAReportingCode__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>ffps_forterro__RequestedServicePoints__c</field>
             <table>Account</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>fferpcore__SalesTaxStatus__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODASalesTaxStatus__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -832,11 +502,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>fferpcore__IsShippingAddressValidated__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAShippingAddressIsValid__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -921,17 +586,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODATaxCalculationMethod__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>fferpcore__TaxCode1__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODATaxCode1__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -941,17 +596,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODATaxCode2__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>fferpcore__TaxCode3__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODATaxCode3__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -961,17 +606,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAECCountryCode__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>fferpcore__VatRegistrationNumber__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAVATRegistrationNumber__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -981,17 +616,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAVATStatus__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>SBQQ__TaxExempt__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODATaxpayerIdentificationNumber__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -1012,11 +637,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Type</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAUnitOfWork__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -1067,56 +687,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>fferpcore__ValidatedShippingPostalCode__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAValidatedBillingCity__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAValidatedBillingCountry__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAValidatedBillingPostCode__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAValidatedBillingState__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAValidatedBillingStreet__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAValidatedShippingCity__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAValidatedShippingCountry__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAValidatedShippingPostCode__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAValidatedShippingState__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAValidatedShippingStreet__c</field>
             <table>Account</table>
         </columns>
         <columns>
