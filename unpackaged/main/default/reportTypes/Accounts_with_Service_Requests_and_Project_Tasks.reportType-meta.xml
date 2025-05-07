@@ -96,11 +96,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ffbf__BankBIC__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>BillingAddress</field>
             <table>Account</table>
         </columns>
@@ -377,26 +372,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Partner_Discount__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffbf__PaymentCode__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffbf__PaymentCountryISO__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffbf__PaymentPriority__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffbf__PaymentRoutingMethod__c</field>
             <table>Account</table>
         </columns>
         <columns>

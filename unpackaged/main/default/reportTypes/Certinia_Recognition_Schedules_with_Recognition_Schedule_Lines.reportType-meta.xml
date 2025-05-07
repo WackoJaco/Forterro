@@ -230,22 +230,7 @@
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
-            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>Name</field>
-            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CurrencyIsoCode</field>
-            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
+            <field>ffrr__CostAsCurrency__c</field>
             <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
         </columns>
         <columns>
@@ -255,32 +240,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
+            <field>CreatedDate</field>
             <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
+            <field>CurrencyIsoCode</field>
             <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LastActivityDate</field>
+            <field>ffrr__DisplayInformation__c</field>
             <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ffrr__AmortizedCostAsCurrency__c</field>
-            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffrr__AmortizedCost__c</field>
-            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffrr__CostAsCurrency__c</field>
+            <field>ffrr__Engagement__c</field>
             <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
         </columns>
         <columns>
@@ -290,7 +265,32 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ffrr__Engagement__c</field>
+            <field>ffrr__AmortizedCost__c</field>
+            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ffrr__RecognizedRevenue__c</field>
+            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ffrr__Revenue__c</field>
+            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastActivityDate</field>
+            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
             <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
         </columns>
         <columns>
@@ -310,17 +310,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ffrr__RecognitionStatus__c</field>
+            <field>Id</field>
+            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ffrr__AmortizedCostAsCurrency__c</field>
             <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>ffrr__RecognizedRevenueAsCurrency__c</field>
-            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffrr__RecognizedRevenue__c</field>
             <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
         </columns>
         <columns>
@@ -335,37 +340,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ffrr__Revenue__c</field>
-            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>ffrr__ScheduleLineNumber__c</field>
             <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ffrr__DisplayInformation__c</field>
-            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffrrSalesCreditNote__c</field>
-            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffrrSalesCreditNoteLineItem__c</field>
-            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffrrSalesInvoiceLineItem__c</field>
-            <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffrrSalesInvoice__c</field>
+            <field>ffrr__RecognitionStatus__c</field>
             <table>ffrr__RevenueSchedule__c.ffrr__RevenueScheduleLines__r</table>
         </columns>
         <masterLabel>Recognition Schedule Lines</masterLabel>
