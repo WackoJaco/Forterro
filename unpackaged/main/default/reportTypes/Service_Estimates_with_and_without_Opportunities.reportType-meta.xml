@@ -212,11 +212,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Loss_Reason__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>SBQQ__Contracted__c</field>
             <table>Opportunity</table>
         </columns>
