@@ -512,11 +512,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Partner_Opportunity__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>On_Prem_Licence__c</field>
             <table>Opportunity</table>
         </columns>

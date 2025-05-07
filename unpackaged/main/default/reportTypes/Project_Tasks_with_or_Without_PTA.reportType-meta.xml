@@ -386,11 +386,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>msg_link_PSAD4_id__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>pse__Duration__c</field>
             <table>pse__Proj__c</table>
         </columns>
@@ -692,16 +687,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>pse__Milestone_Cost__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MyGroup__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MyRegion__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
