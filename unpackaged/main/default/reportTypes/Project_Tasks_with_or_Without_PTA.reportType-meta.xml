@@ -16,57 +16,27 @@
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
+            <field>ffrrPercentComplete__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Owner</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>Name</field>
+            <field>CTC_Percent_Complete__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CurrencyIsoCode</field>
+            <field>FFX_Complete_Revenue__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RecordType</field>
+            <field>FFX_Percent_Complete_Gauge__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedBy</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastActivityDate</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__API_Time_Period__c</field>
+            <field>pse__Percent_Hours_Completed_For_Recognition__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -82,6 +52,26 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>pse__Action_Update_Current_Time_Period__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Is_Active__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>psaws__Actual_Hours__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Actual_Hours_Migrated__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ffrrtemplate__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -116,6 +106,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Email_Alert_Recipient__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Alert_Threshold__c</field>
             <table>pse__Proj__c</table>
         </columns>
@@ -136,7 +131,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__API_Time_Period__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Apply_Billing_Cap__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Estimate_Approval_Status__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -161,7 +166,42 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Baseline_End_Date__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Baseline_Project_Phase__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Baseline_Project_Status__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Baseline_Stage__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Baseline_Start_Date__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Batch_Sequence__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Batch_Sequence_Number__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Is_Billable__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -231,12 +271,32 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>CPS_Billing_Type_Analytics__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Billings__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>pse__Bookings__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FFX_Budget_Complete__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Budget_Cost_Adherence__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Cash_Collection__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -256,7 +316,27 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Contact__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Copy_Child_Records_from_Template_Async__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Count_of_RB_Task_Warnings__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedBy</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -266,7 +346,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Current_Time_Period_End_Date__c</field>
+            <field>CurrencyIsoCode</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -276,12 +356,47 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Current_Time_Period_End_Date__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Customer_Contact_Reference__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Customer_Relations_Governance__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Customer_Satisfaction__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Daily_Timecard_Notes_Required__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Email_Alert_Recipient__c</field>
+            <field>Delivery_Address__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Delivery_Quality__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>msg_link_PSAD4_id__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Duration__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -296,12 +411,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Estimate_Approval_Status__c</field>
+            <field>Environment_Type__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Estimated_Cost__c</field>
+            <field>ErrorMessage__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -311,12 +426,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Estimated_Margin__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__ExcludeProjectFromDisplayOnBilling__c</field>
+            <field>pse__Exclude_from_Backlog__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -331,12 +441,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Exclude_From_Monitor_Rollup__c</field>
+            <field>pse__Exclude_from_Project_Variance_Batch__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Exclude_from_Backlog__c</field>
+            <field>pse__Exclude_From_Monitor_Rollup__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -346,7 +456,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Exclude_from_Project_Variance_Batch__c</field>
+            <field>pse__ExcludeProjectFromDisplayOnBilling__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -371,12 +481,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Expense__c</field>
+            <field>pse__External_Costs__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__External_Costs__c</field>
+            <field>External_Project_Id__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -386,7 +496,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>msg_link_PSAD4_errors__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>msg_link_PSAD4_state__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Financial_Status__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Financial_Visual__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -396,12 +521,32 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Forterro_Team_Satisfaction__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Go_Live_Date__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Group__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Group_HIDE__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Hierarchy_Depth__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>psaws__High_Actual_Hours__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -426,6 +571,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>ffrrIncludeInRevenueRecognition__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Internal_Budget__c</field>
             <table>pse__Proj__c</table>
         </columns>
@@ -441,27 +591,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Invoice_Contact_Reference__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Invoiced__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Is_Active__c</field>
+            <field>psaws__Close_to_Budget__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Is_Billable__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Is_Primary_Estimate__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Is_Template__c</field>
+            <field>Is_Project_Late__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -471,7 +616,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Jira_Project__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Jira_Project_Key__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>psaj__Jira_Project_Template__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -481,12 +636,57 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Jira_Project__c</field>
+            <field>pse__Jira_Project_URL__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>psaj__Jira_Project_URL__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>psaj__Jira_Template__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastActivityDate</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Lead_Consultant__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Lead_Consultant_is_Current_User__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>pse__Location__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Margin__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FFX_MarginPercent__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -497,6 +697,16 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>pse__Milestone_Cost__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MyGroup__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MyRegion__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -516,7 +726,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Opportunity_Owner__c</field>
+            <field>On_Hold_Date__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -526,7 +736,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Opportunity_Owner__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Order_Id__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Other_Costs__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -541,12 +766,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Percent_Discount__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Percent_Estimated_Margin__c</field>
+            <field>FFX_Percent_Complete_Hours__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -556,7 +776,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Percent_Hours_Completed_For_Recognition__c</field>
+            <field>CPS_Percentage_Complete_From_Tasks__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Percentage_Used__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -581,7 +806,27 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Project_ID_Chain__c</field>
+            <field>Priority__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Product_Funtionality__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Project_Complete__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Project_Estimate_to_Complete__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -591,7 +836,27 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Project_ID_Chain__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Project_Manager__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>psaws__Project_Manager_Is_Current_User__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Project_Margin__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -606,7 +871,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Project_Status_Notes__c</field>
+            <field>Project_Profitability__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -616,337 +881,32 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Project_Type__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Rate_Card_Discount_Limit__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Rate_Card_Percentage_Discount__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Rate_Card_Set__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Recognition_Method__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Region__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Requires_Dependency_Sync__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Revenue_Forecast_Batch_Update_Pending__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Revenue_Forecast_Last_Updated__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Revenue_Forecast_Processing_Status__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Revenue__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Schedule_Status__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Scheduled_Backlog_Calculated_Date__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Scheduled_Backlog_End_Date__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Scheduled_Hours_Remaining__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Scheduled_Milestone__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Scheduled_Time__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Scope_Status__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Services_Billing_Time_Period_Type__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Share_with_Project_Manager__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Share_with_Project_Resources__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Stage__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Start_Date__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Sync_With_Jira__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Tasks_Total_Points_Complete__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Tasks_Total_Points__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Time_Credited__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Time_Excluded__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Time_Logged_In_Days__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Time_Zone__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Total_Assigned_Hours__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Total_Number_of_Tasks__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Total_Projected_Revenue_From_Assignments__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Total_Submitted_Hours__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Unscheduled_Backlog__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Variance_From_Plan__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Variance_at_Completion__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Work_Calendar__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Baseline_End_Date__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Baseline_Project_Phase__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Baseline_Project_Status__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Baseline_Stage__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Baseline_Start_Date__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Batch_Sequence_Number__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Discount__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Duration__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Financial_Visual__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Jira_Project_URL__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Margin__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Net_Amount__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Percentage_Used__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Remaining_Amount__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Schedule_Visual__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Scope_Visual__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>pse__Send_to_Third_Party_Expenses_Application__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>pse__Status_Visual__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Tasks_Total_Percent_Complete_Points__c</field>
+            <field>pse__Project_Status_Notes__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>pse__Total_Costs__c</field>
+            <field>Project_Sub_Types__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>psaj__Jira_Project_Template__c</field>
+            <field>Project_Timeline__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>psaj__Jira_Project_URL__c</field>
+            <field>pse__Project_Type__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>psaj__Jira_Template__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>psaws__Actual_Hours__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>psaws__Close_to_Budget__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>psaws__Project_Manager_Is_Current_User__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>psaws__High_Actual_Hours__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>FFX_Budget_Complete__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>FFX_MarginPercent__c</field>
+            <field>CPS_Project_Type_Analytics__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -1061,67 +1021,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>FFX_Percent_Complete_Hours__c</field>
+            <field>pse__Rate_Card_Discount_Limit__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>FFX_Status_Report_Week_Ending__c</field>
+            <field>pse__Rate_Card_Percentage_Discount__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>msg_link_PSAD4_errors__c</field>
+            <field>pse__Rate_Card_Set__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>msg_link_PSAD4_id__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>msg_link_PSAD4_state__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>FFX_Complete_Revenue__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>FFX_Percent_Complete_Gauge__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Project_Sub_Types__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Sharepoint_Link_URL__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Priority__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Contact__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Lead_Consultant__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ffrrtemplate__c</field>
+            <field>pse__Recognition_Method__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -1131,162 +1046,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ffrrPercentComplete__c</field>
+            <field>RecordType</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ffrrTotalProjectedRevenue__c</field>
+            <field>pse__Region__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ffrrIncludeInRevenueRecognition__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Go_Live_Date__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>On_Hold_Date__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>External_Project_Id__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Unscheduled_Hours__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Group_HIDE__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Project_Margin__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Template_Ref__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Scope_Clarity_Observance__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Customer_Satisfaction__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Budget_Cost_Adherence__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Project_Timeline__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Cash_Collection__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Project_Profitability__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Staffing_Resourcing__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Delivery_Quality__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Forterro_Team_Satisfaction__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Product_Funtionality__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Customer_Relations_Governance__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Total_Estimated_Hours__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Lead_Consultant_is_Current_User__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Task_Notes_Required__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Total_Est_To_Complete__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Project_Complete__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Sync_Status__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>SyncDate__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ErrorMessage__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Customer_Contact_Reference__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Count_of_RB_Task_Warnings__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Order_Id__c</field>
+            <field>pse__Remaining_Amount__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -1296,87 +1066,192 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Is_Project_Late__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Environment_Type__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Total_Orginal_Estimated_Hours__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Delivery_Address__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Project_Estimate_to_Complete__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Total_Milestone_Amount__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Total_Role_Budget__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Total_Actual_Hours__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Invoice_Contact_Reference__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Total_Role_Budget_Hours__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Total_Hours__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Trigger_Refresh__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Total_Milestone_Hours__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CTC_Percent_Complete__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Actual_Hours_Migrated__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Remaining_Hours_Migrated__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>MyGroup__c</field>
+            <field>pse__Requires_Dependency_Sync__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Revenue__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Revenue_Forecast_Batch_Update_Pending__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Revenue_Forecast_Last_Updated__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Revenue_Forecast_Processing_Status__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Schedule_Status__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Schedule_Visual__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Scheduled_Backlog_Calculated_Date__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Scheduled_Backlog_End_Date__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Scheduled_Hours_Remaining__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Scheduled_Milestone__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Scheduled_Time__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Scope_Clarity_Observance__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Scope_Status__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Scope_Visual__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Send_to_Third_Party_Expenses_Application__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Services_Billing_Time_Period_Type__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Share_with_Project_Manager__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Share_with_Project_Resources__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Sharepoint_Link_URL__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Staffing_Resourcing__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Stage__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Start_Date__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FFX_Status_Report_Week_Ending__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Sync_Status__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Sync_With_Jira__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SyncDate__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Task_Notes_Required__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Tasks_Total_Percent_Complete_Points__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Tasks_Total_Points__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Tasks_Total_Points_Complete__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Is_Template__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Template_Ref__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Time_Credited__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Time_Excluded__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Time_Logged_In_Days__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Time_Zone__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -1386,12 +1261,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>MyRegion__c</field>
-            <table>pse__Proj__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CPS_Total_Estimated_Hours_From_Tasks__c</field>
+            <field>Total_Actual_Hours__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
@@ -1401,22 +1271,112 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>pse__Total_Assigned_Hours__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Total_Costs__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_Est_To_Complete__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_Estimated_Hours__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CPS_Total_Estimated_Hours_From_Tasks__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_Hours__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_Milestone_Amount__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_Milestone_Hours__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Total_Number_of_Tasks__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_Orginal_Estimated_Hours__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ffrrTotalProjectedRevenue__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Total_Projected_Revenue_From_Assignments__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>CPS_Total_Remaining_Hours_From_Tasks__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CPS_Percentage_Complete_From_Tasks__c</field>
+            <field>Total_Role_Budget__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CPS_Billing_Type_Analytics__c</field>
+            <field>Total_Role_Budget_Hours__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CPS_Project_Type_Analytics__c</field>
+            <field>pse__Total_Submitted_Hours__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Trigger_Refresh__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Unscheduled_Backlog__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Unscheduled_Hours__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Variance_at_Completion__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Variance_From_Plan__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>pse__Work_Calendar__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <masterLabel>Projects</masterLabel>

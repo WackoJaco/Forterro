@@ -571,11 +571,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>c2g__CODAAccountTradingCurrency__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>c2g__CODAAccountsPayableControl__c</field>
             <table>Account</table>
         </columns>
