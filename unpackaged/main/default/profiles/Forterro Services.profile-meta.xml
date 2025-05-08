@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>true</custom>
-    <userLicense>Salesforce Platform</userLicense>
+    <userLicense>Salesforce</userLicense>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ActivateOrder</name>
+    </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ActivitiesAccess</name>
@@ -32,6 +36,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>CanAccessCE</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ChatterEditOwnPost</name>
     </userPermissions>
     <userPermissions>
@@ -56,6 +64,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ConvertLeads</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>CreateCustomizeFilters</name>
     </userPermissions>
     <userPermissions>
@@ -68,15 +80,15 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>CustomMobileAppsAccess</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>DistributeFromPersWksp</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>EditEvent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditOppLineItemUnitPrice</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -108,6 +120,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>LightningConsoleAllowedForUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>LightningExperienceUser</name>
     </userPermissions>
     <userPermissions>
@@ -117,6 +133,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>MassInlineEdit</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>OverrideForecasts</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -132,6 +152,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>SendSitRequests</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ShareFilesWithNetworks</name>
     </userPermissions>
     <userPermissions>
@@ -140,7 +164,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>SubscribeToLightningDashboards</name>
+        <name>SubmitMacrosAllowed</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>SubscribeToLightningReports</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -160,29 +188,14 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ViewPublicReports</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ViewRoles</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>
     </userPermissions>
-    <layoutAssignments>
-        <layout>pse__Missing_Timecard_Calculation__c-pse__Missing Timecard Calculation Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>pse__Missing_Timecard__c-pse__Missing Timecard Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>pse__Timecard_Header__c-Forterro PSA Timecard Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>pse__Timecard_Transmission__c-pse__Timecard Transmission Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>pse__Timecard__c-pse__Timecard Split Layout</layout>
-    </layoutAssignments>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewTrustMeasures</name>
+    </userPermissions>
 </Profile>
