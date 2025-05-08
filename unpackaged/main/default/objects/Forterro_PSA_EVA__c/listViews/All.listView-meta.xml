@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>CPS_Start_Date__c</columns>
+    <columns>CPS_End_Date__c</columns>
+    <columns>CPS_Estimated_Hours__c</columns>
+    <columns>CPS_Actual_Hours__c</columns>
+    <columns>CPS_Project_Name__c</columns>
+    <columns>CPS_Assignment_Name__c</columns>
+    <columns>CPS_Resource_Name__c</columns>
+    <columns>CPS_EVA_ID__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CPS_Resource_Name__c</field>
+        <operation>equals</operation>
+        <value>Martin Zitz</value>
+    </filters>
+    <label>All</label>
+</ListView>
