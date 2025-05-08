@@ -338,16 +338,6 @@
             <field>pse__Utilization_Target_Hours__c</field>
             <table>pse__Time_Period__c.pse__Utilization_Details1__r</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MyGroup__c</field>
-            <table>pse__Time_Period__c.pse__Utilization_Details1__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MyRegion__c</field>
-            <table>pse__Time_Period__c.pse__Utilization_Details1__r</table>
-        </columns>
         <masterLabel>Utilization Details</masterLabel>
     </sections>
     <sections>
