@@ -93,14 +93,14 @@
                 <label>Internal - Administration</label>
             </value>
             <value>
-                <fullName>Internal – Cross-Functional Work</fullName>
+                <fullName>Internal - Unavailability</fullName>
                 <default>false</default>
-                <label>Internal – Cross-Functional Work</label>
+                <label>Internal - Unavailability</label>
             </value>
             <value>
-                <fullName>Internal – Unavailability</fullName>
+                <fullName>Internal - Cross-Functional Work</fullName>
                 <default>false</default>
-                <label>Internal – Unavailability</label>
+                <label>Internal - Cross-Functional Work</label>
             </value>
             <value>
                 <fullName>IBS - Subscription Managed Services</fullName>
@@ -115,10 +115,10 @@
                 <label>IBS – Upgrade</label>
             </value>
             <value>
-                <fullName>Internal - Cross-Functional Work</fullName>
+                <fullName>Internal – Cross-Functional Work</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
-                <label>Internal - Cross-Functional Work</label>
+                <label>Internal – Cross-Functional Work</label>
             </value>
         </valueSetDefinition>
         <valueSettings>
@@ -143,11 +143,7 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Internal</controllingFieldValue>
-            <valueName>Internal – Cross-Functional Work</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Internal</controllingFieldValue>
-            <valueName>Internal – Unavailability</valueName>
+            <valueName>Internal - Unavailability</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>NSS</controllingFieldValue>
