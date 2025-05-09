@@ -20,11 +20,12 @@
     <tabs>pse__Proj__c</tabs>
     <tabs>pse__Time_Entry</tabs>
     <tabs>pse__Timecard_Header__c</tabs>
-    <tabs>pse__Work_Planner</tabs>
+    <tabs>Work_Planner1</tabs>
     <tabs>pse__Assignment__c</tabs>
     <tabs>pse__Milestone__c</tabs>
     <tabs>pse__Resource_Request__c</tabs>
     <tabs>pse__Project_Task_Assignment__c</tabs>
+    <tabs>ffps_forterro__ServiceRequest__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Forterro_Project_Management_UtilityBar</utilityBar>
 </CustomApplication>
