@@ -569,6 +569,10 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <tabSettings>
+        <tab>Project_Management_Workspace</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>pse__Project_Task__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
