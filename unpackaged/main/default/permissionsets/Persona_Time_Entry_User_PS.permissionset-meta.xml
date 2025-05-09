@@ -1388,6 +1388,10 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabSettings>
+        <tab>Services_Delivery_Workspace</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>pse__Assignment__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
