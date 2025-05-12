@@ -279,11 +279,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransaction__c.FFX_FFA_Accounting_Currency__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>ffrr__RevenueRecognitionTransaction__c.JournalDate__c</field>
         <readable>true</readable>
     </fieldPermissions>
