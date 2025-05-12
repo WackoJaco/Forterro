@@ -279,11 +279,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransaction__c.FFX_Accounting_Company__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>ffrr__RevenueRecognitionTransaction__c.FFX_FFA_Accounting_Currency__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -440,21 +435,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ffrr__RevenueRecognitionTransaction__c.ffrr__TotalTransactionLines__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransaction__c.link_FFA_errors__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransaction__c.link_FFA_id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransaction__c.link_FFA_state__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
