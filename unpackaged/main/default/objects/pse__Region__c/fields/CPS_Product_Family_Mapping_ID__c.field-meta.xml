@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPS_Product_Family_Mapping_ID__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Holds a mapping ID value to use when Region is mapped based on 'Product Family' within the Opportunity Object. Typically this will match the original name of the region. However can be defined by the System Administrator.</description>
+    <externalId>false</externalId>
+    <label>Product Family Mapping ID</label>
+    <length>80</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>
