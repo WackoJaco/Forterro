@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <decisions>
+        <description>Checks to see if a Region Record was found.</description>
+        <name>Was_Region_Record_Returned</name>
+        <label>Was Region Record Returned?</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Update_Opp_with_Region_Suggestion</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Region Found</defaultConnectorLabel>
+        <rules>
+            <name>Region_Not_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Retrieve_Suggested_Region_Record.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Region Not Found</label>
+        </rules>
+    </decisions>
+    <description>Based on the value in the &apos;Product Family&apos; field within an Opportunity record when it is created, find using mappings a correlating PSA &apos;Region&apos; record to place into the Opportunities &apos;Region&apos; field as an initial suggestion.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Will take the Product Family text string value of the record which has triggered the flow, and if an appropriate value is within the field, it will save a correlating string to search for the correct &apos;suggested region&apos; in the flow.</description>
+        <name>MatchRegionFromProductFamily</name>
+        <dataType>String</dataType>
+        <expression>CASE(TEXT({!$Record.Product_Family__c}),
+&apos;123Insight&apos;, &apos;123Insight&apos;,
+&apos;ABAS&apos;, &apos;Abas&apos;,
+&apos;BPSC&apos;, &apos;BPSC&apos;,
+&apos;Jeeves&apos;, &apos;Jeeves&apos;,
+&apos;MyFactory&apos;, &apos;&apos;,
+&apos;OrderWise&apos;, &apos;OrderWise&apos;,
+&apos;Sylob&apos;, &apos;Sylob&apos;,
+&apos;Helios&apos;, &apos;Helios&apos;,
+&apos;Silog&apos;, &apos;Silog&apos;,
+&apos;Clipper&apos;, &apos;Clipper&apos;,
+&apos;ProConcept&apos;, &apos;&apos;,
+&apos;Fortee&apos;, &apos;Fortee UK&apos;,
+&apos;GARP&apos;, &apos;Jeeves&apos;,
+&apos;&apos;
+)</expression>
+    </formulas>
+    <interviewLabel>Certinia: Opportunity - Create (Set Region Suggestion From Product Family) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Certinia: Opportunity - Create (Set Region Suggestion From Product Family)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Based on the value resolved by formula &apos;MatchRegionFromProductFamily&apos;, the flow will search for a Region record with the corresponding value within the &apos;CPS_Product_Family_Mapping_ID&apos; field.</description>
+        <name>Retrieve_Suggested_Region_Record</name>
+        <label>Retrieve Suggested Region Record</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Was_Region_Record_Returned</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CPS_Product_Family_Mapping_ID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>MatchRegionFromProductFamily</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Region__c</object>
+        <queriedFields>Id</queriedFields>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Places the Region Record found above, into the Region field of the Opportunity Record in question.</description>
+        <name>Update_Opp_with_Region_Suggestion</name>
+        <label>Update Opp with Region Suggestion</label>
+        <locationX>264</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>pse__Region__c</field>
+            <value>
+                <elementReference>Retrieve_Suggested_Region_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Retrieve_Suggested_Region_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Product_Family__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

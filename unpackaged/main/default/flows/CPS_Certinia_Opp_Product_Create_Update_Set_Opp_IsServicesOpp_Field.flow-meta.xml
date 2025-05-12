@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <assignments>
+        <description>Add 1 to the Services Opp Product Counter, if the Opp Product was of a Services type.</description>
+        <name>Add_to_Services_Opp_Product_Counter</name>
+        <label>Add to Services Opp Product Counter</label>
+        <locationX>270</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>CountOfServicesOppProducts</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_Opportunity_Products</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Checks to see if the Opp Product Counter is greater than zero. If so, the &apos;Is Services Opportunity&apos; field on the Opportunity record should be TRUE.</description>
+        <name>Is_Opp_Product_Counter_Greater_Than_0</name>
+        <label>Is Opp Product Counter Greater Than 0?</label>
+        <locationX>182</locationX>
+        <locationY>923</locationY>
+        <defaultConnector>
+            <targetReference>Mark_Opportunity_Is_Services_Opp_FALSE</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Greater Than Zero</defaultConnectorLabel>
+        <rules>
+            <name>Greater_than_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CountOfServicesOppProducts</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Mark_Opportunity_Is_Services_Opp_TRUE</targetReference>
+            </connector>
+            <label>Greater than 0</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Ascertain if the Opportunity Product is a &apos;Services&apos; Product or not.</description>
+        <name>Is_Services_Opp_Product_Line</name>
+        <label>Is Services Opp Product Line?</label>
+        <locationX>402</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Through_Opportunity_Products</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Services OP</defaultConnectorLabel>
+        <rules>
+            <name>Is_Services_Opp_Product</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Through_Opportunity_Products.pse__IsServicesProductLine__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_to_Services_Opp_Product_Counter</targetReference>
+            </connector>
+            <label>Is Services OP</label>
+        </rules>
+    </decisions>
+    <description>When an Opportunity Product is created or updated, review all Opp Products associated to the same opportunity. Count those which are marked as &apos;IsServicesProductLine&apos; TRUE, and mark the Opportunity as &apos;Is Services Opportunity&apos; if it features any Service type Opportunity Products.</description>
+    <environments>Default</environments>
+    <interviewLabel>Certinia: Opp Product - Create/Update (Set Opp IsServicesOpp Field) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Certinia: Opp Product - Create/Update (Set Opp IsServicesOpp Field)</label>
+    <loops>
+        <description>Loop through all Opportunity Products associated to the Opportunity</description>
+        <name>Loop_Through_Opportunity_Products</name>
+        <label>Loop Through Opportunity Products</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <collectionReference>Get_Opp_Product_s_Parent_Opportunity</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Is_Services_Opp_Product_Line</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Is_Opp_Product_Counter_Greater_Than_0</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Retrieves all Opportunity Products from the Opportunity associated with the Opp Product which triggered the flow.</description>
+        <name>Get_Opp_Product_s_Parent_Opportunity</name>
+        <label>Get Opp Products from Same Opp</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Through_Opportunity_Products</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OpportunityId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Mark the Opportunities field &apos;Is Services Opportunity&apos; as FALSE</description>
+        <name>Mark_Opportunity_Is_Services_Opp_FALSE</name>
+        <label>Mark Opportunity &apos;Is Services Opp&apos; = FALSE</label>
+        <locationX>314</locationX>
+        <locationY>1031</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OpportunityId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>pse__Is_Services_Opportunity__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Mark the Opportunities field &apos;Is Services Opportunity&apos; as TRUE</description>
+        <name>Mark_Opportunity_Is_Services_Opp_TRUE</name>
+        <label>Mark Opportunity &apos;Is Services Opp&apos; = TRUE</label>
+        <locationX>50</locationX>
+        <locationY>1031</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OpportunityId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>pse__Is_Services_Opportunity__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opp_Product_s_Parent_Opportunity</targetReference>
+        </connector>
+        <filterFormula>OR(
+      ISNEW(),
+      ISCHANGED({!$Record.pse__IsServicesProductLine__c})
+)</filterFormula>
+        <object>OpportunityLineItem</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Will count the number of Opp Products with &apos;Is Services Product Line&apos; marked as true.</description>
+        <name>CountOfServicesOppProducts</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+</Flow>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <decisions>
+        <description>Ascertains whether the Product Category defines the Product as &apos;included&apos; as a Services type of Product.</description>
+        <name>Is_Product_Category_Services_Bucket</name>
+        <label>Is Product Category &apos;Services&apos; Bucket?</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Mark_Product_as_Is_Services_Product_to_FALSE</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Services Product</defaultConnectorLabel>
+        <rules>
+            <name>Is_Services_Product</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Product_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Service</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Recurring PS</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Mark_Product_as_Is_Services_Product_to_TRUE</targetReference>
+            </connector>
+            <label>Is Services Product</label>
+        </rules>
+    </decisions>
+    <description>When a Product2 record is created or updated, set the &apos;Is Services Product&apos; field as TRUE or FALSE, dependent on the &apos;Product Category&apos; picklist value.</description>
+    <environments>Default</environments>
+    <interviewLabel>Certinia: Product - Create/Update (Set &apos;IsServicesProduct&apos; Field) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Certinia: Product - Create/Update (Set &apos;IsServicesProduct&apos; Field)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Mark_Product_as_Is_Services_Product_to_FALSE</name>
+        <label>Mark Product as &apos;Is Services Product?&apos; to FALSE</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>pse__IsServicesProduct__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Based on the entry criteria, if the flow runs, the record in question should have the &apos;Is Services Product?&apos; field set to TRUE.</description>
+        <name>Mark_Product_as_Is_Services_Product_to_TRUE</name>
+        <label>Mark Product as &apos;Is Services Product?&apos; to TRUE</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>pse__IsServicesProduct__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Product_Category_Services_Bucket</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Product_Category__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Product2</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

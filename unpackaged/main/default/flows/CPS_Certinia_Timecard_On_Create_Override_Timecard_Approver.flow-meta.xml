@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <decisions>
+        <description>Was a User Record found?</description>
+        <name>User_Located</name>
+        <label>User Located?</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Place_Timecard_Approver_User_on_Timecard_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>User Found</defaultConnectorLabel>
+        <rules>
+            <name>User_Not_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Timecard_Approver_User_Record.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>User Not Found</label>
+        </rules>
+    </decisions>
+    <description>When a Timecard record is created and the &apos;Timecard Approver&apos; field on the parent Project record is populated appropriately, the flow will seek the User ID of the User associated to the Contact referenced on the Project as the Timecard Approver. This User ID will then be placed into the Timecard records&apos; &apos;Project Override Approver&apos; field for use in the Approval Process.</description>
+    <environments>Default</environments>
+    <interviewLabel>Certinia: Timecard - On Create (Override Timecard Approver) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Certinia: Timecard - On Create (Override Timecard Approver)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Retrieve the User Record associated with the Contact Record which is held in the &apos;Timecard Approver&apos; field on the parent Project Record.</description>
+        <name>Get_Timecard_Approver_User_Record</name>
+        <label>Get Timecard Approver User Record</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>User_Located</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Project__r.CPS_Timecard_Approver__r.pse__Salesforce_User__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <queriedFields>Id</queriedFields>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update the triggering Timecard record to add within the &apos;Project Override Approver&apos; field, the lookup to the User which was found via the parent Project record in the previous step.</description>
+        <name>Place_Timecard_Approver_User_on_Timecard_Record</name>
+        <label>Place Timecard Approver User on Timecard Record</label>
+        <locationX>264</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>CPS_Project_Override_Approver__c</field>
+            <value>
+                <elementReference>Get_Timecard_Approver_User_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Timecard_Approver_User_Record</targetReference>
+        </connector>
+        <filterFormula>AND(
+      {!$Record.pse__Project__r.CPS_Timecard_Approver__r.Id} != Null,
+      {!$Record.pse__Project__r.CPS_Timecard_Approver__r.Id} != {!$Record.pse__Project__r.pse__Project_Manager__r.Id}
+)</filterFormula>
+        <object>pse__Timecard_Header__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

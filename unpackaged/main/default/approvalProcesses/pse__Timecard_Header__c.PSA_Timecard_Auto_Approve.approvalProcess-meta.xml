@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>true</active>
+    <active>false</active>
     <allowRecall>true</allowRecall>
     <allowedSubmitters>
         <type>creator</type>
@@ -10,29 +10,6 @@
     </allowedSubmitters>
     <approvalPageFields>
         <field>Name</field>
-        <field>pse__Project__c</field>
-        <field>pse__Assignment__c</field>
-        <field>pse__Resource__c</field>
-        <field>pse__Start_Date__c</field>
-        <field>pse__End_Date__c</field>
-        <field>pse__Sunday_Hours__c</field>
-        <field>pse__Sunday_Notes__c</field>
-        <field>pse__Monday_Hours__c</field>
-        <field>pse__Monday_Notes__c</field>
-        <field>pse__Tuesday_Hours__c</field>
-        <field>pse__Tuesday_Notes__c</field>
-        <field>pse__Wednesday_Hours__c</field>
-        <field>pse__Wednesday_Notes__c</field>
-        <field>pse__Thursday_Hours__c</field>
-        <field>pse__Thursday_Notes__c</field>
-        <field>pse__Friday_Hours__c</field>
-        <field>pse__Friday_Notes__c</field>
-        <field>pse__Saturday_Hours__c</field>
-        <field>pse__Saturday_Notes__c</field>
-        <field>pse__Total_Hours__c</field>
-        <field>pse__Total_Days_Worked__c</field>
-        <field>pse__Bill_Rate__c</field>
-        <field>pse__Total_Billable_Amount__c</field>
         <field>Owner</field>
     </approvalPageFields>
     <approvalStep>
@@ -42,16 +19,17 @@
                 <type>userHierarchyField</type>
             </approver>
         </assignedApprover>
-        <label>Request to Manager</label>
-        <name>Request_to_Manager</name>
+        <entryCriteria>
+            <formula>false</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Auto Approve</label>
+        <name>Auto_Approve</name>
     </approvalStep>
-    <emailTemplate>unfiled$public/Forterro_PSA_Timecard_Approval</emailTemplate>
+    <emailTemplate>FFX_PSA_Email_Templates/FFX_PSA_Timecard_Approval</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
-        <formula>(ISBLANK(pse__Approver__c) ||
-(pse__Approver__r.Id = pse__Resource__r.pse__Salesforce_User__r.Id) ||
-(CPS_Project_Override_Approver__c  = pse__Resource__r.pse__Salesforce_User__r.Id))
-&amp;&amp; pse__Submitted__c = True</formula>
+        <formula>True</formula>
     </entryCriteria>
     <finalApprovalActions>
         <action>
@@ -64,10 +42,6 @@
         </action>
         <action>
             <name>FFX_PSA_Timecard_Status_Approved</name>
-            <type>FieldUpdate</type>
-        </action>
-        <action>
-            <name>PSA_Timecard_Set_Approved_Date</name>
             <type>FieldUpdate</type>
         </action>
     </finalApprovalActions>
@@ -95,18 +69,12 @@
         </action>
     </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
-    <initialSubmissionActions>
-        <action>
-            <name>PSA_Timecard_Set_Approved_Date</name>
-            <type>FieldUpdate</type>
-        </action>
-    </initialSubmissionActions>
-    <label>PSA Timecard PM to LM of Project/Global</label>
+    <label>PSA Timecard Auto-Approve</label>
     <nextAutomatedApprover>
         <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
         <userHierarchyField>Manager</userHierarchyField>
     </nextAutomatedApprover>
-    <processOrder>2</processOrder>
+    <processOrder>3</processOrder>
     <recallActions>
         <action>
             <name>FFX_PSA_Timecard_Approved_False</name>

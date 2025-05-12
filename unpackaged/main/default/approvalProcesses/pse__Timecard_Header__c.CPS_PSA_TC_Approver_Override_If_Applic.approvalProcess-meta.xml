@@ -36,22 +36,25 @@
         <field>Owner</field>
     </approvalPageFields>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
-                <type>userHierarchyField</type>
+                <name>CPS_Project_Override_Approver__c</name>
+                <type>relatedUserField</type>
             </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
-        <label>Request to Manager</label>
-        <name>Request_to_Manager</name>
+        <label>Request to Approver</label>
+        <name>Request_to_Approver</name>
     </approvalStep>
+    <description>Will use the &apos;Project Override Approval&apos; field on the Timecard as opposed to the conventional &apos;Approver&apos; field. This value comes from the &apos;Timecard Approver&apos; field on the project.</description>
     <emailTemplate>unfiled$public/Forterro_PSA_Timecard_Approval</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
-        <formula>(ISBLANK(pse__Approver__c) ||
-(pse__Approver__r.Id = pse__Resource__r.pse__Salesforce_User__r.Id) ||
-(CPS_Project_Override_Approver__c  = pse__Resource__r.pse__Salesforce_User__r.Id))
-&amp;&amp; pse__Submitted__c = True</formula>
+        <formula>NOT(ISBLANK( CPS_Project_Override_Approver__c )) &amp;&amp;
+(CPS_Project_Override_Approver__c != pse__Approver__r.Id) &amp;&amp;
+(CPS_Project_Override_Approver__c !=  pse__Resource__r.pse__Salesforce_User__c) &amp;&amp; 
+pse__Submitted__c = True</formula>
     </entryCriteria>
     <finalApprovalActions>
         <action>
@@ -95,18 +98,12 @@
         </action>
     </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
-    <initialSubmissionActions>
-        <action>
-            <name>PSA_Timecard_Set_Approved_Date</name>
-            <type>FieldUpdate</type>
-        </action>
-    </initialSubmissionActions>
-    <label>PSA Timecard PM to LM of Project/Global</label>
+    <label>PSA TC Approver Override (If Applic)</label>
     <nextAutomatedApprover>
         <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
         <userHierarchyField>Manager</userHierarchyField>
     </nextAutomatedApprover>
-    <processOrder>2</processOrder>
+    <processOrder>1</processOrder>
     <recallActions>
         <action>
             <name>FFX_PSA_Timecard_Approved_False</name>
