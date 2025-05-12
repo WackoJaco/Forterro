@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>MyRegion__c</fullName>
-    <formula>CONTAINS( pse__Region__r.pse__Region_ID_Chain__c, $User.PSA_Region_ID__c)</formula>
+    <fullName>Unavailable_Project__c</fullName>
+    <formula>ISPICKVAL( pse__Project__r.Project_Sub_Types__c , "Internal - Unavailability")</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>MyRegion</label>
+    <label>Unavailable Project</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

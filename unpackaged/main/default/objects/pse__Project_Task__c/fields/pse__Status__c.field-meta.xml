@@ -6,7 +6,7 @@
     <label>Status</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -28,19 +28,24 @@
                 <label>Started</label>
             </value>
             <value>
-                <fullName>Blocked</fullName>
-                <default>false</default>
-                <label>Blocked</label>
-            </value>
-            <value>
                 <fullName>Complete</fullName>
                 <default>false</default>
                 <label>Complete</label>
             </value>
             <value>
+                <fullName>Blocked</fullName>
+                <default>false</default>
+                <label>Blocked</label>
+            </value>
+            <value>
                 <fullName>Deferred</fullName>
                 <default>false</default>
                 <label>Deferred</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
             </value>
         </valueSetDefinition>
     </valueSet>

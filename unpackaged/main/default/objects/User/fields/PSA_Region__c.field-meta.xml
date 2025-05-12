@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PSA_Region__c</fullName>
+    <label>PSA Region</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>123 Insight</fullName>
+                <default>false</default>
+                <label>123 Insight</label>
+            </value>
+            <value>
+                <fullName>Abas</fullName>
+                <default>false</default>
+                <label>Abas</label>
+            </value>
+            <value>
+                <fullName>Abas Bulgaria</fullName>
+                <default>false</default>
+                <label>Abas Bulgaria</label>
+            </value>
+            <value>
+                <fullName>Abas China</fullName>
+                <default>false</default>
+                <label>Abas China</label>
+            </value>
+            <value>
+                <fullName>Abas France &amp; Netherlands</fullName>
+                <default>false</default>
+                <label>Abas France &amp; Netherlands</label>
+            </value>
+            <value>
+                <fullName>Abas Germany</fullName>
+                <default>false</default>
+                <label>Abas Germany</label>
+            </value>
+            <value>
+                <fullName>Abas Germany East</fullName>
+                <default>false</default>
+                <label>Abas Germany East</label>
+            </value>
+            <value>
+                <fullName>Abas Germany North Central</fullName>
+                <default>false</default>
+                <label>Abas Germany North Central</label>
+            </value>
+            <value>
+                <fullName>Abas Germany South</fullName>
+                <default>false</default>
+                <label>Abas Germany South</label>
+            </value>
+            <value>
+                <fullName>Abas Germany South West</fullName>
+                <default>false</default>
+                <label>Abas Germany South West</label>
+            </value>
+            <value>
+                <fullName>Abas India</fullName>
+                <default>false</default>
+                <label>Abas India</label>
+            </value>
+            <value>
+                <fullName>Abas Poland</fullName>
+                <default>false</default>
+                <label>Abas Poland</label>
+            </value>
+            <value>
+                <fullName>Abas Spain</fullName>
+                <default>false</default>
+                <label>Abas Spain</label>
+            </value>
+            <value>
+                <fullName>Abas USA</fullName>
+                <default>false</default>
+                <label>Abas USA</label>
+            </value>
+            <value>
+                <fullName>BM Group</fullName>
+                <default>false</default>
+                <label>BM Group</label>
+            </value>
+            <value>
+                <fullName>BPSC</fullName>
+                <default>false</default>
+                <label>BPSC</label>
+            </value>
+            <value>
+                <fullName>BPSC Projects</fullName>
+                <default>false</default>
+                <label>BPSC Projects</label>
+            </value>
+            <value>
+                <fullName>BPSC Recurring PS</fullName>
+                <default>false</default>
+                <label>BPSC Recurring PS</label>
+            </value>
+            <value>
+                <fullName>Clipper</fullName>
+                <default>false</default>
+                <label>Clipper</label>
+            </value>
+            <value>
+                <fullName>CLP Projects</fullName>
+                <default>false</default>
+                <label>CLP Projects</label>
+            </value>
+            <value>
+                <fullName>CLP Recurring PS</fullName>
+                <default>false</default>
+                <label>CLP Recurring PS</label>
+            </value>
+            <value>
+                <fullName>Cluster 1</fullName>
+                <default>false</default>
+                <label>Cluster 1</label>
+            </value>
+            <value>
+                <fullName>Cluster 2</fullName>
+                <default>false</default>
+                <label>Cluster 2</label>
+            </value>
+            <value>
+                <fullName>Fortee UK</fullName>
+                <default>false</default>
+                <label>Fortee UK</label>
+            </value>
+            <value>
+                <fullName>Forterro Global Region</fullName>
+                <default>false</default>
+                <label>Forterro Global Region</label>
+            </value>
+            <value>
+                <fullName>Helios</fullName>
+                <default>false</default>
+                <label>Helios</label>
+            </value>
+            <value>
+                <fullName>HLS Projects</fullName>
+                <default>false</default>
+                <label>HLS Projects</label>
+            </value>
+            <value>
+                <fullName>HLS Recurring PS</fullName>
+                <default>false</default>
+                <label>HLS Recurring PS</label>
+            </value>
+            <value>
+                <fullName>Jeeves</fullName>
+                <default>false</default>
+                <label>Jeeves</label>
+            </value>
+            <value>
+                <fullName>JVS Managed Services</fullName>
+                <default>false</default>
+                <label>JVS Managed Services</label>
+            </value>
+            <value>
+                <fullName>JVS Projects</fullName>
+                <default>false</default>
+                <label>JVS Projects</label>
+            </value>
+            <value>
+                <fullName>JVS Recurring PS</fullName>
+                <default>false</default>
+                <label>JVS Recurring PS</label>
+            </value>
+            <value>
+                <fullName>Logikal</fullName>
+                <default>false</default>
+                <label>Logikal</label>
+            </value>
+            <value>
+                <fullName>MyFactory</fullName>
+                <default>false</default>
+                <label>MyFactory</label>
+            </value>
+            <value>
+                <fullName>OrderWise</fullName>
+                <default>false</default>
+                <label>OrderWise</label>
+            </value>
+            <value>
+                <fullName>OW Customisation</fullName>
+                <default>false</default>
+                <label>OW Customisation</label>
+            </value>
+            <value>
+                <fullName>OW Project Management Services</fullName>
+                <default>false</default>
+                <label>OW Project Management Services</label>
+            </value>
+            <value>
+                <fullName>OW Projects</fullName>
+                <default>false</default>
+                <label>OW Projects</label>
+            </value>
+            <value>
+                <fullName>OW Recurring PS</fullName>
+                <default>false</default>
+                <label>OW Recurring PS</label>
+            </value>
+            <value>
+                <fullName>PCP Projects</fullName>
+                <default>false</default>
+                <label>PCP Projects</label>
+            </value>
+            <value>
+                <fullName>PCP Recurring PS</fullName>
+                <default>false</default>
+                <label>PCP Recurring PS</label>
+            </value>
+            <value>
+                <fullName>ProConcept</fullName>
+                <default>false</default>
+                <label>ProConcept</label>
+            </value>
+            <value>
+                <fullName>Prodaso</fullName>
+                <default>false</default>
+                <label>Prodaso</label>
+            </value>
+            <value>
+                <fullName>Proffix</fullName>
+                <default>false</default>
+                <label>Proffix</label>
+            </value>
+            <value>
+                <fullName>Silog</fullName>
+                <default>false</default>
+                <label>Silog</label>
+            </value>
+            <value>
+                <fullName>SLG Projects</fullName>
+                <default>false</default>
+                <label>SLG Projects</label>
+            </value>
+            <value>
+                <fullName>SLG Recurring PS</fullName>
+                <default>false</default>
+                <label>SLG Recurring PS</label>
+            </value>
+            <value>
+                <fullName>SYB Managed Services</fullName>
+                <default>false</default>
+                <label>SYB Managed Services</label>
+            </value>
+            <value>
+                <fullName>SYB Projects</fullName>
+                <default>false</default>
+                <label>SYB Projects</label>
+            </value>
+            <value>
+                <fullName>SYB Recurring PS</fullName>
+                <default>false</default>
+                <label>SYB Recurring PS</label>
+            </value>
+            <value>
+                <fullName>Sylob</fullName>
+                <default>false</default>
+                <label>Sylob</label>
+            </value>
+            <value>
+                <fullName>Windows &amp; Doors</fullName>
+                <default>false</default>
+                <label>Windows &amp; Doors</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

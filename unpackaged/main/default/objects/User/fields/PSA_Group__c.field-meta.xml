@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PSA_Group__c</fullName>
+    <label>PSA Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>123 Insight</fullName>
+                <default>false</default>
+                <label>123 Insight</label>
+            </value>
+            <value>
+                <fullName>Abas</fullName>
+                <default>false</default>
+                <label>Abas</label>
+            </value>
+            <value>
+                <fullName>Abas Bulgaria</fullName>
+                <default>false</default>
+                <label>Abas Bulgaria</label>
+            </value>
+            <value>
+                <fullName>Abas China</fullName>
+                <default>false</default>
+                <label>Abas China</label>
+            </value>
+            <value>
+                <fullName>Abas DE BI</fullName>
+                <default>false</default>
+                <label>Abas DE BI</label>
+            </value>
+            <value>
+                <fullName>Abas DE Client Group East</fullName>
+                <default>false</default>
+                <label>Abas DE Client Group East</label>
+            </value>
+            <value>
+                <fullName>Abas DE Client Group North-Central</fullName>
+                <default>false</default>
+                <label>Abas DE Client Group North-Central</label>
+            </value>
+            <value>
+                <fullName>Abas DE Client Group South</fullName>
+                <default>false</default>
+                <label>Abas DE Client Group South</label>
+            </value>
+            <value>
+                <fullName>Abas DE Client Group South-West</fullName>
+                <default>false</default>
+                <label>Abas DE Client Group South-West</label>
+            </value>
+            <value>
+                <fullName>Abas DE Cloud &amp; Technology Services</fullName>
+                <default>false</default>
+                <label>Abas DE Cloud &amp; Technology Services</label>
+            </value>
+            <value>
+                <fullName>Abas DE Cloud Onboarding Factory</fullName>
+                <default>false</default>
+                <label>Abas DE Cloud Onboarding Factory</label>
+            </value>
+            <value>
+                <fullName>Abas DE Consulting FiCo</fullName>
+                <default>false</default>
+                <label>Abas DE Consulting FiCo</label>
+            </value>
+            <value>
+                <fullName>Abas DE Consulting SCM &amp; MFG</fullName>
+                <default>false</default>
+                <label>Abas DE Consulting SCM &amp; MFG</label>
+            </value>
+            <value>
+                <fullName>Abas DE Consulting SCM &amp; MFG 1</fullName>
+                <default>false</default>
+                <label>Abas DE Consulting SCM &amp; MFG 1</label>
+            </value>
+            <value>
+                <fullName>Abas DE Consulting SCM &amp; MFG 2</fullName>
+                <default>false</default>
+                <label>Abas DE Consulting SCM &amp; MFG 2</label>
+            </value>
+            <value>
+                <fullName>Abas DE Consulting SCM &amp; MFG 3</fullName>
+                <default>false</default>
+                <label>Abas DE Consulting SCM &amp; MFG 3</label>
+            </value>
+            <value>
+                <fullName>Abas DE D2D Services</fullName>
+                <default>false</default>
+                <label>Abas DE D2D Services</label>
+            </value>
+            <value>
+                <fullName>Abas DE Demand</fullName>
+                <default>false</default>
+                <label>Abas DE Demand</label>
+            </value>
+            <value>
+                <fullName>Abas DE Development 1</fullName>
+                <default>false</default>
+                <label>Abas DE Development 1</label>
+            </value>
+            <value>
+                <fullName>Abas DE Development 2</fullName>
+                <default>false</default>
+                <label>Abas DE Development 2</label>
+            </value>
+            <value>
+                <fullName>Abas DE DMS</fullName>
+                <default>false</default>
+                <label>Abas DE DMS</label>
+            </value>
+            <value>
+                <fullName>Abas DE Education Services</fullName>
+                <default>false</default>
+                <label>Abas DE Education Services</label>
+            </value>
+            <value>
+                <fullName>Abas DE Packaged Solutions</fullName>
+                <default>false</default>
+                <label>Abas DE Packaged Solutions</label>
+            </value>
+            <value>
+                <fullName>Abas DE Presales Productised Services</fullName>
+                <default>false</default>
+                <label>Abas DE Presales Productised Services</label>
+            </value>
+            <value>
+                <fullName>Abas DE Presales Professional Services</fullName>
+                <default>false</default>
+                <label>Abas DE Presales Professional Services</label>
+            </value>
+            <value>
+                <fullName>Abas DE Project Management &amp; Solution Architecture</fullName>
+                <default>false</default>
+                <label>Abas DE Project Management &amp; Solution Architecture</label>
+            </value>
+            <value>
+                <fullName>Abas DE SOM</fullName>
+                <default>false</default>
+                <label>Abas DE SOM</label>
+            </value>
+            <value>
+                <fullName>Abas DE Subconsultants</fullName>
+                <default>false</default>
+                <label>Abas DE Subconsultants</label>
+            </value>
+            <value>
+                <fullName>Abas DE Supply</fullName>
+                <default>false</default>
+                <label>Abas DE Supply</label>
+            </value>
+            <value>
+                <fullName>Abas DE Support &amp; D2D Services</fullName>
+                <default>false</default>
+                <label>Abas DE Support &amp; D2D Services</label>
+            </value>
+            <value>
+                <fullName>Abas DE Support EVS/PMD</fullName>
+                <default>false</default>
+                <label>Abas DE Support EVS/PMD</label>
+            </value>
+            <value>
+                <fullName>Abas DE Support FAC/CUS/TECH</fullName>
+                <default>false</default>
+                <label>Abas DE Support FAC/CUS/TECH</label>
+            </value>
+            <value>
+                <fullName>Abas DE Support Services</fullName>
+                <default>false</default>
+                <label>Abas DE Support Services</label>
+            </value>
+            <value>
+                <fullName>Abas DE Systech</fullName>
+                <default>false</default>
+                <label>Abas DE Systech</label>
+            </value>
+            <value>
+                <fullName>Abas DE Upgrade Factory</fullName>
+                <default>false</default>
+                <label>Abas DE Upgrade Factory</label>
+            </value>
+            <value>
+                <fullName>Abas DE Web</fullName>
+                <default>false</default>
+                <label>Abas DE Web</label>
+            </value>
+            <value>
+                <fullName>Abas ES Accounting/Localisations</fullName>
+                <default>false</default>
+                <label>Abas ES Accounting/Localisations</label>
+            </value>
+            <value>
+                <fullName>Abas ES Consulting ES-CENTER</fullName>
+                <default>false</default>
+                <label>Abas ES Consulting ES-CENTER</label>
+            </value>
+            <value>
+                <fullName>Abas ES Consulting ES-EAST</fullName>
+                <default>false</default>
+                <label>Abas ES Consulting ES-EAST</label>
+            </value>
+            <value>
+                <fullName>Abas ES Consulting ES-NORTH</fullName>
+                <default>false</default>
+                <label>Abas ES Consulting ES-NORTH</label>
+            </value>
+            <value>
+                <fullName>Abas ES Customer Care &amp; Infrastructure</fullName>
+                <default>false</default>
+                <label>Abas ES Customer Care &amp; Infrastructure</label>
+            </value>
+            <value>
+                <fullName>Abas FR Consulting SCM &amp; MFG</fullName>
+                <default>false</default>
+                <label>Abas FR Consulting SCM &amp; MFG</label>
+            </value>
+            <value>
+                <fullName>Abas FR Customer Care &amp; Infrastructure</fullName>
+                <default>false</default>
+                <label>Abas FR Customer Care &amp; Infrastructure</label>
+            </value>
+            <value>
+                <fullName>Abas FR Development</fullName>
+                <default>false</default>
+                <label>Abas FR Development</label>
+            </value>
+            <value>
+                <fullName>Abas FR Project Management</fullName>
+                <default>false</default>
+                <label>Abas FR Project Management</label>
+            </value>
+            <value>
+                <fullName>Abas France &amp; Netherlands</fullName>
+                <default>false</default>
+                <label>Abas France &amp; Netherlands</label>
+            </value>
+            <value>
+                <fullName>Abas Germany</fullName>
+                <default>false</default>
+                <label>Abas Germany</label>
+            </value>
+            <value>
+                <fullName>Abas India</fullName>
+                <default>false</default>
+                <label>Abas India</label>
+            </value>
+            <value>
+                <fullName>Abas Poland</fullName>
+                <default>false</default>
+                <label>Abas Poland</label>
+            </value>
+            <value>
+                <fullName>Abas Spain</fullName>
+                <default>false</default>
+                <label>Abas Spain</label>
+            </value>
+            <value>
+                <fullName>Abas USA</fullName>
+                <default>false</default>
+                <label>Abas USA</label>
+            </value>
+            <value>
+                <fullName>BM Group</fullName>
+                <default>false</default>
+                <label>BM Group</label>
+            </value>
+            <value>
+                <fullName>BPSC</fullName>
+                <default>false</default>
+                <label>BPSC</label>
+            </value>
+            <value>
+                <fullName>BPSC Custo Alpha</fullName>
+                <default>false</default>
+                <label>BPSC Custo Alpha</label>
+            </value>
+            <value>
+                <fullName>BPSC Custo Bravo</fullName>
+                <default>false</default>
+                <label>BPSC Custo Bravo</label>
+            </value>
+            <value>
+                <fullName>BPSC Customisation</fullName>
+                <default>false</default>
+                <label>BPSC Customisation</label>
+            </value>
+            <value>
+                <fullName>BPSC FKK</fullName>
+                <default>false</default>
+                <label>BPSC FKK</label>
+            </value>
+            <value>
+                <fullName>BPSC Functional</fullName>
+                <default>false</default>
+                <label>BPSC Functional</label>
+            </value>
+            <value>
+                <fullName>BPSC KPP</fullName>
+                <default>false</default>
+                <label>BPSC KPP</label>
+            </value>
+            <value>
+                <fullName>BPSC MRP</fullName>
+                <default>false</default>
+                <label>BPSC MRP</label>
+            </value>
+            <value>
+                <fullName>BPSC Professional Services</fullName>
+                <default>false</default>
+                <label>BPSC Professional Services</label>
+            </value>
+            <value>
+                <fullName>BPSC Project Management</fullName>
+                <default>false</default>
+                <label>BPSC Project Management</label>
+            </value>
+            <value>
+                <fullName>BPSC SCM</fullName>
+                <default>false</default>
+                <label>BPSC SCM</label>
+            </value>
+            <value>
+                <fullName>BPSC Support</fullName>
+                <default>false</default>
+                <label>BPSC Support</label>
+            </value>
+            <value>
+                <fullName>BPSC Technical</fullName>
+                <default>false</default>
+                <label>BPSC Technical</label>
+            </value>
+            <value>
+                <fullName>Clipper</fullName>
+                <default>false</default>
+                <label>Clipper</label>
+            </value>
+            <value>
+                <fullName>CLP Consulting</fullName>
+                <default>false</default>
+                <label>CLP Consulting</label>
+            </value>
+            <value>
+                <fullName>Cluster 1</fullName>
+                <default>false</default>
+                <label>Cluster 1</label>
+            </value>
+            <value>
+                <fullName>Cluster 2</fullName>
+                <default>false</default>
+                <label>Cluster 2</label>
+            </value>
+            <value>
+                <fullName>Fortee UK</fullName>
+                <default>false</default>
+                <label>Fortee UK</label>
+            </value>
+            <value>
+                <fullName>Forterro Global Group</fullName>
+                <default>false</default>
+                <label>Forterro Global Group</label>
+            </value>
+            <value>
+                <fullName>Helios</fullName>
+                <default>false</default>
+                <label>Helios</label>
+            </value>
+            <value>
+                <fullName>HLS Consulting</fullName>
+                <default>false</default>
+                <label>HLS Consulting</label>
+            </value>
+            <value>
+                <fullName>HLS Customisation</fullName>
+                <default>false</default>
+                <label>HLS Customisation</label>
+            </value>
+            <value>
+                <fullName>Jeeves</fullName>
+                <default>false</default>
+                <label>Jeeves</label>
+            </value>
+            <value>
+                <fullName>JVS Alpha</fullName>
+                <default>false</default>
+                <label>JVS Alpha</label>
+            </value>
+            <value>
+                <fullName>JVS Bravo</fullName>
+                <default>false</default>
+                <label>JVS Bravo</label>
+            </value>
+            <value>
+                <fullName>JVS Business Consulting</fullName>
+                <default>false</default>
+                <label>JVS Business Consulting</label>
+            </value>
+            <value>
+                <fullName>JVS Charlie</fullName>
+                <default>false</default>
+                <label>JVS Charlie</label>
+            </value>
+            <value>
+                <fullName>JVS Cloud Services</fullName>
+                <default>false</default>
+                <label>JVS Cloud Services</label>
+            </value>
+            <value>
+                <fullName>JVS Delta</fullName>
+                <default>false</default>
+                <label>JVS Delta</label>
+            </value>
+            <value>
+                <fullName>JVS DT Alto</fullName>
+                <default>false</default>
+                <label>JVS DT Alto</label>
+            </value>
+            <value>
+                <fullName>JVS DT Cumulus</fullName>
+                <default>false</default>
+                <label>JVS DT Cumulus</label>
+            </value>
+            <value>
+                <fullName>JVS DT Stratus</fullName>
+                <default>false</default>
+                <label>JVS DT Stratus</label>
+            </value>
+            <value>
+                <fullName>JVS Infra Services</fullName>
+                <default>false</default>
+                <label>JVS Infra Services</label>
+            </value>
+            <value>
+                <fullName>JVS Managed Services</fullName>
+                <default>false</default>
+                <label>JVS Managed Services</label>
+            </value>
+            <value>
+                <fullName>JVS Other Internal</fullName>
+                <default>false</default>
+                <label>JVS Other Internal</label>
+            </value>
+            <value>
+                <fullName>JVS PMO</fullName>
+                <default>false</default>
+                <label>JVS PMO</label>
+            </value>
+            <value>
+                <fullName>JVS Solution Center</fullName>
+                <default>false</default>
+                <label>JVS Solution Center</label>
+            </value>
+            <value>
+                <fullName>JVS Solutions</fullName>
+                <default>false</default>
+                <label>JVS Solutions</label>
+            </value>
+            <value>
+                <fullName>JVS Subcontractor</fullName>
+                <default>false</default>
+                <label>JVS Subcontractor</label>
+            </value>
+            <value>
+                <fullName>MyFactory</fullName>
+                <default>false</default>
+                <label>MyFactory</label>
+            </value>
+            <value>
+                <fullName>MyFactory Cons.</fullName>
+                <default>false</default>
+                <label>MyFactory Cons.</label>
+            </value>
+            <value>
+                <fullName>MyFactory Dev.</fullName>
+                <default>false</default>
+                <label>MyFactory Dev.</label>
+            </value>
+            <value>
+                <fullName>OrderWise</fullName>
+                <default>false</default>
+                <label>OrderWise</label>
+            </value>
+            <value>
+                <fullName>OrgaData</fullName>
+                <default>false</default>
+                <label>OrgaData</label>
+            </value>
+            <value>
+                <fullName>OW Business Process</fullName>
+                <default>false</default>
+                <label>OW Business Process</label>
+            </value>
+            <value>
+                <fullName>OW Customer Success</fullName>
+                <default>false</default>
+                <label>OW Customer Success</label>
+            </value>
+            <value>
+                <fullName>OW Customisation</fullName>
+                <default>false</default>
+                <label>OW Customisation</label>
+            </value>
+            <value>
+                <fullName>OW Infrastructure</fullName>
+                <default>false</default>
+                <label>OW Infrastructure</label>
+            </value>
+            <value>
+                <fullName>OW Project Management</fullName>
+                <default>false</default>
+                <label>OW Project Management</label>
+            </value>
+            <value>
+                <fullName>PCP BO</fullName>
+                <default>false</default>
+                <label>PCP BO</label>
+            </value>
+            <value>
+                <fullName>PCP Expert</fullName>
+                <default>false</default>
+                <label>PCP Expert</label>
+            </value>
+            <value>
+                <fullName>PCP LogProd</fullName>
+                <default>false</default>
+                <label>PCP LogProd</label>
+            </value>
+            <value>
+                <fullName>PCP Project Management</fullName>
+                <default>false</default>
+                <label>PCP Project Management</label>
+            </value>
+            <value>
+                <fullName>PCP Subcontractor</fullName>
+                <default>false</default>
+                <label>PCP Subcontractor</label>
+            </value>
+            <value>
+                <fullName>ProConcept</fullName>
+                <default>false</default>
+                <label>ProConcept</label>
+            </value>
+            <value>
+                <fullName>Proffix</fullName>
+                <default>false</default>
+                <label>Proffix</label>
+            </value>
+            <value>
+                <fullName>Proffix Cons.</fullName>
+                <default>false</default>
+                <label>Proffix Cons.</label>
+            </value>
+            <value>
+                <fullName>Proffix Dev.</fullName>
+                <default>false</default>
+                <label>Proffix Dev.</label>
+            </value>
+            <value>
+                <fullName>Silog</fullName>
+                <default>false</default>
+                <label>Silog</label>
+            </value>
+            <value>
+                <fullName>SLG CADPlan</fullName>
+                <default>false</default>
+                <label>SLG CADPlan</label>
+            </value>
+            <value>
+                <fullName>SLG Consulting</fullName>
+                <default>false</default>
+                <label>SLG Consulting</label>
+            </value>
+            <value>
+                <fullName>Solution Center</fullName>
+                <default>false</default>
+                <label>Solution Center</label>
+            </value>
+            <value>
+                <fullName>SYB Consulting</fullName>
+                <default>false</default>
+                <label>SYB Consulting</label>
+            </value>
+            <value>
+                <fullName>SYB Customisation</fullName>
+                <default>false</default>
+                <label>SYB Customisation</label>
+            </value>
+            <value>
+                <fullName>SYB ELECTRA</fullName>
+                <default>false</default>
+                <label>SYB ELECTRA</label>
+            </value>
+            <value>
+                <fullName>SYB Expert</fullName>
+                <default>false</default>
+                <label>SYB Expert</label>
+            </value>
+            <value>
+                <fullName>SYB M&amp;S</fullName>
+                <default>false</default>
+                <label>SYB M&amp;S</label>
+            </value>
+            <value>
+                <fullName>SYB Managed Services</fullName>
+                <default>false</default>
+                <label>SYB Managed Services</label>
+            </value>
+            <value>
+                <fullName>SYB OMEGA</fullName>
+                <default>false</default>
+                <label>SYB OMEGA</label>
+            </value>
+            <value>
+                <fullName>SYB Project Management</fullName>
+                <default>false</default>
+                <label>SYB Project Management</label>
+            </value>
+            <value>
+                <fullName>SYB SEGNO</fullName>
+                <default>false</default>
+                <label>SYB SEGNO</label>
+            </value>
+            <value>
+                <fullName>SYB SOLARIS</fullName>
+                <default>false</default>
+                <label>SYB SOLARIS</label>
+            </value>
+            <value>
+                <fullName>SYB Subcontractor</fullName>
+                <default>false</default>
+                <label>SYB Subcontractor</label>
+            </value>
+            <value>
+                <fullName>Sylob</fullName>
+                <default>false</default>
+                <label>Sylob</label>
+            </value>
+            <value>
+                <fullName>Windows &amp; Doors</fullName>
+                <default>false</default>
+                <label>Windows &amp; Doors</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
