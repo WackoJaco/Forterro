@@ -424,16 +424,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransaction__c.msg_link_RRTJNL_errors__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransaction__c.msg_link_RRTJNL_state__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>pse__Expense__c.ffrrtemplate__c</field>
         <readable>true</readable>
     </fieldPermissions>
