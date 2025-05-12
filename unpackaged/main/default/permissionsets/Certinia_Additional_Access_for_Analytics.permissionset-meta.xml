@@ -279,16 +279,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransaction__c.JournalDate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransaction__c.JournalStatus__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>ffrr__RevenueRecognitionTransaction__c.ffrr__Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
