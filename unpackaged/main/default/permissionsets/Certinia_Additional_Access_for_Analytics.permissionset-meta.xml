@@ -24,26 +24,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrSalesCreditNoteLineItem__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrSalesCreditNote__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrSalesInvoiceLineItem__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrSalesInvoice__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrTimecard__c</field>
         <readable>true</readable>
     </fieldPermissions>
