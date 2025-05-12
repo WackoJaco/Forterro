@@ -1654,21 +1654,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>pse__Proj__c.msg_link_PSAD4_errors__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Proj__c.msg_link_PSAD4_id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Proj__c.msg_link_PSAD4_state__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>pse__Proj__c.psaj__Jira_Project_Template__c</field>
         <readable>true</readable>
     </fieldPermissions>
