@@ -1694,6 +1694,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.pse__Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.pse__Action_Count_Billing_Eligible_Records__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1750,11 +1755,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.pse__Allow_Timecards_Without_Assignment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Proj__c.pse__Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1939,11 +1939,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>pse__Proj__c.pse__Discount__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>pse__Proj__c.pse__Duration__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1969,17 +1964,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>pse__Proj__c.pse__Estimated_Cost__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>pse__Proj__c.pse__Estimated_Hours_at_Completion__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Proj__c.pse__Estimated_Margin__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2035,11 +2020,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.pse__Expense_Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Proj__c.pse__Expense__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2129,11 +2109,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>pse__Proj__c.pse__Is_Primary_Estimate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>pse__Proj__c.pse__Is_Template__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2184,11 +2159,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>pse__Proj__c.pse__Net_Amount__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>pse__Proj__c.pse__Non_Billable_External_Hours__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2225,16 +2195,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.pse__Pass_Through_Billings__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Proj__c.pse__Percent_Discount__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Proj__c.pse__Percent_Estimated_Margin__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
