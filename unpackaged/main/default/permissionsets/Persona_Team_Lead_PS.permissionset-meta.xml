@@ -2561,6 +2561,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Milestone__c.Complete_Milestone_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Milestone__c.Milestone_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3881,6 +3886,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.Total_Revenue_to_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.Unscheduled_Hours__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5140,7 +5150,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>pse__Project_Task__c.pse__Estimated_Time_To_Completion__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6667,16 +6677,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Time_Variance_Detail__c.pse__Work_Calendar_Hours__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Timecard_Header__c.Absence_Rejected_Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>pse__Timecard_Header__c.Absence_Rejected_Flag__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -8582,4 +8582,12 @@
         <tab>standard-report</tab>
         <visibility>Visible</visibility>
     </tabSettings>
+    <classAccesses>
+        <apexClass>pse__PTM_ResourceController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>pse__PTM_ResourceControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
 </PermissionSet>
