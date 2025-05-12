@@ -3,10 +3,13 @@
     <fullName>psaws__My_Overdue_Tasks</fullName>
     <columns>pse__Project__c</columns>
     <columns>pse__Project_Task__c</columns>
+    <columns>Resource_Name__c</columns>
     <columns>pse__Project_Task_Start_Date__c</columns>
     <columns>pse__Project_Task_End_Date__c</columns>
-    <columns>pse__Hours__c</columns>
     <columns>psaws__Status__c</columns>
+    <columns>FFX_Estimated_Hours__c</columns>
+    <columns>pse__Hours__c</columns>
+    <columns>Hours_Remaining__c</columns>
     <columns>NAME</columns>
     <filterScope>Everything</filterScope>
     <filters>
