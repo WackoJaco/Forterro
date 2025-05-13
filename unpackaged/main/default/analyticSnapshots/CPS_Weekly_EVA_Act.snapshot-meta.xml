@@ -57,7 +57,7 @@
         <targetField>Forterro_PSA_EVA__c.CPS_Project_Name__c</targetField>
     </mappings>
     <name>CPS Weekly EVA (Act)</name>
-    <runningUser>martin.zitz@forterro.com.certpartial</runningUser>
+    <runningUser>martin.zitz@forterro.com.qa</runningUser>
     <sourceReport>ForterroCertiniaReports/PSA296_EVA_Snap_Source_Past_Acts_RyB</sourceReport>
     <targetObject>Forterro_PSA_EVA__c</targetObject>
 </AnalyticSnapshot>
