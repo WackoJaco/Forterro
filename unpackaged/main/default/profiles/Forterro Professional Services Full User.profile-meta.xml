@@ -167,6 +167,21 @@
         <name>ViewSetup</name>
     </userPermissions>
     <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout</layout>
+        <recordType>Opportunity.Existing_Business</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout</layout>
+        <recordType>Opportunity.New_Business</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout</layout>
+        <recordType>Opportunity.Renewal</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>pse__Missing_Timecard_Calculation__c-pse__Missing Timecard Calculation Layout</layout>
     </layoutAssignments>
     <layoutAssignments>

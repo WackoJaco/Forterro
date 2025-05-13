@@ -198,4 +198,19 @@
         <enabled>true</enabled>
         <name>ViewTrustMeasures</name>
     </userPermissions>
+    <layoutAssignments>
+        <layout>Opportunity-Forterro CPQ Opportunity Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Forterro CPQ Opportunity Layout</layout>
+        <recordType>Opportunity.Existing_Business</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Forterro CPQ Opportunity Layout</layout>
+        <recordType>Opportunity.New_Business</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Forterro CPQ Opportunity Layout</layout>
+        <recordType>Opportunity.Renewal</recordType>
+    </layoutAssignments>
 </Profile>
