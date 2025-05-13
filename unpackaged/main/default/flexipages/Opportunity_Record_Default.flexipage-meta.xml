@@ -212,26 +212,6 @@
                 <identifier>RecordACV_Uplift_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.GTM_Motion__c</fieldItem>
-                <identifier>RecordGTM_Motion__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.LoB_Category__c</fieldItem>
-                <identifier>RecordLoB_Category__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-de61552c-f29c-4511-99e9-fee9329210b0</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -507,6 +487,46 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.pse__Region__c</fieldItem>
+                <identifier>Recordpse_Region_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.pse__Practice__c</fieldItem>
+                <identifier>Recordpse_Practice_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.pse__Group__c</fieldItem>
+                <identifier>Recordpse_Group_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.pse__Primary_Project__c</fieldItem>
+                <identifier>Recordpse_Primary_Project_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.CTC_Expected_Project_Start_Date__c</fieldItem>
                 <identifier>RecordCTC_Expected_Project_Start_Date_cField</identifier>
             </fieldInstance>
@@ -525,6 +545,46 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.pse__Is_Services_Opportunity__c</fieldItem>
+                <identifier>Recordpse_Is_Services_Opportunity_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.pse__Is_Change_Request__c</fieldItem>
+                <identifier>Recordpse_Is_Change_Request_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.pse__Services_Attached_From_Products__c</fieldItem>
+                <identifier>Recordpse_Services_Attached_From_Products_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.pse__Services_Attached_Percent_From_Products__c</fieldItem>
+                <identifier>Recordpse_Services_Attached_Percent_From_Products_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -1307,6 +1367,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Family_Segment__c</fieldItem>
+                <identifier>RecordFamily_Segment_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Amendment_Type_from_Quote__c</fieldItem>
                 <identifier>RecordAmendment_Type_from_Quote_cField</identifier>
                 <visibilityRule>
@@ -1350,6 +1420,23 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.OW_Support_Level__c</fieldItem>
                 <identifier>RecordOW_Support_Level_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Product_Family__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>OrderWise</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Licence_Preparation__c</fieldItem>
+                <identifier>RecordLicence_Preparation_cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Product_Family__c}</leftValue>
