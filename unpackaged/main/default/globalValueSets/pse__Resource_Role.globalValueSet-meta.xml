@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Consultant</fullName>
+        <default>false</default>
+        <label>Consultant</label>
+    </customValue>
+    <customValue>
+        <fullName>Consultant (Finance)</fullName>
+        <default>false</default>
+        <label>Consultant (Finance)</label>
+    </customValue>
+    <customValue>
+        <fullName>Consultant (HR)</fullName>
+        <default>false</default>
+        <label>Consultant (HR)</label>
+    </customValue>
+    <customValue>
+        <fullName>Consultant (Infrastructure)</fullName>
+        <default>false</default>
+        <label>Consultant (Infrastructure)</label>
+    </customValue>
+    <customValue>
+        <fullName>Consultant (Logistic Production)</fullName>
+        <default>false</default>
+        <label>Consultant (Logistic Production)</label>
+    </customValue>
+    <customValue>
+        <fullName>Consultant (Managed Services)</fullName>
+        <default>false</default>
+        <label>Consultant (Managed Services)</label>
+    </customValue>
+    <customValue>
+        <fullName>Consultant (Principal)</fullName>
+        <default>false</default>
+        <label>Consultant (Principal)</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer Success Manager</fullName>
+        <default>false</default>
+        <label>Customer Success Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Database Engineer</fullName>
+        <default>false</default>
+        <label>Database Engineer</label>
+    </customValue>
+    <customValue>
+        <fullName>Developer</fullName>
+        <default>false</default>
+        <label>Developer</label>
+    </customValue>
+    <customValue>
+        <fullName>Director</fullName>
+        <default>false</default>
+        <label>Director</label>
+    </customValue>
+    <customValue>
+        <fullName>Education Services</fullName>
+        <default>false</default>
+        <label>Education Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Lead</fullName>
+        <default>false</default>
+        <label>Lead</label>
+    </customValue>
+    <customValue>
+        <fullName>Project Coordinator</fullName>
+        <default>false</default>
+        <label>Project Coordinator</label>
+    </customValue>
+    <customValue>
+        <fullName>Project Manager</fullName>
+        <default>false</default>
+        <label>Project Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Solution Architect</fullName>
+        <default>false</default>
+        <label>Solution Architect</label>
+    </customValue>
+    <customValue>
+        <fullName>Team Lead</fullName>
+        <default>false</default>
+        <label>Team Lead</label>
+    </customValue>
+    <customValue>
+        <fullName>Trainer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Trainer</label>
+    </customValue>
+    <customValue>
+        <fullName>Senior Consultant</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Senior Consultant</label>
+    </customValue>
+    <customValue>
+        <fullName>Executive</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Executive</label>
+    </customValue>
+    <customValue>
+        <fullName>Contractor</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Contractor</label>
+    </customValue>
+    <customValue>
+        <fullName>Client Manager</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Client Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Analyst</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Analyst</label>
+    </customValue>
+    <customValue>
+        <fullName>Architect</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Architect</label>
+    </customValue>
+    <description>The resource roles available for skills and skill sets.</description>
+    <masterLabel>Resource Role</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

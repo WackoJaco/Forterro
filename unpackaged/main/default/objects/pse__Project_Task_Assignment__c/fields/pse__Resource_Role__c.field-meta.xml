@@ -17,6 +17,21 @@
                 <label>Consultant</label>
             </value>
             <value>
+                <fullName>Project Manager</fullName>
+                <default>false</default>
+                <label>Project Manager</label>
+            </value>
+            <value>
+                <fullName>Solution Architect</fullName>
+                <default>false</default>
+                <label>Solution Architect</label>
+            </value>
+            <value>
+                <fullName>Team Lead</fullName>
+                <default>false</default>
+                <label>Team Lead</label>
+            </value>
+            <value>
                 <fullName>Consultant (Finance)</fullName>
                 <default>false</default>
                 <label>Consultant (Finance)</label>
@@ -80,21 +95,6 @@
                 <fullName>Project Coordinator</fullName>
                 <default>false</default>
                 <label>Project Coordinator</label>
-            </value>
-            <value>
-                <fullName>Project Manager</fullName>
-                <default>false</default>
-                <label>Project Manager</label>
-            </value>
-            <value>
-                <fullName>Solution Architect</fullName>
-                <default>false</default>
-                <label>Solution Architect</label>
-            </value>
-            <value>
-                <fullName>Team Lead</fullName>
-                <default>false</default>
-                <label>Team Lead</label>
             </value>
         </valueSetDefinition>
     </valueSet>
