@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
     <backgroundEndColor>#FFFFFF</backgroundEndColor>
     <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
@@ -254,8 +254,8 @@
     </dashboardGridLayout>
     <dashboardType>LoggedInUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    
-    
+    <owner>tmudd@certinia.com</owner>
+    <runningUser>tmudd@certinia.com</runningUser>
     <textColor>#000000</textColor>
     <title>Estimated vs Reported Hours</title>
     <titleColor>#000000</titleColor>
