@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF(
+   Forterro_PSA_EVA__c.CPS_Actual_Hours__c:SUM &lt;= 0 &amp;&amp; Forterro_PSA_EVA__c.CPS_Estimated_Hours__c:SUM &gt; 0,
+   -1,
+
+   IF(
+      Forterro_PSA_EVA__c.CPS_Estimated_Hours__c:SUM &lt;= 0 &amp;&amp; Forterro_PSA_EVA__c.CPS_Actual_Hours__c:SUM &gt; 0,
+      1,
+
+      IF(Forterro_PSA_EVA__c.CPS_Actual_Hours__c:SUM = 0 &amp;&amp; Forterro_PSA_EVA__c.CPS_Estimated_Hours__c:SUM = 0,
+         0,
+         ((Forterro_PSA_EVA__c.CPS_Actual_Hours__c:SUM - Forterro_PSA_EVA__c.CPS_Estimated_Hours__c:SUM)/ Forterro_PSA_EVA__c.CPS_Estimated_Hours__c:SUM)
+      )
+   )
+)</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Variance</masterLabel>
+        <scale>1</scale>
+    </aggregates>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Forterro_PSA_EVA__c.CPS_Estimated_Hours__c</column>
+        </chartSummaries>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Forterro_PSA_EVA__c.CPS_Actual_Hours__c</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Forterro_PSA_EVA__c.CPS_Start_Date__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>false</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <title>Estimate vs Actual Hours by Week</title>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Forterro_PSA_EVA__c.CPS_Estimated_Hours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Forterro_PSA_EVA__c.CPS_Actual_Hours__c</field>
+    </columns>
+    <currency>EUR</currency>
+    <description>A report which utilises snapshot data from the Certinia EVA object to ascertain week by week Estimated Hours and Actual Hours per resource. Resultant &apos;Variance&apos; field should highlight significant deltas between plan and reality for further drill down.</description>
+    <filter>
+        <criteriaItems>
+            <column>Forterro_PSA_EVA__c.CPS_Start_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>LAST_MONTH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Forterro_PSA_EVA__c.CPS_Start_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>THIS_MONTH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Forterro_PSA_EVA__c.CPS_Resource_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Forterro_PSA_EVA__c.CPS_Project_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Forterro_PSA_EVA__c.MyGroup__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <field>Forterro_PSA_EVA__c.CPS_Start_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Forterro_PSA_EVA__c.CPS_Resource_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Forterro_PSA_EVA__c.CPS_Assignment_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Team Workspace - Est vs Act Hours</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntity$Forterro_PSA_EVA__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Forterro_PSA_EVA__c.CPS_End_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
