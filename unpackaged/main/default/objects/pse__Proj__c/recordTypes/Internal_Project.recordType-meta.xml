@@ -225,11 +225,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Internal %E2%80%93 Cross-Functional Work</fullName>
+            <fullName>Internal - Cross-Functional Work</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Internal %E2%80%93 Unavailability</fullName>
+            <fullName>Internal - Unavailability</fullName>
             <default>false</default>
         </values>
         <values>
