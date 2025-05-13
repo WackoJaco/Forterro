@@ -20,12 +20,13 @@
     <tabs>standard-Contact</tabs>
     <tabs>pse__Resource_Request__c</tabs>
     <tabs>pse__Assignment__c</tabs>
+    <tabs>Work_Planner1</tabs>
     <tabs>pse__Project_Task_Assignment__c</tabs>
     <tabs>pse__Proj__c</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <tabs>Exclude_from_Work__c</tabs>
-    <tabs>Work_Planner1</tabs>
+    <tabs>Forterro_PSA_EVA__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Forterro_Workforce_Management_UtilityBar</utilityBar>
 </CustomApplication>
