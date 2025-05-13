@@ -25,12 +25,6 @@
     <columns>
         <field>pse__Est_Vs_Actuals__c$Id</field>
     </columns>
-    <columns>
-        <field>pse__Est_Vs_Actuals__c$Region_Chain_ID__c</field>
-    </columns>
-    <columns>
-        <field>pse__Est_Vs_Actuals__c$Group_ID_Chain__c</field>
-    </columns>
     <currency>EUR</currency>
     <description>SYSTEM USE, DO NOT EDIT: PSA-296 - EVA Snap Source (Future Est) - Snapshot future weeks estimated hours on Sunday 21:00, weekly.</description>
     <filter>
