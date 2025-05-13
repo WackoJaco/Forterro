@@ -9,6 +9,47 @@
     <dashboardColorPalette>unity</dashboardColorPalette>
     <dashboardGridLayout>
         <dashboardGridComponents>
+            <colSpan>12</colSpan>
+            <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>Forterro_PSA_EVA__c.CPS_Estimated_Hours__c</column>
+                </chartSummary>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>Forterro_PSA_EVA__c.CPS_Actual_Hours__c</column>
+                </chartSummary>
+                <componentType>Column</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>Forterro_PSA_EVA__c.CPS_Start_Date__c</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>Snapshot EVA Weekly Variance</header>
+                <legendPosition>Right</legendPosition>
+                <report>ForterroCertiniaReports/Team_Workspace_Est_vs_Act_Hours_qax</report>
+                <showPercentage>false</showPercentage>
+                <showValues>true</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>0</rowIndex>
+            <rowSpan>8</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
             <colSpan>4</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
@@ -17,31 +58,25 @@
                 <flexComponentProperties>
                     <decimalPrecision>-1</decimalPrecision>
                     <flexTableColumn>
-                        <reportColumn>pse__Est_Vs_Actuals__c.pse__Resource__c</reportColumn>
+                        <reportColumn>Forterro_PSA_EVA__c.CPS_Start_Date__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>grouping</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>pse__Est_Vs_Actuals__c.pse__Start_Date__c</reportColumn>
+                        <reportColumn>Forterro_PSA_EVA__c.CPS_Resource_Name__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>grouping</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!pse__Est_Vs_Actuals__c.pse__Estimated_Hours__c</reportColumn>
+                        <reportColumn>s!Forterro_PSA_EVA__c.CPS_Estimated_Hours__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!pse__Est_Vs_Actuals__c.pse__Actual_Hours__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
-                        <showTotal>false</showTotal>
-                        <type>aggregate</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>s!pse__Est_Vs_Actuals__c.pse__Variance__c</reportColumn>
+                        <reportColumn>s!Forterro_PSA_EVA__c.CPS_Actual_Hours__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
@@ -50,10 +85,10 @@
                         <breakPoint1>-0.1</breakPoint1>
                         <breakPoint2>0.1</breakPoint2>
                         <breakPointOrder>0</breakPointOrder>
-                        <highRangeColor>16068656</highRangeColor>
-                        <lowRangeColor>16724016</lowRangeColor>
-                        <midRangeColor>2345729</midRangeColor>
-                        <reportColumn>s!pse__Est_Vs_Actuals__c.pse__Percent_Variance__c</reportColumn>
+                        <highRangeColor>16384000</highRangeColor>
+                        <lowRangeColor>16384000</lowRangeColor>
+                        <midRangeColor>4770561</midRangeColor>
+                        <reportColumn>FORMULA1</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
@@ -73,11 +108,10 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Weekly Assignment Variance</header>
-                <report>ForterroCertiniaReports/Planned_vs_Reported_Hours_Group_ka0</report>
-                <title>Last 6 Weeks</title>
+                <header>Snapshot EVA Weekly Variance</header>
+                <report>ForterroCertiniaReports/Team_Workspace_Est_vs_Act_Hours_qax</report>
             </dashboardComponent>
-            <rowIndex>0</rowIndex>
+            <rowIndex>8</rowIndex>
             <rowSpan>17</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -87,9 +121,8 @@
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
                 <chartSummary>
-                    <aggregate>Sum</aggregate>
                     <axisBinding>y</axisBinding>
-                    <column>pse__Est_Vs_Actuals__c.pse__Variance__c</column>
+                    <column>FORMULA1</column>
                 </chartSummary>
                 <componentType>Column</componentType>
                 <decimalPrecision>-1</decimalPrecision>
@@ -98,23 +131,22 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>pse__Est_Vs_Actuals__c.pse__Resource__c</groupingColumn>
+                <groupingColumn>Forterro_PSA_EVA__c.CPS_Resource_Name__c</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Resource Variance Hours</header>
+                <header>EVA Resource Variance</header>
                 <legendPosition>Bottom</legendPosition>
-                <report>ForterroCertiniaReports/Planned_vs_Reported_Hours_Group_ka0</report>
+                <report>ForterroCertiniaReports/Team_Workspace_Est_vs_Act_Hours_qax</report>
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
-                <title>Last 6 Weeks</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>0</rowIndex>
+            <rowIndex>8</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -124,9 +156,8 @@
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
                 <chartSummary>
-                    <aggregate>Sum</aggregate>
                     <axisBinding>y</axisBinding>
-                    <column>pse__Est_Vs_Actuals__c.pse__Percent_Variance__c</column>
+                    <column>FORMULA1</column>
                 </chartSummary>
                 <componentType>Column</componentType>
                 <decimalPrecision>-1</decimalPrecision>
@@ -135,23 +166,22 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>pse__Est_Vs_Actuals__c.pse__Start_Date__c</groupingColumn>
+                <groupingColumn>Forterro_PSA_EVA__c.CPS_Start_Date__c</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Weekly Variance %</header>
+                <header>EVA Weekly Variance</header>
                 <legendPosition>Bottom</legendPosition>
-                <report>ForterroCertiniaReports/Planned_vs_Reported_Hours_Group_ka0</report>
+                <report>ForterroCertiniaReports/Team_Workspace_Est_vs_Act_Hours_qax</report>
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
-                <title>Last 6 Weeks</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>0</rowIndex>
+            <rowIndex>8</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -163,44 +193,38 @@
                 <flexComponentProperties>
                     <decimalPrecision>-1</decimalPrecision>
                     <flexTableColumn>
-                        <reportColumn>pse__Est_Vs_Actuals__c.pse__Resource__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
+                        <reportColumn>Forterro_PSA_EVA__c.CPS_Project_Name__c</reportColumn>
+                        <showSubTotal>true</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>grouping</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>pse__Est_Vs_Actuals__c.pse__Project__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
+                        <reportColumn>Forterro_PSA_EVA__c.CPS_Resource_Name__c</reportColumn>
+                        <showSubTotal>true</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>grouping</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!pse__Est_Vs_Actuals__c.pse__Estimated_Hours__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
+                        <reportColumn>s!Forterro_PSA_EVA__c.CPS_Estimated_Hours__c</reportColumn>
+                        <showSubTotal>true</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!pse__Est_Vs_Actuals__c.pse__Actual_Hours__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
+                        <reportColumn>s!Forterro_PSA_EVA__c.CPS_Actual_Hours__c</reportColumn>
+                        <showSubTotal>true</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!pse__Est_Vs_Actuals__c.pse__Variance__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
-                        <showTotal>false</showTotal>
-                        <type>aggregate</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <breakPoint1>-0.1</breakPoint1>
-                        <breakPoint2>0.1</breakPoint2>
+                        <breakPoint1>33.0</breakPoint1>
+                        <breakPoint2>67.0</breakPoint2>
                         <breakPointOrder>0</breakPointOrder>
-                        <highRangeColor>14233648</highRangeColor>
-                        <lowRangeColor>14233648</lowRangeColor>
-                        <midRangeColor>9816833</midRangeColor>
-                        <reportColumn>s!pse__Est_Vs_Actuals__c.pse__Percent_Variance__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
+                        <highRangeColor>16711693</highRangeColor>
+                        <lowRangeColor>16713728</lowRangeColor>
+                        <midRangeColor>2151748</midRangeColor>
+                        <reportColumn>FORMULA1</reportColumn>
+                        <showSubTotal>true</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
@@ -219,11 +243,10 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Resource Project Variance</header>
-                <report>ForterroCertiniaReports/Planned_vs_Reported_Hours_Group_ka0</report>
-                <title>Last 6 Weeks</title>
+                <header>EVA Project Variance</header>
+                <report>ForterroCertiniaReports/Team_Workspace_Est_vs_Act_Hours_qax</report>
             </dashboardComponent>
-            <rowIndex>8</rowIndex>
+            <rowIndex>16</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <numberOfColumns>12</numberOfColumns>
@@ -234,7 +257,7 @@
     
     
     <textColor>#000000</textColor>
-    <title>Planned vs Reported Hours (Group)</title>
+    <title>Estimated vs Reported Hours</title>
     <titleColor>#000000</titleColor>
     <titleSize>12</titleSize>
 </Dashboard>
