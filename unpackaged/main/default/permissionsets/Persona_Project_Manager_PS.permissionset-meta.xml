@@ -36,6 +36,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Milestone__c.Complete_Milestone_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Revenue_Margin_Percentage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Revenue_Margin__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Total_Revenue_to_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Project_Task__c.Assignment_Created__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -255,7 +275,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>pse__Project_Task__c.pse__Estimated_Time_To_Completion__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -568,10 +588,6 @@
         <object>pse__Project_Task__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    <tabSettings>
-        <tab>Project_Management_Workspace</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
     <tabSettings>
         <tab>pse__Project_Task__c</tab>
         <visibility>Visible</visibility>

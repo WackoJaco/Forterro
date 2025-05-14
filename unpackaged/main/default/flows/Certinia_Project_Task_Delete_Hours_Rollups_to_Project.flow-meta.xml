@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <assignments>
+        <description>Will stack up the total hour sums for Estimated, Actual and Remaining Hours, for all Project Tasks associated with the same Project as the triggering Project Task record.</description>
+        <name>Collate_Total_Hours</name>
+        <label>Collate Total Hours</label>
+        <locationX>490</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>TasksTotalActualHours</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Sibling_Project_Tasks.pse__Actual_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TasksTotalEstimatedHours</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Sibling_Project_Tasks.pse__Estimated_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TasksTotalRemainingHours</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Sibling_Project_Tasks.pse__Hours_Remaining__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Sibling_Project_Tasks</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Will stack up the total hour sums for Estimated, Actual and Remaining Hours, for all Project Tasks associated with the same Project as the triggering Project Task record.</description>
+        <name>Collate_Total_Hours_Filtered</name>
+        <label>Collate Total Hours (Filtered)</label>
+        <locationX>138</locationX>
+        <locationY>719</locationY>
+        <assignmentItems>
+            <assignToReference>TasksTotalActualHours</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Filtered_Project_Tasks.pse__Actual_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TasksTotalEstimatedHours</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Filtered_Project_Tasks.pse__Estimated_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TasksTotalRemainingHours</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Filtered_Project_Tasks.pse__Hours_Remaining__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Filtered_Project_Tasks</targetReference>
+        </connector>
+    </assignments>
+    <collectionProcessors>
+        <name>Remove_Triggering_Record_from_Level_0_Collection</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Remove Triggering Record from Level 0 Collection</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <assignNextValueToReference>currentItem_Remove_Triggering_Record_from_Level_0_Collection</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>Retrieve_Sibling_Project_Tasks_Child_Only</collectionReference>
+        <conditionLogic>and</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Remove_Triggering_Record_from_Level_0_Collection.Id</leftValueReference>
+            <operator>NotEqualTo</operator>
+            <rightValue>
+                <elementReference>$Record.Id</elementReference>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Loop_Filtered_Project_Tasks</targetReference>
+        </connector>
+    </collectionProcessors>
+    <decisions>
+        <description>Decides whether triggering record is a summary task (i.e. has child tasks) or not.</description>
+        <name>Is_Triggering_Record_Summary_Task</name>
+        <label>Is Triggering Record Summary Task?</label>
+        <locationX>226</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Sibling_Project_Tasks</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Not_Summary</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Summary__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remove_Triggering_Record_from_Level_0_Collection</targetReference>
+            </connector>
+            <label>Is Not Summary</label>
+        </rules>
+    </decisions>
+    <description>Allows for summing of Estimated, Actual and Remaining hours across all Project Task records associated to a Project, and will deliver the values to target fields on the Parent Project record.
+
+Additionally Streamlined for Volume</description>
+    <environments>Default</environments>
+    <interviewLabel>Certinia: Project Task - Delete (Hours Rollups to Project) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Certinia: Project Task - Delete (Hours Rollups to Project)</label>
+    <loops>
+        <name>Loop_Filtered_Project_Tasks</name>
+        <label>Loop Filtered Project Tasks</label>
+        <locationX>50</locationX>
+        <locationY>611</locationY>
+        <collectionReference>Remove_Triggering_Record_from_Level_0_Collection</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Collate_Total_Hours_Filtered</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Total_Hours_On_Project</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Loop through all Project Task Records.</description>
+        <name>Loop_Sibling_Project_Tasks</name>
+        <label>Loop Sibling Project Tasks</label>
+        <locationX>402</locationX>
+        <locationY>503</locationY>
+        <collectionReference>Retrieve_Sibling_Project_Tasks_Child_Only</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Collate_Total_Hours</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Total_Hours_On_Project</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Find all other Project Task Records that are not summary tasks which belong within the parent Project Record.</description>
+        <name>Retrieve_Sibling_Project_Tasks_Child_Only</name>
+        <label>Retrieve ALL Level 0 Tasks</label>
+        <locationX>226</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Triggering_Record_Summary_Task</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Project__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Hierarchy_Depth__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>pse__Project_Task__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>pse__Estimated_Hours__c</queriedFields>
+        <queriedFields>pse__Actual_Hours__c</queriedFields>
+        <queriedFields>pse__Hours_Remaining__c</queriedFields>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Will update the Total Hours (From Tasks) fields on the Project Record with the value stored in the flow variables.</description>
+        <name>Update_Total_Hours_On_Project</name>
+        <label>Update Total Hours On Project</label>
+        <locationX>226</locationX>
+        <locationY>995</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Project__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>CPS_Total_Actual_Hours_From_Tasks__c</field>
+            <value>
+                <elementReference>TasksTotalActualHours</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CPS_Total_Estimated_Hours_From_Tasks__c</field>
+            <value>
+                <elementReference>TasksTotalEstimatedHours</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CPS_Total_Remaining_Hours_From_Tasks__c</field>
+            <value>
+                <elementReference>TasksTotalRemainingHours</elementReference>
+            </value>
+        </inputAssignments>
+        <object>pse__Proj__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>100</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Retrieve_Sibling_Project_Tasks_Child_Only</targetReference>
+        </connector>
+        <filterFormula>AND(
+    OR(
+        {!$Record.pse__Estimated_Hours__c} != 0,
+        {!$Record.pse__Actual_Hours__c} != 0,
+        {!$Record.pse__Hours_Remaining__c} != 0
+    ),
+{!$Record.pse__Hierarchy_Depth__c} = 0
+)</filterFormula>
+        <object>pse__Project_Task__c</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>currentItem_Remove_Deleted_Record</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>pse__Project_Task__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Remove_Triggering_Record_from_Level_0_Collection</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>pse__Project_Task__c</objectType>
+    </variables>
+    <variables>
+        <description>Used to store the Total Estimated Hours for all tasks allocated to a given Project.</description>
+        <name>TasksTotalActualHours</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <description>Used to store the Total Estimated Hours for all tasks allocated to a given Project.</description>
+        <name>TasksTotalEstimatedHours</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <description>Used to store the Total Remaining Hours for all tasks allocated to a given Project.</description>
+        <name>TasksTotalRemainingHours</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+</Flow>

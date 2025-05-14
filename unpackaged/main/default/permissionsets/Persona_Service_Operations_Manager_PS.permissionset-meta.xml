@@ -607,6 +607,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Milestone__c.Complete_Milestone_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Milestone__c.FFX_Complete_Hours__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1518,6 +1523,21 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Practice__c.pse__Utilization__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Revenue_Margin_Percentage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Revenue_Margin__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.Total_Revenue_to_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
