@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>CTC_Closed_Booked_Opp_Services</fullName>
+        <description>Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Region_Owner__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>FFX_PSA_Email_Templates/CTC_Opp_Closed_Won_Region_Owner</template>
+    </alerts>
+    <alerts>
         <fullName>PSA_Services_Opportunity</fullName>
         <description>PSA Services Opportunity</description>
         <protected>false</protected>
