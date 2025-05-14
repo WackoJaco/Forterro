@@ -319,7 +319,7 @@
         <locationX>226</locationX>
         <locationY>431</locationY>
         <defaultConnector>
-            <targetReference>Check_for_Matching_Role_Budgets</targetReference>
+            <targetReference>Default_Cost_Rate</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -492,6 +492,22 @@
             <field>pse__Bill_Rate__c</field>
             <value>
                 <elementReference>$Record.pse__Suggested_Bill_Rate_Number__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Default_Cost_Rate</name>
+        <label>Set Default Cost Rate</label>
+        <locationX>358</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Check_for_Matching_Role_Budgets</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>pse__Use_Resource_Default_Cost_Rate__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>

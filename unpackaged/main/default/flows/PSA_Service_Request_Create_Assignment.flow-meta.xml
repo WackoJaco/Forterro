@@ -409,6 +409,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>pse__Exclude_From_External_Calendar_Sync__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>pse__Is_Billable__c</field>
             <value>
                 <booleanValue>true</booleanValue>
@@ -429,7 +435,7 @@
         <inputAssignments>
             <field>pse__Role__c</field>
             <value>
-                <elementReference>$Record.Resource__r.pse__Resource_Role__c</elementReference>
+                <elementReference>$Record.Resource_Role__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -547,7 +553,7 @@
         <inputAssignments>
             <field>pse__Resource_Role__c</field>
             <value>
-                <elementReference>$Record.Resource__r.pse__Resource_Role__c</elementReference>
+                <elementReference>$Record.Resource_Role__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
