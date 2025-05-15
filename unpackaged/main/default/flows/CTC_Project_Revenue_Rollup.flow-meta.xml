@@ -4,8 +4,8 @@
     <decisions>
         <name>Project_Billing_Type</name>
         <label>Project Billing Type</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>578</locationX>
+        <locationY>252</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Fixed_Price</name>
@@ -118,8 +118,8 @@
     <recordLookups>
         <name>Get_FP_Mixed_Misc_Adjustments</name>
         <label>Get FP Misc Adjustments</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>50</locationX>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Collect_Milestone_Complete_amount</targetReference>
@@ -163,8 +163,8 @@
         <description>Gather all Milestones</description>
         <name>Get_Milestones</name>
         <label>Get Milestones</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>50</locationX>
+        <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_FP_Mixed_Misc_Adjustments</targetReference>
@@ -201,8 +201,8 @@
         <description>Gather all Milestones</description>
         <name>Get_Mixed_Milestones</name>
         <label>Get Mixed Milestones</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>578</locationX>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Mixed_Misc_Adjustments</targetReference>
@@ -245,8 +245,8 @@
     <recordLookups>
         <name>Get_Mixed_Misc_Adjustments</name>
         <label>Get Mixed Misc Adjustments</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>578</locationX>
+        <locationY>576</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Collected_Mixed_Milestones</targetReference>
@@ -289,8 +289,8 @@
     <recordLookups>
         <name>Get_Mixed_Timecard_Splits</name>
         <label>Get Mixed Timecard Splits</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>578</locationX>
+        <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Mixed_Milestones</targetReference>
@@ -333,8 +333,8 @@
     <recordLookups>
         <name>Get_Subscription_Milestones</name>
         <label>Get Subscription Milestones</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>842</locationX>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Collected_Subscription_Misc_Adjustments</targetReference>
@@ -384,8 +384,8 @@
     <recordLookups>
         <name>Get_Subscription_Misc_Adjustments</name>
         <label>Get Subscription Misc Adjustments</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>842</locationX>
+        <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Subscription_Milestones</targetReference>
@@ -428,8 +428,8 @@
     <recordLookups>
         <name>Get_Timecards</name>
         <label>Get Timecard Splits</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>314</locationX>
+        <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_TM_Misc_Adjustments</targetReference>
@@ -472,8 +472,8 @@
     <recordLookups>
         <name>Get_TM_Misc_Adjustments</name>
         <label>Get T&amp;M Misc Adjustments</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>314</locationX>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Collect_Billable_Amounts</targetReference>
@@ -516,8 +516,8 @@
     <recordUpdates>
         <name>Update_FP_Project_TRTD_Field</name>
         <label>Update FP Project TRTD Field</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>50</locationX>
+        <locationY>792</locationY>
         <inputAssignments>
             <field>Total_Revenue_to_Date__c</field>
             <value>
@@ -529,8 +529,8 @@
     <recordUpdates>
         <name>Update_Subscription_TRTD_Field</name>
         <label>Update Subscription TRTD Field</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>842</locationX>
+        <locationY>792</locationY>
         <inputAssignments>
             <field>Total_Revenue_to_Date__c</field>
             <value>
@@ -542,8 +542,8 @@
     <recordUpdates>
         <name>Update_T_M_Project_TRTD_Field</name>
         <label>Update T&amp;M Project TRTD Field</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>314</locationX>
+        <locationY>792</locationY>
         <inputAssignments>
             <field>Total_Revenue_to_Date__c</field>
             <value>
@@ -555,8 +555,8 @@
     <recordUpdates>
         <name>Update_Total_Revenue_to_Date</name>
         <label>Update Total Revenue to Date</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>578</locationX>
+        <locationY>1008</locationY>
         <inputAssignments>
             <field>Total_Revenue_to_Date__c</field>
             <value>
@@ -566,7 +566,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>0</locationX>
+        <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Project_Billing_Type</targetReference>
@@ -599,8 +599,8 @@
         <description>Collect all Total Billable amouhnts and combine them into one sum Number</description>
         <name>Collect_Billable_Amounts</name>
         <label>Collect Billable Amounts</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>314</locationX>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Collect_T_M_Misc_Adjustment</targetReference>
         </connector>
@@ -626,8 +626,8 @@
     <transforms>
         <name>Collect_FP_Misc_Adjustmet</name>
         <label>Collect FP Misc Adjustmet</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>50</locationX>
+        <locationY>684</locationY>
         <connector>
             <targetReference>Update_FP_Project_TRTD_Field</targetReference>
         </connector>
@@ -654,8 +654,8 @@
         <description>Collect all the Include in Revenue Recognition % complete milestones against a Fixed Price Project.</description>
         <name>Collect_Milestone_Complete_amount</name>
         <label>Collect Milestone % Complete amount</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>50</locationX>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Collect_FP_Misc_Adjustmet</targetReference>
         </connector>
@@ -681,8 +681,8 @@
     <transforms>
         <name>Collect_T_M_Misc_Adjustment</name>
         <label>Collect T&amp;M Misc Adjustment</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>314</locationX>
+        <locationY>684</locationY>
         <connector>
             <targetReference>Update_T_M_Project_TRTD_Field</targetReference>
         </connector>
@@ -708,8 +708,8 @@
     <transforms>
         <name>Collected_Mixed_Milestones</name>
         <label>Collected Mixed Milestones</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>578</locationX>
+        <locationY>684</locationY>
         <connector>
             <targetReference>Collected_Mixed_Timecards</targetReference>
         </connector>
@@ -735,8 +735,8 @@
     <transforms>
         <name>Collected_Mixed_Misc_Asjustments</name>
         <label>Collected Mixed Misc Asjustments</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>578</locationX>
+        <locationY>900</locationY>
         <connector>
             <targetReference>Update_Total_Revenue_to_Date</targetReference>
         </connector>
@@ -762,8 +762,8 @@
     <transforms>
         <name>Collected_Mixed_Timecards</name>
         <label>Collected Mixed Timecards</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>578</locationX>
+        <locationY>792</locationY>
         <connector>
             <targetReference>Collected_Mixed_Misc_Asjustments</targetReference>
         </connector>
@@ -789,8 +789,8 @@
     <transforms>
         <name>Collected_Sub_Milestone</name>
         <label>Collected Sub Milestone</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>842</locationX>
+        <locationY>684</locationY>
         <connector>
             <targetReference>Update_Subscription_TRTD_Field</targetReference>
         </connector>
@@ -816,8 +816,8 @@
     <transforms>
         <name>Collected_Subscription_Misc_Adjustments</name>
         <label>Collected Subscription Misc Adjustments</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>842</locationX>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Collected_Sub_Milestone</targetReference>
         </connector>
