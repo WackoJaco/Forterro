@@ -3,6 +3,10 @@
     <description>Permissions required for use of Certinia Revenue Management</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Persona: Revenue Management</label>
+    <mutingPermissionSets>Persona_Revenue_Management_Muted</mutingPermissionSets>
+    <permissionSets>Certinia_Hide_OOTB_Work_Planner_Tab</permissionSets>
+    <permissionSets>Certinia_Services_Revenue_Workspace</permissionSets>
+    <permissionSets>Certinia_User_Group_Permissions</permissionSets>
     <permissionSets>RMPSAObjectPermissionSet</permissionSets>
     <permissionSets>ffrr__RMAdmin</permissionSets>
     <permissionSets>ffrr__RMGuest</permissionSets>

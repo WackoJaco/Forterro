@@ -3,6 +3,8 @@
     <description>Permission Set Group enabling use of Services CPQ for Services users</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Persona - Services Estimator</label>
+    <permissionSets>Certinia_Hide_OOTB_Work_Planner_Tab</permissionSets>
+    <permissionSets>Certinia_User_Group_Permissions</permissionSets>
     <permissionSets>OutputBuilderUnmanaged</permissionSets>
     <permissionSets>Persona_Services_Estimator_PS</permissionSets>
     <permissionSets>ffscpq__AddFromTemplate</permissionSets>

@@ -4,7 +4,8 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>Persona - Team Lead / Business Manager</label>
     <mutingPermissionSets>Persona_Team_Lead_Business_Manager_Muted</mutingPermissionSets>
-    <permissionSets>CPS_View_Forterro_EVA_s</permissionSets>
+    <permissionSets>Certinia_Hide_OOTB_Work_Planner_Tab</permissionSets>
+    <permissionSets>Certinia_Team_Lead_Workspace</permissionSets>
     <permissionSets>Certinia_User_Group_Permissions</permissionSets>
     <permissionSets>FFX_FF_PSA_CRM_View_Only</permissionSets>
     <permissionSets>FFX_FF_PSA_Time_and_Expense_User</permissionSets>
@@ -25,7 +26,6 @@
     <permissionSets>pse__PSAOnlineHelp</permissionSets>
     <permissionSets>pse__PSAServicesForecastingProjectManager</permissionSets>
     <permissionSets>pse__PSAServicesForecastingRegionalManager</permissionSets>
-    <permissionSets>pse__PSAUseProjectPlanner</permissionSets>
     <permissionSets>pse__PSAViewCostAndRevenueSummaryForOpportunity</permissionSets>
     <permissionSets>pse__PSAViewCostAndRevenueSummaryForProject</permissionSets>
     <permissionSets>pse__PSAViewProjectTeamSchedule</permissionSets>

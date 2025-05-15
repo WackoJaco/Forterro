@@ -58,9 +58,9 @@
                 <label>PS Subscription - Forterro Service Points</label>
             </value>
             <value>
-                <fullName>PS Solution - Packaged Solution</fullName>
+                <fullName>PS Subscription - Packaged Solution</fullName>
                 <default>false</default>
-                <label>PS Solution - Packaged Solution</label>
+                <label>PS Subscription - Packaged Solution</label>
             </value>
             <value>
                 <fullName>PS Subscription - Customisation Maintenance</fullName>
@@ -146,6 +146,10 @@
             <valueName>Internal - Unavailability</valueName>
         </valueSettings>
         <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Internal - Cross-Functional Work</valueName>
+        </valueSettings>
+        <valueSettings>
             <controllingFieldValue>NSS</controllingFieldValue>
             <valueName>NSS - Implementation</valueName>
         </valueSettings>
@@ -183,7 +187,7 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>PS Subscription</controllingFieldValue>
-            <valueName>PS Solution - Packaged Solution</valueName>
+            <valueName>PS Subscription - Packaged Solution</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>PS Subscription</controllingFieldValue>

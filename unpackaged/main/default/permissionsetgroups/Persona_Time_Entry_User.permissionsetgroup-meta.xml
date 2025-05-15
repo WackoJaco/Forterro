@@ -4,6 +4,8 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>Persona - Time Entry User</label>
     <mutingPermissionSets>PSA_Muted_PSA_Apps</mutingPermissionSets>
+    <permissionSets>Certinia_Hide_OOTB_Work_Planner_Tab</permissionSets>
+    <permissionSets>Certinia_User_Group_Permissions</permissionSets>
     <permissionSets>FFX_FF_PSA_Time_and_Expense_User</permissionSets>
     <permissionSets>PSA_Create_New_Service_Request</permissionSets>
     <permissionSets>Persona_Time_Entry_User_PS</permissionSets>

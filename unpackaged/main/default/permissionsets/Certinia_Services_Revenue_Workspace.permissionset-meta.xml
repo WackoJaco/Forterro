@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grants access to the services revenue workspace</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Certinia - Services Revenue Workspace</label>
+    <tabSettings>
+        <tab>Services_Revenue_Forecasting_Workspace1</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>psaws__services_revenue_forecasting_workspace</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>

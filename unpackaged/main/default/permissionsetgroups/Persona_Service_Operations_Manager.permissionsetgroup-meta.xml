@@ -5,6 +5,9 @@
     <label>Persona - Service Operations Manager</label>
     <mutingPermissionSets>Persona_Service_Operations_Manager_Muted</mutingPermissionSets>
     <permissionSets>Account_Read_and_Edit_All</permissionSets>
+    <permissionSets>Certinia_Hide_OOTB_Work_Planner_Tab</permissionSets>
+    <permissionSets>Certinia_User_Group_Permissions</permissionSets>
+    <permissionSets>Certinia_Workspace_Create_Project</permissionSets>
     <permissionSets>FFX_FF_PSA_Full_User</permissionSets>
     <permissionSets>FFX_FF_PSA_Full_User_Modify_All</permissionSets>
     <permissionSets>FFX_FF_PSA_Full_User_No_Cost_Fields2</permissionSets>

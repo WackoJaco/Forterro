@@ -84,6 +84,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Est_Vs_Actuals__c.Region_Chain_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Milestone__c.MyGroup__c</field>
         <readable>true</readable>
     </fieldPermissions>

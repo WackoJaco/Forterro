@@ -4,7 +4,7 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>Persona - Workforce Manager</label>
     <mutingPermissionSets>Persona_Workforce_Manager_Muted</mutingPermissionSets>
-    <permissionSets>CPS_View_Forterro_EVA_s</permissionSets>
+    <permissionSets>Certinia_Hide_OOTB_Work_Planner_Tab</permissionSets>
     <permissionSets>Certinia_User_Group_Permissions</permissionSets>
     <permissionSets>FFX_FF_PSA_Full_User</permissionSets>
     <permissionSets>PSA_Create_New_Service_Request</permissionSets>
@@ -16,11 +16,9 @@
     <permissionSets>psaws__PSA_Workspaces_Time_And_Expense</permissionSets>
     <permissionSets>pse__ApexLibBatchProcess</permissionSets>
     <permissionSets>pse__PSACloseAssignments</permissionSets>
-    <permissionSets>pse__PSADecisionIntelligence</permissionSets>
     <permissionSets>pse__PSAEditSkillAndCertificationRatings</permissionSets>
     <permissionSets>pse__PSAEditWorkPlanner</permissionSets>
     <permissionSets>pse__PSALightningComponentApexClassAccess</permissionSets>
-    <permissionSets>pse__PSAManageGanttAndProjectTasks</permissionSets>
     <permissionSets>pse__PSAManageSelfNominationOnWorkOpportunities</permissionSets>
     <permissionSets>pse__PSAManageSkillAndCertificationRatings</permissionSets>
     <permissionSets>pse__PSAManageTeams</permissionSets>

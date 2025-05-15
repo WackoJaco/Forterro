@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Profile: System Administrator</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Persona - System Administrators</label>
+    <mutingPermissionSets>Persona_System_Administrators_Muted</mutingPermissionSets>
+    <permissionSets>Case_Internal_Support</permissionSets>
+    <permissionSets>Certinia_Hide_OOTB_Work_Planner_Tab</permissionSets>
+    <permissionSets>Certinia_Team_Lead_Workspace</permissionSets>
+    <permissionSets>Certinia_User_Group_Permissions</permissionSets>
+    <permissionSets>FFX_FF_PSA_CRM_View_Only</permissionSets>
+    <permissionSets>FFX_FF_PSA_Full_User</permissionSets>
+    <permissionSets>FFX_FF_PSA_Full_User_Modify_All</permissionSets>
+    <permissionSets>FFX_FF_PSA_Full_User_No_Cost_Fields2</permissionSets>
+    <permissionSets>FFX_FF_PSA_Time_and_Expense_User</permissionSets>
+    <permissionSets>Jeeves_Fields_Temp</permissionSets>
+    <permissionSets>Lead_Manage_Leads</permissionSets>
+    <permissionSets>OrderWise_Fields</permissionSets>
+    <permissionSets>PSA_Manage_Role_Budgets</permissionSets>
+    <permissionSets>Persona_System_Administrator</permissionSets>
+    <permissionSets>pse__PSALightningComponentApexClassAccess</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
