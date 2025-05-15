@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Projects_Without_Assigned_Hours_Group</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND (4 OR 5) and 6</booleanFilter>
+    <columns>NAME</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__Project_Manager__c</columns>
+    <columns>pse__Project_Type__c</columns>
+    <columns>pse__Billing_Type__c</columns>
+    <columns>ffrrPercentComplete__c</columns>
+    <columns>pse__Account__c</columns>
+    <columns>psaws__Actual_Hours__c</columns>
+    <columns>Project_Timeline__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Start_Date__c</field>
+        <operation>equals</operation>
+        <value>NEXT_N_DAYS:30</value>
+    </filters>
+    <filters>
+        <field>pse__Is_Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Canceled</value>
+    </filters>
+    <filters>
+        <field>pse__Total_Assigned_Hours__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>pse__Total_Assigned_Hours__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>MyRegion__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Projects Without Assigned Hours (Region)</label>
+</ListView>

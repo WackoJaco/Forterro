@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Planned_Tasks_wo_Assignments_Group</fullName>
+    <columns>NAME</columns>
+    <columns>Project_Region__c</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__WBS_Element_Number__c</columns>
+    <columns>pse__Estimated_Hours__c</columns>
+    <columns>pse__Hours_Remaining__c</columns>
+    <columns>Sharepoint_Link_URL__c</columns>
+    <columns>pse__Description__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Assigned_Resources__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Assigned_Resources__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>equals</operation>
+        <value>Draft,Planned,Started</value>
+    </filters>
+    <filters>
+        <field>pse__Project__c</field>
+        <operation>notContain</operation>
+        <value>Template</value>
+    </filters>
+    <filters>
+        <field>pse__Summary__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>MyRegion__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Planned Tasks wo Assignments (Region)</label>
+</ListView>

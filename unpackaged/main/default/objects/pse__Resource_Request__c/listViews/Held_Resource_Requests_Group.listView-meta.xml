@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Held_Resource_Requests_Group</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Resource_Request_Name__c</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__SOW_Hours__c</columns>
+    <columns>pse__Resource_Role__c</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__Staffer_Resource__c</columns>
+    <columns>pse__Request_Priority__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>pse__Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Resource_Held__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Staffer_Resource__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>pse__Preferred_Schedule__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>pse__Assignment__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled,Assigned</value>
+    </filters>
+    <filters>
+        <field>MyRegion__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Held Resource Requests (Region)</label>
+</ListView>
