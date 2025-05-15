@@ -2,8 +2,9 @@
 <Role xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseAccessLevel>Edit</caseAccessLevel>
     <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Services Management</description>
     <mayForecastManagerShare>false</mayForecastManagerShare>
-    <name>Services - Orderwise</name>
+    <name>Services Management</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Cluster_2</parentRole>
+    <parentRole>Forterro_Services</parentRole>
 </Role>

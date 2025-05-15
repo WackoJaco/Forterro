@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>PSA_Sharing_Write_Opportunities_Cluster_1</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>PSA Sharing: Write Opportunities Cluster 1</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Cluster_1</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Product_Family__c</field>
+            <operation>equals</operation>
+            <value>ProConcept CH,ProConcept DE,ABAS,ABAS BS</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PSA_Sharing_Write_Opportunities_Cluster_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>PSA Sharing: Write Opportunities Cluster 2</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Cluster_2</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Product_Family__c</field>
+            <operation>equals</operation>
+            <value>ProConcept CH,ProConcept DE,Fortee,Fortee CH,GARP,Fortee FR,123Insight,BPSC,Jeeves,OrderWise,Sylob,Helios,Silog,Clipper CH,Clipper</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PSA_Sharing_Write_Opportunities_Services_Management</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>PSA Sharing: Write Opportunities Services Management</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Services_Management</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Product_Family__c</field>
+            <operation>equals</operation>
+            <value>ProConcept CH,ProConcept DE,Fortee,Fortee CH,GARP,MYFactory CH,MyFactory DE,Fortee FR,123Insight,ABAS,BPSC,Jeeves,OrderWise,Sylob,Helios,Silog,Clipper CH,ABAS BS,Clipper</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

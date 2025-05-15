@@ -3,7 +3,7 @@
     <caseAccessLevel>Edit</caseAccessLevel>
     <contactAccessLevel>Edit</contactAccessLevel>
     <mayForecastManagerShare>false</mayForecastManagerShare>
-    <name>Services - Digital Hub</name>
+    <name>Services - 123 Insight</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Regional_Service_Lead_FNE</parentRole>
+    <parentRole>Cluster_2</parentRole>
 </Role>

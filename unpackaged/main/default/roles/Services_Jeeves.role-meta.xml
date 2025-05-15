@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Services - Jeeves</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Regional_Service_Lead_FNE</parentRole>
+    <parentRole>Cluster_2</parentRole>
 </Role>

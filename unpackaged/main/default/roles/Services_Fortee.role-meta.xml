@@ -3,7 +3,7 @@
     <caseAccessLevel>Edit</caseAccessLevel>
     <contactAccessLevel>Edit</contactAccessLevel>
     <mayForecastManagerShare>false</mayForecastManagerShare>
-    <name>Services - Orderwise</name>
+    <name>Services - Fortee</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
     <parentRole>Cluster_2</parentRole>
 </Role>
