@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Hides the default work planner tab.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Certinia - Hide OOTB Work Planner Tab</label>
+</PermissionSet>
