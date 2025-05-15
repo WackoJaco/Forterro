@@ -68,7 +68,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Group_ID_Chain__c</field>
+            <table>pse__Est_Vs_Actuals__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>pse__Assignment__c</field>
+            <table>pse__Est_Vs_Actuals__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Region_Chain_ID__c</field>
             <table>pse__Est_Vs_Actuals__c</table>
         </columns>
         <columns>

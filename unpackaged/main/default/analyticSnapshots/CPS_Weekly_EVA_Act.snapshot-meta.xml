@@ -7,14 +7,19 @@
         <targetField>Forterro_PSA_EVA__c.Name</targetField>
     </mappings>
     <mappings>
-        <sourceField>ExecutionTime</sourceField>
-        <sourceType>snapshot</sourceType>
-        <targetField>Forterro_PSA_EVA__c.LastReferencedDate</targetField>
+        <sourceField>pse__Est_Vs_Actuals__c$pse__Actual_Hours__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Forterro_PSA_EVA__c.CPS_Actual_Hours__c</targetField>
     </mappings>
     <mappings>
-        <sourceField>pse__Est_Vs_Actuals__c$pse__Start_Date__c</sourceField>
+        <sourceField>pse__Est_Vs_Actuals__c$pse__Assignment__c</sourceField>
         <sourceType>tabular</sourceType>
-        <targetField>Forterro_PSA_EVA__c.CPS_Start_Date__c</targetField>
+        <targetField>Forterro_PSA_EVA__c.CPS_Assignment_Name__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>pse__Est_Vs_Actuals__c$Id</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Forterro_PSA_EVA__c.CPS_EVA_ID__c</targetField>
     </mappings>
     <mappings>
         <sourceField>pse__Est_Vs_Actuals__c$pse__End_Date__c</sourceField>
@@ -22,9 +27,19 @@
         <targetField>Forterro_PSA_EVA__c.CPS_End_Date__c</targetField>
     </mappings>
     <mappings>
-        <sourceField>pse__Est_Vs_Actuals__c$pse__Actual_Hours__c</sourceField>
+        <sourceField>pse__Est_Vs_Actuals__c$pse__Project__c</sourceField>
         <sourceType>tabular</sourceType>
-        <targetField>Forterro_PSA_EVA__c.CPS_Actual_Hours__c</targetField>
+        <targetField>Forterro_PSA_EVA__c.CPS_Project_Name__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>pse__Est_Vs_Actuals__c$pse__Resource__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Forterro_PSA_EVA__c.CPS_Resource_Name__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>pse__Est_Vs_Actuals__c$pse__Start_Date__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Forterro_PSA_EVA__c.CPS_Start_Date__c</targetField>
     </mappings>
     <mappings>
         <sourceField>pse__Est_Vs_Actuals__c$Group_ID_Chain__c</sourceField>
@@ -36,28 +51,8 @@
         <sourceType>tabular</sourceType>
         <targetField>Forterro_PSA_EVA__c.Region_ID_Chain__c</targetField>
     </mappings>
-    <mappings>
-        <sourceField>pse__Est_Vs_Actuals__c$Id</sourceField>
-        <sourceType>tabular</sourceType>
-        <targetField>Forterro_PSA_EVA__c.CPS_EVA_ID__c</targetField>
-    </mappings>
-    <mappings>
-        <sourceField>pse__Est_Vs_Actuals__c$pse__Resource__c</sourceField>
-        <sourceType>tabular</sourceType>
-        <targetField>Forterro_PSA_EVA__c.CPS_Resource_Name__c</targetField>
-    </mappings>
-    <mappings>
-        <sourceField>pse__Est_Vs_Actuals__c$pse__Assignment__c</sourceField>
-        <sourceType>tabular</sourceType>
-        <targetField>Forterro_PSA_EVA__c.CPS_Assignment_Name__c</targetField>
-    </mappings>
-    <mappings>
-        <sourceField>pse__Est_Vs_Actuals__c$pse__Project__c</sourceField>
-        <sourceType>tabular</sourceType>
-        <targetField>Forterro_PSA_EVA__c.CPS_Project_Name__c</targetField>
-    </mappings>
     <name>CPS Weekly EVA (Act)</name>
-    <runningUser>martin.zitz@forterro.com.qa</runningUser>
+    <runningUser>martin.zitz@forterro.com</runningUser>
     <sourceReport>ForterroCertiniaReports/PSA296_EVA_Snap_Source_Past_Acts_RyB</sourceReport>
     <targetObject>Forterro_PSA_EVA__c</targetObject>
 </AnalyticSnapshot>

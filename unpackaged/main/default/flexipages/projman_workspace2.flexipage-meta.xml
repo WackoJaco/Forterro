@@ -87,6 +87,29 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>configApiName</name>
+                    <value>expNavPane_Forterro_PM_Workspace1</value>
+                </componentInstanceProperties>
+                <componentName>fferpcore:exp_navigationPane</componentName>
+                <identifier>fferpcore_exp_navigationPane2</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$Client.formFactor}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Large</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$Permission.CustomPermission.Workspace_Create_Project}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>configApiName</name>
                     <value>expNavPane_Forterro_PM_Workspace</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -100,10 +123,16 @@
                 <componentName>fferpcore:exp_navigationPane</componentName>
                 <identifier>fferpcore_exp_navigationPane</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!$Client.formFactor}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Large</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$Permission.CustomPermission.Workspace_Create_Project}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -116,10 +145,16 @@
                 <componentName>pse:projectCreationActions</componentName>
                 <identifier>pse_projectCreationActions</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!$Client.formFactor}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Large</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$Permission.CustomPermission.Workspace_Create_Project}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -513,6 +548,14 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>enableFillHandle</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>endDateOffset</name>
+                    <value>28</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>height</name>
                     <value>500</value>
                 </componentInstanceProperties>
@@ -530,6 +573,26 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideCreateResourceRequestButton</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSplitAssignmentToNewAssignmentAction</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSplitAssignmentToNewResourceRequestAction</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSplitResourceRequestAction</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSwapResourceOnAssignmentAction</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSwapResourceOnResourceRequestAction</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -567,6 +630,14 @@
                 <componentInstanceProperties>
                     <name>resourceRequestFieldSetName</name>
                     <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>restrictPastDateEdit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>startDateOffset</name>
+                    <value>-7</value>
                 </componentInstanceProperties>
                 <componentName>pse:rmwp_projectManagerWorkPlanner</componentName>
                 <identifier>pse_rmwp_projectManagerWorkPlanner</identifier>

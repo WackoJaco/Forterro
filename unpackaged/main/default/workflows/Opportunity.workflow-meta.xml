@@ -19,7 +19,7 @@
             <field>Region_Owner__c</field>
             <type>contactLookup</type>
         </recipients>
-        <senderType>DefaultWorkflowUser</senderType>
+        <senderType>CurrentUser</senderType>
         <template>FFX_PSA_Email_Templates/PSA_Services_Opportunity</template>
     </alerts>
 </Workflow>
