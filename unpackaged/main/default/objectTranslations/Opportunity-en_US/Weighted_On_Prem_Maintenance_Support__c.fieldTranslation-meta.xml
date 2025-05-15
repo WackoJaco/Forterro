@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- This field multiplies On Prem Maintenance &amp; Support by Probability to give a weighted value. --></help>
+        <label><!-- Weighted Perpetual Maintenance &amp; Support --></label>
+        <name>Weighted_On_Prem_Maintenance_Support__c</name>
+    </CustomFieldTranslation>

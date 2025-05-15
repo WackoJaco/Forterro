@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Enter the URL external link / folder link to the customer agreement(s) --></help>
+        <label><!-- Customer Agreement (URL) --></label>
+        <name>Customer_Agreement__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Closed Won Reason DELETE --></label>
+        <name>Closed_Won_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Amendment</masterLabel>
+            <translation><!-- Amendment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Replacement</masterLabel>
+            <translation><!-- Contract Replacement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost / Solution Fit / Engagement</masterLabel>
+            <translation><!-- Cost / Solution Fit / Engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Features and Functionality / Platform</masterLabel>
+            <translation><!-- Features and Functionality / Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Market Experience / References</masterLabel>
+            <translation><!-- Market Experience / References --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Roadmap / Established Product</masterLabel>
+            <translation><!-- Product Roadmap / Established Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Differentiation / ROI</masterLabel>
+            <translation><!-- Value Differentiation / ROI --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

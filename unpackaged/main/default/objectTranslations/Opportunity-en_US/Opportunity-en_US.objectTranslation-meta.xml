@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <fieldSets>
+        <label><!-- Opportunity Detail Fields on RR From Template Field Set --></label>
+        <name>pse__OppDetailOnRRFromTemplateFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Opportunity Fields For Rate Card Set --></label>
+        <name>pse__Opportunity_Fields_For_Rate_Card_Set</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- customCR --></label>
+        <name>pse_customCR</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Deal Desk --></label>
+        <name>sbaa__DealDesk</name>
+    </fieldSets>
+    <recordTypes>
+        <description><!-- Select for Install Base Sales Opportunities (IBS) --></description>
+        <label><!-- Existing Business --></label>
+        <name>Existing_Business</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Select for New Business Opportunity. (NSS) --></description>
+        <label><!-- New Business --></label>
+        <name>New_Business</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Process for renewals --></description>
+        <label><!-- Renewal --></label>
+        <name>Renewal</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- For Partner Opportunities, you must enter the End Customer --></errorMessage>
+        <name>Abas_Partner_End_Customer_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Account is Blacklisted, please contact Finance to validate customer status. --></errorMessage>
+        <name>AccountBlacklisted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please check the Account Billing Address before creating the Opportunity. --></errorMessage>
+        <name>Account_Billing_Address_is_Blank</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter Estimated opportunity &apos;Amount&apos; to proceed --></errorMessage>
+        <name>Amount_is_required_before_Qualification</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Close Date cannot be set to a date older than previous month --></errorMessage>
+        <name>Closed_Date_cannot_be_less_than_prior_mo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a Closed Reason --></errorMessage>
+        <name>Closed_Reason_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please terminate the existing Contract to Replace, before booking this opportunity --></errorMessage>
+        <name>Closed_booked_must_Terminate_Contract</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please update the Account&apos;s Company Registration No before moving this Opportunity Stage --></errorMessage>
+        <name>Company_Registration_No_is_missing</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the Contract number that this Opportunity will replace --></errorMessage>
+        <name>Contract_Replacement_requires_Contract</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter Customer Agreement URL --></errorMessage>
+        <name>Customer_Agreement_URL_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please go to the Primary Quote and select a value in the &quot;FWE Family Segment&quot; field before checking the OTC Validated field. --></errorMessage>
+        <name>FWE_Family_Segment_must_have_a_value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Finance OTC admins can edit a Renewal Opportunity (FWE Only) --></errorMessage>
+        <name>FWE_Sales_Users_cannot_edit_Renewals</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The account is an existing customer, please create an Opportunity Record Type: ‘Existing Business. --></errorMessage>
+        <name>IBS_customer_cannot_create_NNS_Oppty</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity is Closed Booked and locked for changes. --></errorMessage>
+        <name>LockEditingOpportunityClosedBooked</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the competitor. If competitor is unknown, select &apos;Unknown&apos;. --></errorMessage>
+        <name>Lost_to_Competitor</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- NSS: Please generate a Quote for this Opportunity --></errorMessage>
+        <name>NSS_Quote_is_Required_at_Negotiation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only users with OTC Permissions can update the this field --></errorMessage>
+        <name>OTC_Validated_requires_OTC_Permission</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please populate the Primary Contact --></errorMessage>
+        <name>Primary_Contact_is_BLANK</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter &apos;Primary Offering&apos; to proceed to the next stage --></errorMessage>
+        <name>Primary_Offering_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Review the Primary Quotes Order information is complete: Family Segment, Billing Frequency, Payment Terms, and Index Increase Type fields. --></errorMessage>
+        <name>Quote_Required_Fields_for_OTC</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must generate a Quote before Sales Won or Close Booked --></errorMessage>
+        <name>Quote_is_Required_at_Sales_Won</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter Closed Reason --></errorMessage>
+        <name>Sales_Won_Reasons</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Primary quote status should be &apos;Accepted&apos; or &apos;Accepted Other&apos; before an Opportunity can be Closed Booked (100%) --></errorMessage>
+        <name>Stage_Closed_Booked</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please confirm OTC checks are completed before proceeding to Close --></errorMessage>
+        <name>Stage_Closed_Booked_Required_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please answer Q8 Guidance for Success Question(s) --></errorMessage>
+        <name>Stage_Final_Selection_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please answer Q6-Q7 Guidance for Success Question(s) in previous Stage --></errorMessage>
+        <name>Stage_Negotiation_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please answer Q4-Q5 Guidance for Success Question(s) in previous Stage --></errorMessage>
+        <name>Stage_Propose_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please answer Q1 --></errorMessage>
+        <name>Stage_Prospect_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please answer Q2-Q3 Guidance for Success Question(s) in previous Stage --></errorMessage>
+        <name>Stage_Qualification_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The customer must pass credit checks before you can Close Book this opportunity --></errorMessage>
+        <name>Validate_Closed_Booked_Credit_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Rate Card Percentage Discount must be between 0 and 100. --></errorMessage>
+        <name>pse__Discount_Rates_Must_Be_Between_0_to_100</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot associate the rate card set with the opportunity. They must both use the same currency. --></errorMessage>
+        <name>pse__Opp_Rate_Card_Set_Currency_Mismatch</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Amend_Assets --></label>
+        <name>SBQQ__Amend_Assets</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Amend_Contract --></label>
+        <name>SBQQ__Amend_Contract</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CreateOrder --></label>
+        <name>SBQQ__CreateOrder</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Include_Document --></label>
+        <name>SBQQ__Include_Document</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Pardot_Emails --></label>
+        <name>pi__Send_Pardot_Emails</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Single_Pardot_Email --></label>
+        <name>pi__Send_Single_Pardot_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Apply_Rate_Card_Discount --></label>
+        <name>pse__Apply_Rate_Card_Discount</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Change_Request --></label>
+        <name>pse__Create_Change_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Project --></label>
+        <name>pse__Create_Project</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Run_Revenue_Forecast --></label>
+        <name>pse__Run_Revenue_Forecast</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- PreviewApprovals --></label>
+        <name>sbaa__PreviewApprovals</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- RecallApprovals --></label>
+        <name>sbaa__RecallApprovals</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ResendRequestEmail --></label>
+        <name>sbaa__ResendRequestEmail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SubmitForApproval --></label>
+        <name>sbaa__SubmitForApproval</name>
+    </webLinks>
+</CustomObjectTranslation>

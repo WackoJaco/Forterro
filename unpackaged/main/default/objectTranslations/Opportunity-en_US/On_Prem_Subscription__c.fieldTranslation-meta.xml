@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- This field sums &apos;TotalPrice&apos; for &quot;On Prem Subscription&quot; products in the Quote linked to this Opportunity. --></help>
+        <label><!-- Subscription --></label>
+        <name>On_Prem_Subscription__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Enter the Contract that this Opportunity will replace/supercede --></help>
+        <label><!-- Contract to Replace --></label>
+        <name>Contract_to_Replace__c</name>
+        <relationshipLabel><!-- Replaced by Opportunity --></relationshipLabel>
+    </CustomFieldTranslation>

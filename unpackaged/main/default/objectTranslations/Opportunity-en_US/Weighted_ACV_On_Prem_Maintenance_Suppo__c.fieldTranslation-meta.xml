@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- This field multiplies ACV On Prem Maintenance &amp; Support by Probability to give a weighted value. --></help>
+        <label><!-- Weighted ACV Perpetual Maintenance &amp; Sup --></label>
+        <name>Weighted_ACV_On_Prem_Maintenance_Suppo__c</name>
+    </CustomFieldTranslation>

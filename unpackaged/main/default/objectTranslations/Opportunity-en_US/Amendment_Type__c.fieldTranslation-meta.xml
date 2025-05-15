@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Amendment Type OLD --></label>
+        <name>Amendment_Type__c</name>
+        <picklistValues>
+            <masterLabel>Cancellation</masterLabel>
+            <translation><!-- Cancellation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conversion</masterLabel>
+            <translation><!-- Conversion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cross Sell</masterLabel>
+            <translation><!-- Cross Sell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Downgrades</masterLabel>
+            <translation><!-- Downgrades --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Index Increase</masterLabel>
+            <translation><!-- Index Increase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrades</masterLabel>
+            <translation><!-- Upgrades --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upsell</masterLabel>
+            <translation><!-- Upsell --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

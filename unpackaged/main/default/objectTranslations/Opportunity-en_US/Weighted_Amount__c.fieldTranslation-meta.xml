@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- This field multiplies Amount by Probability to give a weighted value. --></help>
+        <label><!-- Weighted Amount --></label>
+        <name>Weighted_Amount__c</name>
+    </CustomFieldTranslation>

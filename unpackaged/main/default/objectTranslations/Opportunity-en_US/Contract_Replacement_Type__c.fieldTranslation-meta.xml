@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Contract Replacement Type --></label>
+        <name>Contract_Replacement_Type__c</name>
+        <picklistValues>
+            <masterLabel>Conversion - 'On Prem Lic+Maintenance' to 'Cloud'</masterLabel>
+            <translation><!-- Conversion - &apos;On Prem Lic+Maintenance&apos; to &apos;Cloud&apos; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conversion - 'On Prem Lic+Maintenance' to 'On Prem Subscription'</masterLabel>
+            <translation><!-- Conversion - &apos;On Prem Lic+Maintenance&apos; to &apos;On Prem Subscription&apos; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conversion - ‘On Prem Subscription'’ to 'Cloud'</masterLabel>
+            <translation><!-- Conversion - ‘On Prem Subscription&apos;’ to &apos;Cloud&apos; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replacement Contract</masterLabel>
+            <translation><!-- Replacement Contract --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

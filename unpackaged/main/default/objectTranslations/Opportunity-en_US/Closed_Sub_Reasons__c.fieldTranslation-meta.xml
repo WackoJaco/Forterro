@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Dependent on Closed Reason --></help>
+        <label><!-- Closed Sub Reasons --></label>
+        <name>Closed_Sub_Reasons__c</name>
+        <picklistValues>
+            <masterLabel>Budget Lost / Changed / Alternative Use of Funds</masterLabel>
+            <translation><!-- Budget Lost / Changed / Alternative Use of Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget changed during Sales Engagement</masterLabel>
+            <translation><!-- Budget changed during Sales Engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Sold / Acquired</masterLabel>
+            <translation><!-- Company Sold / Acquired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract / Financial / Commercial Terms</masterLabel>
+            <translation><!-- Contract / Financial / Commercial Terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Migration Error</masterLabel>
+            <translation><!-- Data Migration Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate Opportunity</masterLabel>
+            <translation><!-- Duplicate Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Functionality</masterLabel>
+            <translation><!-- Functionality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incumbent Relationship</masterLabel>
+            <translation><!-- Incumbent Relationship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insufficient Budget</masterLabel>
+            <translation><!-- Insufficient Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lack of Resource</masterLabel>
+            <translation><!-- Lack of Resource --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lack of Value Differentiation</masterLabel>
+            <translation><!-- Lack of Value Differentiation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Decision</masterLabel>
+            <translation><!-- No Decision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Longer Trading</masterLabel>
+            <translation><!-- No Longer Trading --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Target Market For Solution</masterLabel>
+            <translation><!-- Not Target Market For Solution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Engagement</masterLabel>
+            <translation><!-- Partner Engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platform / Architecture</masterLabel>
+            <translation><!-- Platform / Architecture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor Engagement</masterLabel>
+            <translation><!-- Poor Engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor Qualification</masterLabel>
+            <translation><!-- Poor Qualification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Duration</masterLabel>
+            <translation><!-- Project Duration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project No longer Going Ahead</masterLabel>
+            <translation><!-- Project No longer Going Ahead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referencability</masterLabel>
+            <translation><!-- Referencability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resource</masterLabel>
+            <translation><!-- Resource --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution Fit</masterLabel>
+            <translation><!-- Solution Fit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undisclosed</masterLabel>
+            <translation><!-- Undisclosed --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

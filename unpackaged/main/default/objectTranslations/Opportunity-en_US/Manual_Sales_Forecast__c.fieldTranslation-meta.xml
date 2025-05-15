@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Select Best Case or Commit to indicate where opportunity resides in your sales forecast. --></help>
+        <label><!-- Manual Sales Forecast --></label>
+        <name>Manual_Sales_Forecast__c</name>
+        <picklistValues>
+            <masterLabel>Best Case</masterLabel>
+            <translation><!-- Best Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commit</masterLabel>
+            <translation><!-- Commit --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

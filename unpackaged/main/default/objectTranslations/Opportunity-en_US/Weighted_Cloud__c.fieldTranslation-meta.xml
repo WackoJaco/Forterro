@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- This field multiplies the Cloud field by Probability to get a weighted value for the Opportunity. --></help>
+        <label><!-- Weighted Cloud --></label>
+        <name>Weighted_Cloud__c</name>
+    </CustomFieldTranslation>

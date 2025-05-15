@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- This field multiplies Recurring PS by Probability to give a weighted value. --></help>
+        <label><!-- Weighted Recurring PS --></label>
+        <name>Weighted_Recurring_PS__c</name>
+    </CustomFieldTranslation>

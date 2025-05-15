@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Closed Reason --></label>
+        <name>Closed_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Amendment</masterLabel>
+            <translation><!-- Amendment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancellation</masterLabel>
+            <translation><!-- Cancellation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ceased Trading</masterLabel>
+            <translation><!-- Ceased Trading --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Replacement</masterLabel>
+            <translation><!-- Contract Replacement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost / Solution Fit / Engagement</masterLabel>
+            <translation><!-- Cost / Solution Fit / Engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Migration Error</masterLabel>
+            <translation><!-- Data Migration Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Downsell</masterLabel>
+            <translation><!-- Downsell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Errors in Sales Process</masterLabel>
+            <translation><!-- Errors in Sales Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Features and Functionality / Platform</masterLabel>
+            <translation><!-- Features and Functionality / Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Index Increase</masterLabel>
+            <translation><!-- Index Increase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost to Competitor</masterLabel>
+            <translation><!-- Lost to Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Market Experience / References</masterLabel>
+            <translation><!-- Market Experience / References --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Bid</masterLabel>
+            <translation><!-- No Bid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out of Budget</masterLabel>
+            <translation><!-- Out of Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Roadmap / Established Product</masterLabel>
+            <translation><!-- Product Roadmap / Established Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Cancelled / No Go</masterLabel>
+            <translation><!-- Project Cancelled / No Go --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Differentiation / ROI</masterLabel>
+            <translation><!-- Value Differentiation / ROI --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Q. 6 --></label>
+        <name>Q_Have_we_been_short_listed__c</name>
+    </CustomFieldTranslation>

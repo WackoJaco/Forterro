@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Applicable for Partner Opportunities --></help>
+        <label><!-- End Customer --></label>
+        <name>End_Customer__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </CustomFieldTranslation>

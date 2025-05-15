@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Main offering/license type applicable to the opportunity - used for forecast reporting. --></help>
+        <label><!-- Primary Offering --></label>
+        <name>Primary_Offering__c</name>
+    </CustomFieldTranslation>

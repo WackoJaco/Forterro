@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Budget record against which the amounts on this opportunity will be tracked. --></help>
+        <label><!-- Budget --></label>
+        <name>Budget__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </CustomFieldTranslation>

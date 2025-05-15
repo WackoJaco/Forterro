@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Forterro Region this Opportunity is forecasted against. Automatically determined by the Opportunity’s Product Family. --></help>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </CustomFieldTranslation>
