@@ -447,51 +447,15 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>dashboardId</name>
-                    <value>Advanced_PSA_Skills_Capacity_and_Demand_Planning</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>enableNotifications</name>
+                    <name>decorate</name>
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>enableSubscriptions</name>
-                    <value>true</value>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Add in the PSA Core Analytics Dashboard called "PSA Skills Capacity and Demand Planning"&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Height 1200&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Show Title = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Show Header = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Open In Analytics Studio&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Open Links in New Window = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Enable Notification = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Enable Subscription = True&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>height</name>
-                    <value>1200</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>hideOnError</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>openLinksInNewWindow</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>openLocation</name>
-                    <value>OPEN_IN_STUDIO</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showHeader</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPostToSlack</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showSharing</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showTitle</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>wave:waveDashboard</componentName>
-                <identifier>wave_waveDashboard</identifier>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
