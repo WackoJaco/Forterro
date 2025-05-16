@@ -4,7 +4,7 @@
     <masterLabel>Custom - PSA Analytics App</masterLabel>
     <shares>
         <accessLevel>Manage</accessLevel>
-        <sharedTo>jhogg@certinia.com</sharedTo>
+        <sharedTo>martin.zitz@forterro.com.uat</sharedTo>
         <sharedToType>User</sharedToType>
     </shares>
 </WaveApplication>
