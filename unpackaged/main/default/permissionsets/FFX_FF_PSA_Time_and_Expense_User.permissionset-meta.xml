@@ -12744,6 +12744,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.CPS_Billing_Type_Analytics__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CPS_Project_Type_Analytics__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.Cash_Collection__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -14419,6 +14429,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Region__c.CPS_Product_Family_Mapping_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Region__c.pse__Region_ID_Chain__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -15125,6 +15140,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Timecard_Header__c.Approved_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Timecard_Header__c.CPS_Project_Override_Approver__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16840,6 +16860,10 @@
         <recordType>pse__Skill__c.pse__Skill</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
+    <tabSettings>
+        <tab>Create_Assignment</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
     <tabSettings>
         <tab>Create_Support_Request</tab>
         <visibility>Visible</visibility>

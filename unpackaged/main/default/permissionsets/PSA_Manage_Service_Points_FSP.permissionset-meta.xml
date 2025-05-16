@@ -332,4 +332,8 @@
         <tab>ffps_forterro__ServiceRequest__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>ffps_forterro__MultiAccountServiceRequests</name>
+    </customPermissions>
 </PermissionSet>

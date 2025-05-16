@@ -4,7 +4,7 @@
     <assignments>
         <name>isFixed</name>
         <label>Fixed</label>
-        <locationX>314</locationX>
+        <locationX>842</locationX>
         <locationY>395</locationY>
         <assignmentItems>
             <assignToReference>$Record.Billing_Type__c</assignToReference>
@@ -15,10 +15,50 @@
         </assignmentItems>
     </assignments>
     <assignments>
+        <name>Set_FSP</name>
+        <label>Set FSP</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Sub_Project_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>PS Subscription - Forterro Service Points</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>PS Subscription</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_MS</name>
+        <label>Set MS</label>
+        <locationX>314</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Sub_Project_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>PS Subscription - Managed Services	</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Billing_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>PS Subscription</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
         <name>Subscription</name>
         <label>Subscription</label>
-        <locationX>50</locationX>
-        <locationY>395</locationY>
+        <locationX>578</locationX>
+        <locationY>503</locationY>
         <assignmentItems>
             <assignToReference>$Record.Billing_Type__c</assignToReference>
             <operator>Assign</operator>
@@ -26,18 +66,11 @@
                 <stringValue>Subscription</stringValue>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>$Record.Sub_Project_Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>PS Subscription - Managed Services</stringValue>
-            </value>
-        </assignmentItems>
     </assignments>
     <decisions>
         <name>assign_bill_type</name>
         <label>assign bill type</label>
-        <locationX>314</locationX>
+        <locationX>710</locationX>
         <locationY>287</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -51,7 +84,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Subscription</targetReference>
+                <targetReference>Check_Sub_type</targetReference>
             </connector>
             <label>Subscription</label>
         </rules>
@@ -69,6 +102,46 @@
                 <targetReference>isFixed</targetReference>
             </connector>
             <label>Fixed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Sub_type</name>
+        <label>Check Sub type</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Subscription</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FSP</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Sub_Project_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>IBS - FSP Contract</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_FSP</targetReference>
+            </connector>
+            <label>FSP</label>
+        </rules>
+        <rules>
+            <name>Managed_Services</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Managed Services</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_MS</targetReference>
+            </connector>
+            <label>Managed Services</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -94,7 +167,7 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>188</locationX>
+        <locationX>584</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>assign_bill_type</targetReference>

@@ -4,40 +4,18 @@
     <customErrors>
         <name>Role_Budgets_Not_Setup</name>
         <label>Role Budgets Not Setup</label>
-        <locationX>242</locationX>
-        <locationY>611</locationY>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
         <customErrorMessages>
             <errorMessage>Project Stage cannot be updated. There are no Role Budgets setup for this project.</errorMessage>
             <isFieldError>false</isFieldError>
         </customErrorMessages>
     </customErrors>
     <decisions>
-        <name>Bypass_Validation</name>
-        <label>Bypass Validation</label>
-        <locationX>176</locationX>
-        <locationY>287</locationY>
-        <defaultConnector>
-            <targetReference>Get_Role_Budgets</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes_Bypass_Validation</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>formBypassValidation</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Role_Budget_Exist</name>
         <label>Role Budget Exist?</label>
-        <locationX>374</locationX>
-        <locationY>503</locationY>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>No_Role_Budget_Exist</name>
@@ -54,6 +32,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>FSP</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Project_Sub_Types__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>IBS - Ongoing Work</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -93,8 +78,8 @@
     <recordLookups>
         <name>Get_Role_Budgets</name>
         <label>Get Role Budgets</label>
-        <locationX>374</locationX>
-        <locationY>395</locationY>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Role_Budget_Exist</targetReference>
@@ -113,10 +98,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Bypass_Validation</targetReference>
+            <targetReference>Get_Role_Budgets</targetReference>
         </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>(1  AND 4 AND 5) or (2 AND 3 AND 4) or (6 AND 4)</filterLogic>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>pse__Gantt_Columns</fullName>
+    <fullName>pse__CreateProjFromTempAltCopyProjTaskFields</fullName>
     <availableFields>
         <field>pse__Actual_End_Date_Time__c</field>
         <isFieldManaged>false</isFieldManaged>
@@ -33,6 +33,11 @@
     </availableFields>
     <availableFields>
         <field>pse__Assigned_Resources__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>pse__Blocked__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -87,6 +92,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>pse__Estimated_Time_To_Completion__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>pse__External_Task_ID__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -98,16 +108,6 @@
     </availableFields>
     <availableFields>
         <field>pse__Hours_Remaining__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>Id</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>IsDeleted</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -137,11 +137,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>LastModifiedBy.LastName</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>pse__Long_Description__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -152,17 +147,7 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>CreatedBy.Name</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>Name</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>Owner.Name</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -173,31 +158,6 @@
     </availableFields>
     <availableFields>
         <field>pse__Number_of_Assignments__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>pse__Order__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>pse__Override_Estimated_Hours__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>pse__Override_Points_Complete__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>pse__Override_Points__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>OwnerId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -292,27 +252,12 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Milestone__r.pse__Status__c</field>
+        <field>pse__Status__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
         <field>pse__Summary__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>pse__Sync_with_Jira__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>SystemModstamp</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>pse__Milestone__r.pse__Target_Date__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -357,18 +302,33 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>pse__WBS_Element_Number__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>pse__Work_Remaining__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
-    <description>Enables you to add editable columns to the task grid in Project Task Gantt and Gantt.</description>
+    <description>When creating a project from a project template, use to define the Project Task fields (if associated project tasks exist) that are copied from the project template to the new project record. These fields do not display on the CreateProjectFromTemplate Visualforce page.</description>
     <displayedFields>
-        <field>RAG__c</field>
+        <field>OwnerId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>pse__Estimated_Time_To_Completion__c</field>
+        <field>pse__Order__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>pse__Work_Calendar__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>pse__Synchronize_Milestone_And_Task__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
@@ -378,7 +338,17 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Role_Budget__c</field>
+        <field>Task_Type__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Sharepoint_Link__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Sharepoint_Link_URL__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
@@ -388,44 +358,9 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Order_Id__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>Practice__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
-    <displayedFields>
-        <field>pse__Status__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>pse__Blocked__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>pse__WBS_Element_Number__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Task_Type__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Task_Timeline_Status__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Sharepoint_Link_URL__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <label>Gantt Editable Custom Columns</label>
+    <label>Create Project From Template Alt Copy Project Task Fields</label>
 </FieldSet>

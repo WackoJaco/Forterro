@@ -10745,6 +10745,46 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Forterro_PSA_EVA__c.CPS_Actual_Hours__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forterro_PSA_EVA__c.CPS_Assignment_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forterro_PSA_EVA__c.CPS_EVA_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forterro_PSA_EVA__c.CPS_End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forterro_PSA_EVA__c.CPS_Estimated_Hours__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forterro_PSA_EVA__c.CPS_Project_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forterro_PSA_EVA__c.CPS_Resource_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forterro_PSA_EVA__c.CPS_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.IsPrivate</field>
         <readable>true</readable>
@@ -10952,6 +10992,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>appirio_core__Config_Option__c.appirio_core__Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>appirio_core__Config_Value__c.Group_DO_NOT_DEPLOY__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16101,6 +16146,41 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.CPS_Billing_Type_Analytics__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CPS_Percentage_Complete_From_Tasks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CPS_Project_Type_Analytics__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CPS_Timecard_Approver__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CPS_Total_Actual_Hours_From_Tasks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CPS_Total_Estimated_Hours_From_Tasks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CPS_Total_Remaining_Hours_From_Tasks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.CTC_Percent_Complete__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16387,6 +16467,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.Remaining_Hours__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Revenue_Margin_Percentage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Revenue_Margin__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -18525,6 +18615,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Region__c.CPS_Product_Family_Mapping_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>pse__Region__c.Cascading_Multiplier_Rates__c</field>
         <readable>true</readable>
@@ -20287,6 +20382,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Timecard_Header__c.Approved_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Timecard_Header__c.CPS_Project_Override_Approver__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -27453,6 +27553,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
+        <object>Exclude_from_Work__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>appirio_core__App_Log__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
@@ -28522,6 +28631,10 @@
     </tabSettings>
     <tabSettings>
         <tab>Create_Support_Request</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Exclude_from_Work__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
