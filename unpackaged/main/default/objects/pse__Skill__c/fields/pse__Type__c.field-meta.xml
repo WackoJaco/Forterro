@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Set of skill types. Used when grouping skills capacity reports.</description>
+    <inlineHelpText>Set of skill types. Used when grouping skills capacity reports.</inlineHelpText>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>abas ERP</fullName>
+                <default>false</default>
+                <label>abas ERP</label>
+            </value>
+            <value>
+                <fullName>BPSC ERP</fullName>
+                <default>false</default>
+                <label>BPSC ERP</label>
+            </value>
+            <value>
+                <fullName>Business Analysis</fullName>
+                <default>false</default>
+                <label>Business Analysis</label>
+            </value>
+            <value>
+                <fullName>DMS</fullName>
+                <default>false</default>
+                <label>DMS</label>
+            </value>
+            <value>
+                <fullName>Industry</fullName>
+                <default>false</default>
+                <label>Industry</label>
+            </value>
+            <value>
+                <fullName>Jeeves ERP</fullName>
+                <default>false</default>
+                <label>Jeeves ERP</label>
+            </value>
+            <value>
+                <fullName>Languages</fullName>
+                <default>false</default>
+                <label>Languages</label>
+            </value>
+            <value>
+                <fullName>OrderWise ERP</fullName>
+                <default>false</default>
+                <label>OrderWise ERP</label>
+            </value>
+            <value>
+                <fullName>Programming</fullName>
+                <default>false</default>
+                <label>Programming</label>
+            </value>
+            <value>
+                <fullName>Project Management</fullName>
+                <default>false</default>
+                <label>Project Management</label>
+            </value>
+            <value>
+                <fullName>Soft Skills</fullName>
+                <default>false</default>
+                <label>Soft Skills</label>
+            </value>
+            <value>
+                <fullName>SQL</fullName>
+                <default>false</default>
+                <label>SQL</label>
+            </value>
+            <value>
+                <fullName>Strategy</fullName>
+                <default>false</default>
+                <label>Strategy</label>
+            </value>
+            <value>
+                <fullName>Technical &amp; Architecture</fullName>
+                <default>false</default>
+                <label>Technical &amp; Architecture</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

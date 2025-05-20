@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Group__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Picklist of certification groups.</description>
+    <inlineHelpText>Picklist of certification groups.</inlineHelpText>
+    <label>Group</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Jeeves ERP Customization</fullName>
+                <default>false</default>
+                <label>Jeeves ERP Customization</label>
+            </value>
+            <value>
+                <fullName>Jeeves ERP Finance</fullName>
+                <default>false</default>
+                <label>Jeeves ERP Finance</label>
+            </value>
+            <value>
+                <fullName>Jeeves ERP Infrastructure &amp; Cloud</fullName>
+                <default>false</default>
+                <label>Jeeves ERP Infrastructure &amp; Cloud</label>
+            </value>
+            <value>
+                <fullName>Jeeves ERP Manufacturing</fullName>
+                <default>false</default>
+                <label>Jeeves ERP Manufacturing</label>
+            </value>
+            <value>
+                <fullName>Jeeves ERP Supply Chain</fullName>
+                <default>false</default>
+                <label>Jeeves ERP Supply Chain</label>
+            </value>
+            <value>
+                <fullName>Jeeves ERP JAPP</fullName>
+                <default>false</default>
+                <label>Jeeves ERP JAPP</label>
+            </value>
+            <value>
+                <fullName>Jeeves ERP General</fullName>
+                <default>false</default>
+                <label>Jeeves ERP General</label>
+            </value>
+            <value>
+                <fullName>Jeeves ERP Role</fullName>
+                <default>false</default>
+                <label>Jeeves ERP Role</label>
+            </value>
+            <value>
+                <fullName>BPSC ERP Finance</fullName>
+                <default>false</default>
+                <label>BPSC ERP Finance</label>
+            </value>
+            <value>
+                <fullName>BPSC ERP SCM</fullName>
+                <default>false</default>
+                <label>BPSC ERP SCM</label>
+            </value>
+            <value>
+                <fullName>BPSC ERP WMS</fullName>
+                <default>false</default>
+                <label>BPSC ERP WMS</label>
+            </value>
+            <value>
+                <fullName>BPSC ERP HR</fullName>
+                <default>false</default>
+                <label>BPSC ERP HR</label>
+            </value>
+            <value>
+                <fullName>BPSC ERP Manufacturing</fullName>
+                <default>false</default>
+                <label>BPSC ERP Manufacturing</label>
+            </value>
+            <value>
+                <fullName>BPSC ERP PM/SysWag</fullName>
+                <default>false</default>
+                <label>BPSC ERP PM/SysWag</label>
+            </value>
+            <value>
+                <fullName>BPSC ERP ADM/Reps</fullName>
+                <default>false</default>
+                <label>BPSC ERP ADM/Reps</label>
+            </value>
+            <value>
+                <fullName>Oracle</fullName>
+                <default>false</default>
+                <label>Oracle</label>
+            </value>
+            <value>
+                <fullName>Delphi</fullName>
+                <default>false</default>
+                <label>Delphi</label>
+            </value>
+            <value>
+                <fullName>Crystal Reports</fullName>
+                <default>false</default>
+                <label>Crystal Reports</label>
+            </value>
+            <value>
+                <fullName>.NET</fullName>
+                <default>false</default>
+                <label>.NET</label>
+            </value>
+            <value>
+                <fullName>C#</fullName>
+                <default>false</default>
+                <label>C#</label>
+            </value>
+            <value>
+                <fullName>mySQL SysWag</fullName>
+                <default>false</default>
+                <label>mySQL SysWag</label>
+            </value>
+            <value>
+                <fullName>Java</fullName>
+                <default>false</default>
+                <label>Java</label>
+            </value>
+            <value>
+                <fullName>Spring Boot</fullName>
+                <default>false</default>
+                <label>Spring Boot</label>
+            </value>
+            <value>
+                <fullName>MS Windows Srv</fullName>
+                <default>false</default>
+                <label>MS Windows Srv</label>
+            </value>
+            <value>
+                <fullName>Linux Srv</fullName>
+                <default>false</default>
+                <label>Linux Srv</label>
+            </value>
+            <value>
+                <fullName>Cloud AWS</fullName>
+                <default>false</default>
+                <label>Cloud AWS</label>
+            </value>
+            <value>
+                <fullName>Cloud Azure</fullName>
+                <default>false</default>
+                <label>Cloud Azure</label>
+            </value>
+            <value>
+                <fullName>SQL</fullName>
+                <default>false</default>
+                <label>SQL</label>
+            </value>
+            <value>
+                <fullName>PL/SQL</fullName>
+                <default>false</default>
+                <label>PL/SQL</label>
+            </value>
+            <value>
+                <fullName>BPSC ERP Insta/Upgr</fullName>
+                <default>false</default>
+                <label>BPSC ERP Insta/Upgr</label>
+            </value>
+            <value>
+                <fullName>Infrastructure Ins/Config</fullName>
+                <default>false</default>
+                <label>Infrastructure Ins/Config</label>
+            </value>
+            <value>
+                <fullName>Other OS Inst/Config</fullName>
+                <default>false</default>
+                <label>Other OS Inst/Config</label>
+            </value>
+            <value>
+                <fullName>VM Ins/Config</fullName>
+                <default>false</default>
+                <label>VM Ins/Config</label>
+            </value>
+            <value>
+                <fullName>Potential</fullName>
+                <default>false</default>
+                <label>Potential</label>
+            </value>
+            <value>
+                <fullName>Resistance</fullName>
+                <default>false</default>
+                <label>Resistance</label>
+            </value>
+            <value>
+                <fullName>Tasks</fullName>
+                <default>false</default>
+                <label>Tasks</label>
+            </value>
+            <value>
+                <fullName>People</fullName>
+                <default>false</default>
+                <label>People</label>
+            </value>
+            <value>
+                <fullName>Motivation</fullName>
+                <default>false</default>
+                <label>Motivation</label>
+            </value>
+            <value>
+                <fullName>Tools</fullName>
+                <default>false</default>
+                <label>Tools</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
