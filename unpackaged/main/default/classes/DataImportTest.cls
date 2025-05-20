@@ -868,11 +868,19 @@ public class DataImportTest
         batch = new DataImportBatch();
         batch.currentProcess = DataImportBatch.Process.CREATE_ROLE_BUDGETS;
         batch.errorMessages = new List<string>();
-        
+
         // re-query so we get fresh data
         Set<string> statuses = new Set<string>{ 'Parents Associated' };
         stagingTasks = (List<Staging_Task__c>)Database.query( batch.start( null ).getQuery() );
         batch.execute( null, stagingTasks );
+
+        // due to a validation rule we can only create 'Requested' projects, now we have to update the stage accordingly
+        List<pse__Proj__c> projects = [Select Id, pse__Stage__c from pse__Proj__c];
+        for( pse__Proj__c project : projects )
+        {
+            project.pse__Stage__c = 'In Progress';
+        }
+        update projects;
 
         Test.startTest();
 
@@ -1039,6 +1047,14 @@ public class DataImportTest
         Set<string> statuses = new Set<string>{ 'Parents Associated' };
         stagingTasks = (List<Staging_Task__c>)Database.query( batch.start( null ).getQuery() );
         batch.execute( null, stagingTasks );
+
+        // due to a validation rule we can only create 'Requested' projects, now we have to update the stage accordingly
+        List<pse__Proj__c> projects = [Select Id, pse__Stage__c from pse__Proj__c];
+        for( pse__Proj__c project : projects )
+        {
+            project.pse__Stage__c = 'In Progress';
+        }
+        update projects;
 
         batch = new DataImportBatch();
         batch.currentProcess = DataImportBatch.Process.CREATE_ASSIGNMENTS;
@@ -1395,5 +1411,179 @@ public class DataImportTest
 
         List<pse__Budget__c> budgets = [Select Id from pse__Budget__c];
         system.assert( budgets.size() > 0 );
+    }
+
+    @isTest static void TestUpdateAssignmentScheduledHours()
+    {
+        Account acc = new Account( Name = 'John Smith', External_Id__c = 'C-133701' );
+        insert acc;   
+
+        Contact con = new Contact( FirstName = 'Izabela', LastName = 'Gredka', AccountId = acc.Id, External_Id__c = 'IGREDKA' );
+        insert con;
+
+        pse__Work_Calendar__c cal = new pse__Work_Calendar__c(
+            Name = 'Test Calendar',
+            pse__Week_Start_Day__c = 'Monday',
+            pse__Sunday_Hours__c = 0.0,
+            pse__Monday_Hours__c = 8.0,
+            pse__Tuesday_Hours__c = 8.0,
+            pse__Wednesday_Hours__c = 8.0,
+            pse__Thursday_Hours__c =8.0,
+            pse__Friday_Hours__c = 8.0,
+            pse__Saturday_Hours__c = 0.0
+        );
+        insert cal;
+
+        pse__Region__c region = new pse__Region__c( BU_Code__c = 'AB123', Name = 'Test Region', pse__Default_Work_Calendar__c = cal.Id );
+        insert region;
+
+        Contact con2 = new Contact( 
+            FirstName = 'Mike', 
+            LastName = 'Bullet', 
+            AccountId = acc.Id, 
+            External_Id__c = 'MIKEBULLET',
+            pse__Is_Resource__c = true,
+            pse__Is_Resource_Active__c = true,
+            pse__Resource_Role__c = 'Consultant',
+            pse__Region__c = region.Id );
+        insert con2;
+
+        pse__Permission_Control__c perm = new pse__Permission_Control__c(
+            pse__User__c = UserInfo.getUserId(),
+            pse__Region__c = region.Id,
+            pse__Cascading_Permission__c = true,
+            pse__Timecard_Ops_Edit__c = true,
+            pse__Timecard_Entry__c = true,
+            pse__Staffing__c = true,
+            pse__Skills_And_Certifications_View__c = true,
+            pse__Skills_And_Certifications_Entry__c = true, 
+            pse__Resource_Request_Entry__c = true,
+            pse__Invoicing__c = true,
+            pse__Forecast_View__c = true,
+            pse__Forecast_Edit__c = true,
+            pse__Expense_Ops_Edit__c = true,
+            pse__Expense_Entry__c = true,
+            pse__Billing__c = true
+        );
+
+        insert perm;
+
+        List<Staging_Project__c> stagingProjects = new List<Staging_Project__c>
+        {
+            new Staging_Project__c(
+                Project_Name__c = 'Test project',
+                Start_Date__c = system.today().addMonths( -1 ),
+                Due_Date__c = system.today().addMonths( 2 ),
+                Type__c = 'NSS',
+                Sub_Project_Type__c = 'NSS - Implementation',
+                State__c = 'Active',
+                Billing_Type__c = 'Mixed',
+                Customer_Name__c = 'John Smith',
+                Customer_Id__c = 'C-133701',
+                Project_ID__c = 'P-99702',
+                Project_Number__c = '702',
+                Project_Manager_Name__c = 'Izabela Gredka',
+                Project_ManagerFortX_ID__c = 'FX1',
+                Project_ManagerInternal_ID__c = 'IGREDKA',
+                Description__c = 'This is a description',
+                Region__c = 'Test Region',
+                Order_Id__c = '12345',
+                CurrencyisoCode = 'EUR' )
+        };
+        insert stagingProjects;
+
+        DataImportBatch batch = new DataImportBatch();
+        batch.currentProcess = DataImportBatch.Process.CREATE_PROJECT_FIRST_PASS;
+        batch.errorMessages = new List<string>();
+        batch.execute( null, stagingProjects );
+
+        List<Staging_Task__c> stagingTasks = new List<Staging_Task__c>
+        {
+            new Staging_Task__c( 
+                Task_Name__c = 'Task 1',
+                Start_Date__c = system.today().toStartOfWeek().addDays( -7 ),
+                Due_Date__c = system.today().toStartOfWeek().addDays( -1 ),
+                Budget__c = 12,
+                Resource_Name__c = 'Mike Bullet',
+                Task_ID__c = 'T-000001',
+                Task_Type__c = 'Billable',
+                Task_Rate__c = 10,
+                State__c = 'Active',
+                Project_ID__c = 'P-99702',
+                Remaining_Effort__c = 10,
+                Internal_Id__c = '8ae6838b9105721c0191095e08064fe1',
+                Parent_Id__c = 'T-000002',
+                CurrencyisoCode = 'EUR',
+                Training_Module__c = 'H-FRM-REFERP',
+                Reportable__c = true
+            ),
+            new Staging_Task__c( 
+                Task_Name__c = 'Task 2',
+                Start_Date__c = system.today().toStartOfWeek().addDays( -7 ),
+                Due_Date__c = system.today().toStartOfWeek().addDays( -1 ),
+                Budget__c = 18,
+                Resource_Name__c = 'Mike Bullet',
+                Task_ID__c = 'T-000002',
+                Task_Type__c = 'Billable',
+                Task_Rate__c = 11,
+                State__c = 'Active',
+                Project_ID__c = 'P-99702',
+                Remaining_Effort__c = 10,
+                Internal_Id__c = '8ae6838b9105721c0191095e08064fe2',
+                Parent_Id__c = '',
+                CurrencyisoCode = 'EUR',
+                Training_Module__c = 'H-FRM-REFERP',
+                Reportable__c = false
+            )
+        };
+        insert stagingTasks;
+
+        batch = new DataImportBatch();
+        batch.currentProcess = DataImportBatch.Process.CREATE_PROJECT_TASKS;
+        batch.errorMessages = new List<string>();
+        batch.execute( null, stagingTasks );
+
+        batch = new DataImportBatch();
+        batch.currentProcess = DataImportBatch.Process.SET_PROJECT_TASK_PARENTS;
+        batch.errorMessages = new List<string>();
+        batch.execute( null, stagingTasks );
+
+        batch = new DataImportBatch();
+        batch.currentProcess = DataImportBatch.Process.CREATE_ROLE_BUDGETS;
+        batch.errorMessages = new List<string>();
+        
+        // re-query so we get fresh data
+        Set<string> statuses = new Set<string>{ 'Parents Associated' };
+        stagingTasks = (List<Staging_Task__c>)Database.query( batch.start( null ).getQuery() );
+        batch.execute( null, stagingTasks );
+
+        // due to a validation rule we can only create 'Requested' projects, now we have to update the stage accordingly
+        List<pse__Proj__c> projects = [Select Id, pse__Stage__c from pse__Proj__c];
+        for( pse__Proj__c project : projects )
+        {
+            project.pse__Stage__c = 'In Progress';
+        }
+        update projects;
+
+        batch = new DataImportBatch();
+        batch.currentProcess = DataImportBatch.Process.CREATE_ASSIGNMENTS;
+        batch.errorMessages = new List<string>();
+
+        // re-query so we get fresh data
+        statuses = new Set<string>{ 'Role Budgets Created' };
+        stagingTasks = (List<Staging_Task__c>)Database.query( batch.start( null ).getQuery() );
+        batch.execute( null, stagingTasks );
+
+        Test.startTest();
+
+        batch = new DataImportBatch();
+        batch.currentProcess = DataImportBatch.Process.CALCULATE_ASSIGNMENT_SCHED_HOURS;
+        Database.executeBatch( batch );
+
+        Test.stopTest();
+
+        List<pse__Assignment__c> assignments = [Select Id, pse__Scheduled_Hours__c, Scheduled_Hours_Clone__c from pse__Assignment__c];
+        system.assert( assignments.size() > 0 );
+        system.assert( assignments[0].pse__Scheduled_Hours__c == assignments[0].Scheduled_Hours_Clone__c );
     }
 }

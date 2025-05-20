@@ -148,8 +148,6 @@ public class ProjectTaskHelper
                 }
             }
 
-            system.debug( 'z: ' + changedResourceRequests );
-
             // update everything we've touched
             update changedPTAs.values();
             update changedAssignments.values();

@@ -1,8 +1,16 @@
 @isTest
 public class APITest 
 {
-    @TestSetup
-    static void commonSetup()
+    static pse__Project_Task__c projectTask;
+    static pse__Assignment__c assignment;
+    static Contact res;
+    static pse__Proj__c project;
+    static Role_Budget__c roleBudget;
+    static pse__Project_Task_Assignment__c pta;
+    static pse__Timecard_Header__c header;
+    static pse__Miscellaneous_Adjustment__c adjustment;
+
+    static void TestSetup1()
     {
         pse__Region__c region = new pse__Region__c(
             Name = 'Region1',
@@ -31,7 +39,7 @@ public class APITest
 
         insert acc;
 
-        Contact res = new Contact(
+        res = new Contact(
             AccountId = acc.Id,
             FirstName = 'Test',
             LastName = 'Resource',
@@ -47,7 +55,7 @@ public class APITest
 
         insert res;
 
-        pse__Proj__c project = new pse__Proj__c(
+        project = new pse__Proj__c(
             Name = 'Test project',
             pse__Account__c = acc.Id,
             pse__Billing_Type__c = 'Time and Materials',
@@ -89,7 +97,7 @@ public class APITest
 
         insert sched;
 
-        Role_Budget__c roleBudget = new Role_Budget__c(
+        roleBudget = new Role_Budget__c(
             Project__c = project.Id,
             Hours_Budget__c = 100,
             Rate__c = 50,
@@ -121,7 +129,7 @@ public class APITest
 
         insert perm;
 
-        pse__Assignment__c assignment = new pse__Assignment__c(
+        assignment = new pse__Assignment__c(
             Name = 'AssignmentName',
             pse__Project__c = project.Id,
             pse__Schedule__c = sched.Id,
@@ -136,7 +144,7 @@ public class APITest
 
         insert assignment;
 
-        pse__Project_Task__c projectTask = new pse__Project_Task__c(
+        projectTask = new pse__Project_Task__c(
             Name = 'Design',
             pse__Actual_Start_Date_Time__c = DateTime.newInstance( system.today().tostartOfMonth().addMonths( -2 ), Time.newInstance( 11, 0, 0, 0 ) ),
             pse__Actual_End_Date_Time__c = DateTime.newInstance( system.today().tostartOfMonth().addMonths( 2 ).addDays( -1 ), Time.newInstance( 11, 0, 0, 0 ) ), 
@@ -153,13 +161,7 @@ public class APITest
     private static void TestSetup2()
     {
         // have to do this after Test.startTest() to avoid hitting the governor limits
-        pse__Project_Task__c projectTask = [Select Id from pse__Project_Task__c limit 1];
-        pse__Assignment__c assignment = [Select id from pse__Assignment__c limit 1];
-        Contact res = [Select id from Contact limit 1];
-        pse__Proj__c project = [Select id from pse__Proj__c limit 1];
-        Role_Budget__c roleBudget = [Select id from Role_Budget__c limit 1];
-
-        pse__Project_Task_Assignment__c pta = new pse__Project_Task_Assignment__c(
+        pta = new pse__Project_Task_Assignment__c(
             pse__Project_Task__c = projectTask.Id,
             pse__Assignment__c = assignment.Id,
             pse__Resource__c = res.Id,
@@ -170,7 +172,7 @@ public class APITest
 
         insert pta;
 
-        pse__Timecard_Header__c header = new pse__Timecard_Header__c(
+        header = new pse__Timecard_Header__c(
             pse__Assignment__c = assignment.Id,
             pse__Project__c = project.Id,
             pse__Resource__c = res.Id,
@@ -215,7 +217,7 @@ public class APITest
 
         insert settings;
 
-        pse__Miscellaneous_Adjustment__c adjustment = new pse__Miscellaneous_Adjustment__c(
+        adjustment = new pse__Miscellaneous_Adjustment__c(
             Name= 'Test Miscellaneous Adjustment',
             pse__Project__c = project.Id,
             CurrencyIsoCode = 'EUR',
@@ -231,6 +233,7 @@ public class APITest
 
     @isTest static void GetProjectTest()
     {
+        TestSetup1();
         Test.startTest();
         TestSetup2();
 
@@ -252,10 +255,11 @@ public class APITest
 
     @isTest static void UpdateProjectTest()
     {
+        TestSetup1();
         Test.startTest();
         TestSetup2();
-        
-        pse__Proj__c project = [Select Id, pse__Project_ID__c from pse__Proj__c limit 1];
+
+        project = [Select id, pse__Project_ID__c from pse__Proj__c where Id = :project.Id];
         
         List<ProjectAPI.ProjectUpdate> updates = new List<ProjectAPI.ProjectUpdate>();
         ProjectAPI.ProjectUpdate upd = new ProjectAPI.ProjectUpdate();
@@ -282,12 +286,9 @@ public class APITest
 
     @isTest static void GetTaskTimesTest()
     {
+        TestSetup1();
         Test.startTest();
         TestSetup2();
-
-        pse__Proj__c project = [Select Id from pse__Proj__c limit 1];
-        pse__Project_Task_Assignment__c pta = [Select Id, pse__Project_Task__c from pse__Project_Task_Assignment__c limit 1];
-        pse__Timecard_Header__c header = [Select Id from pse__Timecard_Header__c limit 1];
 
         pse__Task_Time__c taskTime = new pse__Task_Time__c(
             pse__Project_Task__c = pta.pse__Project_Task__c,
@@ -330,12 +331,9 @@ public class APITest
 
     @isTest static void UpdateTaskTimesTest()
     {
+        TestSetup1();
         Test.startTest();
         TestSetup2();
-
-        pse__Proj__c project = [Select Id from pse__Proj__c limit 1];
-        pse__Project_Task_Assignment__c pta = [Select Id, pse__Project_Task__c from pse__Project_Task_Assignment__c limit 1];
-        pse__Timecard_Header__c header = [Select Id from pse__Timecard_Header__c limit 1];
 
         pse__Task_Time__c taskTime = new pse__Task_Time__c(
             pse__Project_Task__c = pta.pse__Project_Task__c,
@@ -384,6 +382,7 @@ public class APITest
 
     @isTest static void GetMiscAdjustmentTest()
     {
+        TestSetup1();
         Test.startTest();
         TestSetup2();
 
@@ -407,10 +406,9 @@ public class APITest
 
     @isTest static void UpdateMiscAdjustmentTest()
     {
+        TestSetup1();
         Test.startTest();
         TestSetup2();
-        
-        pse__Miscellaneous_Adjustment__c adjustment = [Select Id from pse__Miscellaneous_Adjustment__c limit 1];
         
         List<MiscAdjustmentsAPI.MiscAdjustmentUpdate> updates = new List<MiscAdjustmentsAPI.MiscAdjustmentUpdate>();
         MiscAdjustmentsAPI.MiscAdjustmentUpdate upd = new MiscAdjustmentsAPI.MiscAdjustmentUpdate();
@@ -439,15 +437,12 @@ public class APITest
 
     @isTest static void GetDeletedTaskTimesTest()
     {
+        TestSetup1();
         Test.startTest();
         TestSetup2();
 
-        pse__Proj__c project = [Select Id from pse__Proj__c limit 1];
-        pse__Project_Task_Assignment__c pta = [Select Id, pse__Project_Task__c from pse__Project_Task_Assignment__c limit 1];
-        pse__Timecard_Header__c header = [Select Id from pse__Timecard_Header__c limit 1];
-
         pse__Task_Time__c taskTime = new pse__Task_Time__c(
-            pse__Project_Task__c = pta.pse__Project_Task__c,
+            pse__Project_Task__c = projectTask.Id,
             pse__Project_Task_Assignment__c = pta.Id,
             pse__Timecard__c = header.Id,
             pse__Monday_Hours__c = 6,
@@ -494,6 +489,8 @@ public class APITest
         update splits;
 
         TimecardRevokeController con = new TimecardRevokeController( new ApexPages.StandardController( header ) );
+        con.preCheck();
+        con.Reason = 'This is a reason';
         con.Revoke();
 
         String rootUrl = URL.getOrgDomainUrl().toExternalForm() + '/';
@@ -515,15 +512,12 @@ public class APITest
 
     @isTest static void UpdateDeletedTaskTimesTest()
     {
+        TestSetup1();
         Test.startTest();
         TestSetup2();
 
-        pse__Proj__c project = [Select Id from pse__Proj__c limit 1];
-        pse__Project_Task_Assignment__c pta = [Select Id, pse__Project_Task__c from pse__Project_Task_Assignment__c limit 1];
-        pse__Timecard_Header__c header = [Select Id from pse__Timecard_Header__c limit 1];
-
         pse__Task_Time__c taskTime = new pse__Task_Time__c(
-            pse__Project_Task__c = pta.pse__Project_Task__c,
+            pse__Project_Task__c = projectTask.Id,
             pse__Project_Task_Assignment__c = pta.Id,
             pse__Timecard__c = header.Id,
             pse__Monday_Hours__c = 6,
@@ -570,6 +564,7 @@ public class APITest
         update splits;
 
         TimecardRevokeController con = new TimecardRevokeController( new ApexPages.StandardController( header ) );
+        con.Reason = 'This is a reason';
         con.Revoke();
 
         List<DeletedTaskTimeAPI.DeletedTimeEntryUpdate> updates = new List<DeletedTaskTimeAPI.DeletedTimeEntryUpdate>();
@@ -577,6 +572,7 @@ public class APITest
         {
             DeletedTaskTimeAPI.DeletedTimeEntryUpdate up = new DeletedTaskTimeAPI.DeletedTimeEntryUpdate();
             up.syncState = 'Synced';
+            up.revokeState = 'Completed';
             up.timeEntryId = deletedSplit.Task_Time_Split_Id__c;
             updates.add( up );
         }

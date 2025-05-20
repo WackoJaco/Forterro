@@ -38,7 +38,7 @@ global with sharing class MiscAdjustmentsAPI
         {
             projectId = adjustment.pse__Project__r.pse__Project_ID__c;
             projectName = adjustment.pse__Project__r.Name;
-            customerID = adjustment.pse__Project__r.pse__Account__r.External_Id__c == null ? (string)adjustment.pse__Project__r.pse__Account__c : adjustment.pse__Project__r.pse__Account__r.External_Id__c;
+            customerID = adjustment.pse__Project__r.pse__Account__r.AccountNumber;
             customerName = adjustment.pse__Project__r.pse__Account__r.Name;
             if( adjustment.pse__Project__r.pse__Region__c != null )
             {
@@ -47,7 +47,7 @@ global with sharing class MiscAdjustmentsAPI
             syncDate = adjustment.SyncDate__c;
             syncState = adjustment.Sync_Status__c;
             errorMessage = adjustment.ErrorMessage__c;
-            amount = adjustment.pse__Amount__c;
+            amount = Math.abs( adjustment.pse__Amount__c );
             invoiceNumber = adjustment.pse__Invoice_Number__c;
             invoiceDate = adjustment.pse__Invoice_Date__c;
             Description = adjustment.pse__Description__c;
@@ -104,7 +104,7 @@ global with sharing class MiscAdjustmentsAPI
                     pse__Project__r.pse__Project_ID__c,
                     pse__Project__r.Name,
                     pse__Project__r.pse__Account__c,
-                    pse__Project__r.pse__Account__r.External_Id__c,
+                    pse__Project__r.pse__Account__r.AccountNumber,
                     pse__Project__r.pse__Account__r.Name,
                     pse__Project__r.pse__Region__c,
                     pse__Project__r.pse__Region__r.BU_Code__c,

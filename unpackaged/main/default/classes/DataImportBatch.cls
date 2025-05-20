@@ -16,7 +16,8 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
         CREATE_ONE_TO_ONE_PTAS,             // 10
         UPDATE_PROJECT_PLANNED_HOURS,       // 11
         CREATE_PROJECT_BUDGETS,             // 12
-        COMPLETE                            // 13
+        CALCULATE_ASSIGNMENT_SCHED_HOURS,   // 13
+        COMPLETE                            // 14
     }
 
     public Process GetNext( Process current )
@@ -69,6 +70,10 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
             }
             when CREATE_PROJECT_BUDGETS
             {
+                return Process.CALCULATE_ASSIGNMENT_SCHED_HOURS;
+            }
+            when CALCULATE_ASSIGNMENT_SCHED_HOURS
+            {
                 return Process.COMPLETE;
             }
             when else
@@ -108,7 +113,16 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
             when GET_TASK_RATE_ON_TASKS_FROM_ORDERS
             {
                 statuses = new Set<string>{ '', 'New' };
-                query = 'Select Id, Internal_Id__c, Task_Rate__c from Staging_Task__c where Import_Status__c in :statuses';
+                query = 
+                    'Select ' +
+                    '    Id, ' +
+                    '    Internal_Id__c, ' +
+                    '    Task_Rate__c ' +
+                    'from ' +
+                    '    Staging_Task__c ' +
+                    'where ' +
+                    '    Import_Status__c in :statuses and ' +
+                    '    ( not RUC_Category__c like \'%Free%\' ) ';
             }
             when CREATE_PROJECT_FIRST_PASS
             {
@@ -243,6 +257,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     '    Project_Task__r.pse__Project__c, ' +
                     '    Project_Task__r.pse__Project__r.CurrencyIsoCode, ' +
                     '    Project_Task__r.pse__Project__r.Project_Sub_Types__c, ' +
+                    '    Project_Task__r.pse__Project__r.pse__Billing_Type__c, ' +
                     '    Remaining_Effort__c, ' +
                     '    Task_Type__c, ' +
                     '    Task_Rate__c, ' +
@@ -299,6 +314,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     '    Project_Task__r.pse__Project__r.pse__Account__c, ' +
                     '    Project_Task__r.pse__Project__r.pse__Start_Date__c, ' +
                     '    Project_Task__r.pse__Project__r.pse__End_Date__c, ' +
+                    '    Project_Task__r.pse__Project__r.pse__Billing_Type__c, ' +
                     '    Project_Task__r.pse__Project__r.CurrencyIsoCode, ' +
                     '    Task_Type__c, ' +
                     '    Task_Rate__c, ' +
@@ -377,6 +393,34 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     '    Import_Status__c in :statuses and ' +
                     '    Project__c != null ';
             }
+            when CALCULATE_ASSIGNMENT_SCHED_HOURS
+            {
+                statuses = new Set<string>{ 'Assignments Created', 'Complete' };
+                query = 
+                    'Select ' +
+                    '    Id, ' +
+                    '    Import_Status__c, ' +
+                    '    Project_Task__c, ' +
+                    '    Project_Task__r.Name, ' +
+                    '    Project_Task__r.pse__Project__c, ' +
+                    '    Project_Task__r.pse__Project__r.Name, ' +
+                    '    Project_Task__r.pse__Project__r.pse__Account__c, ' +
+                    '    Project_Task__r.pse__Project__r.pse__Start_Date__c, ' +
+                    '    Project_Task__r.pse__Project__r.pse__End_Date__c, ' +
+                    '    Project_Task__r.pse__Project__r.pse__Billing_Type__c, ' +
+                    '    Project_Task__r.pse__Project__r.CurrencyIsoCode, ' +
+                    '    Task_Type__c, ' +
+                    '    Task_Rate__c, ' +
+                    '    Resource_Name__c, ' +
+                    '    Task_Role__c ' +
+                    'from ' +
+                    '    Staging_Task__c ' +
+                    'where ' +
+                    '    Import_Status__c in :statuses and ' +
+                    '    Project_Task__c != null and ' +
+                    '    Reportable__c = true and ' +
+                    '    Task_Type__c != \'Non-Billable\' ';
+            }
         }
 
         return Database.getQueryLocator( query );
@@ -452,7 +496,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     Map<string,Account> customers = new Map<string,Account>();
                     for( Account acc : [Select Id, External_Id__c from Account where External_Id__c in :customerIdentifiers] )
                     {
-                        customers.put( acc.External_Id__c, acc );
+                        customers.put( acc.External_Id__c.toUpperCase(), acc );
                     }
 
                     Map<string,Contact> contacts = new Map<string,Contact>();
@@ -481,7 +525,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                             Project_Sub_Types__c = getProjectSubTypes( stagingProject.Sub_Project_Type__c ),
                             pse__Stage__c = getProjectStage( stagingProject.State__c ),
                             pse__Billing_Type__c = stagingProject.Billing_Type__c,
-                            pse__Account__c = customers.get( stagingProject.Customer_Id__c )?.Id,
+                            pse__Account__c = customers.get( stagingProject.Customer_Id__c?.toUpperCase() )?.Id,
                             External_Project_Id__c = stagingProject.Project_ID__c,
                             pse__Notes__c = stagingProject.Description__c,
                             pse__Project_Manager__c = contacts.get( stagingProject.Project_Manager_Name__c?.toUpperCase() )?.Id,
@@ -680,7 +724,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     }
 
                     Map<string,pse__Proj__c> projectIdToActual = new Map<string,pse__Proj__c>();
-                    for( pse__Proj__c project : [Select Id, External_Project_Id__c, pse__Work_Calendar__c from pse__Proj__c where External_Project_Id__c in :projectIds] )
+                    for( pse__Proj__c project : [Select Id, External_Project_Id__c, pse__Work_Calendar__c, pse__Region__r.BU_Code__c from pse__Proj__c where External_Project_Id__c in :projectIds] )
                     {
                         projectIdToActual.put( project.External_Project_Id__c, project );
                     }
@@ -715,6 +759,12 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                             Original_Estimated_Hours__c = stagingTask.Budget__c,
                             Actual_Hours_Migrated__c = stagingTask.Actual_Hours__c
                         );
+
+                        if( projectIdToActual.get( stagingTask.Project_ID__c )?.pse__Region__r.BU_Code__c == 'JVS' &&
+                            !string.isBlank( stagingTask.Task_ID__c ) )
+                        {
+                            projectTask.pse__Order__c = decimal.valueOf( stagingTask.Task_ID__c.replaceAll( '[^0-9]', '' ) );
+                        }
 
                         stagingToReal.put( stagingTask.Id, projectTask );
                     }
@@ -847,6 +897,8 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                             contactMap.containsKey( stagingTask.Resource_Name__c?.toUpperCase() ) &&
                             !string.isBlank( stagingTask.Task_Type__c ) &&
                             stagingTask.Task_Rate__c != null &&
+                            stagingTask.Remaining_Effort__c != null &&
+                            stagingTask.Remaining_Effort__c != 0 &&
                             stagingTask.Project_Task__r.pse__Project__r.Project_Sub_Types__c != 'IBS - Ongoing Work' )
                         {
                             string key = makeKeyForRoleBudget( stagingTask, contactMap );
@@ -880,10 +932,16 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                                     role = contactMap.get( stagingTask.Resource_Name__c?.toUpperCase() )?.pse__Resource_Role__c;
                                 }
 
+                                decimal rate = stagingTask.Task_Rate__c;
+                                if( stagingTask.Project_Task__r.pse__Project__r.pse__Billing_Type__c == 'Fixed Price' )
+                                {
+                                    rate = 0;
+                                }
+
                                 Role_Budget__c budget = new Role_Budget__c(
                                     Role__c = role,
                                     Hours_Budget__c = stagingTask.Remaining_Effort__c,
-                                    Rate__c = stagingTask.Task_Rate__c,
+                                    Rate__c = rate,
                                     Project__c = stagingTask.Project_Task__r.pse__Project__c,
                                     CurrencyIsoCode = stagingTask.Project_Task__r.pse__Project__r.CurrencyIsoCode,
                                     Credited_Hours__c = stagingTask.Task_Type__c == 'Productive' ? true : false,
@@ -903,8 +961,8 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                         stagingTask.Import_Status__c = 'Role Budgets Created';
                         if( stagingTask.Project_Task__r.pse__Status__c == 'Complete' )
                         {
-                            // if complete we don't want to create assignments or PTAs
-                            stagingTask.Import_Status__c = 'Complete';
+                            // if complete we don't want to create assignments but do create PTAs
+                            stagingTask.Import_Status__c = 'Assignments Created';
                         }
                     }
                     update records;
@@ -1301,7 +1359,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
 
                     // search for role budgets
                     Map<string,Id> roleBudgetKeyToId = new Map<string,Id>();
-                    Map<string,Id> roleBudgetKeyToReference = new Map<string,Id>();
+                    Map<string,string> roleBudgetKeyToReference = new Map<string,string>();
                     for( Role_Budget__c budget : [Select Id, External_Id__c, Hours_Budget__c, Reference__c from Role_Budget__c where External_Id__c in :assignmentKeyToRoleBudgetKey.values()] )
                     {
                         roleBudgetKeyToId.put( budget.External_Id__c, budget.Id );
@@ -1595,6 +1653,58 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     insert newBudgets;
                     update records;
                 }
+                when CALCULATE_ASSIGNMENT_SCHED_HOURS
+                {
+                    Set<string> resourceNames = new Set<string>();
+                    for( Staging_Task__c stagingTask : (List<Staging_Task__c>)records )
+                    {
+                        if( !string.isBlank( stagingTask.Resource_Name__c ) )
+                        {
+                            resourceNames.add( stagingTask.Resource_Name__c );
+                        }
+
+                        if( stagingTask.Task_Rate__c == null )
+                        {
+                            stagingTask.Task_Rate__c = 0;
+                        }
+                    }
+
+                    Map<string,Contact> contactMap = new Map<string,Contact>();
+                    for( Contact con : 
+                        [Select 
+                            Id, 
+                            Name,
+                            pse__Resource_Role__c
+                        from 
+                            Contact 
+                        where 
+                            Name in :resourceNames and 
+                            pse__Is_Resource__c = true and 
+                            pse__Is_Resource_Active__c = true] )
+                    {
+                        contactMap.put( con.Name.toUpperCase(), con );
+                    }
+
+                    Set<string> assignmentKeys = new Set<string>();
+                    for( Staging_Task__c stagingTask : (List<Staging_Task__c>)records )
+                    {
+                        if( stagingTask.Project_Task__r.pse__Project__c != null &&
+                            contactMap.containsKey( stagingTask.Resource_Name__c?.toUpperCase() ) &&
+                            !string.isBlank( stagingTask.Task_Type__c ) &&
+                            stagingTask.Task_Rate__c != null )
+                        {
+                            assignmentKeys.add( makeKeyForAssignment( stagingTask, contactMap ) );
+                        }
+                    }
+
+                    List<pse__Assignment__c> assignments = new List<pse__Assignment__c>();
+                    for( pse__Assignment__c ass : [Select Id, pse__Scheduled_Hours__c, Scheduled_Hours_Clone__c from pse__Assignment__c where Assignment_External_ID__c in :assignmentKeys] )
+                    {
+                        ass.Scheduled_Hours_Clone__c = ass.pse__Scheduled_Hours__c;
+                        assignments.add( ass );
+                    }
+                    update assignments;
+                }
             }
         }
         catch( Exception ex )
@@ -1671,11 +1781,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
         }
         body += '</ul>';
 
-        insert new Data_Import_Results__c(
-            Errors__c = body
-        );
-
-        /*body += '<p>User: ' + UserInfo.getUserName() + ', Org Id: ' + UserInfo.getOrganizationId() + '</p>';
+        body += '<p>User: ' + UserInfo.getUserName() + ', Org Id: ' + UserInfo.getOrganizationId() + '</p>';
 
 		body += '<p>Certinia</p>';
 
@@ -1687,7 +1793,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
         }
         catch( System.EmailException sex ) 
         {
-        }*/
+        }
     }
 
     public static string makeKeyForAssignment( Staging_Task__c stagingTask, Map<string,Contact> contactMap )
@@ -1708,7 +1814,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                 stagingTask.Project_Task__r.pse__Project__c + '|' +
                 contactMap.get( stagingTask.Resource_Name__c?.toUpperCase() )?.Id + '|' +
                 stagingTask.Task_Type__c + '|' +
-                stagingTask.Task_Rate__c + '|' + 
+                stagingTask.Task_Rate__c?.setScale( 4 ) + '|' + 
                 role;
         }
     }
@@ -1725,7 +1831,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
             stagingTask.Project_Task__r.pse__Project__c + '|' +
             contactMap.get( stagingTask.Resource_Name__c?.toUpperCase() )?.Id + '|' +
             stagingTask.Task_Type__c + '|' +
-            stagingTask.Task_Rate__c + '|' +
+            stagingTask.Task_Rate__c?.setScale( 4 ) + '|' +
             stagingTask.Project_Task__c + '|' + 
             role;
     }
@@ -1738,10 +1844,16 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
             role = contactMap.get( stagingTask.Resource_Name__c?.toUpperCase() )?.pse__Resource_Role__c;
         }
 
+        decimal rate = stagingTask.Task_Rate__c;
+        if( stagingTask.Project_Task__r.pse__Project__r.pse__Billing_Type__c == 'Fixed Price' )
+        {
+            rate = 0;
+        }
+
         return
             stagingTask.Project_Task__r.pse__Project__c + '|' +
             stagingTask.Task_Type__c + '|' +
-            stagingTask.Task_Rate__c + '|' +
+            rate?.setScale( 4 ) + '|' +
             role;
     }
 
@@ -1806,6 +1918,11 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
             'Completed' => 'Complete',
             'Cancelled' => 'Cancelled'
         };
+
+        if( Test.isRunningTest() )
+        {
+            return 'Requested';
+        }
         
         return stageMap.get( stagingState );
     }

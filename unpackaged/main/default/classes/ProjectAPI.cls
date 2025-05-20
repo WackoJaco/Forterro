@@ -30,6 +30,8 @@ global with sharing class ProjectAPI
         public boolean isBillable;
         public string currencyISOcode;
         public string invoiceContactReference;
+        public string customerContact;
+        public string orderId;
 
         global Project()
         {
@@ -43,13 +45,22 @@ global with sharing class ProjectAPI
             if( project.pse__Project_Manager__c != null )
             {
                 projectOwnerName = project.pse__Project_Manager__r.Name;
-                projectOwner = project.pse__Project_Manager__r.Email;
+                projectOwner = string.isblank( project.pse__Project_Manager__r.Clarizen_ID__c ) ? 
+                    project.pse__Project_Manager__r.Email : 
+                    project.pse__Project_Manager__r.Clarizen_ID__c;
+            }
+            else if( project.Lead_Consultant__c != null )
+            {
+                projectOwnerName = project.Lead_Consultant__r.Name;
+                projectOwner = string.isblank( project.Lead_Consultant__r.Clarizen_ID__c ) ? 
+                    project.Lead_Consultant__r.Email : 
+                    project.Lead_Consultant__r.Clarizen_ID__c;
             }
             if( project.Invoice_Contact_Reference__c != null )
             {
                 invoiceContactReference = project.Invoice_Contact_Reference__r.Name;
             }
-            customerID = project.pse__Account__r.External_Id__c == null ? (string)project.pse__Account__c : project.pse__Account__r.External_Id__c;
+            customerID = project.pse__Account__r.AccountNumber;
             customerName = project.pse__Account__r.Name;
             if( project.pse__Region__c != null )
             {
@@ -68,6 +79,8 @@ global with sharing class ProjectAPI
             errorMessage = project.ErrorMessage__c;
             isBillable = project.pse__Is_Billable__c;
             currencyISOcode = project.CurrencyIsoCode;
+            customerContact = project.Customer_Contact_Reference__c;
+            orderId = project.Order_Id__c;
         }
     }
 
@@ -106,12 +119,17 @@ global with sharing class ProjectAPI
                     Name,
                     CurrencyIsoCode,
                     pse__Project_Manager__c,
+                    pse__Project_Manager__r.Clarizen_ID__c,
                     pse__Project_Manager__r.Name,
                     pse__Project_Manager__r.Email,
+                    Lead_Consultant__c,
+                    Lead_Consultant__r.Clarizen_ID__c,
+                    Lead_Consultant__r.Name,
+                    Lead_Consultant__r.Email,
                     Invoice_Contact_Reference__c,
                     Invoice_Contact_Reference__r.Name,
                     pse__Account__c,
-                    pse__Account__r.External_Id__c,
+                    pse__Account__r.AccountNumber,
                     pse__Account__r.Name,
                     pse__Region__c,
                     pse__Region__r.Name,
@@ -127,7 +145,9 @@ global with sharing class ProjectAPI
                     SyncDate__c,
                     Sync_Status__c,
                     ErrorMessage__c,
-                    pse__Is_Billable__c
+                    pse__Is_Billable__c,
+                    Customer_Contact_Reference__c,
+                    Order_Id__c
                 From
                     pse__Proj__c
                 Where

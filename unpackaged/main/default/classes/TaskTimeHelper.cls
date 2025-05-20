@@ -55,7 +55,7 @@ public class TaskTimeHelper
         }
     }
 
-    public static void HandleTimesheetRevocation( Id timecardId )
+    public static void HandleTimesheetRevocation( Id timecardId, string reason )
     {
         // get the timecard
         List<pse__Timecard_Header__c> timecards = 
@@ -64,7 +64,12 @@ public class TaskTimeHelper
                 pse__Approved__c,
                 pse__Status__c,
                 pse__Include_In_Financials__c,
-                pse__Submitted__c
+                pse__Submitted__c,
+                pse__Resource__c,
+                pse__Resource__r.Clarizen_ID__c,
+                pse__Resource__r.Email,
+                Revoked__c,
+                Revoke_Reason__c
             from 
                 pse__Timecard_Header__c 
             where 
@@ -75,11 +80,22 @@ public class TaskTimeHelper
             throw new AppException( 'Unable to find the timecard with id ' + timecardId );
         }
 
+        if( string.isBlank( reason ) )
+        {
+            throw new AppException( 'You must provide a revocation reason' );
+        }
+
         pse__Timecard_Header__c timecard = timecards[0];
 
         if( timecard.pse__Approved__c != true )
         {
             throw new AppException( 'You can only revoke approved timecards' );
+        }
+
+        string revokedBy = timecard.pse__Resource__r.Email;
+        if( !string.isBlank( timecard.pse__Resource__r.Clarizen_ID__c ) )
+        {
+            revokedBy = timecard.pse__Resource__r.Clarizen_ID__c;
         }
 
         // gather the splits to delete
@@ -105,7 +121,10 @@ public class TaskTimeHelper
                 deletedTaskTimeSplits.add( new Deleted_Task_Time_Split__c(
                     Timecard__c = timecardId,
                     Task_Time_Split_Id__c = split.Id,
-                    Sync_Status__c = 'New'
+                    Sync_Status__c = 'New',
+                    Revoke_State__c = 'Requested',
+                    Revoke_Reason__c = reason,
+                    Revoked_By__c = revokedBy
                 ) );
             }
             splitsToDelete.add( split );
@@ -131,6 +150,8 @@ public class TaskTimeHelper
         timecard.pse__Status__c = 'Saved';
         timecard.pse__Include_In_Financials__c = false;
         timecard.pse__Submitted__c = false;
+        timecard.Revoked__c = true;
+        timecard.Revoke_Reason__c = reason;
 
         update timecard;
     }

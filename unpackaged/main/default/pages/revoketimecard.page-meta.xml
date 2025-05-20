@@ -5,8 +5,8 @@
     <confirmationTokenRequired>false</confirmationTokenRequired>
     <label>revoketimecard</label>
     <packageVersions>
-        <majorNumber>2024</majorNumber>
-        <minorNumber>201</minorNumber>
+        <majorNumber>2025</majorNumber>
+        <minorNumber>104</minorNumber>
         <namespace>pse</namespace>
     </packageVersions>
 </ApexPage>

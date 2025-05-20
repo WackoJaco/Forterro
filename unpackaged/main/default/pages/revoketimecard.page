@@ -1,4 +1,4 @@
-<apex:page standardController="pse__Timecard_Header__c" lightningStylesheets="true" extensions="TimecardRevokeController">
+<apex:page standardController="pse__Timecard_Header__c" lightningStylesheets="true" extensions="TimecardRevokeController" action="{!preCheck}">
     <script>function setFocusOnLoad() {}</script>
     <apex:sectionHeader title="Revoke Timecard" subtitle="Revokes a timecard and removes associated exported time splits" />
     <apex:form >
@@ -9,6 +9,12 @@
                         <apex:pageMessages />
                     </apex:pageBlockSectionItem>
                 </apex:pageBlockSection>
+                <apex:pageBlockSection columns="2" rendered="{!NOT(IsDone)}">
+					<apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Revocation reason:" for="reason"/>
+						<apex:inputText id="reason" value="{!Reason}"/>
+					</apex:pageBlockSectionItem>
+				</apex:pageBlockSection>
                 <apex:pageBlockSection columns="1" rendered="{!NOT(IsDone)}">
 					<apex:pageBlockSectionItem >
 						<p>Please confirm that you would like to revoke this timecard. There is no undo.<br/><br/></p>

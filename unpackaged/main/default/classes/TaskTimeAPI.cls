@@ -57,8 +57,8 @@ global with sharing class TaskTimeAPI
         public TimeEntry( Task_Time_Split__c split )
         {
             timeEntryId = split.Id;
-            reportedBy = split.Task_Time__r.pse__Timecard__r.pse__Resource__r.External_Id__c == null ?
-                (string)split.Task_Time__r.pse__Timecard__r.pse__Resource__r.Email : split.Task_Time__r.pse__Timecard__r.pse__Resource__r.External_Id__c;
+            reportedBy = split.Task_Time__r.pse__Timecard__r.pse__Resource__r.Clarizen_ID__c == null ?
+                (string)split.Task_Time__r.pse__Timecard__r.pse__Resource__r.Email : split.Task_Time__r.pse__Timecard__r.pse__Resource__r.Clarizen_ID__c;
             reportedDate = split.Start_Date__c;
             reportedHours = split.Hours__c;
             notes = split.Notes__c;
@@ -71,8 +71,7 @@ global with sharing class TaskTimeAPI
             projectId = split.Task_Time__r.pse__Timecard__r.pse__Project__r.External_Project_Id__c == null ?
                 (string)split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Project_ID__c : split.Task_Time__r.pse__Timecard__r.pse__Project__r.External_Project_Id__c;
             projectName = split.Task_Time__r.pse__Timecard__r.pse__Project__r.Name;
-            customerID = split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__r.External_Id__c == null ?
-                (string)split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__c : split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__r.External_Id__c;
+            customerID = split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__r.AccountNumber;
             customerName = split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__r.Name;
             invoiceNumber = split.Invoice_Number__c;
             if( split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Project_Manager__c != null )
@@ -223,7 +222,7 @@ global with sharing class TaskTimeAPI
                     Task_Time__r.pse__Timecard__r.Approved_Date__c,
                     Task_Time__r.pse__Timecard__r.Location__c,
                     Task_Time__r.pse__Timecard__r.pse__Resource__c,
-                    Task_Time__r.pse__Timecard__r.pse__Resource__r.External_Id__c,
+                    Task_Time__r.pse__Timecard__r.pse__Resource__r.Clarizen_ID__c,
                     Task_Time__r.pse__Timecard__r.pse__Resource__r.Email,
                     Task_Time__r.pse__Timecard__r.pse__Resource__r.pse__Practice__c,
                     Task_Time__r.pse__Timecard__r.pse__Resource__r.pse__Practice__r.Name,
@@ -243,7 +242,7 @@ global with sharing class TaskTimeAPI
                     Task_Time__r.pse__Timecard__r.pse__Project__r.Project_Sub_Types__c,
                     Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__c,
                     Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__r.Name,
-                    Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__r.External_Id__c,
+                    Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__r.AccountNumber,
                     Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Project_Manager__c,
                     Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Project_Manager__r.Name,
                     Task_Time__r.pse__Timecard__r.pse__Project__r.Contact__c,

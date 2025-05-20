@@ -29,6 +29,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Deleted_Task_Time_Split__c.Revoke_State__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Deleted_Task_Time_Split__c.SyncDate__c</field>
         <readable>true</readable>
     </fieldPermissions>

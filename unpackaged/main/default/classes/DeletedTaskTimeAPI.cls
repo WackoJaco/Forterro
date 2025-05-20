@@ -9,8 +9,12 @@ global with sharing class DeletedTaskTimeAPI
     global class DeletedTimeEntry
     {
         public Id timeEntryId;
+        public Id deletedTimeEntryId;
+        public string revokeState;
         public DateTime syncDate;
         public string syncState;
+        public string revokeReason;
+        public string revokedBy;
 
         global DeletedTimeEntry()
         {
@@ -19,14 +23,19 @@ global with sharing class DeletedTaskTimeAPI
         public DeletedTimeEntry( Deleted_Task_Time_Split__c split )
         {
             timeEntryId = split.Task_Time_Split_Id__c;
+            deletedTimeEntryId = split.Id;
+            revokeState = split.Revoke_State__c;
             syncDate = split.SyncDate__c;
             syncState = split.Sync_Status__c;
+            revokeReason = split.Revoke_Reason__c;
+            revokedBy = split.Revoked_By__c;
         }
     }
 
     global class DeletedTimeEntryUpdate
     {
         public Id timeEntryId;
+        public string revokeState;
         public DateTime syncDate;
         public string syncState;
     }
@@ -52,7 +61,10 @@ global with sharing class DeletedTaskTimeAPI
                     Id, 
                     Task_Time_Split_Id__c,
                     Sync_Status__c,
-                    SyncDate__c
+                    SyncDate__c,
+                    Revoke_Reason__c,
+                    Revoked_By__c,
+                    Revoke_State__c
                 From
                     Deleted_Task_Time_Split__c
                 Where
@@ -93,7 +105,8 @@ global with sharing class DeletedTaskTimeAPI
                     Id, 
                     Task_Time_Split_Id__c, 
                     Sync_Status__c, 
-                    SyncDate__c 
+                    SyncDate__c,
+                    Revoke_State__c
                 from 
                     Deleted_Task_Time_Split__c 
                 where
@@ -115,6 +128,7 @@ global with sharing class DeletedTaskTimeAPI
 
                 Deleted_Task_Time_Split__c split = splits.get( entry.timeEntryId );
                 split.Sync_Status__c = entry.syncState;
+                split.Revoke_State__c = entry.revokeState;
 
                 if( entry.syncDate != null )
                 {
