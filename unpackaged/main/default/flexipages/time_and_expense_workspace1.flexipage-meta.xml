@@ -319,6 +319,14 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>enableFillHandle</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>endDateOffset</name>
+                    <value>28</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>height</name>
                     <value>500</value>
                 </componentInstanceProperties>
@@ -336,6 +344,26 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideCreateResourceRequestButton</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSplitAssignmentToNewAssignmentAction</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSplitAssignmentToNewResourceRequestAction</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSplitResourceRequestAction</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSwapResourceOnAssignmentAction</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSwapResourceOnResourceRequestAction</name>
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -373,6 +401,14 @@
                 <componentInstanceProperties>
                     <name>resourceRequestFieldSetName</name>
                     <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>restrictPastDateEdit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>startDateOffset</name>
+                    <value>-7</value>
                 </componentInstanceProperties>
                 <componentName>pse:rmwp_resourceWorkPlanner</componentName>
                 <identifier>pse_rmwp_resourceWorkPlanner</identifier>
