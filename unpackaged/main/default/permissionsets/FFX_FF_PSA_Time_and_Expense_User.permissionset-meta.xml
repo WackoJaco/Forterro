@@ -11004,6 +11004,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Assignment__c.pse__Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Assignment__c.pse__Milestone__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -12744,16 +12749,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>pse__Proj__c.CPS_Billing_Type_Analytics__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Proj__c.CPS_Project_Type_Analytics__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>pse__Proj__c.Cash_Collection__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -14429,11 +14424,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>pse__Region__c.CPS_Product_Family_Mapping_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>pse__Region__c.pse__Region_ID_Chain__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -15140,11 +15130,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Timecard_Header__c.Approved_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Timecard_Header__c.CPS_Project_Override_Approver__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16462,6 +16447,11 @@
         <field>pse__Work_Calendar__c.pse__WeekendsAreWorkdays__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>sbaa__ApprovalRule__c.FWE_Go_live__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
@@ -16936,4 +16926,8 @@
         <enabled>true</enabled>
         <name>ChatterInternalUser</name>
     </userPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>PM_Edit_Start_End_Dates</name>
+    </customPermissions>
 </PermissionSet>

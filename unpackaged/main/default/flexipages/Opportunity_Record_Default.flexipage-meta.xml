@@ -267,6 +267,16 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Sales_Manager_Forecast__c</fieldItem>
+                <identifier>RecordSales_Manager_Forecast__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.CloseDate</fieldItem>
@@ -571,8 +581,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.pse__Services_Attached_From_Products__c</fieldItem>
-                <identifier>Recordpse_Services_Attached_From_Products_cField</identifier>
+                <fieldItem>Record.pse__Services_Attached_Percent_From_Products__c</fieldItem>
+                <identifier>Recordpse_Services_Attached_Percent_From_Products_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -581,8 +591,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.pse__Services_Attached_Percent_From_Products__c</fieldItem>
-                <identifier>Recordpse_Services_Attached_Percent_From_Products_cField</identifier>
+                <fieldItem>Record.pse__Services_Attached_From_Products__c</fieldItem>
+                <identifier>Recordpse_Services_Attached_From_Products_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

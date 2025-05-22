@@ -4,6 +4,7 @@
     <fields>Name</fields>
     <fields>Category__c</fields>
     <fields>Sub_category__c</fields>
+    <fields>CreatedById</fields>
     <fields>ffps_forterro__RequestedDate__c</fields>
     <fields>ffps_forterro__Type__c</fields>
     <label>Service_Request</label>
