@@ -4,8 +4,8 @@
     <customErrors>
         <name>Role_Budget_Error</name>
         <label>Role Budget Error</label>
-        <locationX>517</locationX>
-        <locationY>1187</locationY>
+        <locationX>819</locationX>
+        <locationY>1295</locationY>
         <customErrorMessages>
             <errorMessage>This Assignment must have a role budget.</errorMessage>
             <isFieldError>false</isFieldError>
@@ -17,7 +17,7 @@
         <locationX>176</locationX>
         <locationY>287</locationY>
         <defaultConnector>
-            <targetReference>Get_Role_Budgets</targetReference>
+            <targetReference>Is_Absence_Project</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -41,10 +41,39 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Absence_Project</name>
+        <label>Is Absence Project?</label>
+        <locationX>478</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Get_Role_Budgets</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Is_Absence_Project</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.Project_Sub_Types__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal - Unavailability</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Unavailability</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Role_Budget_Required_For_Project</name>
         <label>Is Role Budget Required for Project?</label>
-        <locationX>803</locationX>
-        <locationY>611</locationY>
+        <locationX>1105</locationX>
+        <locationY>719</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Is_Role_Budget_Required</name>
@@ -107,8 +136,8 @@
     <decisions>
         <name>Mixed_and_not_Fixed_Price_MS</name>
         <label>Mixed_and_not_Fixed_Price_MS</label>
-        <locationX>627</locationX>
-        <locationY>719</locationY>
+        <locationX>929</locationX>
+        <locationY>827</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Mixed_and_not_Fixed_Price_MS</name>
@@ -136,8 +165,8 @@
     <decisions>
         <name>Role_Budget_Exist</name>
         <label>Role Budget Exist</label>
-        <locationX>231</locationX>
-        <locationY>611</locationY>
+        <locationX>533</locationX>
+        <locationY>719</locationY>
         <defaultConnector>
             <targetReference>Role_Budget_Error</targetReference>
         </defaultConnector>
@@ -158,8 +187,8 @@
     <decisions>
         <name>Role_Budget_Exists</name>
         <label>Role Budget Exists?</label>
-        <locationX>517</locationX>
-        <locationY>503</locationY>
+        <locationX>819</locationX>
+        <locationY>611</locationY>
         <defaultConnector>
             <targetReference>Is_Role_Budget_Required_For_Project</targetReference>
         </defaultConnector>
@@ -205,8 +234,8 @@
     <recordLookups>
         <name>Get_Role_Budgets</name>
         <label>Get Role Budgets</label>
-        <locationX>517</locationX>
-        <locationY>395</locationY>
+        <locationX>819</locationX>
+        <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Role_Budget_Exists</targetReference>

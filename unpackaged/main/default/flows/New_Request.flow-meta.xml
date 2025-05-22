@@ -14,7 +14,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Create_Cross_Functional_General_Request</targetReference>
+            <targetReference>Get_Select_EXT_Project</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -124,7 +124,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Create_General_Request</targetReference>
+            <targetReference>Get_Select_Project</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -270,7 +270,7 @@
                 <leftValueReference>Loop_Over_Cross_Functional_Projects.Project_Sub_Types__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Internal – Cross-Functional Work</stringValue>
+                    <stringValue>Internal - Cross-Functional Work</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -631,7 +631,7 @@
         <name>Create_Cross_Functional_General_Request</name>
         <label>Create Cross Functional General Request</label>
         <locationX>2162</locationX>
-        <locationY>1706</locationY>
+        <locationY>1814</locationY>
         <connector>
             <targetReference>Request_Submitted</targetReference>
         </connector>
@@ -672,7 +672,7 @@
         <inputAssignments>
             <field>Region__c</field>
             <value>
-                <elementReference>lkupRegion.recordId</elementReference>
+                <elementReference>Get_Select_EXT_Project.pse__Region__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -754,7 +754,7 @@
         <name>Create_General_Request</name>
         <label>Create General Request</label>
         <locationX>622</locationX>
-        <locationY>2090</locationY>
+        <locationY>2198</locationY>
         <connector>
             <targetReference>Request_Submitted</targetReference>
         </connector>
@@ -801,7 +801,7 @@
         <inputAssignments>
             <field>Region__c</field>
             <value>
-                <elementReference>lkupRegion.recordId</elementReference>
+                <elementReference>Get_Select_Project.pse__Region__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -897,7 +897,7 @@
             <field>Project_Sub_Types__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Internal – Cross-Functional Work</stringValue>
+                <stringValue>Internal - Cross-Functional Work</stringValue>
             </value>
         </filters>
         <filters>
@@ -1028,6 +1028,48 @@
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Select_EXT_Project</name>
+        <label>Get Select EXT Project</label>
+        <locationX>2162</locationX>
+        <locationY>1706</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Cross_Functional_General_Request</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>txtProjectId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Proj__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Select_Project</name>
+        <label>Get Select Project</label>
+        <locationX>622</locationX>
+        <locationY>2090</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_General_Request</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>txtProjectId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Proj__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <runInMode>SystemModeWithoutSharing</runInMode>
@@ -1271,6 +1313,16 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>What_Type_of_Work_is_this</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>chCredited</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <fields>
                     <name>lkupGroup</name>
@@ -1603,7 +1655,7 @@
         <allowPause>true</allowPause>
         <fields>
             <name>Copy_1_of_txtNoProject</name>
-            <fieldText>&lt;p&gt;No matching project found for the Region: {!Get_Resource.pse__Region__r.Name}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;There must be an Internal Project that is &apos;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;Internal – Cross-Functional Work&lt;/span&gt;&apos; for this Region and must be for the current year.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please contact Operations for any questions.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;No matching project found for the Region: {!lkupRegion.recordName}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;There must be an Internal Project that is &apos;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;Internal – Cross-Functional Work&lt;/span&gt;&apos; for this Region and must be for the current year.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please contact Operations for any questions.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1645,7 +1697,7 @@
         <name>Request_Submitted</name>
         <label>Request Submitted</label>
         <locationX>1722</locationX>
-        <locationY>2414</locationY>
+        <locationY>2522</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>

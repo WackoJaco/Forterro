@@ -439,7 +439,7 @@
                 <leftValueReference>Loop_Extended_Projects.Project_Sub_Types__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Internal – Cross-Functional Work</stringValue>
+                    <stringValue>Internal - Cross-Functional Work</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -990,7 +990,7 @@
             <field>Project_Sub_Types__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Internal – Cross-Functional Work</stringValue>
+                <stringValue>Internal - Cross-Functional Work</stringValue>
             </value>
         </filters>
         <filters>
