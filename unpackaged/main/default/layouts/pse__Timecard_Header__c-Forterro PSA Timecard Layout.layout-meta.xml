@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>pse__edit_in_time_entry</customButtons>
     <customButtons>pse__Admin_Edit</customButtons>
@@ -74,6 +74,10 @@
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Location__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Combined_Notes__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -354,6 +358,10 @@
         <label>System Information</label>
         <layoutColumns>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Sync_Status__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>CreatedById</field>
             </layoutItems>
@@ -371,9 +379,9 @@
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
         <label>Custom Links</label>
-        <layoutColumns/>
-        <layoutColumns/>
-        <layoutColumns/>
+        <layoutColumns />
+        <layoutColumns />
+        <layoutColumns />
         <style>CustomLinks</style>
     </layoutSections>
     <platformActionList>

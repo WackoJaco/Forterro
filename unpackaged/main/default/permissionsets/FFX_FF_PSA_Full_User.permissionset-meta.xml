@@ -10211,6 +10211,10 @@
         <apexPage>pse__releaseLock</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
+    <pageAccesses>
+        <apexPage>revoketimecard</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <applicationVisibilities>
         <application>pse__PS_Enterprise</application>
         <visible>true</visible>
@@ -20502,6 +20506,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Timecard_Header__c.Project_Manager_Current_User__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Timecard_Header__c.Sync_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

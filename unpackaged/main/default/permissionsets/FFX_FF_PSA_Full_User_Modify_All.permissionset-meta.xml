@@ -15322,11 +15322,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>appirio_core__Config_Value__c.Group_DO_NOT_DEPLOY__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>appirio_core__Config_Value__c.appirio_core__Custom_Attribute_1__c</field>
         <readable>true</readable>
@@ -25462,6 +25457,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Timecard_Header__c.Sync_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Timecard_Header__c.Total_Distance__c</field>
         <readable>true</readable>
@@ -34332,6 +34332,10 @@
     <tabSettings>
         <tab>Staging_Project__c</tab>
         <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Work_Planner1</tab>
+        <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
         <tab>appirio_core__App_Log__c</tab>

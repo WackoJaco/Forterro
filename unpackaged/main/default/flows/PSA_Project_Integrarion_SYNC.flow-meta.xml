@@ -43,7 +43,7 @@
         <connector>
             <targetReference>Set_Sync_Status</targetReference>
         </connector>
-        <filterLogic>5 AND (1 OR 2 OR 3 OR 4)</filterLogic>
+        <filterLogic>5 AND (1 OR 2 OR 3 OR 4 or 6)</filterLogic>
         <filters>
             <field>Customer_Contact_Reference__c</field>
             <operator>IsChanged</operator>
@@ -77,6 +77,13 @@
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Synced</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Order_Id__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <object>pse__Proj__c</object>

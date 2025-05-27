@@ -280,11 +280,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>assignmentDetailsFieldSetName</name>
-                    <value>NONE</value>
+                    <value>cps_resource_planner_display_assignment</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>assignmentDetailsTasksFieldSetName</name>
-                    <value>NONE</value>
+                    <value>cps_resource_planner_display_tasks</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>assignmentFieldSetName</name>

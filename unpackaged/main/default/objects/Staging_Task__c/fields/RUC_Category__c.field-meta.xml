@@ -100,70 +100,64 @@
                 <label>4 - Development</label>
             </value>
             <value>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+                <label>Consulting</label>
+            </value>
+            <value>
+                <fullName>3 - Uppsättning / Design</fullName>
+                <default>false</default>
+                <label>3 - Uppsättning / Design</label>
+            </value>
+            <value>
+                <fullName>Approved Internal</fullName>
+                <default>false</default>
+                <label>Approved Internal</label>
+            </value>
+            <value>
                 <fullName>0 - Projektstyrning</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>0 - Projektstyrning</label>
+            </value>
+            <value>
+                <fullName>5 - Test</fullName>
+                <default>false</default>
+                <label>5 - Test</label>
             </value>
             <value>
                 <fullName>1 - Teknik / Installation</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>1 - Teknik / Installation</label>
             </value>
             <value>
                 <fullName>2 - Workshop / Dokumentation</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>2 - Workshop / Dokumentation</label>
-            </value>
-            <value>
-                <fullName>3 - Uppsättning / Design</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>3 - Uppsättning / Design</label>
-            </value>
-            <value>
-                <fullName>4 - Utveckling</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>4 - Utveckling</label>
-            </value>
-            <value>
-                <fullName>5 - Test</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>5 - Test</label>
             </value>
             <value>
                 <fullName>7 - Driftsättning &amp; Support</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>7 - Driftsättning &amp; Support</label>
-            </value>
-            <value>
-                <fullName>Approved Internal</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Approved Internal</label>
-            </value>
-            <value>
-                <fullName>Consulting</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Consulting</label>
-            </value>
-            <value>
-                <fullName>FI-Portfolio Support (incl. KB)</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>FI-Portfolio Support (incl. KB)</label>
             </value>
             <value>
                 <fullName>FI-Projects &amp; Training Delivery (Enablement)</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>FI-Projects &amp; Training Delivery (Enablement)</label>
+            </value>
+            <value>
+                <fullName>4 - Utveckling</fullName>
+                <default>false</default>
+                <label>4 - Utveckling</label>
+            </value>
+            <value>
+                <fullName>FI-Portfolio Support (incl. KB)</fullName>
+                <default>false</default>
+                <label>FI-Portfolio Support (incl. KB)</label>
+            </value>
+            <value>
+                <fullName>Pre-Approved Transition/Shadow Time</fullName>
+                <default>false</default>
+                <label>Pre-Approved Transition/Shadow Time</label>
             </value>
         </valueSetDefinition>
     </valueSet>

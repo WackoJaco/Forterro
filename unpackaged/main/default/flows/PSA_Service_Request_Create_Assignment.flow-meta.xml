@@ -321,6 +321,11 @@
         <scale>0</scale>
     </formulas>
     <formulas>
+        <name>formDescription255</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Record.ffps_forterro__RequestDetails__c}, 255)</expression>
+    </formulas>
+    <formulas>
         <name>formEndDateTime</name>
         <dataType>DateTime</dataType>
         <expression>DATETIMEVALUE({!$Record.Task_End_Date__c})+(16/24)</expression>
@@ -476,7 +481,7 @@
         <inputAssignments>
             <field>pse__Description__c</field>
             <value>
-                <elementReference>$Record.ffps_forterro__RequestDetails__c</elementReference>
+                <elementReference>formDescription255</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -489,6 +494,12 @@
             <field>pse__Estimated_Hours__c</field>
             <value>
                 <elementReference>$Record.Estimated_Hours__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Notes__c</field>
+            <value>
+                <elementReference>$Record.ffps_forterro__RequestDetails__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

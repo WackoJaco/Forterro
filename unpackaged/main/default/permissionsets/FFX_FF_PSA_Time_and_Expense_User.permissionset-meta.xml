@@ -12748,6 +12748,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CPS_Timecard_Approver__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.Cash_Collection__c</field>
         <readable>true</readable>
