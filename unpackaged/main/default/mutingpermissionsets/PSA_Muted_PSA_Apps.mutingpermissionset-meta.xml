@@ -67,7 +67,7 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Assignment__c.pse__Bill_Rate__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -204,23 +204,7 @@
         <visibility>Available</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>Resource_Management_Workspace</tab>
-        <visibility>Available</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>Work_Planner1</tab>
-        <visibility>Available</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>Work_Planner2</tab>
-        <visibility>Available</visibility>
-    </tabSettings>
-    <tabSettings>
         <tab>psaws__projman_workspace</tab>
-        <visibility>Available</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>psaws__resource_manager_workspace</tab>
         <visibility>Available</visibility>
     </tabSettings>
     <tabSettings>
@@ -256,15 +240,7 @@
         <visibility>Available</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>pse__Skills_Capacity</tab>
-        <visibility>Available</visibility>
-    </tabSettings>
-    <tabSettings>
         <tab>pse__Skills_and_Certifications_Matrix</tab>
-        <visibility>Available</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>pse__Work_Planner</tab>
         <visibility>Available</visibility>
     </tabSettings>
     <userPermissions>

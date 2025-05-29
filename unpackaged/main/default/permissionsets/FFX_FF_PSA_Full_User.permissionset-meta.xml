@@ -16489,6 +16489,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Show_Task_Based_Resource_Rpt__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.Staffing_Resourcing__c</field>
         <readable>true</readable>
@@ -19559,6 +19564,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Resource_Request__c.MyProjectRRs__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>pse__Resource_Request__c.Onsite_or_Remote__c</field>
         <readable>true</readable>
@@ -20381,6 +20391,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Timecard_Header__c.Approved_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Timecard_Header__c.Assigned_Approver__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

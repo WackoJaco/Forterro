@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Project_Resource_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Account__c</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__SOW_Hours__c</columns>
+    <columns>pse__Staffer_Resource__c</columns>
+    <columns>pse__Resource_Role__c</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__Region__c</columns>
+    <columns>pse__Practice__c</columns>
+    <columns>pse__Group__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>MyProjectRRs__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>equals</operation>
+        <value>Draft,Ready to Staff,Hold,Tentative</value>
+    </filters>
+    <label>My Project Resource Requests</label>
+</ListView>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Total_Schedule_Hours_Change</fullName>
-    <active>true</active>
+    <active>false</active>
     <description>If the total amount of</description>
     <errorConditionFormula>ISCHANGED( pse__Scheduled_Hours__c ) &amp;&amp; NOT( $Permission.PM_Edit_Start_End_Dates )</errorConditionFormula>
     <errorMessage>Please ensure the Total amount of  scheduled hours remains constant. Otherwise please contact your PM.</errorMessage>

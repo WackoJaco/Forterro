@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <name>GET_EXT</name>
+        <label>GET EXT</label>
+        <locationX>3152</locationX>
+        <locationY>566</locationY>
+        <actionName>GetExtProjectForRegion</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Proejct_Found</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>ErrorPage</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>regionId</name>
+            <value>
+                <elementReference>Get_Resource.pse__Region__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>GetExtProjectForRegion</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
     <apiVersion>62.0</apiVersion>
     <assignments>
         <name>Assign_Cross_Functional_Values</name>
         <label>Assign Cross Functional Values</label>
         <locationX>2162</locationX>
-        <locationY>1598</locationY>
+        <locationY>1814</locationY>
         <assignmentItems>
             <assignToReference>txtWorkType</assignToReference>
             <operator>Assign</operator>
@@ -21,12 +46,12 @@
         <name>Assign_EXT_Counter</name>
         <label>Assign EXT Counter</label>
         <locationX>2558</locationX>
-        <locationY>674</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>projectCounter</assignToReference>
             <operator>AssignCount</operator>
             <value>
-                <elementReference>Get_Internal_Project_EXT_Support</elementReference>
+                <elementReference>Get_EXT_IBS_Enhancement</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -131,7 +156,7 @@
         <name>Assign_Project_Id</name>
         <label>Assign Project Id</label>
         <locationX>2778</locationX>
-        <locationY>1106</locationY>
+        <locationY>1322</locationY>
         <assignmentItems>
             <assignToReference>txtProjectId</assignToReference>
             <operator>Assign</operator>
@@ -140,7 +165,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>Get_Internal_Project_EXT_Support</assignToReference>
+            <assignToReference>Get_EXT_IBS_Enhancement</assignToReference>
             <operator>Assign</operator>
         </assignmentItems>
         <assignmentItems>
@@ -194,7 +219,7 @@
     </choices>
     <choices>
         <name>chCredited</name>
-        <choiceText>Support - Extended Support = Support ticket, ext support (credited time)</choiceText>
+        <choiceText>Support - Extended Support = Support ticket, ext support</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>SupportCredited</stringValue>
@@ -233,7 +258,7 @@
         <name>EXTSupport_Project_Found</name>
         <label>EXTSupport Project Found?</label>
         <locationX>2690</locationX>
-        <locationY>1382</locationY>
+        <locationY>1598</locationY>
         <defaultConnector>
             <targetReference>No_XFunctional_Project_Found</targetReference>
         </defaultConnector>
@@ -258,7 +283,7 @@
         <name>Is_Current_Year</name>
         <label>Is Current Year</label>
         <locationX>2910</locationX>
-        <locationY>998</locationY>
+        <locationY>1214</locationY>
         <defaultConnector>
             <targetReference>Loop_Over_Cross_Functional_Projects</targetReference>
         </defaultConnector>
@@ -270,7 +295,7 @@
                 <leftValueReference>Loop_Over_Cross_Functional_Projects.Project_Sub_Types__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Internal - Cross-Functional Work</stringValue>
+                    <stringValue>IBS - Enhancement</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -307,7 +332,7 @@
     <decisions>
         <name>Is_Practice_Required</name>
         <label>Is Practice Required?</label>
-        <locationX>886</locationX>
+        <locationX>1034</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Request_Type</targetReference>
@@ -384,7 +409,7 @@
         <name>Name_length_80_Character2</name>
         <label>2. Name length &lt;=80 Character</label>
         <locationX>2426</locationX>
-        <locationY>1490</locationY>
+        <locationY>1706</locationY>
         <defaultConnector>
             <targetReference>Copy_1_of_checkName</targetReference>
         </defaultConnector>
@@ -446,10 +471,36 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Proejct_Found</name>
+        <label>Proejct Found?</label>
+        <locationX>3152</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>No_XFunctional_Project_Found</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Proejct_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GET_EXT.projectIds</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_EXT_IBS_Enhancement</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Projects_Found</name>
         <label>Projects Found?</label>
         <locationX>2558</locationX>
-        <locationY>782</locationY>
+        <locationY>998</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>No_XFunctional_Project_Found</targetReference>
@@ -466,7 +517,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Multiple_Internal_EXT_Projects</targetReference>
+                <targetReference>Get_Region</targetReference>
             </connector>
             <label>Multjple Projcts found</label>
         </rules>
@@ -489,10 +540,10 @@
     <decisions>
         <name>Request_Type</name>
         <label>Request Type</label>
-        <locationX>1722</locationX>
+        <locationX>2019</locationX>
         <locationY>458</locationY>
         <defaultConnector>
-            <targetReference>Get_Internal_Project_EXT_Support</targetReference>
+            <targetReference>GET_EXT</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -598,8 +649,8 @@
         <name>Loop_Over_Cross_Functional_Projects</name>
         <label>Loop Over Cross Functional Projects</label>
         <locationX>2690</locationX>
-        <locationY>890</locationY>
-        <collectionReference>Get_Internal_Project_EXT_Support</collectionReference>
+        <locationY>1106</locationY>
+        <collectionReference>Get_EXT_IBS_Enhancement</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Is_Current_Year</targetReference>
@@ -631,7 +682,7 @@
         <name>Create_Cross_Functional_General_Request</name>
         <label>Create Cross Functional General Request</label>
         <locationX>2162</locationX>
-        <locationY>1814</locationY>
+        <locationY>2030</locationY>
         <connector>
             <targetReference>Request_Submitted</targetReference>
         </connector>
@@ -726,7 +777,7 @@
         <inputAssignments>
             <field>ffps_forterro__Account__c</field>
             <value>
-                <elementReference>Loop_Over_Cross_Functional_Projects.pse__Account__c</elementReference>
+                <elementReference>Get_Select_EXT_Project.pse__Account__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -880,10 +931,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
-        <name>Get_Internal_Project_EXT_Support</name>
-        <label>Get Internal Project EXT Support</label>
+        <name>Get_EXT_IBS_Enhancement</name>
+        <label>Get EXT IBS Enhancement</label>
         <locationX>2558</locationX>
-        <locationY>566</locationY>
+        <locationY>782</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_EXT_Counter</targetReference>
@@ -894,45 +945,10 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Project_Sub_Types__c</field>
-            <operator>EqualTo</operator>
+            <field>Id</field>
+            <operator>In</operator>
             <value>
-                <stringValue>Internal - Cross-Functional Work</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Is_Active__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Stage__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>In Progress</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Is_Template__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Region__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>lkupRegion.recordId</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Name</field>
-            <operator>Contains</operator>
-            <value>
-                <stringValue>(EXT)</stringValue>
+                <elementReference>GET_EXT.projectIds</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -996,9 +1012,32 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Region</name>
+        <label>Get Region</label>
+        <locationX>1898</locationX>
+        <locationY>1106</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Multiple_Internal_EXT_Projects</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>GET_EXT.projectIds</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Proj__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Resource</name>
         <label>Get Resource</label>
-        <locationX>886</locationX>
+        <locationX>1034</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1034,7 +1073,7 @@
         <name>Get_Select_EXT_Project</name>
         <label>Get Select EXT Project</label>
         <locationX>2162</locationX>
-        <locationY>1706</locationY>
+        <locationY>1922</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Cross_Functional_General_Request</targetReference>
@@ -1097,7 +1136,7 @@
         <name>Copy_1_of_checkName</name>
         <label>Copy 1 of checkName</label>
         <locationX>2690</locationX>
-        <locationY>1598</locationY>
+        <locationY>1814</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
         <allowPause>true</allowPause>
@@ -1116,7 +1155,7 @@
     <screens>
         <name>Enter_Request</name>
         <label>Enter Request</label>
-        <locationX>886</locationX>
+        <locationX>1034</locationX>
         <locationY>242</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1271,60 +1310,6 @@
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
-                    <name>lkupRegion</name>
-                    <extensionName>flowruntime:lookup</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>fieldApiName</name>
-                        <value>
-                            <stringValue>Region__c</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Region</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>objectApiName</name>
-                        <value>
-                            <stringValue>ffps_forterro__ServiceRequest__c</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>maxValues</name>
-                        <value>
-                            <numberValue>1.0</numberValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>required</name>
-                        <value>
-                            <booleanValue>true</booleanValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>recordId</name>
-                        <value>
-                            <elementReference>Get_Resource.pse__Region__c</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>What_Type_of_Work_is_this</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <elementReference>chCredited</elementReference>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <fields>
                     <name>lkupGroup</name>
                     <extensionName>flowruntime:lookup</extensionName>
                     <fieldType>ComponentInstance</fieldType>
@@ -1366,7 +1351,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>3</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -1501,7 +1486,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>3</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -1512,7 +1497,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -1544,14 +1529,62 @@
         <name>Multiple_Internal_EXT_Projects</name>
         <label>Multiple Internal EXT Projects</label>
         <locationX>1898</locationX>
-        <locationY>890</locationY>
+        <locationY>1214</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
             <name>Copy_1_of_Copy_2_of_txtNoProject</name>
-            <fieldText>&lt;p&gt;Multiple matching internal projects found for the selected Region.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please contact Operations for any questions.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt; Multiple matching active EXT support projects found for the {!Get_Region.pse__Region__r.Name} region.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please contact Operations for any questions.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>listMultipleProjects</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>pse__Proj__c</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Data Table</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>NO_SELECTION</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>Get_EXT_IBS_Enhancement</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-5a7f&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Project Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;pse__Project_ID__c&quot;,&quot;guid&quot;:&quot;column-2455&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Project ID&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;pse__Start_Date__c&quot;,&quot;guid&quot;:&quot;column-4fb5&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Start Date&quot;,&quot;type&quot;:&quot;date-local&quot;},{&quot;apiName&quot;:&quot;pse__End_Date__c&quot;,&quot;guid&quot;:&quot;column-5b93&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;End Date&quot;,&quot;type&quot;:&quot;date-local&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -1649,13 +1682,13 @@
         <name>No_XFunctional_Project_Found</name>
         <label>No XFunctional Project Found</label>
         <locationX>2954</locationX>
-        <locationY>1490</locationY>
-        <allowBack>false</allowBack>
+        <locationY>1706</locationY>
+        <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
             <name>Copy_1_of_txtNoProject</name>
-            <fieldText>&lt;p&gt;No matching project found for the Region: {!lkupRegion.recordName}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;There must be an Internal Project that is &apos;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;Internal – Cross-Functional Work&lt;/span&gt;&apos; for this Region and must be for the current year.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please contact Operations for any questions.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;No matching project found.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please contact Operations for any questions.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1696,8 +1729,8 @@
     <screens>
         <name>Request_Submitted</name>
         <label>Request Submitted</label>
-        <locationX>1722</locationX>
-        <locationY>2522</locationY>
+        <locationX>2019</locationX>
+        <locationY>2606</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1710,7 +1743,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>760</locationX>
+        <locationX>908</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Resource</targetReference>
@@ -1770,6 +1803,20 @@
     </variables>
     <variables>
         <name>txtXFunctionalProjectId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varForterroPSAccount</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varText</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

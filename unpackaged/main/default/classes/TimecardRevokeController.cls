@@ -1,4 +1,4 @@
-public with sharing class TimecardRevokeController 
+public without sharing class TimecardRevokeController 
 {
     public boolean IsDone { get; set; }
     public Id TimecardId { get; set; }

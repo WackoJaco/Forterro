@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unlinking_Task_if_task_greater_0</fullName>
+    <active>true</active>
+    <description>Prevents the unlinking of tasks if the value isn't 0.</description>
+    <errorConditionFormula>IF(AND(
+				ISBLANK( pse__Assignment__c ) = True
+			,ISCHANGED(pse__Assignment__c) 
+			,pse__Estimated_Hours__c &lt;&gt; 0 )
+			, true
+			, false
+		)</errorConditionFormula>
+    <errorMessage>Please set the task estimated hours to 0 before removing resourcing link.</errorMessage>
+</ValidationRule>

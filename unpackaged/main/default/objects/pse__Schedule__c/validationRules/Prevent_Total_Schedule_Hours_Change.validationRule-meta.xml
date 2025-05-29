@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Total_Schedule_Hours_Change</fullName>
+    <active>true</active>
+    <description>Prevent the user from being able to make changes to the total scheduled hours unless they have the appropriate custom permission.</description>
+    <errorConditionFormula>AND(
+				OR(
+				pse__Scheduled_Hours__c &lt; (PRIORVALUE(pse__Scheduled_Hours__c )-0.1),
+				pse__Scheduled_Hours__c &gt; (PRIORVALUE(pse__Scheduled_Hours__c )+0.1)
+    ),
+				 NOT($Permission.Schedule_Hours_Total_Amend_Permissions)
+				)</errorConditionFormula>
+    <errorMessage>You are unable to edit the total hours on the schedule.  If required, please contact your PM. (SCH)</errorMessage>
+</ValidationRule>

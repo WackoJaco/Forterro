@@ -83,12 +83,12 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
-            <value>JVS</value>
+            <value>BPSC</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Tabular</format>
-    <name>Jeeves Timecard ERP Integration</name>
+    <name>BPSC Timecard ERP Integration</name>
     <params>
         <name>co</name>
         <value>1</value>

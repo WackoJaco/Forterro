@@ -467,6 +467,23 @@
                 <identifier>fferpcore_exp_customCountCard4</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>displayLabel</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>listViewApiName</name>
+                    <value>My_Project_Resource_Requests</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectApiName</name>
+                    <value>pse__Resource_Request__c</value>
+                </componentInstanceProperties>
+                <componentName>fferpcore:exp_customCountCard</componentName>
+                <identifier>fferpcore_exp_customCountCard6</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>region7</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -483,7 +500,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>filterName</name>
-                    <value>My_Projects_Project_Manager</value>
+                    <value>psaws__My_Projects</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideActionBar</name>

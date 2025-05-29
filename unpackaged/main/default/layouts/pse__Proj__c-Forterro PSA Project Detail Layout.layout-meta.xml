@@ -345,6 +345,10 @@
                 <field>Project_Profitability__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Show_Task_Based_Resource_Rpt__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Forterro_Team_Satisfaction__c</field>
             </layoutItems>
@@ -666,7 +670,6 @@
     </relatedLists>
     <relatedLists>
         <excludeButtons>MassChangeOwner</excludeButtons>
-        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>pse__Assigned_Resources__c</fields>
         <fields>pse__Start_Date__c</fields>
@@ -828,7 +831,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hVd000000cllu</masterLabel>
+        <masterLabel>00hdw000000NQlE</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

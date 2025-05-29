@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Manage and schedule resources, resource requests, and assignments.</description>
     <flexiPageRegions>
@@ -54,7 +54,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>endDateOffset</name>
-                    <value>28</value>
+                    <value>90</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>height</name>
@@ -78,23 +78,23 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideSplitAssignmentToNewAssignmentAction</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideSplitAssignmentToNewResourceRequestAction</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideSplitResourceRequestAction</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideSwapResourceOnAssignmentAction</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideSwapResourceOnResourceRequestAction</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideSwapSplitAssignmentAction</name>
@@ -138,7 +138,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>startDateOffset</name>
-                    <value>-7</value>
+                    <value>-30</value>
                 </componentInstanceProperties>
                 <componentName>pse:rmwp_fullWorkPlanner</componentName>
                 <identifier>pse_rmwp_fullWorkPlanner</identifier>
