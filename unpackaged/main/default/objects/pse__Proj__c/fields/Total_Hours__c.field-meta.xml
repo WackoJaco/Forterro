@@ -10,7 +10,7 @@
              Total_Role_Budget_Hours__c ,
            If (
              TEXT(pse__Billing_Type__c) = 'Mixed', 
-             Total_Milestone_Hours__c ,
+             Project_Estimate_to_Complete__c ,
             Total_Estimated_Hours__c 
               )
             )

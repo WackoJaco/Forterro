@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Project_Type_Changing</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+				 ISCHANGED( pse__Billing_Type__c ),
+				 psaws__Actual_Hours__c &gt; 0)</errorConditionFormula>
+    <errorDisplayField>pse__Billing_Type__c</errorDisplayField>
+    <errorMessage>Billing type can't be changed if hours have been logged against the project.</errorMessage>
+</ValidationRule>

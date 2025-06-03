@@ -240,7 +240,15 @@
         <visibility>Available</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>pse__Skills_Capacity</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>pse__Skills_and_Certifications_Matrix</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>pse__Work_Planner</tab>
         <visibility>Available</visibility>
     </tabSettings>
     <userPermissions>

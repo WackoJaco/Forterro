@@ -85,6 +85,13 @@
             <operator>equals</operator>
             <value>JVS</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>pse__Task_Time__c.Task_Time_Splits__r$Sync_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Invoiced</value>
+        </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Tabular</format>

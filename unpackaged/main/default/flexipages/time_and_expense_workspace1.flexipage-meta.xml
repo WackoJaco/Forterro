@@ -39,7 +39,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>psaws__My_Time_Variance_For_Last_Week</value>
+                    <value>My_Missing_Time_For_Last_Week</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>majorKpiCalculation</name>
@@ -50,7 +50,6 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>majorKpiFieldName</name>
-                    <value>psaws__Time_Variance_Difference__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>minorKpi1Calculation</name>
@@ -61,7 +60,6 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>minorKpi1FieldName</name>
-                    <value>pse__Work_Calendar_Hours__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>minorKpi2Calculation</name>
@@ -72,11 +70,10 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>minorKpi2FieldName</name>
-                    <value>pse__Total_Hours__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
-                    <value>pse__Time_Variance_Detail__c</value>
+                    <value>pse__Missing_Timecard__c</value>
                 </componentInstanceProperties>
                 <componentName>fferpcore:exp_customAlertCard</componentName>
                 <identifier>fferpcore_exp_customAlertCard</identifier>

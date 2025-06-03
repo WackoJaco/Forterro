@@ -10,11 +10,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>assignmentDetailsFieldSetName</name>
-                    <value>pse__assignment_tooltip_field_set</value>
+                    <value>cps_resource_planner_display_assignment</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>assignmentDetailsTasksFieldSetName</name>
-                    <value>work_planner_fields</value>
+                    <value>cps_resource_planner_display_tasks</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>assignmentFieldSetName</name>

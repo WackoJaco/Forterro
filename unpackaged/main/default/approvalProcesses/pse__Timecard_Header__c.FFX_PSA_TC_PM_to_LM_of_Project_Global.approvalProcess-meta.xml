@@ -49,8 +49,7 @@
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <formula>(ISBLANK(pse__Approver__c) ||
-(pse__Approver__r.Id = pse__Resource__r.pse__Salesforce_User__r.Id) ||
-(CPS_Project_Override_Approver__c  = pse__Resource__r.pse__Salesforce_User__r.Id))
+(pse__Approver__r.Id = pse__Resource__r.pse__Salesforce_User__r.Id))
 &amp;&amp; pse__Submitted__c = True</formula>
     </entryCriteria>
     <finalApprovalActions>

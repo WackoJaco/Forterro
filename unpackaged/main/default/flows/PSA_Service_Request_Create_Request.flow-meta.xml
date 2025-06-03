@@ -50,8 +50,8 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_EXT_Projects</name>
-        <label>Assign EXT Projects</label>
+        <name>Assign_EXT_Counter</name>
+        <label>Assign EXT Counter</label>
         <locationX>1709</locationX>
         <locationY>539</locationY>
         <assignmentItems>
@@ -249,12 +249,19 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Free_Work_Create_a_Project_Budget</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Free_work__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ffps_forterro__Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SupportCredited</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -439,7 +446,7 @@
                 <leftValueReference>Loop_Extended_Projects.Project_Sub_Types__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Internal - Cross-Functional Work</stringValue>
+                    <stringValue>IBS - Enhancement</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -588,6 +595,20 @@
                     <stringValue>smallrequest</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.ffps_forterro__Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SupportCredited</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Free_work__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Assign_Billable_Type</targetReference>
             </connector>
@@ -659,6 +680,11 @@
         <name>formStartDateTime</name>
         <dataType>DateTime</dataType>
         <expression>DATETIMEVALUE({!$Record.Task_Start_Date__c})+(8/24)</expression>
+    </formulas>
+    <formulas>
+        <name>formTextDescription255</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Record.ffps_forterro__RequestDetails__c}, 255)</expression>
     </formulas>
     <interviewLabel>PSA - Service Request - Create Request {!$Flow.CurrentDateTime}</interviewLabel>
     <label>PSA - Service Request - Create Request</label>
@@ -777,7 +803,7 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Sharepoint_Link_URL__c</field>
+            <field>Sharepoint_Link__c</field>
             <value>
                 <elementReference>$Record.Support_Ticket_Link__c</elementReference>
             </value>
@@ -797,7 +823,7 @@
         <inputAssignments>
             <field>pse__Description__c</field>
             <value>
-                <elementReference>$Record.ffps_forterro__RequestDetails__c</elementReference>
+                <elementReference>formTextDescription255</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -810,6 +836,12 @@
             <field>pse__Estimated_Hours__c</field>
             <value>
                 <elementReference>$Record.Estimated_Hours__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Notes__c</field>
+            <value>
+                <elementReference>$Record.ffps_forterro__RequestDetails__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -976,49 +1008,14 @@
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Assign_EXT_Projects</targetReference>
+            <targetReference>Assign_EXT_Counter</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>pse__Region__c</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.Region__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Project_Sub_Types__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Internal - Cross-Functional Work</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Is_Active__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Stage__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>In Progress</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Is_Template__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Name</field>
-            <operator>Contains</operator>
-            <value>
-                <stringValue>(EXT)</stringValue>
+                <elementReference>$Record.Select_Project_Id__c</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>

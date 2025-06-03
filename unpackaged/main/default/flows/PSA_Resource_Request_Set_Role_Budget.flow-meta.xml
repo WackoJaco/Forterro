@@ -4,8 +4,8 @@
     <assignments>
         <name>Calculate_Total</name>
         <label>Calculate Total</label>
-        <locationX>1587</locationX>
-        <locationY>539</locationY>
+        <locationX>2049</locationX>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>countRoleBudgets</assignToReference>
             <operator>AssignCount</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Calculate_Total_Credited</name>
         <label>Calculate Total Credited</label>
-        <locationX>50</locationX>
-        <locationY>539</locationY>
+        <locationX>512</locationX>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>countRoleBudgets</assignToReference>
             <operator>AssignCount</operator>
@@ -36,8 +36,8 @@
     <customErrors>
         <name>Custom_Error_Message_3</name>
         <label>Custom Error Message 3</label>
-        <locationX>908</locationX>
-        <locationY>1187</locationY>
+        <locationX>1370</locationX>
+        <locationY>1295</locationY>
         <customErrorMessages>
             <errorMessage>{!$Record.pse__Resource_Role__c}:Unable to create Resource Requests as there is a problem with the available role budget hours. Please check your project tasks for any warnings and reduce the task hours or increase the role budget hours (5).</errorMessage>
             <isFieldError>false</isFieldError>
@@ -46,8 +46,8 @@
     <customErrors>
         <name>No_Matching_Budget</name>
         <label>No Matching Budget</label>
-        <locationX>2200</locationX>
-        <locationY>1739</locationY>
+        <locationX>2662</locationX>
+        <locationY>1847</locationY>
         <customErrorMessages>
             <errorMessage>{!$Record.pse__Resource_Role__c}:There is no matching role budget or available hours for this resource request. Please review your role budgets.3</errorMessage>
             <isFieldError>false</isFieldError>
@@ -56,19 +56,29 @@
     <customErrors>
         <name>No_PTA_Found</name>
         <label>No Valid PTA Found</label>
-        <locationX>1172</locationX>
-        <locationY>971</locationY>
+        <locationX>1634</locationX>
+        <locationY>1079</locationY>
         <customErrorMessages>
             <errorMessage>Multiple Role Budgets Validation:
 You have tasks which do not have role budgets assigned. Please check that you have allocated a role budget to the Task.</errorMessage>
             <isFieldError>false</isFieldError>
         </customErrorMessages>
     </customErrors>
+    <customErrors>
+        <name>Zero_Hours_error</name>
+        <label>Zero Hours error</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <customErrorMessages>
+            <errorMessage>A Resource Request cannot have 0 hours.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
     <decisions>
         <name>Bypass_Validation</name>
         <label>Bypass Validation</label>
-        <locationX>2272</locationX>
-        <locationY>1187</locationY>
+        <locationX>2734</locationX>
+        <locationY>1295</locationY>
         <defaultConnector>
             <targetReference>No_Matching_Budget</targetReference>
         </defaultConnector>
@@ -89,8 +99,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <decisions>
         <name>Check_Available_Hours</name>
         <label>Check Available Hours</label>
-        <locationX>1766</locationX>
-        <locationY>971</locationY>
+        <locationX>2228</locationX>
+        <locationY>1079</locationY>
         <defaultConnector>
             <targetReference>No_Matching_Budget</targetReference>
         </defaultConnector>
@@ -114,8 +124,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <decisions>
         <name>Check_If_Credited</name>
         <label>Check If Credited Project</label>
-        <locationX>818</locationX>
-        <locationY>323</locationY>
+        <locationX>1280</locationX>
+        <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Get_all_Billable_Role_Budgets</targetReference>
         </defaultConnector>
@@ -137,10 +147,35 @@ You have tasks which do not have role budgets assigned. Please check that you ha
         </rules>
     </decisions>
     <decisions>
+        <name>Check_RR_Hours_not_0</name>
+        <label>Check RR Hours not 0</label>
+        <locationX>665</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Check_If_Credited</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Check_RR_Hours_not_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__SOW_Hours__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Zero_Hours_error</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Copy_1_of_Check_Available_Hours</name>
         <label>Copy 1 of Check Available Hours</label>
-        <locationX>776</locationX>
-        <locationY>1079</locationY>
+        <locationX>1238</locationX>
+        <locationY>1187</locationY>
         <defaultConnector>
             <targetReference>Custom_Error_Message_3</targetReference>
         </defaultConnector>
@@ -164,8 +199,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <decisions>
         <name>Credited_Role_Found</name>
         <label>Credited Role Found</label>
-        <locationX>248</locationX>
-        <locationY>863</locationY>
+        <locationX>710</locationX>
+        <locationY>971</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Credit_Role_Budget_Found</name>
@@ -186,8 +221,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <decisions>
         <name>Has_Bill_Rate</name>
         <label>Has Bill Rate</label>
-        <locationX>1568</locationX>
-        <locationY>1079</locationY>
+        <locationX>2030</locationX>
+        <locationY>1187</locationY>
         <defaultConnector>
             <targetReference>Set_Role_Budget</targetReference>
         </defaultConnector>
@@ -212,8 +247,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
         <description>Checks that a role budget is required.</description>
         <name>Is_Valid_Project</name>
         <label>Is Valid Project?</label>
-        <locationX>2635</locationX>
-        <locationY>971</locationY>
+        <locationX>3097</locationX>
+        <locationY>1079</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Is_Valid_Project</name>
@@ -276,8 +311,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <decisions>
         <name>Mixed_and_Fixed_Price</name>
         <label>Mixed and not Fixed Price MS ?</label>
-        <locationX>2426</locationX>
-        <locationY>1079</locationY>
+        <locationX>2888</locationX>
+        <locationY>1187</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Mixed_and_Fixed_Price</name>
@@ -305,8 +340,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <decisions>
         <name>Multiple_Role_Budgets</name>
         <label>Multiple Role Budgets?</label>
-        <locationX>1587</locationX>
-        <locationY>647</locationY>
+        <locationX>2049</locationX>
+        <locationY>755</locationY>
         <defaultConnector>
             <targetReference>getMatchingRoleBudget</targetReference>
         </defaultConnector>
@@ -330,8 +365,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <decisions>
         <name>MultipleCreditedRoleBudgets</name>
         <label>Multiple Credited Role Budgets?</label>
-        <locationX>50</locationX>
-        <locationY>647</locationY>
+        <locationX>512</locationX>
+        <locationY>755</locationY>
         <defaultConnector>
             <targetReference>Get_Credited_Role_Budget</targetReference>
         </defaultConnector>
@@ -352,8 +387,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <decisions>
         <name>Role_Budget_Found</name>
         <label>Role Budget Found</label>
-        <locationX>2200</locationX>
-        <locationY>863</locationY>
+        <locationX>2662</locationX>
+        <locationY>971</locationY>
         <defaultConnector>
             <targetReference>Is_Valid_Project</targetReference>
         </defaultConnector>
@@ -377,8 +412,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <decisions>
         <name>RR_PTSA_Found</name>
         <label>RR PTSA Found?</label>
-        <locationX>974</locationX>
-        <locationY>863</locationY>
+        <locationX>1436</locationX>
+        <locationY>971</locationY>
         <defaultConnector>
             <targetReference>No_PTA_Found</targetReference>
         </defaultConnector>
@@ -430,8 +465,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <recordLookups>
         <name>Get_all_Billable_Role_Budgets</name>
         <label>Get all Billable Role Budgets</label>
-        <locationX>1587</locationX>
-        <locationY>431</locationY>
+        <locationX>2049</locationX>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Calculate_Total</targetReference>
@@ -460,8 +495,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <recordLookups>
         <name>Get_all_Credited_Role_Budgets</name>
         <label>Get all Credited Role Budgets</label>
-        <locationX>50</locationX>
-        <locationY>431</locationY>
+        <locationX>512</locationX>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Calculate_Total_Credited</targetReference>
@@ -497,8 +532,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <recordLookups>
         <name>Get_Credited_Role_Budget</name>
         <label>Get Credited Role Budget</label>
-        <locationX>248</locationX>
-        <locationY>755</locationY>
+        <locationX>710</locationX>
+        <locationY>863</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Credited_Role_Found</targetReference>
@@ -542,8 +577,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
         <description>We need to get a PTA linked to the RR that has a role budget set. If no role budget on the PTA then the process cannot continue.</description>
         <name>Get_PTA_from_RR</name>
         <label>Get PTA from RR</label>
-        <locationX>974</locationX>
-        <locationY>755</locationY>
+        <locationX>1436</locationX>
+        <locationY>863</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>RR_PTSA_Found</targetReference>
@@ -574,8 +609,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <recordLookups>
         <name>Get_PTA_Role_Budget</name>
         <label>Get PTA Role Budget</label>
-        <locationX>776</locationX>
-        <locationY>971</locationY>
+        <locationX>1238</locationX>
+        <locationY>1079</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Copy_1_of_Check_Available_Hours</targetReference>
@@ -595,8 +630,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <recordLookups>
         <name>getMatchingRoleBudget</name>
         <label>getMatchingRoleBudget</label>
-        <locationX>2200</locationX>
-        <locationY>755</locationY>
+        <locationX>2662</locationX>
+        <locationY>863</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Role_Budget_Found</targetReference>
@@ -625,8 +660,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <recordUpdates>
         <name>Set_Credited_Role_Budget</name>
         <label>Set Credited Role Budget</label>
-        <locationX>116</locationX>
-        <locationY>971</locationY>
+        <locationX>578</locationX>
+        <locationY>1079</locationY>
         <inputAssignments>
             <field>Role_Budget__c</field>
             <value>
@@ -638,8 +673,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <recordUpdates>
         <name>Set_Role_Budget</name>
         <label>Set Role Budget</label>
-        <locationX>1700</locationX>
-        <locationY>1187</locationY>
+        <locationX>2162</locationX>
+        <locationY>1295</locationY>
         <inputAssignments>
             <field>Role_Budget_Required__c</field>
             <value>
@@ -657,8 +692,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <recordUpdates>
         <name>Set_Role_Budget_and_Rate</name>
         <label>Set Role Budget and Rate</label>
-        <locationX>1436</locationX>
-        <locationY>1187</locationY>
+        <locationX>1898</locationX>
+        <locationY>1295</locationY>
         <inputAssignments>
             <field>Role_Budget_Required__c</field>
             <value>
@@ -682,8 +717,8 @@ You have tasks which do not have role budgets assigned. Please check that you ha
     <recordUpdates>
         <name>Update_Resource_Request</name>
         <label>Update Resource Request</label>
-        <locationX>644</locationX>
-        <locationY>1187</locationY>
+        <locationX>1106</locationX>
+        <locationY>1295</locationY>
         <inputAssignments>
             <field>Role_Budget_Required__c</field>
             <value>
@@ -693,10 +728,10 @@ You have tasks which do not have role budgets assigned. Please check that you ha
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>692</locationX>
+        <locationX>539</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Check_If_Credited</targetReference>
+            <targetReference>Check_RR_Hours_not_0</targetReference>
         </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <itemInstances>
@@ -32,69 +32,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>alertDescription</name>
-                    <value>Resources at 90% or below their utilization target in the current and next month.</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>alertTitle</name>
-                    <value>Resources below Utilization Target</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>listViewApiName</name>
-                    <value>Resources_Below_Utili_Target_Group</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiCalculation</name>
-                    <value>count</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiDefaultThresholdColor</name>
-                    <value>gray</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiDescription</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiFieldName</name>
-                    <value>pse__Resource__c</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiLowerThresholdColor</name>
-                    <value>gray</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiUpperThresholdColor</name>
-                    <value>gray</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1Calculation</name>
-                    <value>count</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1Description</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1FieldName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2Calculation</name>
-                    <value>count</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2Description</name>
-                    <value>records due to multiple calculations per resource.</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2FieldName</name>
-                    <value>Name</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>objectApiName</name>
-                    <value>pse__Utilization_Detail__c</value>
-                </componentInstanceProperties>
-                <componentName>fferpcore:exp_customAlertCard</componentName>
-                <identifier>fferpcore_exp_customAlertCard3</identifier>
+                <componentName>psaws:alertLowUtilization</componentName>
+                <identifier>alertLowUtilization</identifier>
             </componentInstance>
         </itemInstances>
         <name>region2</name>
@@ -113,7 +52,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>Projects_Without_Assigned_Hours_Group</value>
+                    <value>psaws__Projects_Without_Assigned_Hours</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>majorKpiCalculation</name>
@@ -135,7 +74,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>alertDescription</name>
-                    <value>Resource requests that are open for staffing</value>
+                    <value>Open resource requests starting in the next 10 days</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>alertTitle</name>
@@ -143,7 +82,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>Ready_to_Staff_Resource_Requests</value>
+                    <value>psaws__Open_Resource_Requests_Next_10_Days</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>majorKpiCalculation</name>
@@ -152,12 +91,6 @@
                 <componentInstanceProperties>
                     <name>majorKpiDefaultThresholdColor</name>
                     <value>gray</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiDescription</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiFieldName</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>majorKpiLowerThresholdColor</name>
@@ -172,20 +105,8 @@
                     <value>count</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>minorKpi1Description</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1FieldName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>minorKpi2Calculation</name>
                     <value>count</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2Description</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2FieldName</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
@@ -203,11 +124,11 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>displayLabel</name>
-                    <value>Tasks pending resourcing</value>
+                    <value>Planned Tasks without assigned Resources</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>Planned_Tasks_wo_Assignments_Group</value>
+                    <value>Planned_Tasks_wo_Assignments</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
@@ -224,11 +145,8 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>displayLabel</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>Held_Resource_Requests_Group</value>
+                    <value>psaws__Held_Resource_Requests</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
@@ -246,15 +164,15 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>displayLabel</name>
-                    <value>Resource request starting soon (15 days)</value>
+                    <value>Resources Started Recently</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>Open_Resource_Requests_Next_15_Days</value>
+                    <value>psaws__Resources_Started_in_the_Last_30_Days</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
-                    <value>pse__Resource_Request__c</value>
+                    <value>Contact</value>
                 </componentInstanceProperties>
                 <componentName>fferpcore:exp_customCountCard</componentName>
                 <identifier>fferpcore_exp_customCountCard3</identifier>
@@ -272,11 +190,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>assignmentDetailsFieldSetName</name>
-                    <value>NONE</value>
+                    <value>cps_resource_planner_display_assignment</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>assignmentDetailsTasksFieldSetName</name>
-                    <value>NONE</value>
+                    <value>cps_resource_planner_display_tasks</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>assignmentFieldSetName</name>
@@ -316,7 +234,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>endDateOffset</name>
-                    <value>28</value>
+                    <value>90</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>height</name>
@@ -400,7 +318,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>startDateOffset</name>
-                    <value>-7</value>
+                    <value>-30</value>
                 </componentInstanceProperties>
                 <componentName>pse:rmwp_fullWorkPlanner</componentName>
                 <identifier>pse_rmwp_fullWorkPlanner</identifier>
@@ -452,10 +370,10 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Add in the PSA Core Analytics Dashboard called "PSA Skills Capacity and Demand Planning"&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Height 1200&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Show Title = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Show Header = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Open In Analytics Studio&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Open Links in New Window = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Enable Notification = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Enable Subscription = True&lt;/strong&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;** Reinstate the PSA Skills Capacity and Demand Planning Analytics Dashboard **&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;** Required as a manual post deployment step - CERTINIA **&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText3</identifier>
+                <identifier>flexipage_richText</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -483,146 +401,6 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-0kk0lut70ier</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>dashboardName</name>
-                    <value>FFX_PSA_Consultant_Dashboard21</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>hideOnError</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>desktopDashboards:embeddedDashboard</componentName>
-                <identifier>desktopDashboards_embeddedDashboard</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-4877e5d4-b79c-4ee9-ad80-afb8c01a9beb</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>decorate</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Add in the PSA Core Analytics Dashboard called "PSA Utilization Summary"&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Height 1000&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Show Title = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Show Header = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Open In Analytics Studio&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Open Links in New Window = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Enable Notification = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Enable Subscription = True&lt;/strong&gt;&lt;/p&gt;</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-7754fe74-02f9-476a-a4e2-73e20070fc2e</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>decorate</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(255, 0, 0);"&gt;Add in the PSA Core Analytics Dashboard called "PSA Utilization Analytics"&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(255, 0, 0);"&gt;Height 1000&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(255, 0, 0);"&gt;Show Title = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(255, 0, 0);"&gt;Show Header = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(255, 0, 0);"&gt;Open In Analytics Studio&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(255, 0, 0);"&gt;Enable Notification = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(255, 0, 0);"&gt;Enable Subscription = True&lt;/strong&gt;&lt;/p&gt;</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText4</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-6c2381c7-df9e-44f2-98a2-ef20dfd3730d</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>decorate</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Add in the PSA Core Analytics Dashboard called "PSA Utilization Analytics Capacity and Demand Planning"&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Height 1000&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Show Title = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Show Header = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Open In Analytics Studio&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Enable Notification = True&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style="color: rgb(255, 0, 0); font-size: 14px;"&gt;Enable Subscription = True&lt;/strong&gt;&lt;/p&gt;</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-0b700683-2c21-44da-9154-9340f14f1687</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>active</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-7754fe74-02f9-476a-a4e2-73e20070fc2e</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Utilization Summary</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab8</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>active</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-6c2381c7-df9e-44f2-98a2-ef20dfd3730d</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Utilization Analytics</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab6</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-0b700683-2c21-44da-9154-9340f14f1687</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Capacity &amp; Demand</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab7</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-6c62e53c-e4ef-4ba7-bb5f-e39e3d0b1e31</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>tabs</name>
-                    <value>Facet-6c62e53c-e4ef-4ba7-bb5f-e39e3d0b1e31</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tabset</componentName>
-                <identifier>flexipage_tabset2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-dd3e19ec-e731-4910-b503-f4b53c8ea500</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -670,34 +448,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab4</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-4877e5d4-b79c-4ee9-ad80-afb8c01a9beb</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Utilization</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-dd3e19ec-e731-4910-b503-f4b53c8ea500</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Analytics</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab5</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-6bf06cba-247d-4e3f-a961-347746273de9</name>

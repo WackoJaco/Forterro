@@ -47,7 +47,7 @@
     <formulas>
         <name>formRoleBudgetTolernace</name>
         <dataType>Number</dataType>
-        <expression>{!$Record.Hours_Budget__c} + ({!$Record.Hours_Budget__c}*{!$Record.Budget_Tolerance__c})</expression>
+        <expression>(({!$Record.Budget_Tolerance__c}/100 ) *{!$Record.Hours_Budget__c})  + {!$Record.Hours_Budget__c}</expression>
         <scale>2</scale>
     </formulas>
     <interviewLabel>PSA Role Budget Task Hours Variance {!$Flow.CurrentDateTime}</interviewLabel>
