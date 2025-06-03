@@ -7,7 +7,7 @@
         <chartSummaries>
             <aggregate>Sum</aggregate>
             <axisBinding>y</axisBinding>
-            <column>pse__Proj__c.FFX_MarginPercent__c</column>
+            <column>pse__Proj__c.Total_Revenue_to_Date__c</column>
         </chartSummaries>
         <chartType>VerticalColumn</chartType>
         <enableHoverLabels>false</enableHoverLabels>
@@ -27,6 +27,10 @@
     </chart>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Proj__c.Total_Revenue_to_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>pse__Proj__c.ffrrRecognizedToDate__c.CONVERT</field>
     </columns>
     <columns>
@@ -35,11 +39,11 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>pse__Proj__c.pse__Margin__c</field>
+        <field>pse__Proj__c.Revenue_Margin__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>pse__Proj__c.FFX_MarginPercent__c</field>
+        <field>pse__Proj__c.Revenue_Margin_Percentage__c</field>
     </columns>
     <currency>EUR</currency>
     <description>Report showing Current users Projects and Margin %s</description>
