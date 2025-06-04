@@ -66,7 +66,12 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
             }
             when UPDATE_PROJECT_PLANNED_HOURS
             {
-                return Process.CREATE_PROJECT_BUDGETS;
+                if( this.errorMessages.size() == 0 )
+                {
+                    // only create project budgets if there are no errors
+                    return Process.CREATE_PROJECT_BUDGETS;
+                }
+                return Process.CALCULATE_ASSIGNMENT_SCHED_HOURS;
             }
             when CREATE_PROJECT_BUDGETS
             {
@@ -139,6 +144,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     '    Billing_Type__c, ' +
                     '    Customer_Name__c, ' +
                     '    Customer_Id__c, ' +
+                    '    BusinessUnit__c, ' +
                     '    Project_ID__c, ' +
                     '    Project_Number__c, ' +
                     '    Project_Manager_Name__c, ' +
@@ -168,6 +174,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                 query = 
                     'Select ' +
                     '    Id, ' +
+                    '    BusinessUnit__c, ' +
                     '    Parent_Project_Id__c, ' +
                     '    Import_Status__c, ' +
                     '    Project__c ' +
@@ -184,6 +191,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     'Select ' +
                     '    Id, ' +
                     '    CurrencyIsoCode, ' +
+                    '    BusinessUnit__c, ' +
                     '    Project_ID__c, ' +
                     '    Resource_Name__c, ' +
                     '    Task_Role__c, ' +
@@ -206,6 +214,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     '    Resource_Name__c, ' +
                     '    Task_ID__c, ' +
                     '    State__c, ' +
+                    '    BusinessUnit__c, ' +
                     '    Project_ID__c, ' +
                     '    Task_Type__c, ' +
                     '    Expected_Revenue__c, ' +
@@ -386,7 +395,9 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     'Select ' +
                     '    Id, ' +
                     '    Import_Status__c, ' +
-                    '    Project__c ' +
+                    '    Project__c, ' +
+                    '    Project__r.Sync_Status__c, ' +
+                    '    Project__r.SyncDate__c ' +
                     'from ' +
                     '    Staging_Project__c ' +
                     'where ' +
@@ -500,7 +511,16 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     }
 
                     Map<string,Contact> contacts = new Map<string,Contact>();
-                    for( Contact con : [Select Id, Name from Contact where Name in :resourceIdentifiers] )
+                    for( Contact con : 
+                        [Select 
+                            Id, 
+                            Name 
+                        from 
+                            Contact 
+                        where 
+                            Name in :resourceIdentifiers and 
+                            pse__Is_Resource__c = true and 
+                            pse__Is_Resource_Active__c = true] )
                     {
                         contacts.put( con.Name.toUpperCase(), con );
                     }
@@ -526,7 +546,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                             pse__Stage__c = getProjectStage( stagingProject.State__c ),
                             pse__Billing_Type__c = stagingProject.Billing_Type__c,
                             pse__Account__c = customers.get( stagingProject.Customer_Id__c?.toUpperCase() )?.Id,
-                            External_Project_Id__c = stagingProject.Project_ID__c,
+                            External_Project_Id__c = getProjectId( stagingProject ),
                             pse__Notes__c = stagingProject.Description__c,
                             pse__Project_Manager__c = contacts.get( stagingProject.Project_Manager_Name__c?.toUpperCase() )?.Id,
                             pse__Region__c = region?.Id,
@@ -540,7 +560,8 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                             pse__Include_In_Forecasting__c = true,
                             Total_Orginal_Estimated_Hours__c = stagingProject.Planned_Hours__c,
                             Actual_Hours_Migrated__c = stagingProject.Actual_Hours__c,
-                            Go_Live_Date__c = stagingProject.Go_Live_Date__c
+                            Go_Live_Date__c = stagingProject.Go_Live_Date__c,
+                            Task_Notes_Required__c = true
                         );
 
                         stagingToReal.put( stagingProject.Id, project );
@@ -590,18 +611,27 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                         }
                     }
 
-                    Map<string,Id> projectIdToPSAProjectId = new Map<string,Id>();
-                    for( Staging_Project__c proj : [Select Id, Project_ID__c, Project__c from Staging_Project__c where Project_ID__c in :parentIds] )
+                    Map<string,Map<string,Id>> businessUnitToProjectIdToPSAProjectId = new Map<string,Map<string,Id>>();
+                    for( Staging_Project__c proj : [Select Id, Project_ID__c, BusinessUnit__c, Project__c from Staging_Project__c where Project_ID__c in :parentIds] )
                     {
-                        projectIdToPSAProjectId.put( proj.Project_ID__c, proj.Project__c );
+                        if( !businessUnitToProjectIdToPSAProjectId.containsKey( proj.BusinessUnit__c ) )
+                        {
+                            businessUnitToProjectIdToPSAProjectId.put( proj.BusinessUnit__c, new Map<string,Id>() );
+                        }
+                        businessUnitToProjectIdToPSAProjectId.get( proj.BusinessUnit__c ).put( proj.Project_ID__c, proj.Project__c );
                     }
 
                     Map<Id,Id> childToParentPSAProjectIds = new Map<Id,Id>();
                     for( Staging_Project__c stagingProject : (List<Staging_Project__c>)records )
                     {
-                        if( projectIdToPSAProjectId.containsKey( stagingProject.Parent_Project_Id__c ) )
+                        string businessUnit = stagingProject.BusinessUnit__c;
+                        if( businessUnitToProjectIdToPSAProjectId.containsKey( businessUnit ) )
                         {
-                            childToParentPSAProjectIds.put( stagingProject.Project__c, projectIdToPSAProjectId.get( stagingProject.Parent_Project_Id__c ) );
+                            Map<string,Id> projectIdToPSAProjectId = businessUnitToProjectIdToPSAProjectId.get( businessUnit );
+                            if( projectIdToPSAProjectId.containsKey( stagingProject.Parent_Project_Id__c ) )
+                            {
+                                childToParentPSAProjectIds.put( stagingProject.Project__c, projectIdToPSAProjectId.get( stagingProject.Parent_Project_Id__c ) );
+                            }
                         }
                         stagingProject.Import_Status__c = 'Parents Associated';
                     }
@@ -625,7 +655,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     {
                         if( !string.isBlank( stagingTask.Project_ID__c ) )
                         {
-                            projectIds.add( stagingTask.Project_ID__c );
+                            projectIds.add( getProjectId( stagingTask ) );
                         }
 
                         if( !string.isBlank( stagingTask.Resource_Name__c ) )
@@ -692,8 +722,8 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     List<Staging_Task__c> changedStagingTasks = new List<Staging_Task__c>();
                     for( Staging_Task__c stagingTask : (List<Staging_Task__c>)records )
                     {
-                        Id accountId = projectIdToAccountId.get( stagingTask.Project_ID__c );
-                        string currencyCode = projectIdToCurrency.get( stagingTask.Project_ID__c );
+                        Id accountId = projectIdToAccountId.get( getProjectId( stagingTask ) );
+                        string currencyCode = projectIdToCurrency.get( getProjectId( stagingTask ) );
                         string role = stagingTaskIdToRole.get( stagingTask.Id );
                         string key = accountId + '|' + currencyCode + '|' + role;
 
@@ -714,7 +744,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     {
                         if( !string.isBlank( stagingTask.Project_ID__c ) )
                         {
-                            projectIds.add( stagingTask.Project_ID__c );
+                            projectIds.add( getProjectId( stagingTask ) );
                         }
 
                         if( !string.isBlank( stagingTask.Practice__c ) )
@@ -724,7 +754,18 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     }
 
                     Map<string,pse__Proj__c> projectIdToActual = new Map<string,pse__Proj__c>();
-                    for( pse__Proj__c project : [Select Id, External_Project_Id__c, pse__Work_Calendar__c, pse__Region__r.BU_Code__c from pse__Proj__c where External_Project_Id__c in :projectIds] )
+                    for( pse__Proj__c project : 
+                        [Select     
+                            Id, 
+                            External_Project_Id__c, 
+                            pse__Work_Calendar__c, 
+                            pse__Work_Calendar__r.pse__Monday_Start_Hour__c, 
+                            pse__Work_Calendar__r.pse__Monday_End_Hour__c, 
+                            pse__Region__r.BU_Code__c 
+                        from 
+                            pse__Proj__c 
+                        where 
+                            External_Project_Id__c in :projectIds] )
                     {
                         projectIdToActual.put( project.External_Project_Id__c, project );
                     }
@@ -738,35 +779,55 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                     Map<Id,pse__Project_Task__c> stagingToReal = new Map<Id,pse__Project_Task__c>();
                     for( Staging_Task__c stagingTask : (List<Staging_Task__c>)records )
                     {
-                        pse__Project_Task__c projectTask = new pse__Project_Task__c(
-                            Name = stagingTask.Task_Name__c.left( 80 ),
-                            pse__Start_Date_Time__c = DateTime.newInstance( stagingTask.Start_Date__c, time.newInstance( 9, 0, 0, 0 ) ),
-                            pse__End_Date_Time__c = DateTime.newInstance( stagingTask.Due_Date__c, time.newInstance( 17, 0, 0, 0 ) ),
-                            pse__Estimated_Hours__c = stagingTask.Remaining_Effort__c,
-                            pse__External_Task_ID__c = stagingTask.Task_ID__c,
-                            pse__Status__c = getTaskState( stagingTask.State__c ),
-                            pse__Project__c = projectIdToActual.get( stagingTask.Project_ID__c )?.Id,
-                            pse__Work_Calendar__c = projectIdToActual.get( stagingTask.Project_ID__c )?.pse__Work_Calendar__c,
-                            CLZ_Internal_Id__c = stagingTask.Internal_Id__c,
-                            CurrencyisoCode = stagingTask.CurrencyisoCode,
-                            CTC_Training_Code__c = stagingTask.Training_Module__c,
-                            Practice__c = practiceNameToId.get( stagingTask.Practice__c ),
-                            Timecard_History__c = stagingTask.Timecard_History__c,
-                            Task_Type__c = stagingTask.Task_Category__c,
-                            Order_Id__c = stagingTask.Order_Id__c,
-                            pse__Description__c = stagingTask.Description__c,
-                            pse__Assigned_Resources_Long__c = stagingTask.Resource_Name__c,
-                            Original_Estimated_Hours__c = stagingTask.Budget__c,
-                            Actual_Hours_Migrated__c = stagingTask.Actual_Hours__c
-                        );
+                        Time dayStartTime = time.newInstance( 8, 0, 0, 0 );
+                        Time dayEndTime = time.newInstance( 8, 0, 0, 0 );
 
-                        if( projectIdToActual.get( stagingTask.Project_ID__c )?.pse__Region__r.BU_Code__c == 'JVS' &&
-                            !string.isBlank( stagingTask.Task_ID__c ) )
+                        if( projectIdToActual.containsKey( getProjectId( stagingTask ) ) )
                         {
-                            projectTask.pse__Order__c = decimal.valueOf( stagingTask.Task_ID__c.replaceAll( '[^0-9]', '' ) );
+                            pse__Proj__c project = projectIdToActual.get( getProjectId( stagingTask ) );
+                            if( project.pse__Work_Calendar__c != null )
+                            {
+                                dayStartTime = getPSATime( project.pse__Work_Calendar__r.pse__Monday_Start_Hour__c, dayStartTime );
+                                dayEndTime = getPSATime( project.pse__Work_Calendar__r.pse__Monday_End_Hour__c, dayEndTime );
+                            }
                         }
 
-                        stagingToReal.put( stagingTask.Id, projectTask );
+                        if( stagingTask.Start_Date__c == null || stagingTask.Due_Date__c == null )
+                        {
+                            errorMessages.add( stagingTask.Id + ': Staging task needs a start and a due date' );
+                        }
+                        else
+                        {
+                            pse__Project_Task__c projectTask = new pse__Project_Task__c(
+                                Name = stagingTask.Task_Name__c.left( 80 ),
+                                pse__Start_Date_Time__c = DateTime.newInstance( stagingTask.Start_Date__c, dayStartTime ),
+                                pse__End_Date_Time__c = DateTime.newInstance( stagingTask.Due_Date__c, dayEndTime ),
+                                pse__Estimated_Hours__c = stagingTask.Remaining_Effort__c,
+                                pse__External_Task_ID__c = stagingTask.Task_ID__c,
+                                pse__Status__c = getTaskState( stagingTask.State__c ),
+                                pse__Project__c = projectIdToActual.get( getProjectId( stagingTask ) )?.Id,
+                                pse__Work_Calendar__c = projectIdToActual.get( getProjectId( stagingTask ) )?.pse__Work_Calendar__c,
+                                CLZ_Internal_Id__c = stagingTask.Internal_Id__c,
+                                CurrencyisoCode = stagingTask.CurrencyisoCode,
+                                CTC_Training_Code__c = stagingTask.Training_Module__c,
+                                Practice__c = practiceNameToId.get( stagingTask.Practice__c ),
+                                Timecard_History__c = stagingTask.Timecard_History__c,
+                                Task_Type__c = stagingTask.Task_Category__c,
+                                Order_Id__c = stagingTask.Order_Id__c,
+                                pse__Description__c = stagingTask.Description__c,
+                                pse__Assigned_Resources_Long__c = stagingTask.Resource_Name__c,
+                                Original_Estimated_Hours__c = stagingTask.Budget__c,
+                                Actual_Hours_Migrated__c = stagingTask.Actual_Hours__c
+                            );
+
+                            if( projectIdToActual.get( getProjectId( stagingTask ) )?.pse__Region__r.BU_Code__c == 'JVS' &&
+                                !string.isBlank( stagingTask.Task_ID__c ) )
+                            {
+                                projectTask.pse__Order__c = decimal.valueOf( stagingTask.Task_ID__c.replaceAll( '[^0-9]', '' ) );
+                            }
+
+                            stagingToReal.put( stagingTask.Id, projectTask );
+                        }
                     }
 
                     List<Database.SaveResult> results = database.insert( stagingToReal.values(), false );
@@ -1602,10 +1663,14 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
                 when CREATE_PROJECT_BUDGETS
                 {
                     Set<Id> projectIds = new Set<Id>();
+                    List<pse__Proj__c> projectsToUpdate = new List<pse__Proj__c>();
                     for( Staging_Project__c stagingProject : (List<Staging_Project__c>)records )
                     {
                         projectIds.add( stagingProject.Project__c );
                         stagingProject.Import_Status__c = 'Complete';
+                        stagingProject.Project__r.Sync_Status__c = 'Synced';
+                        stagingProject.Project__r.SyncDate__c = system.now();
+                        projectsToUpdate.add( stagingProject.Project__r );
                     }
 
                     List<pse__Budget__c> newBudgets = new List<pse__Budget__c>();
@@ -1652,6 +1717,7 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
 
                     insert newBudgets;
                     update records;
+                    update projectsToUpdate;
                 }
                 when CALCULATE_ASSIGNMENT_SCHED_HOURS
                 {
@@ -1780,20 +1846,18 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
             body += '<li>' + s + '</li>';
         }
         body += '</ul>';
+        
+        Data_Import_Results__c res = new Data_Import_Results__c(
+            Errors__c = 'See attachment'
+        );
+        insert res;
 
-        body += '<p>User: ' + UserInfo.getUserName() + ', Org Id: ' + UserInfo.getOrganizationId() + '</p>';
-
-		body += '<p>Certinia</p>';
-
-		mail.setHtmlBody( body );
-
-        try 
-        {
-		    Messaging.sendEmail( new Messaging.SingleEmailMessage[] { mail } );
-        }
-        catch( System.EmailException sex ) 
-        {
-        }
+        ContentVersion contentVersion = new ContentVersion(
+            versionData = Blob.valueOf(body),
+            title = 'Error details',
+            pathOnClient = 'error-details.html',
+            FirstPublishLocationId = res.id );
+        insert contentVersion; 
     }
 
     public static string makeKeyForAssignment( Staging_Task__c stagingTask, Map<string,Contact> contactMap )
@@ -1967,5 +2031,78 @@ public with sharing class DataImportBatch implements Database.Batchable<sObject>
 
         update settings;
         return wasEnabled;
+    }
+
+    private static string getProjectId( Staging_Task__c stagingTask )
+    {
+        return stagingTask.BusinessUnit__c + '|' + stagingTask.Project_ID__c;
+    }
+
+    private static string getProjectId( Staging_Project__c stagingProject )
+    {
+        return stagingProject.BusinessUnit__c + '|' + stagingProject.Project_ID__c;
+    }
+
+    private static Time getPSATime( string theTime, time defaultTime )
+    {
+        Map<string,Time> timeMap = new Map<string,Time>
+        {
+            '00:00 (12:00 AM)' => time.newInstance( 0, 0, 0, 0 ),
+            '00:30 (12:30 AM)' => time.newInstance( 0, 30, 0, 0 ),
+            '01:00 (1:00 AM)' => time.newInstance( 1, 0, 0, 0 ),
+            '01:30 (1:30 AM)' => time.newInstance( 1, 30, 0, 0 ),
+            '02:00 (2:00 AM)' => time.newInstance( 2, 0, 0, 0 ),
+            '02:30 (2:30 AM)' => time.newInstance( 2, 30, 0, 0 ),
+            '03:00 (3:00 AM)' => time.newInstance( 3, 0, 0, 0 ),
+            '03:30 (3:30 AM)' => time.newInstance( 3, 30, 0, 0 ),
+            '04:00 (4:00 AM)' => time.newInstance( 4, 0, 0, 0 ),
+            '04:30 (4:30 AM)' => time.newInstance( 4, 30, 0, 0 ),
+            '05:00 (5:00 AM)' => time.newInstance( 5, 0, 0, 0 ),
+            '05:30 (5:30 AM)' => time.newInstance( 5, 30, 0, 0 ),
+            '06:00 (6:00 AM)' => time.newInstance( 6, 0, 0, 0 ),
+            '06:30 (6:30 AM)' => time.newInstance( 6, 30, 0, 0 ),
+            '07:00 (7:00 AM)' => time.newInstance( 7, 0, 0, 0 ),
+            '07:30 (7:30 AM)' => time.newInstance( 7, 30, 0, 0 ),
+            '08:00 (8:00 AM)' => time.newInstance( 8, 0, 0, 0 ),
+            '08:30 (8:30 AM)' => time.newInstance( 8, 30, 0, 0 ),
+            '09:00 (9:00 AM)' => time.newInstance( 9, 0, 0, 0 ),
+            '09:30 (9:30 AM)' => time.newInstance( 9, 30, 0, 0 ),
+            '10:00 (10:00 AM)' => time.newInstance( 10, 0, 0, 0 ),
+            '10:30 (10:30 AM)' => time.newInstance( 10, 30, 0, 0 ),
+            '11:00 (11:00 AM)' => time.newInstance( 11, 0, 0, 0 ),
+            '11:30 (11:30 AM)' => time.newInstance( 11, 30, 0, 0 ),
+            '12:00 (12:00 PM)' => time.newInstance( 12, 0, 0, 0 ),
+            '012:30 (12:30 PM)' => time.newInstance( 12, 30, 0, 0 ),
+            '12:30 (12:30 PM)' => time.newInstance( 12, 30, 0, 0 ),
+            '13:00 (1:00 PM)' => time.newInstance( 13, 0, 0, 0 ),
+            '13:30 (1:30 PM)' => time.newInstance( 13, 30, 0, 0 ),
+            '14:00 (2:00 PM)' => time.newInstance( 14, 0, 0, 0 ),
+            '14:30 (2:30 PM)' => time.newInstance( 14, 30, 0, 0 ),
+            '15:00 (3:00 PM)' => time.newInstance( 15, 0, 0, 0 ),
+            '15:30 (3:30 PM)' => time.newInstance( 15, 30, 0, 0 ),
+            '16:00 (4:00 PM)' => time.newInstance( 16, 0, 0, 0 ),
+            '16:30 (4:30 PM)' => time.newInstance( 16, 30, 0, 0 ),
+            '17:00 (5:00 PM)' => time.newInstance( 17, 0, 0, 0 ),
+            '17:30 (5:30 PM)' => time.newInstance( 17, 30, 0, 0 ),
+            '18:00 (6:00 PM)' => time.newInstance( 18, 0, 0, 0 ),
+            '18:30 (6:30 PM)' => time.newInstance( 18, 30, 0, 0 ),
+            '19:00 (7:00 PM)' => time.newInstance( 19, 0, 0, 0 ),
+            '19:30 (7:30 PM)' => time.newInstance( 19, 30, 0, 0 ),
+            '20:00 (8:00 PM)' => time.newInstance( 20, 0, 0, 0 ),
+            '20:30 (8:30 PM)' => time.newInstance( 20, 30, 0, 0 ),
+            '21:00 (9:00 PM)' => time.newInstance( 21, 0, 0, 0 ),
+            '21:30 (9:30 PM)' => time.newInstance( 21, 30, 0, 0 ),
+            '22:00 (10:00 PM)' => time.newInstance( 22, 0, 0, 0 ),
+            '22:30 (10:30 PM)' => time.newInstance( 22, 30, 0, 0 ),
+            '23:00 (11:00 PM)' => time.newInstance( 23, 0, 0, 0 ),
+            '23:30 (11:30 PM)' => time.newInstance( 23, 30, 0, 0 )
+        };
+
+        if( timeMap.containsKey( theTime ) )
+        {
+            return timeMap.get( theTime );
+        }
+
+        return defaultTime;
     }
 }

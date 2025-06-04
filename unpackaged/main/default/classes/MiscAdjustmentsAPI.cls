@@ -36,7 +36,8 @@ global with sharing class MiscAdjustmentsAPI
 
         public MiscAdjustment( pse__Miscellaneous_Adjustment__c adjustment )
         {
-            projectId = adjustment.pse__Project__r.pse__Project_ID__c;
+            projectId = adjustment.pse__Project__r.External_Project_Id__c == null ?
+                (string)adjustment.pse__Project__r.pse__Project_ID__c : RestAPIHelper.sanitiseProjectId( adjustment.pse__Project__r.External_Project_Id__c );
             projectName = adjustment.pse__Project__r.Name;
             customerID = adjustment.pse__Project__r.pse__Account__r.AccountNumber;
             customerName = adjustment.pse__Project__r.pse__Account__r.Name;
@@ -102,6 +103,7 @@ global with sharing class MiscAdjustmentsAPI
                     Owner.Name,
                     pse__Project__c,
                     pse__Project__r.pse__Project_ID__c,
+                    pse__Project__r.External_Project_Id__c,
                     pse__Project__r.Name,
                     pse__Project__r.pse__Account__c,
                     pse__Project__r.pse__Account__r.AccountNumber,
@@ -126,7 +128,8 @@ global with sharing class MiscAdjustmentsAPI
                     pse__Include_In_Financials__c = true and
                     pse__Transaction_Category__c = 'Ready-to-Bill Revenue' and
                     pse__Project__r.pse__Is_Billable__c = true and
-                    pse__Project__r.pse__Region__c = :regions[0].Id
+                    pse__Project__r.pse__Account__r.AccountNumber != '' and
+                    pse__Project__r.pse__Region__r.BU_Code__c = :context
                 Limit
                     :MAX_RECORDS] )
             {

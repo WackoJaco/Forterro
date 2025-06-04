@@ -40,7 +40,7 @@ global with sharing class ProjectAPI
         public Project( pse__Proj__c project )
         {
             projectId = project.pse__Project_ID__c;
-            externalProjectId = project.External_Project_Id__c;
+            externalProjectId = RestAPIHelper.sanitiseProjectId( project.External_Project_Id__c );
             projectName = project.Name;
             if( project.pse__Project_Manager__c != null )
             {
@@ -156,7 +156,8 @@ global with sharing class ProjectAPI
                     pse__Stage__c != 'Draft' and
                     pse__Stage__c != null and
                     pse__Is_Billable__c = true and
-                    pse__Region__c = :regions[0].Id
+                    pse__Account__r.AccountNumber != '' and
+                    pse__Region__r.BU_Code__c = :context
                 Limit
                     :MAX_RECORDS] )
             {

@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Services - Proffix</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Cluster_1</parentRole>
+    <parentRole>Services_Proffix_Mgmt</parentRole>
 </Role>

@@ -17,5 +17,9 @@
         <operation>equals</operation>
         <value>1</value>
     </filters>
+    <filters>
+        <field>pse__Assignment__c</field>
+        <operation>notEqual</operation>
+    </filters>
     <label>My Task Assignments</label>
 </ListView>

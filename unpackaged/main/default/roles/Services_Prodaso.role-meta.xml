@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Services - Prodaso</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Cluster_1</parentRole>
+    <parentRole>Services_Prodaso_Mgmt</parentRole>
 </Role>

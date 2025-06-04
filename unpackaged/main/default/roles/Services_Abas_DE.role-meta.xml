@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Services - Abas DE</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Cluster_1</parentRole>
+    <parentRole>Services_Abas_DE_Mgmt</parentRole>
 </Role>

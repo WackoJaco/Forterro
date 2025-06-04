@@ -88,26 +88,29 @@ public class ProjectTaskHelper
         for( pse__Project_Task__c task : changedProjectTasks.values() )
         {
             Set<Id> taskAssignmentIds = new Set<Id>();
-            for( pse__Project_Task_Assignment__c pta : taskToPTAs.get( task.Id ) )
+            if( taskToPTAs.containsKey( task.Id ) )
             {
-                Id assignmentId = pta.pse__Assignment__c;
-                if( assignmentId == null )
+                for( pse__Project_Task_Assignment__c pta : taskToPTAs.get( task.Id ) )
                 {
-                    // easy, just change the PTA and resource request and we're done
-                    pta.Role_Budget__c = task.Role_Budget_Link__c;
-                    changedPTAs.put( pta.Id, pta );
-
-                    system.debug( 'x: ' + pta.Id + ' ' + pta.pse__Resource_Request__c );
-
-                    if( pta.pse__Resource_Request__c != null )
+                    Id assignmentId = pta.pse__Assignment__c;
+                    if( assignmentId == null )
                     {
-                        pta.pse__Resource_Request__r.Role_Budget__c = task.Role_Budget_Link__c;
-                        changedResourceRequests.put( pta.pse__Resource_Request__c, pta.pse__Resource_Request__r );
+                        // easy, just change the PTA and resource request and we're done
+                        pta.Role_Budget__c = task.Role_Budget_Link__c;
+                        changedPTAs.put( pta.Id, pta );
+
+                        system.debug( 'x: ' + pta.Id + ' ' + pta.pse__Resource_Request__c );
+
+                        if( pta.pse__Resource_Request__c != null )
+                        {
+                            pta.pse__Resource_Request__r.Role_Budget__c = task.Role_Budget_Link__c;
+                            changedResourceRequests.put( pta.pse__Resource_Request__c, pta.pse__Resource_Request__r );
+                        }
                     }
-                }
-                else
-                {
-                    taskAssignmentIds.add( assignmentId );
+                    else
+                    {
+                        taskAssignmentIds.add( assignmentId );
+                    }
                 }
             }
 

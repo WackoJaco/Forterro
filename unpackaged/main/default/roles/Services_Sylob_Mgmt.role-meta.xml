@@ -3,7 +3,7 @@
     <caseAccessLevel>Edit</caseAccessLevel>
     <contactAccessLevel>Edit</contactAccessLevel>
     <mayForecastManagerShare>false</mayForecastManagerShare>
-    <name>Project Coordinator</name>
+    <name>Services - Sylob - Mgmt</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Services_Operations_Mgmt</parentRole>
+    <parentRole>Cluster_2</parentRole>
 </Role>

@@ -37,4 +37,16 @@ global class RestAPIHelper
     {
         return d == null ? 0.0 : d;
     }
+
+    public static string sanitiseProjectId( string projectId )
+    {
+        // project id may be ABC|P-01234 - we want to return P-01234
+        if( string.isBlank( projectId ) )
+        {
+            return projectId;
+        }
+
+        string[] parts = projectId.split( '\\|' );
+        return parts[parts.size() - 1];
+    }
 }

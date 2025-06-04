@@ -162,7 +162,8 @@ public class TaskTimeHelperTest
             pse__Project_Task__c = projectTask.Id,
             pse__Assignment__c = assignment.Id,
             pse__Resource__c = res.Id,
-            pse__Estimated_Hours__c = 100
+            pse__Estimated_Hours__c = 100,
+            pse__Resource_Role__c = 'Consultant'
         );
 
         insert pta;
@@ -564,9 +565,18 @@ public class TaskTimeHelperTest
         system.assert( splitIds.size() == 7, splitIds.size() );
 
         TimecardRevokeController con = new TimecardRevokeController( new ApexPages.StandardController( header ) );
+        con.Reason = 'This is a reason';
         con.Revoke();
 
         Test.stopTest();
+
+        for( ApexPages.Message message : ApexPages.getMessages() )
+        {
+            if( message.getSeverity() != ApexPages.Severity.Confirm )
+            {
+                system.assert( false, message.getDetail() );
+            }
+        }
 
         for( Deleted_Task_Time_Split__c deletedSplit : [Select Id, Task_Time_Split_Id__c from Deleted_Task_Time_Split__c where Timecard__c = :header.Id] )
         {

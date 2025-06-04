@@ -2,8 +2,9 @@
 <Role xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseAccessLevel>Edit</caseAccessLevel>
     <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Services Operations Management</description>
     <mayForecastManagerShare>false</mayForecastManagerShare>
-    <name>Project Coordinator</name>
+    <name>Services Operations Mgmt</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Services_Operations_Mgmt</parentRole>
+    <parentRole>Forterro_Services</parentRole>
 </Role>

@@ -78,11 +78,6 @@ public class ClearStagingDataBatch implements Database.Batchable<sObject>, Datab
         }
         body += '</ul>';
 
-        /*Data_Import_Results__c res = new Data_Import_Results__c(
-            Errors__c = body
-        );
-        insert res;*/
-
         body += '<p>User: ' + UserInfo.getUserName() + ', Org Id: ' + UserInfo.getOrganizationId() + '</p>';
 
 		body += '<p>Certinia</p>';
@@ -95,6 +90,10 @@ public class ClearStagingDataBatch implements Database.Batchable<sObject>, Datab
         }
         catch( System.EmailException sex ) 
         {
+            Data_Import_Results__c res = new Data_Import_Results__c(
+                Errors__c = body
+            );
+            insert res;
         }
     }
 }

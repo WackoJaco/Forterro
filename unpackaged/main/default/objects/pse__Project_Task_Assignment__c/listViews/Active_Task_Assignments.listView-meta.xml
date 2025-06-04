@@ -22,5 +22,9 @@
         <operation>notEqual</operation>
         <value>cancelled,complete</value>
     </filters>
+    <filters>
+        <field>pse__Assignment__c</field>
+        <operation>notEqual</operation>
+    </filters>
     <label>My Active Task Assignments</label>
 </ListView>

@@ -3,7 +3,7 @@
     <caseAccessLevel>Edit</caseAccessLevel>
     <contactAccessLevel>Edit</contactAccessLevel>
     <mayForecastManagerShare>false</mayForecastManagerShare>
-    <name>Project Coordinator</name>
+    <name>Services - Silog</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Services_Operations_Mgmt</parentRole>
+    <parentRole>Services_Clipper_Helios_Silog_Mgmt</parentRole>
 </Role>

@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Services - Fortee</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Cluster_2</parentRole>
+    <parentRole>Services_Fortee_Mgmt</parentRole>
 </Role>

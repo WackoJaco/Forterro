@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Services - BPSC</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Cluster_2</parentRole>
+    <parentRole>Services_BPSC_Mgmt</parentRole>
 </Role>

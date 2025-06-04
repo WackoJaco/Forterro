@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Services - Windows &amp; Doors</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Cluster_1</parentRole>
+    <parentRole>Services_Windows_Doors_Mgmt</parentRole>
 </Role>

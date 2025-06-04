@@ -110,6 +110,12 @@ public class TriggerOngoingTaskForServiceRequestBatch implements Database.Batcha
 
 		mail.setHtmlBody( body );
 
+        List<OrgWideEmailAddress> addresses = [Select Id from OrgWideEmailAddress where DisplayName = 'Salesforce No Reply'];
+        if( addresses.size() > 0 )
+        {
+            mail.setOrgWideEmailAddressId( addresses[0].Id );
+        }
+
         try 
         {
 		    Messaging.sendEmail( new Messaging.SingleEmailMessage[] { mail } );

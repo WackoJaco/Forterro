@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Services - MyFactory</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Cluster_1</parentRole>
+    <parentRole>Services_MyFactory_Mgmt</parentRole>
 </Role>

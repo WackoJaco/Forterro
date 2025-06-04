@@ -34,7 +34,8 @@ public class APITest
         insert cal;
 
         Account acc = new Account(
-            Name = 'Test account'
+            Name = 'Test account',
+            AccountNumber = '123456'
         );
 
         insert acc;
@@ -492,6 +493,14 @@ public class APITest
         con.preCheck();
         con.Reason = 'This is a reason';
         con.Revoke();
+
+        for( ApexPages.Message message : ApexPages.getMessages() )
+        {
+            if( message.getSeverity() != ApexPages.Severity.Confirm )
+            {
+                system.assert( false, message.getDetail() );
+            }
+        }
 
         String rootUrl = URL.getOrgDomainUrl().toExternalForm() + '/';
         RestRequest request = new RestRequest();

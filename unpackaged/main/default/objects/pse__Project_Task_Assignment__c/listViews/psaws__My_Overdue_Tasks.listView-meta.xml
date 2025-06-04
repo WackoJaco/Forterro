@@ -24,8 +24,12 @@
     </filters>
     <filters>
         <field>psaws__Status__c</field>
-        <operation>equals</operation>
-        <value>Started</value>
+        <operation>notEqual</operation>
+        <value>Cancelled,Complete</value>
+    </filters>
+    <filters>
+        <field>pse__Assignment__c</field>
+        <operation>notEqual</operation>
     </filters>
     <label>My Overdue Tasks</label>
 </ListView>

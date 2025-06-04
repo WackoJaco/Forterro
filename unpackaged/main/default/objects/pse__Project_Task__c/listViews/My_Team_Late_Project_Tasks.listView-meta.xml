@@ -23,5 +23,10 @@
         <operation>equals</operation>
         <value>1</value>
     </filters>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled,Complete</value>
+    </filters>
     <label>My Team Late Project Tasks</label>
 </ListView>

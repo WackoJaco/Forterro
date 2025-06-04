@@ -9,6 +9,7 @@
     <columns>pse__Scheduled_Hours__c</columns>
     <columns>Remaining_Hours__c</columns>
     <columns>pse__Status__c</columns>
+    <columns>pse__Resource__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Late_Assignment__c</field>
@@ -19,6 +20,11 @@
         <field>MyGroup__c</field>
         <operation>equals</operation>
         <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
     </filters>
     <label>My Team Late Assignments</label>
 </ListView>

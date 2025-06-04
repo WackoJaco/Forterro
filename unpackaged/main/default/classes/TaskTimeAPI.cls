@@ -69,7 +69,7 @@ global with sharing class TaskTimeAPI
             timeType = split.Task_Time__r.pse__Timecard__r.Type__c;
             businessUnitId = split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Region__r.BU_Code__c;
             projectId = split.Task_Time__r.pse__Timecard__r.pse__Project__r.External_Project_Id__c == null ?
-                (string)split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Project_ID__c : split.Task_Time__r.pse__Timecard__r.pse__Project__r.External_Project_Id__c;
+                (string)split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Project_ID__c : RestAPIHelper.sanitiseProjectId( split.Task_Time__r.pse__Timecard__r.pse__Project__r.External_Project_Id__c );
             projectName = split.Task_Time__r.pse__Timecard__r.pse__Project__r.Name;
             customerID = split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__r.AccountNumber;
             customerName = split.Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__r.Name;
@@ -264,6 +264,7 @@ global with sharing class TaskTimeAPI
                     Task_Time__r.pse__Timecard__r.pse__Approved__c = true and
                     Task_Time__r.pse__Timecard__r.pse__Include_In_Financials__c = true and
                     Task_Time__r.pse__Timecard__r.pse__Submitted__c = true and
+                    Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Account__r.AccountNumber != '' and 
                     Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Region__r.BU_Code__c = :context and
                     ( 
                         Task_Time__r.pse__Timecard__r.pse__Project__r.pse__Region__r.BU_Code__c not in :NO_MILEAGE_ONLY_BUS or 
