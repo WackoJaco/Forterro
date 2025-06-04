@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>PSA - Service Request - Set Region for FSP {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PSA - Service Request - Set Region for FSP</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Values2</name>
+        <label>Set Values</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <inputAssignments>
+            <field>Region__c</field>
+            <value>
+                <elementReference>$Record.ffps_forterro__ActiveMilestone__r.pse__Project__r.pse__Region__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Values2</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>ffps_forterro__Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>FSP</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>ffps_forterro__Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Ad Hoc</stringValue>
+            </value>
+        </filters>
+        <object>ffps_forterro__ServiceRequest__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

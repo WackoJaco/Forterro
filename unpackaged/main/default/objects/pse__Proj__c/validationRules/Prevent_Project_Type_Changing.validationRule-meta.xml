@@ -4,7 +4,7 @@
     <active>true</active>
     <errorConditionFormula>AND(
 				 ISCHANGED( pse__Billing_Type__c ),
-				 psaws__Actual_Hours__c &gt; 0)</errorConditionFormula>
+				 pse__Total_Assigned_Hours__c &gt; 0)</errorConditionFormula>
     <errorDisplayField>pse__Billing_Type__c</errorDisplayField>
-    <errorMessage>Billing type can't be changed if hours have been logged against the project.</errorMessage>
+    <errorMessage>Billing type can't be changed if assignments have been created against the project.</errorMessage>
 </ValidationRule>

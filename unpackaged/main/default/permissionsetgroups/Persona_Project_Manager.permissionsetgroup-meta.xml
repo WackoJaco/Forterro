@@ -4,6 +4,7 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>Persona - Project Manager</label>
     <mutingPermissionSets>Persona_Project_Manager_Muted</mutingPermissionSets>
+    <permissionSets>CPS_Project_Manager_Account_Custom_Field_Edit</permissionSets>
     <permissionSets>Certinia_Adjust_schedules_on_planner</permissionSets>
     <permissionSets>Certinia_Hide_OOTB_Work_Planner_Tab</permissionSets>
     <permissionSets>Certinia_User_Group_Permissions</permissionSets>

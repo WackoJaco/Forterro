@@ -343,6 +343,26 @@
                 <identifier>RecordRecordTypeIdField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Opportunity_Sub_Type__c</fieldItem>
+                <identifier>RecordSub_Type_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Amendment_Type_from_Quote__c</fieldItem>
+                <identifier>RecordAmendment_Type_from_Quote_cField2</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-90f67cd1-4423-4556-876b-7eb3bb4cc604</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -497,8 +517,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.pse__Region__c</fieldItem>
-                <identifier>Recordpse_Region_cField</identifier>
+                <fieldItem>Record.pse__Practice__c</fieldItem>
+                <identifier>Recordpse_Practice_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -507,8 +527,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.pse__Practice__c</fieldItem>
-                <identifier>Recordpse_Practice_cField</identifier>
+                <fieldItem>Record.pse__Region__c</fieldItem>
+                <identifier>Recordpse_Region_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -581,8 +601,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.pse__Services_Attached_Percent_From_Products__c</fieldItem>
-                <identifier>Recordpse_Services_Attached_Percent_From_Products_cField</identifier>
+                <fieldItem>Record.pse__Services_Attached_From_Products__c</fieldItem>
+                <identifier>Recordpse_Services_Attached_From_Products_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -591,8 +611,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.pse__Services_Attached_From_Products__c</fieldItem>
-                <identifier>Recordpse_Services_Attached_From_Products_cField</identifier>
+                <fieldItem>Record.pse__Services_Attached_Percent_From_Products__c</fieldItem>
+                <identifier>Recordpse_Services_Attached_Percent_From_Products_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

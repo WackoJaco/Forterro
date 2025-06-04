@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Role_Budget_Role_Invalid</fullName>
-    <active>false</active>
+    <active>true</active>
     <errorConditionFormula>AND ( Not(IsBlank(Role_Budget__c)), 
          TEXT(pse__Resource_Role__c)&lt;&gt; TEXT(Role_Budget__r.Role__c )
      )</errorConditionFormula>

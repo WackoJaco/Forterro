@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows the edit-ability of a select number of custom fields on the account object, for 'Persona - Project Manager'</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CPS Project Manager Account Custom Field (Edit)</label>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Delivery_Team__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Reference_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+</PermissionSet>
