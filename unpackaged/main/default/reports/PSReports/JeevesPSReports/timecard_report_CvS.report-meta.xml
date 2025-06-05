@@ -90,7 +90,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>notEqual</operator>
-            <value>Invoiced</value>
+            <value>New</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>

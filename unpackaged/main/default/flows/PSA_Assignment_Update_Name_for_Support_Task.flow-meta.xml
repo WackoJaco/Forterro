@@ -4,7 +4,7 @@
     <assignments>
         <name>Ongoing_Assignment_Name</name>
         <label>Ongoing Assignment Name</label>
-        <locationX>314</locationX>
+        <locationX>50</locationX>
         <locationY>503</locationY>
         <assignmentItems>
             <assignToReference>$Record.Name</assignToReference>
@@ -17,7 +17,7 @@
     <assignments>
         <name>Update_Name</name>
         <label>Update Name</label>
-        <locationX>50</locationX>
+        <locationX>314</locationX>
         <locationY>503</locationY>
         <assignmentItems>
             <assignToReference>$Record.Name</assignToReference>
@@ -34,6 +34,35 @@
         <locationY>395</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
+            <name>Ongoing_Project_Task</name>
+            <conditionLogic>1 OR (2 AND 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Related_Task.pse__Project_Task__r.pse__Project__r.Project_Sub_Types__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>IBS - Ongoing Work</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Related_Task.pse__Project_Task__r.pse__Project__r.Project_Sub_Types__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>IBS - Enhancement</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Related_Task.pse__Project_Task__r.pse__Project__r.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>(EXT)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Ongoing_Assignment_Name</targetReference>
+            </connector>
+            <label>Ongoing Project Task</label>
+        </rules>
+        <rules>
             <name>Yes_Is_this_a_Valid_Task</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
@@ -47,28 +76,6 @@
                 <targetReference>Update_Name</targetReference>
             </connector>
             <label>Yes</label>
-        </rules>
-        <rules>
-            <name>Ongoing_Project_Task</name>
-            <conditionLogic>or</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Related_Task.pse__Project_Task__r.pse__Project__r.Project_Sub_Types__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>IBS - Ongoing Work</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Related_Task.pse__Project_Task__r.pse__Project__r.Project_Sub_Types__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Internal – Cross-Functional Work</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Ongoing_Assignment_Name</targetReference>
-            </connector>
-            <label>Ongoing Project Task</label>
         </rules>
     </decisions>
     <description>Updates Assignment name based on Support Task or Ongoing Project.</description>
