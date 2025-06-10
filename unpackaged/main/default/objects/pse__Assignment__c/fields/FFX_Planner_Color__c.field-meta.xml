@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FFX_Planner_Color__c</fullName>
+    <description>Field used on Planners to show color coding.</description>
+    <externalId>false</externalId>
+    <formula>IF(pse__Is_Billable__c , "lightBlue", 
+IF( NOT(pse__Is_Billable__c) &amp;&amp;  ISPICKVAL(pse__Project__r.pse__Project_Type__c, "Customer Project"), "lightGreen", 
+IF( ISPICKVAL(pse__Project__r.pse__Project_Type__c, "Paid Time Off"), "Pink",
+IF(TEXT( pse__Project__r.Project_Sub_Types__c) = "Internal - Unavailability", "LightYellow",
+ ""))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Planner Color</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
