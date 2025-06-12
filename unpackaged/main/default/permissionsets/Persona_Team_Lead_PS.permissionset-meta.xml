@@ -896,11 +896,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>SBQQ__Quote__c.Payment_Plan__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>ffscpq__Estimate__c.Approver__c</field>
         <readable>true</readable>
     </fieldPermissions>
