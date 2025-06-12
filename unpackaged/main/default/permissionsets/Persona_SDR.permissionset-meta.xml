@@ -1973,11 +1973,6 @@ Manages Leads from AQLs to MQLs and assigns to Sales Reps</description>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Order.Payment_Plan__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Order.SBQQ__PaymentTerm__c</field>
         <readable>true</readable>
     </fieldPermissions>
