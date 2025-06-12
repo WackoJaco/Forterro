@@ -762,11 +762,6 @@ Manages Leads from AQLs to MQLs and assigns to Sales Reps</description>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact.Inbound_MQL_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Invalid_email_within_7_days_of_creation__c</field>
         <readable>true</readable>
