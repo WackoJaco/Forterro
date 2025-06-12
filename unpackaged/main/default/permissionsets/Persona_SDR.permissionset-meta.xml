@@ -1013,11 +1013,6 @@ Manages Leads from AQLs to MQLs and assigns to Sales Reps</description>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.Budget__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Lead.Convert__c</field>
         <readable>true</readable>
     </fieldPermissions>
