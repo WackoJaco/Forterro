@@ -3048,11 +3048,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Product2.New_Product__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Product2.Orderwise_Variant_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3309,11 +3304,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>SBQQ__ProductOption__c.Unit_of_Measure__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>SBQQ__QuoteLine__c.ACVNew__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
