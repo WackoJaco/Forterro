@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JVS_All_PTAs</fullName>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Project_Task__c</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__Project_Task_Start_Date__c</columns>
+    <columns>pse__Project_Task_End_Date__c</columns>
+    <columns>FFX_Estimated_Hours__c</columns>
+    <columns>Timecard_Hours__c</columns>
+    <columns>Hours_Remaining__c</columns>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>MyRegion__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>JVS All PTAs</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Services_Jeeves</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

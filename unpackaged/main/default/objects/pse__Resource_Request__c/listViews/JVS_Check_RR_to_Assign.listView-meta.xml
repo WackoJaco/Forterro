@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JVS_Check_RR_to_Assign</fullName>
+    <columns>FFX_Project_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>pse__Resource_Request_Name__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Request_Priority__c</columns>
+    <columns>pse__SOW_Hours__c</columns>
+    <columns>pse__Resource_Role__c</columns>
+    <columns>pse__Practice__c</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>equals</operation>
+        <value>Assigned</value>
+    </filters>
+    <filters>
+        <field>pse__Assignment__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>MyRegion__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>JVS Check RR to Assign</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Services_Jeeves</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

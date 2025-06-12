@@ -7,13 +7,13 @@
     <columns>Service_Request_Type__c</columns>
     <columns>pse__Start_Date__c</columns>
     <columns>pse__End_Date__c</columns>
-    <columns>pse__WBS_Element_Number__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Assigned_Resources__c</columns>
     <columns>pse__Estimated_Hours__c</columns>
+    <columns>pse__Actual_Hours__c</columns>
     <columns>pse__Hours_Remaining__c</columns>
     <columns>Sharepoint_Link_URL__c</columns>
     <columns>pse__Description__c</columns>
-    <columns>pse__Status__c</columns>
-    <columns>pse__Assigned_Resources__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>ffps_forterro__ServiceRequest__c</field>

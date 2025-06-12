@@ -3,15 +3,16 @@
     <fullName>psaws__Assignments_Ending_in_the_Next_30_Days</fullName>
     <columns>NAME</columns>
     <columns>pse__Project__c</columns>
+    <columns>pse__Role__c</columns>
     <columns>pse__Start_Date__c</columns>
     <columns>pse__End_Date__c</columns>
+    <columns>pse__Status__c</columns>
     <columns>pse__Resource__c</columns>
-    <columns>pse__Role__c</columns>
-    <columns>pse__Scheduled_Hours__c</columns>
-    <columns>Remaining_Hours__c</columns>
     <columns>pse__Is_Billable__c</columns>
     <columns>pse__Bill_Rate__c</columns>
-    <columns>pse__Status__c</columns>
+    <columns>pse__Scheduled_Hours__c</columns>
+    <columns>Actual_Hours__c</columns>
+    <columns>Remaining_Hours__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>pse__End_Date__c</field>

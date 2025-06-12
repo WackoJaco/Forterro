@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JVS_Late_Assignments</fullName>
+    <columns>pse__Project__c</columns>
+    <columns>NAME</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__Is_Billable__c</columns>
+    <columns>pse__Bill_Rate__c</columns>
+    <columns>pse__Scheduled_Hours__c</columns>
+    <columns>Actual_Hours__c</columns>
+    <columns>Remaining_Hours__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Late_Assignment__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>MyRegion__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>JVS Late Assignments</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Services_Jeeves</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

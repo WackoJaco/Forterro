@@ -3,13 +3,15 @@
     <fullName>Late_Project_Tasks</fullName>
     <columns>NAME</columns>
     <columns>pse__Project__c</columns>
+    <columns>pse__Assigned_Resources__c</columns>
     <columns>pse__Start_Date__c</columns>
     <columns>pse__End_Date__c</columns>
     <columns>pse__Status__c</columns>
     <columns>pse__Estimated_Hours__c</columns>
+    <columns>pse__Actual_Hours__c</columns>
     <columns>pse__Hours_Remaining__c</columns>
-    <columns>pse__Assigned_Resources__c</columns>
     <columns>Sharepoint_Link__c</columns>
+    <columns>pse__Description__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Late_Project_Task__c</field>
@@ -20,6 +22,11 @@
         <field>Is_PM_Current_User__c</field>
         <operation>equals</operation>
         <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled,Complete</value>
     </filters>
     <label>My Project Late Project Tasks</label>
 </ListView>

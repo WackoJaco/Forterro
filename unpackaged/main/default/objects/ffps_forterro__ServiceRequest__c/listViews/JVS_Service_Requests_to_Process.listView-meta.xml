@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JVS_Service_Requests_to_Process</fullName>
+    <columns>NAME</columns>
+    <columns>ffps_forterro__Type__c</columns>
+    <columns>Task_Name__c</columns>
+    <columns>ffps_forterro__RequestedDate__c</columns>
+    <columns>ffps_forterro__RequestDetails__c</columns>
+    <columns>ffps_forterro__Account__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>ffps_forterro__ProjectTask__c</columns>
+    <columns>Resource__c</columns>
+    <columns>Estimated_Hours__c</columns>
+    <columns>Trigger_Ongoing_Task__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Ongoing_Task_Created__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>MyRegion__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>JVS Service Requests to Process</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Services_Jeeves</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

@@ -2,23 +2,27 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>My_Group_Assignments</fullName>
     <columns>NAME</columns>
-    <columns>pse__Role__c</columns>
     <columns>pse__Project__c</columns>
+    <columns>pse__Role__c</columns>
     <columns>pse__Start_Date__c</columns>
     <columns>pse__End_Date__c</columns>
-    <columns>pse__Scheduled_Hours__c</columns>
-    <columns>Remaining_Hours__c</columns>
     <columns>pse__Status__c</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__Is_Billable__c</columns>
+    <columns>pse__Bill_Rate__c</columns>
+    <columns>pse__Scheduled_Hours__c</columns>
+    <columns>Actual_Hours__c</columns>
+    <columns>Remaining_Hours__c</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>pse__Status__c</field>
-        <operation>equals</operation>
-        <value>Scheduled</value>
-    </filters>
     <filters>
         <field>MyGroup__c</field>
         <operation>equals</operation>
         <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>equals</operation>
+        <value>Tentative,Scheduled</value>
     </filters>
     <label>My Group Assignments</label>
 </ListView>

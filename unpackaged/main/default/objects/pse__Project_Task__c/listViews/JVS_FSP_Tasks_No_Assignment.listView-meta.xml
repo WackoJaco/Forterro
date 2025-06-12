@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JVS_FSP_Tasks_No_Assignment</fullName>
+    <columns>pse__Project__c</columns>
+    <columns>NAME</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Assigned_Resources__c</columns>
+    <columns>pse__Estimated_Hours__c</columns>
+    <columns>pse__Hours_Remaining__c</columns>
+    <columns>Role_Budget__c</columns>
+    <columns>Role_Budget_Link__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Service_Request_Type__c</field>
+        <operation>equals</operation>
+        <value>FSP</value>
+    </filters>
+    <filters>
+        <field>MyRegion__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Number_of_Resource_Assignments__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>JVS FSP Tasks (No Assignment)</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Services_Jeeves</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JVS_PSA_Resources</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>pse__Is_Resource__c</columns>
+    <columns>pse__Is_Resource_Active__c</columns>
+    <columns>pse__Salesforce_User__c</columns>
+    <columns>pse__Work_Calendar__c</columns>
+    <columns>pse__Region__c</columns>
+    <columns>pse__Practice__c</columns>
+    <columns>pse__Group__c</columns>
+    <columns>pse__Resource_Role__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CONTACT.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.PSA_Resource</value>
+    </filters>
+    <filters>
+        <field>MyRegion__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>JVS PSA Resources</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Services_Jeeves</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>
