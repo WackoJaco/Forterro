@@ -2950,16 +2950,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>SBQQ__QuoteLine__c.Sum_List_Price_of_Licenses__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>SBQQ__QuoteLine__c.Sum_List_Price_of_Third_Party__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>SBQQ__QuoteLine__c.Sum_Quantity_of_Licenses__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3226,11 +3216,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>SBQQ__Quote__c.Partner_Sales__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>SBQQ__Quote__c.Payment_Plan_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
