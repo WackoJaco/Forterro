@@ -2643,11 +2643,6 @@ Manages Leads from AQLs to MQLs and assigns to Sales Reps</description>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>SBQQ__Quote__c.Payment_Plan_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>SBQQ__Quote__c.Payment_Plan__c</field>
         <readable>true</readable>
     </fieldPermissions>
