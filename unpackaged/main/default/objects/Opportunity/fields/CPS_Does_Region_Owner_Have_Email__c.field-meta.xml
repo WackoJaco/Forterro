@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPS_Does_Region_Owner_Have_Email__c</fullName>
+    <description>Highlights whether or not the Contact that is associated to the Opportunity Record as 'Region Owner' has an email address value present. (PIU-239)</description>
+    <formula>NOT(ISBLANK( Region_Owner__r.Email ))</formula>
+    <label>Does Region Owner Have Email?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

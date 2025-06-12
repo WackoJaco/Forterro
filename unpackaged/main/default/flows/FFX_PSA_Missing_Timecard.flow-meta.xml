@@ -4,7 +4,7 @@
         <name>Missing_Timecard_Email2_to_Resource</name>
         <label>Missing Timecard Email to Resource</label>
         <locationX>314</locationX>
-        <locationY>408</locationY>
+        <locationY>384</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -33,12 +33,13 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Missing_Timecard_Email_to_Resource</name>
         <label>Missing Timecard Email to Resource</label>
         <locationX>50</locationX>
-        <locationY>288</locationY>
+        <locationY>276</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -67,13 +68,14 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>56.0</apiVersion>
     <decisions>
         <name>Timecard_Still_Missing</name>
         <label>Timecard Still Missing?</label>
         <locationX>446</locationX>
-        <locationY>288</locationY>
+        <locationY>276</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -92,7 +94,10 @@
         </rules>
     </decisions>
     <description>Migrated from the &quot;FFX PSA Missing Timecard Created&quot; workflow rule
-Missing Timecard email alert trigger on record creation</description>
+Missing Timecard email alert trigger on record creation
+
+CPS - Added entry condition logic to flow, to ensure that flow only fires when the missing timecard record is attached to a resource with a related user that has an email address.</description>
+    <environments>Default</environments>
     <formulas>
         <name>Email2Subject</name>
         <dataType>String</dataType>
@@ -128,6 +133,13 @@ Missing Timecard email alert trigger on record creation</description>
         <filters>
             <field>pse__Date_Timecard_Entered__c</field>
             <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CPS_Does_Resources_User_Have_Email_Addr__c</field>
+            <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>

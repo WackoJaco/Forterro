@@ -18,7 +18,9 @@
         <offset>0</offset>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
-    <description>Flow for when a services Opportunity reaches 75% or &quot;Negotiation&quot; it sends an email to the services lead asking for input</description>
+    <description>Flow for when a services Opportunity reaches 75% or &quot;Negotiation&quot; it sends an email to the services lead asking for input
+
+PIU-239 - Updated condition logic to fire only when the Opportunities &apos;Region Owner&apos; has an email address value present.</description>
     <environments>Default</environments>
     <interviewLabel>CTC {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CTC - Services Opportunity Email Trigger</label>
@@ -47,7 +49,7 @@
         <connector>
             <targetReference>Services_Opp_Email</targetReference>
         </connector>
-        <filterLogic>3 AND (1 OR 2)</filterLogic>
+        <filterLogic>(1 OR 2) AND 3 AND 4</filterLogic>
         <filters>
             <field>Probability</field>
             <operator>EqualTo</operator>
@@ -64,6 +66,13 @@
         </filters>
         <filters>
             <field>pse__Is_Services_Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CPS_Does_Region_Owner_Have_Email__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>

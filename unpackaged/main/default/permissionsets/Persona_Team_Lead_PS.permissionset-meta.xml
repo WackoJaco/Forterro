@@ -116,6 +116,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Impuls_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Industry</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -297,6 +302,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.pse__Services_Billing_Time_Period_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.rh2__Describe__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -887,6 +897,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.pse__Work_Calendar__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>SBQQ__QuoteLine__c.ACVNew__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>SBQQ__Quote__c.Payment_Plan__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3222,6 +3242,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Miscellaneous_Adjustment__c.pse__Vendor_Invoice_Item__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Missing_Timecard__c.CPS_Does_Resources_User_Have_Email_Addr__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -8582,12 +8607,4 @@
         <tab>standard-report</tab>
         <visibility>Visible</visibility>
     </tabSettings>
-    <classAccesses>
-        <apexClass>pse__PTM_ResourceController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>pse__PTM_ResourceControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
 </PermissionSet>

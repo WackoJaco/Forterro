@@ -8,6 +8,11 @@
         <visible>true</visible>
     </applicationVisibilities>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>SBQQ__QuoteLine__c.ACVNew__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>ffscpq__Estimate__c.Approver__c</field>
         <readable>true</readable>
@@ -215,6 +220,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Assignment__c.pse__Time_Excluded__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Missing_Timecard__c.CPS_Does_Resources_User_Have_Email_Addr__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

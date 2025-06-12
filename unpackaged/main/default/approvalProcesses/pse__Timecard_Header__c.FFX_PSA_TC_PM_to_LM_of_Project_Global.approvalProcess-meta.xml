@@ -49,7 +49,8 @@
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <formula>(ISBLANK(pse__Approver__c) ||
-(pse__Approver__r.Id = pse__Resource__r.pse__Salesforce_User__r.Id))
+(pse__Approver__r.Id = pse__Resource__r.pse__Salesforce_User__r.Id)) ||
+(TEXT(pse__Project__r.Project_Sub_Types__c) = &quot;IBS - Ongoing&quot;)
 &amp;&amp; pse__Submitted__c = True</formula>
     </entryCriteria>
     <finalApprovalActions>
