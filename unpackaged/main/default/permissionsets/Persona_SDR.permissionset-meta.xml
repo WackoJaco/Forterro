@@ -2302,11 +2302,6 @@ Manages Leads from AQLs to MQLs and assigns to Sales Reps</description>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>SBQQ__QuoteLine__c.ACVNew__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>SBQQ__QuoteLine__c.ACV_Euro__c</field>
         <readable>true</readable>
