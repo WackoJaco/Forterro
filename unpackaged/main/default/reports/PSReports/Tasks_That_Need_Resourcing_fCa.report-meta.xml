@@ -26,7 +26,15 @@
         <field>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r$pse__Resource_Request__c</field>
     </columns>
     <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Proj__c.pse__Project_Tasks__r$Number_of_Resource_Requests__c</field>
+    </columns>
+    <columns>
         <field>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r$pse__Assignment__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Proj__c.pse__Project_Tasks__r$Number_of_Resource_Assignments__c</field>
     </columns>
     <columns>
         <field>pse__Proj__c.pse__Project_Tasks__r$ffps_forterro__ServiceRequest__c</field>
@@ -34,7 +42,7 @@
     <currency>EUR</currency>
     <description>Shows all Tasks that need Resourcing for a specific project (linked to Project Object -&gt; Resourcing)</description>
     <filter>
-        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
         <criteriaItems>
             <column>pse__Proj__c.pse__Project_Tasks__r$pse__Summary__c</column>
             <columnToColumn>false</columnToColumn>
@@ -64,18 +72,11 @@
             <value>0</value>
         </criteriaItems>
         <criteriaItems>
-            <column>pse__Proj__c.pse__Project_Tasks__r.pse__Project_Task_Assignments__r$pse__Assignment__c</column>
+            <column>pse__Proj__c.pse__Project_Tasks__r$Number_of_Resource_Assignments__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
-            <value></value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>pse__Proj__c$Id</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value></value>
+            <value>0</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>

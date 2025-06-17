@@ -51,8 +51,8 @@
         <field>CUST_NAME</field>
     </columns>
     <currency>EUR</currency>
-    <description>Report showing the revenue forecast for the previous 3 and next 3 months for my Group.
-Actuals - Revenue Recognised to Date
+    <description>Report showing the revenue forecast for the previous 3 and next 3 months for my Region.
+Actuals - Revenue Recognised to Date (not ready to be recognised!)
 Forecast - Revenue Pending Recognition / Scheduled Revenue / Unscheduled Revenue</description>
     <filter>
         <criteriaItems>
