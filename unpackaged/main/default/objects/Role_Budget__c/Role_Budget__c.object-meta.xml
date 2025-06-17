@@ -168,14 +168,16 @@
     </nameField>
     <pluralLabel>Role Budgets</pluralLabel>
     <searchLayouts>
-        <searchResultsAdditionalFields>Role_Budget_Name__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Role__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Project__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Reference__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Role__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Rate__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Hours_Budget__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Available_Hours_to_Request__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Available_Hours_to_Assign__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Requested_Hours__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Assigned_Hours__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Timecard_Hours__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Project_Task_Hours__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

@@ -14,5 +14,9 @@
         <operation>equals</operation>
         <value>1</value>
     </filters>
+    <filters>
+        <field>pse__Date_Timecard_Entered__c</field>
+        <operation>equals</operation>
+    </filters>
     <label>My Groups Missing Timecards</label>
 </ListView>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JVS_NSS_Projects</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Project_Manager__c</columns>
+    <columns>Lead_Consultant__c</columns>
+    <columns>pse__Stage__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>Go_Live_Date__c</columns>
+    <columns>pse__Planned_Hours__c</columns>
+    <columns>Total_Actual_Hours__c</columns>
+    <columns>Remaining_Hours__c</columns>
+    <columns>pse__Account__c</columns>
+    <columns>pse__Billing_Type__c</columns>
+    <columns>Project_Sub_Types__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Project_Type__c</field>
+        <operation>notEqual</operation>
+        <value>Internal</value>
+    </filters>
+    <filters>
+        <field>pse__Stage__c</field>
+        <operation>equals</operation>
+        <value>In Progress,Draft,Requested</value>
+    </filters>
+    <filters>
+        <field>pse__Is_Template__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>MyRegion__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Project_Type__c</field>
+        <operation>equals</operation>
+        <value>NSS</value>
+    </filters>
+    <label>JVS NSS Projects</label>
+</ListView>
