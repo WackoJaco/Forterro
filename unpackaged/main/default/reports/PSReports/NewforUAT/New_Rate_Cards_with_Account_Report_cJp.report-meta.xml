@@ -17,9 +17,6 @@
         <field>pse__Rate_Card__c.pse__End_Date__c</field>
     </columns>
     <columns>
-        <field>FK_NAME</field>
-    </columns>
-    <columns>
         <field>pse__Rate_Card__c.pse__Region__c</field>
     </columns>
     <columns>
@@ -43,17 +40,22 @@
     </columns>
     <currency>EUR</currency>
     <description>This report shows all Rate Cards for Accounts and the Account Product Family (LOB)</description>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Rate Cards with Account and Account LOB</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$pse__Rate_Card__c@pse__Rate_Card__c.pse__Account__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
-    <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>pse__Rate_Card__c.pse__End_Date__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
