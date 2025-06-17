@@ -9,6 +9,7 @@
     <customButtons>pse__Create_Change_Request</customButtons>
     <excludeButtons>ChangeOwnerOne</excludeButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>PrintableView</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -343,10 +344,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Project_Profitability__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Show_Task_Based_Resource_Rpt__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

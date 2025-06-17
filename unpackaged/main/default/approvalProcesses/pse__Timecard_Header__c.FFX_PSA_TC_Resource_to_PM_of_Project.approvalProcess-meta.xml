@@ -47,10 +47,13 @@
         <label>Request to Approver</label>
         <name>Request_to_Approver</name>
     </approvalStep>
+    <description>Uses the standard &apos;Approver&apos; field of the Timecard object, which is the Project Manager of the related project by default. Only when it is not that same user submitting a timecard, and not specifically for IBS Ongoing projects.</description>
     <emailTemplate>unfiled$public/Forterro_PSA_Timecard_Approval</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
-        <formula>(pse__Approver__r.Id &lt;&gt; pse__Resource__r.pse__Salesforce_User__r.Id) &amp;&amp; pse__Submitted__c = True</formula>
+        <formula>TEXT(pse__Project__r.Project_Sub_Types__c) != &quot;IBS - Ongoing Work&quot; &amp;&amp;
+(pse__Approver__r.Id != pse__Resource__r.pse__Salesforce_User__r.Id) &amp;&amp; 
+pse__Submitted__c = True</formula>
     </entryCriteria>
     <finalApprovalActions>
         <action>
@@ -99,7 +102,7 @@
         <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
         <userHierarchyField>Manager</userHierarchyField>
     </nextAutomatedApprover>
-    <processOrder>3</processOrder>
+    <processOrder>2</processOrder>
     <recallActions>
         <action>
             <name>FFX_PSA_Timecard_Approved_False</name>

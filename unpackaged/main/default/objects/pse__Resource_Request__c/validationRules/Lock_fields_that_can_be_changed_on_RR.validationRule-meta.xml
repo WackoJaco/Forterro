@@ -4,9 +4,7 @@
     <active>true</active>
     <errorConditionFormula>OR(ISCHANGED( pse__Resource_Role__c  ),
   			ISCHANGED(  pse__Resource_Role__c ),
-			  ISCHANGED(  pse__SOW_Hours__c  ),
-			  ISCHANGED(  pse__Start_Date__c  ),
-			  ISCHANGED(  pse__End_Date__c  ),
+			
 			  ISCHANGED(  FFX_Resource_Request_Type__c  ),
 			  ISCHANGED(  pse__Opportunity__c ),
 			  ISCHANGED(  pse__Project__c )  

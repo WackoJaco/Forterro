@@ -21,10 +21,35 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <connector>
+                <targetReference>Retrieve_Submitters_Reports_To_Contact</targetReference>
+            </connector>
             <label>User Not Found</label>
         </rules>
     </decisions>
-    <description>When a Timecard record is created and the &apos;Timecard Approver&apos; field on the parent Project record is populated appropriately, the flow will seek the User ID of the User associated to the Contact referenced on the Project as the Timecard Approver. This User ID will then be placed into the Timecard records&apos; &apos;Project Override Approver&apos; field for use in the Approval Process.</description>
+    <decisions>
+        <name>User_Located2</name>
+        <label>User Located?</label>
+        <locationX>176</locationX>
+        <locationY>947</locationY>
+        <defaultConnector>
+            <targetReference>Place_Submitters_Reports_To_User_on_Timecard_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>User Found</defaultConnectorLabel>
+        <rules>
+            <name>User_Not_Found2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Retrieve_Submitters_Reports_To_Related_User.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>User Not Found</label>
+        </rules>
+    </decisions>
+    <description>When a Timecard record is created this flow will populate User Lookup fields on the Timecard record based on the &apos;Timecard Approver&apos; field on the parent Project record, as well as the &apos;Reports To&apos; Resources user, of the Resource who is submitting the timecard in question.</description>
     <environments>Default</environments>
     <interviewLabel>Certinia: Timecard - On Create (Override Timecard Approver) {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Certinia: Timecard - On Create (Override Timecard Approver)</label>
@@ -79,12 +104,81 @@
         <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Retrieve_Submitters_Reports_To_Contact</name>
+        <label>Retrieve Submitters &apos;Reports To&apos; Contact</label>
+        <locationX>176</locationX>
+        <locationY>731</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Retrieve_Submitters_Reports_To_Related_User</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Resource__r.ReportsToId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Retrieve_Submitters_Reports_To_Related_User</name>
+        <label>Retrieve Submitters &apos;Reports To&apos; Related User</label>
+        <locationX>176</locationX>
+        <locationY>839</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>User_Located2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Retrieve_Submitters_Reports_To_Contact.pse__Salesforce_User__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Place_Submitters_Reports_To_User_on_Timecard_Record</name>
+        <label>Place Submitters &apos;Reports To&apos; User on Timecard Record</label>
+        <locationX>308</locationX>
+        <locationY>1055</locationY>
+        <inputAssignments>
+            <field>CPS_Resource_s_Reports_To_Approver__c</field>
+            <value>
+                <elementReference>Retrieve_Submitters_Reports_To_Related_User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <recordUpdates>
         <description>Update the triggering Timecard record to add within the &apos;Project Override Approver&apos; field, the lookup to the User which was found via the parent Project record in the previous step.</description>
         <name>Place_Timecard_Approver_User_on_Timecard_Record</name>
         <label>Place Timecard Approver User on Timecard Record</label>
         <locationX>264</locationX>
         <locationY>539</locationY>
+        <connector>
+            <targetReference>Retrieve_Submitters_Reports_To_Contact</targetReference>
+        </connector>
         <inputAssignments>
             <field>CPS_Project_Override_Approver__c</field>
             <value>
@@ -99,9 +193,9 @@
         <connector>
             <targetReference>Get_Timecard_Approver_User_Record</targetReference>
         </connector>
-        <filterFormula>AND(
-      {!$Record.pse__Project__r.CPS_Timecard_Approver__r.Id} != Null,
-      {!$Record.pse__Project__r.CPS_Timecard_Approver__r.Id} != {!$Record.pse__Project__r.pse__Project_Manager__r.Id}
+        <filterFormula>OR(
+{!$Record.CPS_Project_Override_Approver__c}= Null,
+{!$Record.CPS_Resource_s_Reports_To_Approver__c} = Null
 )</filterFormula>
         <object>pse__Timecard_Header__c</object>
         <recordTriggerType>Create</recordTriggerType>

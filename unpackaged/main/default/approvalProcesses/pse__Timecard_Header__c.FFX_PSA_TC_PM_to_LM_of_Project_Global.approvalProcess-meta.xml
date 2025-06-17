@@ -39,19 +39,19 @@
         <allowDelegate>false</allowDelegate>
         <assignedApprover>
             <approver>
-                <type>userHierarchyField</type>
+                <name>CPS_Resource_s_Reports_To_Approver__c</name>
+                <type>relatedUserField</type>
             </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
         <label>Request to Manager</label>
         <name>Request_to_Manager</name>
     </approvalStep>
+    <description>Will use the Resource records &apos;Reports To&apos; Manager as a &apos;catch all&apos; in any scenarios not covered by the first two steps.</description>
     <emailTemplate>unfiled$public/Forterro_PSA_Timecard_Approval</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
-        <formula>(ISBLANK(pse__Approver__c) ||
-(pse__Approver__r.Id = pse__Resource__r.pse__Salesforce_User__r.Id)) ||
-(TEXT(pse__Project__r.Project_Sub_Types__c) = &quot;IBS - Ongoing&quot;)
-&amp;&amp; pse__Submitted__c = True</formula>
+        <formula>pse__Submitted__c = True</formula>
     </entryCriteria>
     <finalApprovalActions>
         <action>
@@ -106,7 +106,7 @@
         <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
         <userHierarchyField>Manager</userHierarchyField>
     </nextAutomatedApprover>
-    <processOrder>2</processOrder>
+    <processOrder>3</processOrder>
     <recallActions>
         <action>
             <name>FFX_PSA_Timecard_Approved_False</name>

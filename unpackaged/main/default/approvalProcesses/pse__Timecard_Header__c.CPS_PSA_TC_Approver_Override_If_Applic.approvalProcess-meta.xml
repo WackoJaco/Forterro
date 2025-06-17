@@ -47,12 +47,11 @@
         <label>Request to Approver</label>
         <name>Request_to_Approver</name>
     </approvalStep>
-    <description>Will use the &apos;Project Override Approval&apos; field on the Timecard as opposed to the conventional &apos;Approver&apos; field. This value comes from the &apos;Timecard Approver&apos; field on the project.</description>
+    <description>Will use the &apos;Project Override Approver&apos; field on the Timecard to assign an approver. Only if populated and not the same user as the submitting resource.</description>
     <emailTemplate>unfiled$public/Forterro_PSA_Timecard_Approval</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <formula>NOT(ISBLANK( CPS_Project_Override_Approver__c )) &amp;&amp;
-(CPS_Project_Override_Approver__c != pse__Approver__r.Id) &amp;&amp;
 (CPS_Project_Override_Approver__c !=  pse__Resource__r.pse__Salesforce_User__c) &amp;&amp; 
 pse__Submitted__c = True</formula>
     </entryCriteria>

@@ -3,6 +3,7 @@ public class ProjectTaskHelper
     public static void TriggerHandler()
     {
         Map<Id,pse__Project_Task__c> changedProjectTasks = new Map<Id,pse__Project_Task__c>();
+        Set<Id> dateChangedProjectTaskIds = new Set<Id>();
 
         if( trigger.isUpdate && trigger.isAfter )
         {
@@ -15,123 +16,98 @@ public class ProjectTaskHelper
                     // the role budget has changed
                     changedProjectTasks.put( task.Id, task );
                 }
+
+                if( task.pse__Start_Date_Time__c != old.pse__Start_Date_Time__c ||
+                    task.pse__End_Date_Time__c != old.pse__End_Date_Time__c )
+                {
+                    dateChangedProjectTaskIds.add( task.Id );
+                }
             }
         }
 
-        if( changedProjectTasks.size() == 0 )
+        if( changedProjectTasks.size() == 0 && dateChangedProjectTaskIds.size() == 0 )
         {
             return;
         }
 
-        Set<Id> assignmentIds = new Set<Id>();
-        Map<Id,List<pse__Project_Task_Assignment__c>> taskToPTAs = new Map<Id,List<pse__Project_Task_Assignment__c>>();
-
-        for( pse__Project_Task_Assignment__c pta : 
-            [Select 
-                Id,
-                Role_Budget__c,
-                pse__Project_Task__c,
-                pse__Assignment__c,
-                pse__Assignment__r.Role_Budget__c,
-                pse__Resource_Request__c,
-                pse__Resource_Request__r.Role_Budget__c
-            from 
-                pse__Project_Task_Assignment__c 
-            where 
-                pse__Project_Task__c in :changedProjectTasks.keySet()] )
+        if( changedProjectTasks.size() > 0 )
         {
-            if( pta.pse__Assignment__c != null )
-            {
-                assignmentIds.add( pta.pse__Assignment__c );
-            }
+            Set<Id> assignmentIds = new Set<Id>();
+            Map<Id,List<pse__Project_Task_Assignment__c>> taskToPTAs = new Map<Id,List<pse__Project_Task_Assignment__c>>();
 
-            if( !taskToPTAs.containsKey( pta.pse__Project_Task__c ) )
+            for( pse__Project_Task_Assignment__c pta : 
+                [Select 
+                    Id,
+                    Role_Budget__c,
+                    pse__Project_Task__c,
+                    pse__Assignment__c,
+                    pse__Assignment__r.Role_Budget__c,
+                    pse__Resource_Request__c,
+                    pse__Resource_Request__r.Role_Budget__c,
+                    pse__Estimated_Hours__c
+                from 
+                    pse__Project_Task_Assignment__c 
+                where 
+                    pse__Project_Task__c in :changedProjectTasks.keySet()] )
             {
-                taskToPTAs.put( pta.pse__Project_Task__c, new List<pse__Project_Task_Assignment__c>() );
-            }
-            taskToPTAs.get( pta.pse__Project_Task__c ).add( pta );
-        }
-
-        Map<Id,Set<Id>> assignmentToTasks = new Map<Id,Set<Id>>();
-        Map<Id,pse__Assignment__c> assignments = new Map<Id,pse__Assignment__c>();
-        for( pse__Assignment__c assignment : 
-            [Select 
-                Id,
-                Role_Budget__c,
-                (Select Id, Role_Budget__c, pse__Project_Task__c, pse__Project_Task__r.Role_Budget__c from pse__Project_Task_Assignments__r) 
-            from 
-                pse__Assignment__c 
-            where 
-                Id in :assignmentIds] )
-        {
-            Set<Id> taskIds = new Set<Id>();
-            for( pse__Project_Task_Assignment__c pta : assignment.pse__Project_Task_Assignments__r )
-            {
-                if( pta.pse__Project_Task__c != null )
+                if( pta.pse__Assignment__c != null )
                 {
-                    taskIds.add( pta.pse__Project_Task__c );
+                    assignmentIds.add( pta.pse__Assignment__c );
                 }
-            }
 
-            if( taskIds.size() > 0 )
-            {
-                assignmentToTasks.put( assignment.Id, taskIds );
-            }
-
-            assignments.put( assignment.Id, assignment );
-        }
-
-        Map<Id,pse__Project_Task_Assignment__c> changedPTAs = new Map<Id,pse__Project_Task_Assignment__c>();
-        Map<Id,pse__Assignment__c> changedAssignments = new Map<Id,pse__Assignment__c>();
-        Map<Id,pse__Resource_Request__c> changedResourceRequests = new Map<Id,pse__Resource_Request__c>();
-
-        for( pse__Project_Task__c task : changedProjectTasks.values() )
-        {
-            Set<Id> taskAssignmentIds = new Set<Id>();
-            if( taskToPTAs.containsKey( task.Id ) )
-            {
-                for( pse__Project_Task_Assignment__c pta : taskToPTAs.get( task.Id ) )
+                if( !taskToPTAs.containsKey( pta.pse__Project_Task__c ) )
                 {
-                    Id assignmentId = pta.pse__Assignment__c;
-                    if( assignmentId == null )
-                    {
-                        // easy, just change the PTA and resource request and we're done
-                        pta.Role_Budget__c = task.Role_Budget_Link__c;
-                        changedPTAs.put( pta.Id, pta );
+                    taskToPTAs.put( pta.pse__Project_Task__c, new List<pse__Project_Task_Assignment__c>() );
+                }
+                taskToPTAs.get( pta.pse__Project_Task__c ).add( pta );
+            }
 
-                        system.debug( 'x: ' + pta.Id + ' ' + pta.pse__Resource_Request__c );
-
-                        if( pta.pse__Resource_Request__c != null )
-                        {
-                            pta.pse__Resource_Request__r.Role_Budget__c = task.Role_Budget_Link__c;
-                            changedResourceRequests.put( pta.pse__Resource_Request__c, pta.pse__Resource_Request__r );
-                        }
-                    }
-                    else
+            Map<Id,Set<Id>> assignmentToTasks = new Map<Id,Set<Id>>();
+            Map<Id,pse__Assignment__c> assignments = new Map<Id,pse__Assignment__c>();
+            for( pse__Assignment__c assignment : 
+                [Select 
+                    Id,
+                    Role_Budget__c,
+                    (Select Id, Role_Budget__c, pse__Project_Task__c, pse__Project_Task__r.Role_Budget__c from pse__Project_Task_Assignments__r) 
+                from 
+                    pse__Assignment__c 
+                where 
+                    Id in :assignmentIds] )
+            {
+                Set<Id> taskIds = new Set<Id>();
+                for( pse__Project_Task_Assignment__c pta : assignment.pse__Project_Task_Assignments__r )
+                {
+                    if( pta.pse__Project_Task__c != null )
                     {
-                        taskAssignmentIds.add( assignmentId );
+                        taskIds.add( pta.pse__Project_Task__c );
                     }
                 }
+
+                if( taskIds.size() > 0 )
+                {
+                    assignmentToTasks.put( assignment.Id, taskIds );
+                }
+
+                assignments.put( assignment.Id, assignment );
             }
 
-            if( taskAssignmentIds.size() > 0 )
+            Map<Id,pse__Project_Task_Assignment__c> changedPTAs = new Map<Id,pse__Project_Task_Assignment__c>();
+            Map<Id,pse__Assignment__c> changedAssignments = new Map<Id,pse__Assignment__c>();
+            Map<Id,pse__Resource_Request__c> changedResourceRequests = new Map<Id,pse__Resource_Request__c>();
+
+            for( pse__Project_Task__c task : changedProjectTasks.values() )
             {
-                for( Id assignmentId : taskAssignmentIds )
+                Set<Id> taskAssignmentIds = new Set<Id>();
+                if( taskToPTAs.containsKey( task.Id ) )
                 {
-                    Set<Id> taskIds = assignmentToTasks.get( assignmentId );
-                    if( taskIds.contains( task.Id ) )
+                    for( pse__Project_Task_Assignment__c pta : taskToPTAs.get( task.Id ) )
                     {
-                        for( pse__Project_Task_Assignment__c pta : taskToPTAs.get( task.Id ) )
+                        Id assignmentId = pta.pse__Assignment__c;
+                        if( assignmentId == null )
                         {
-                            if( taskIds.size() > 1 )
-                            {
-                                // we have tasks other than this one associated with the assignment
-                                pta.pse__Assignment__c = null;
-                            }
+                            // easy, just change the PTA and resource request and we're done
                             pta.Role_Budget__c = task.Role_Budget_Link__c;
                             changedPTAs.put( pta.Id, pta );
-
-                            system.debug( 'y: ' + pta.Id + ' ' + pta.pse__Resource_Request__c );
 
                             if( pta.pse__Resource_Request__c != null )
                             {
@@ -139,22 +115,77 @@ public class ProjectTaskHelper
                                 changedResourceRequests.put( pta.pse__Resource_Request__c, pta.pse__Resource_Request__r );
                             }
                         }
-
-                        if( taskIds.size() == 1 )
+                        else
                         {
-                            // we have a pure assignment so we can update it too
-                            pse__Assignment__c assignment = assignments.get( assignmentId );
-                            assignment.Role_Budget__c = task.Role_Budget_Link__c;
-                            changedAssignments.put( assignment.Id, assignment );
+                            taskAssignmentIds.add( assignmentId );
                         }
                     }
                 }
+
+                if( taskAssignmentIds.size() > 0 )
+                {
+                    for( Id assignmentId : taskAssignmentIds )
+                    {
+                        Set<Id> taskIds = assignmentToTasks.get( assignmentId );
+                        if( taskIds.contains( task.Id ) )
+                        {
+                            for( pse__Project_Task_Assignment__c pta : taskToPTAs.get( task.Id ) )
+                            {
+                                if( taskIds.size() > 1 )
+                                {
+                                    // we have tasks other than this one associated with the assignment
+                                    pta.pse__Assignment__c = null;
+                                    pta.pse__Estimated_Hours__c = 0;
+                                }
+                                pta.Role_Budget__c = task.Role_Budget_Link__c;
+                                changedPTAs.put( pta.Id, pta );
+
+                                if( pta.pse__Resource_Request__c != null )
+                                {
+                                    pta.pse__Resource_Request__r.Role_Budget__c = task.Role_Budget_Link__c;
+                                    changedResourceRequests.put( pta.pse__Resource_Request__c, pta.pse__Resource_Request__r );
+                                }
+                            }
+
+                            if( taskIds.size() == 1 )
+                            {
+                                // we have a pure assignment so we can update it too
+                                pse__Assignment__c assignment = assignments.get( assignmentId );
+                                assignment.Role_Budget__c = task.Role_Budget_Link__c;
+                                changedAssignments.put( assignment.Id, assignment );
+                            }
+                        }
+                    }
+                }
+
+                // update everything we've touched
+                update changedPTAs.values();
+                update changedAssignments.values();
+                update changedResourceRequests.values();
+            }
+        }
+
+        if( dateChangedProjectTaskIds.size() > 0 )
+        {
+            Set<Id> resourceRequestIds = new Set<Id>();
+            for( pse__Project_Task_Assignment__c pta : 
+                [Select 
+                    Id,
+                    pse__Resource_Request__c 
+                from 
+                    pse__Project_Task_Assignment__c
+                where
+                    pse__Project_Task__c in :dateChangedProjectTaskIds and
+                    pse__Resource_Request__c != null and
+                    pse__Assignment__c = null] )
+            {
+                resourceRequestIds.add( pta.pse__Resource_Request__c );
             }
 
-            // update everything we've touched
-            update changedPTAs.values();
-            update changedAssignments.values();
-            update changedResourceRequests.values();
+            if( resourceRequestIds.size() > 0 )
+            {
+                ProjectTaskAssignmentTriggerHandler.UpdateResourceRequestsFromPTAs( resourceRequestIds );
+            }
         }
     }
 }

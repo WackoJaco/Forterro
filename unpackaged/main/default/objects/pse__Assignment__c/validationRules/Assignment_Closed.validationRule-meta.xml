@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assignment_Closed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+        Remaining_Hours__c &gt; 0,
+         IsPickval(pse__Status__c,'Closed')
+     )</errorConditionFormula>
+    <errorMessage>An assignment cannot be closed if there are remaining hours.</errorMessage>
+</ValidationRule>

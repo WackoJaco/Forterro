@@ -12834,6 +12834,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.CPS_Work_Planner_Colour__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.Cash_Collection__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -15235,6 +15240,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Timecard_Header__c.CPS_Project_Override_Approver__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Timecard_Header__c.CPS_Resource_s_Reports_To_Approver__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPS_Resource_s_Reports_To_Approver__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Holds the Resources &gt; Reports To &gt; User, acting as an alternative 'manager' to that defined within the Salesforce User record directly. Used as read only for end users within the system. Populated by flow.</description>
+    <label>Resource's 'Reports To' Approver</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Timecards1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

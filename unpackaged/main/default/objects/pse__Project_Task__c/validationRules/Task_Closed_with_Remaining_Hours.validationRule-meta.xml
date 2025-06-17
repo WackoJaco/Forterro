@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Closed_with_Remaining_Hours</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( 
+       pse__Hours_Remaining__c &gt; 0,
+        IsPickVal(pse__Status__c,'Complete')
+    )</errorConditionFormula>
+    <errorMessage>A task cannot be closed with Hours remaining. Update the estimated hours so that there are 0 remaining hours.</errorMessage>
+</ValidationRule>

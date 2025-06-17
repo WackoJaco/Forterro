@@ -118,7 +118,7 @@
     <formulas>
         <name>SaturdayBillRate</name>
         <dataType>Currency</dataType>
-        <expression>{!Get_Assignment_Linked_to_TC.pse__Bill_Rate__c}  * {!$Record.pse__Project__r.pse__Region__r.Standby_Multiplier__c}</expression>
+        <expression>{!Get_Assignment_Linked_to_TC.pse__Bill_Rate__c}  * {!$Record.pse__Project__r.pse__Region__r.Saturday_Rate__c}</expression>
         <scale>2</scale>
     </formulas>
     <formulas>

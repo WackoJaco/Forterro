@@ -23,7 +23,7 @@
             <assignToReference>$Record.Name</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>formAssignmentName</elementReference>
+                <elementReference>txtOngoingAssignmentName</elementReference>
             </value>
         </assignmentItems>
     </assignments>

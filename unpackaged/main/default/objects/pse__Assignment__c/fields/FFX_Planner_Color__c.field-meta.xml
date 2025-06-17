@@ -4,9 +4,9 @@
     <description>Field used on Planners to show color coding.</description>
     <externalId>false</externalId>
     <formula>IF(pse__Is_Billable__c , "lightBlue", 
-IF( NOT(pse__Is_Billable__c) &amp;&amp;  ISPICKVAL(pse__Project__r.pse__Project_Type__c, "Customer Project"), "lightGreen", 
-IF( ISPICKVAL(pse__Project__r.pse__Project_Type__c, "Paid Time Off"), "Pink",
-IF(TEXT( pse__Project__r.Project_Sub_Types__c) = "Internal - Unavailability", "LightYellow",
+IF( NOT(pse__Is_Billable__c) &amp;&amp; pse__Time_Credited__c, "lightGreen", 
+IF( NOT(pse__Is_Billable__c) &amp;&amp; NOT(pse__Time_Credited__c) &amp;&amp;  pse__Time_Excluded__c, "turquoise",
+IF( NOT(pse__Is_Billable__c) &amp;&amp; NOT(pse__Time_Credited__c) &amp;&amp;  NOT(pse__Time_Excluded__c), "pink",
  ""))))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Planner Color</label>

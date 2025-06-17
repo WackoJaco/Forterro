@@ -16,6 +16,16 @@
         <application>pse__PS_Enterprise_Lightning</application>
         <visible>true</visible>
     </applicationVisibilities>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Assignment__c.pse__Closed_for_Expense_Entry__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Assignment__c.pse__Closed_for_Time_Entry__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <label>Persona - Workforce Manager Muted</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -42,6 +52,15 @@
         <allowRead>false</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>pse__Region__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>pse__Task_Time__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <tabSettings>

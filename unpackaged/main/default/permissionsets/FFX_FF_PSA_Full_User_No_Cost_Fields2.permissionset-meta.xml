@@ -19455,6 +19455,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Timecard_Header__c.CPS_Resource_s_Reports_To_Approver__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>pse__Timecard_Header__c.Distance_Friday__c</field>
         <readable>true</readable>

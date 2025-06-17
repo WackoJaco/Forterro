@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Task_Equals_Cancelled</fullName>
+    <active>true</active>
+    <description>If Project Task is marked complete no time can be entered against it</description>
+    <errorConditionFormula>ISNEW() &amp;&amp;  ISPICKVAL( pse__Project_Task__r.pse__Status__c, "Cancelled" )</errorConditionFormula>
+    <errorMessage>If Project Task is marked cancelled no time can be entered against it</errorMessage>
+</ValidationRule>
