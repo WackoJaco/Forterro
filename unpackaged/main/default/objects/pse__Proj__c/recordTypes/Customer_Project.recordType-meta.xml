@@ -241,10 +241,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>PS Solution - Packaged Solution</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>PS Subscription - Customisation Maintenance</fullName>
             <default>false</default>
         </values>
