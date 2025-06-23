@@ -194,21 +194,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Language__c</picklist>
-        <values>
-            <fullName>English</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>French</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>German</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>LeadSource</picklist>
         <values>
             <fullName>Affiliate</fullName>
