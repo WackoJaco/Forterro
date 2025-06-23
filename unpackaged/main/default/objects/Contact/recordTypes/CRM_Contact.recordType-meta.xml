@@ -428,25 +428,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Opportunity_Stage__c</picklist>
-        <values>
-            <fullName>No Opportunity</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Nurture</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Open Opportunity</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pending Renewal</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Preferred_Language__c</picklist>
         <values>
             <fullName>English</fullName>
