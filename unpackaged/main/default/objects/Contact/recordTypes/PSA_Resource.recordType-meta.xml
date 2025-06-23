@@ -62,17 +62,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>ERP_Project__c</picklist>
-        <values>
-            <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yes</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>ERP_Upgdrade_Date__c</picklist>
         <values>
             <fullName>1990s</fullName>
