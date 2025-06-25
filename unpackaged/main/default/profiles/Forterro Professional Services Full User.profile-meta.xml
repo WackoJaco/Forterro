@@ -1904,42 +1904,6 @@
         <layout>pse__fflib_XXXBatchTestOpportunity2__c-pse__XXX Batch Test Opportunity 2 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>rh2__Filter__c-rh2__Filter Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>rh2__HS_Filter__c-rh2__Filter Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>rh2__PS_Describe__c-rh2__Describe Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>rh2__PS_Exception__c-rh2__Rollup Helper Exception Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>rh2__PS_Export_Rollups__c-rh2__Rollup Export Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>rh2__PS_OAuth_Configuration__mdt-rh2__Rollup Helper OAuth Configuration Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>rh2__PS_Queue__c-rh2__Rollup Helper Queue Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>rh2__PS_Rollup_Audit__c-rh2__Rollup Audit Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>rh2__PS_Rollup_Dummy__c-rh2__Rollup Dummy Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>rh2__PS_Rollup_Group__c-rh2__Rollup Group Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>rh2__PS_Use_Case_Library__mdt-rh2__PS Use Case Library Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>rh2__RH_Job__c-rh2__Rollup Job Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>sbaa__ApprovalChain__c-sbaa__Approval Chain Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2772,16 +2736,6 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>pse__PS_Enterprise_Operations_Lightning</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>rh2__PS_Rollup_Helper</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>rh2__Rollup_Helper_Lightning</application>
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
