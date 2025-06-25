@@ -2506,11 +2506,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <applicationVisibilities>
-        <application>Forterro_Cash_Collections</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
         <application>Forterro_PSA</application>
         <default>false</default>
         <visible>true</visible>
