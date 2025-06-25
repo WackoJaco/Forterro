@@ -832,16 +832,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>AllClosedLostAmountCV__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>AllOpenAmountCV__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Licence_Preparation__c</field>
             <table>Opportunity</table>
         </columns>
