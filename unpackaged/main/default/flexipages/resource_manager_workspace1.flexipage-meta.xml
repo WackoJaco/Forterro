@@ -601,10 +601,6 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-7754fe74-02f9-476a-a4e2-73e20070fc2e</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>title</name>
                     <value>Utilization Summary</value>
                 </componentInstanceProperties>
