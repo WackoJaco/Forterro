@@ -21,11 +21,6 @@
     </customPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>SBQQ__QuoteLine__c.Training_Code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>ffscpq__Estimate__c.Approver__c</field>
         <readable>true</readable>
     </fieldPermissions>
