@@ -832,11 +832,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>AllClosedAmountCV__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>AllClosedWonAmountCV__c</field>
             <table>Opportunity</table>
         </columns>
