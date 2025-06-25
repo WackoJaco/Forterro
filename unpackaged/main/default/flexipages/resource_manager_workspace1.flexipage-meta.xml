@@ -615,10 +615,6 @@
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-6c2381c7-df9e-44f2-98a2-ef20dfd3730d</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>title</name>
                     <value>Utilization Analytics</value>
                 </componentInstanceProperties>
